@@ -1,0 +1,52 @@
+<block wx:for="{{listcont}}">
+
+
+  <view class="listshop">
+    <image mode="aspectFill" src="{{item.cartInfo.imgUrl}}"></image>
+    <view class="ship">
+      <view class="shop_name">
+        {{item.cartInfo.name}}
+      </view>
+      <view class="guige" wx:if="{{item.cartInfo.sku}}">{{item.cartInfo.sku}}</view>
+      <view class="pickers">￥{{item.cartInfo.price}}</view>
+    </view>
+  </view>
+  <view class="titl_pinj">
+    <view class="pibgjianame">评价</view>
+    <view class="xin_list">
+      <view class="stars  {{item.productScore>=1? 'on': ''}}" bindtap="clicxinFn" data-code="{{item.id}}" data-id="1">
+      </view>
+      <view class="stars  {{item.productScore>=2? 'on': ''}}" bindtap="clicxinFn" data-code="{{item.id}}" data-id="2">
+      </view>
+      <view class="stars  {{item.productScore>=3? 'on': ''}}" bindtap="clicxinFn" data-code="{{item.id}}" data-id="3">
+      </view>
+      <view class="stars  {{item.productScore>=4? 'on': ''}}" bindtap="clicxinFn" data-code="{{item.id}}" data-id="4">
+      </view>
+      <view class="stars  {{item.productScore>=5? 'on': ''}}" bindtap="clicxinFn" data-code="{{item.id}}" data-id="5">
+      </view>
+    </view>
+  </view>
+  <view class="txt_intxar">
+    <textarea placeholder="看起来不错，快大家分享一下吧" maxlength='500' confirm-type='return' bindinput="inptext"
+      value="{{item.comment}}" data-id="{{item.id}}" name="" id=""></textarea>
+    <view class="num_ll">
+      <view></view>
+      <view class="num_allm">{{item.numsl}}/500</view>
+    </view>
+  </view>
+  <view class="images_box">
+    <block wx:for="{{item.imgbox}}" wx:for-item="ite" wx:for-index="inde" >
+      <view class='img-box' bindtap="topic_preview" data-id="{{item.id}}" data-url="{{ite.url1}}">
+        <image class='img' mode="aspectFill" src='{{ite.url1}}'></image>
+        <view class='img-delect' data-deindex='{{inde}}' catchtap='imgDelete1' data-id="{{item.id}}" wx:if="{{isbtn!=1||!isbtn}}">
+          <image class='img' src='http://47.94.16.158:8001/62.png'></image>
+        </view>
+      </view>
+    </block>
+      <view class='img-box' bindtap='addPic1' data-id="{{item.id}}" wx:if="{{item.imgbox.length<3}}">
+        <image class='img' src='http://47.94.16.158:8001/239.png'></image>
+      </view>
+  </view>
+</block>
+<view style="height:150px"></view>
+<view class="bintab" bindtap="submit">发布</view>

@@ -1,0 +1,115 @@
+<view class="tabs">
+  <view class="dv {{tid==1?'active':''}}" data-id="1" bindtap="click">今天</view>
+  <view class="dv {{tid==2?'active':''}}" data-id="2" bindtap="click">全部记录</view>
+</view>
+<block wx:if="{{tid==1}}">
+
+
+<view class="list" wx:for="{{list}}" data-id="{{item.id}}">
+  <block wx:if="{{item.type==0&&item.status==1}}">
+    <view class="lefts">
+      <view class="tii">{{item.name}}</view>
+      <view class="tit">用餐时间 {{item.createTime}}</view>
+    </view>
+    <view class="imglist">
+      <image mode="aspectFill"  wx:for="{{item.img}}" wx:for-item="ite" bindtap="topic_preview" data-id="{{item.id}}" data-url="{{ite.url2}}" src="{{ite.url2}}"></image>
+    </view>
+  </block>
+  <block wx:if="{{item.type==0&&item.status==0}}">
+    <view class="lefts">
+      <view class="tii">{{item.name}}</view>
+      <view class="tit" style="color:#EE7500">您还没有记录哟～</view>
+    </view>
+    <view class="imglists" >
+      <view class="jifen"><image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}</view>
+      <view class="btnjilu" data-id="{{item.id}}"  data-time="{{item.dayTime}}" bindtap="jilupageFn">去记录</view>
+  </view>
+  </block>
+  <block wx:if="{{item.type==1}}">
+    <view class="lefts" style="width:50%" wx:if="{{item.id==7}}">
+      <view class="tii">营养餐包</view>
+      <view class="tit">我今天吃了 <text style="color:#EE7500">{{item.value?item.value:'0'}}</text> 包营养参</view>
+    </view>
+    <view class="lefts" style="width:50%" wx:if="{{item.id==8}}">
+      <view class="tii">喝水量</view>
+      <view class="tit">我今天喝了  <text style="color:#EE7500">{{item.value?item.value:'0'}}</text> ml水</view>
+    </view>
+  </block>
+  <view class="imglists" wx:if="{{item.status==0&&item.type==1&&item.id==7}}">
+      <view class="jifen"><image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}</view>
+      <view class="btnjilu" data-id="{{item.id}}" data-time="{{item.dayTime}}" bindtap="jilupageFnst">去记录</view>
+  </view>
+  <view class="imglists" wx:if="{{item.status==0&&item.type==1&&item.id==8}}">
+      <view class="jifen"><image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}</view>
+      <view class="btnjilu" data-id="{{item.id}}" data-time="{{item.dayTime}}" bindtap="jilupageFns">去记录</view>
+  </view>
+  <view class="imglists" wx:if="{{item.type==1&&item.status==1}}">
+      
+  </view>
+</view>
+
+</block>
+<block wx:if="{{tid==2}}">
+  <view class="tabtimes">
+    <image class="imgri" src="http://47.94.16.158:8001/126.png"></image>
+    <picker bindchange="changeDate" mode="date" fields="day" value="{{date}}">
+      <view class="picker-area-text" style="font-size:28rpx;color:#999AA6">
+        {{date_time?date_time:'请选择日期'}}
+      </view>
+    </picker>
+    <image class="imgjiant" src="http://47.94.16.158:8001/125.png"></image>
+  </view>
+  <block wx:for="{{movieList}}" >
+    <view class="imtwsd">{{item.createTime}}</view>
+    <view class="list" wx:for="{{item.dietList}}" data-id="999" wx:for-item="ite">
+    <block wx:if="{{ite.type==0&&ite.status==1}}">
+      <view class="lefts">
+        <view class="tii">{{ite.name}}</view>
+        <view class="tit">用餐时间 {{ite.createTime}}</view>
+      </view>
+      <view class="imglist">
+        <image mode="aspectFill" wx:for="{{ite.img}}" wx:for-item="it" bindtap="topic_preview" data-id="{{ite.id}}"
+          data-url="{{it.url2}}" src="{{it.url2}}"></image>
+      </view>
+    </block>
+    <block wx:if="{{ite.type==0&&ite.status==0}}">
+      <view class="lefts">
+        <view class="tii">{{ite.name}}</view>
+        <view class="tit" style="color:#EE7500">您还没有记录哟～</view>
+      </view>
+      <view class="imglists">
+        <view class="jifen">
+          <image src="http://47.94.16.158:8001/n1.png"></image>积分+{{ite.integral}}
+        </view>
+        <view class="btnjilu" data-id="{{ite.id}}" data-time="{{item.createTime}}" bindtap="jilupageFn">去记录</view>
+      </view>
+    </block>
+    <block wx:if="{{ite.type==1}}">
+      <view class="lefts" style="width:50%" wx:if="{{ite.id==7}}">
+        <view class="tii">营养餐包</view>
+        <view class="tit">我今天吃了 <text style="color:#EE7500">{{ite.value?ite.value:'0'}}</text> 包营养参</view>
+      </view>
+      <view class="lefts" style="width:50%" wx:if="{{ite.id==8}}">
+        <view class="tii">喝水量</view>
+        <view class="tit">我今天喝了 <text style="color:#EE7500">{{ite.value?ite.value:'0'}}</text> ml水</view>
+      </view>
+    </block>
+    <view class="imglists" wx:if="{{ite.status==0&&ite.type==1&&ite.id==7}}">
+      <view class="jifen">
+        <image src="http://47.94.16.158:8001/n1.png"></image>积分+{{ite.integral}}
+      </view>
+      <view class="btnjilu" data-id="{{ite.id}}" data-time="{{item.createTime}}" bindtap="jilupageFnst">去记录</view>
+    </view>
+    <view class="imglists" wx:if="{{ite.status==0&&ite.type==1&&ite.id==8}}">
+      <view class="jifen">
+        <image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}
+      </view>
+      <view class="btnjilu" data-id="{{ite.id}}" data-time="{{item.createTime}}" bindtap="jilupageFns">去记录</view>
+    </view>
+    <view class="imglists" wx:if="{{ite.type==1&&ite.status==1}}">
+
+    </view>
+  </view>
+  </block>
+ 
+</block>

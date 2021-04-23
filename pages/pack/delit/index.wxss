@@ -1,0 +1,187 @@
+/* pages/delit/index.wxss */
+page{
+  background:#F6F6F6;
+}
+.top_stype{
+  padding: 26rpx;
+  background-image: linear-gradient(to right, #15A7AA, #29C3C7);
+}
+.titl_pagestyle{
+  font-size: 40rpx;
+  padding:10rpx 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titl_pagestyle view{
+  font-size: 40rpx;
+}
+.page_tile{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10rpx 0;
+}
+.tit{
+  color: white;
+}
+.subTitle{
+  width: 200rpx;
+  line-height: 66rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  background: white;
+  color: #15A7AA;
+}
+.contdelit{
+  padding:30rpx;
+
+  background:white;
+
+}
+
+.title{
+  font-size:34rpx;
+  color: #000A12;
+
+}
+.cont{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cont image{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius:14rpx;
+}
+.delit{
+  width: 64%;
+  
+}
+.listdelit{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:10rpx 0;
+}
+.shoptitle{
+  font-size:28rpx;
+
+}
+.pinji {
+  color: #FFFFFF;
+  background: #EE7500;
+  border: 1px solid #EE7500;
+
+  font-size: 30rpx;
+  width: 30%;
+  line-height: 70rpx;
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 0 1.5%;
+}
+.num{
+  font-size: 30rpx;
+  color: #4A4A4A;
+}
+.titles{
+  font-size: 24rpx;
+  width: 310rpx;
+  text-align: center;
+  padding:4rpx 0;
+  background:#FFF6F0;
+  color: #EE7500;
+}
+.backd{
+  width: 100%;
+  height: 24rpx;
+  background:#F6F6F6;
+}
+.pickercont{
+  padding: 30rpx;
+  background:white;
+}
+.lost_picker{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:8rpx 0;
+}
+.txt{
+  font-size: 34rpx;
+  color: #4A4A4A;
+}
+.txt_s{
+  font-size: 34rpx;
+  color: #191919;
+}
+.pickers{
+  color: #EE7500;
+  font-size: 34rpx;
+
+}
+.botflex{
+  width: 96%;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  left:0;
+  padding: 20rpx 2%;
+
+}
+.botflex view{
+  float: right;
+}
+.weactsub{
+  background:#29C3C7;
+  color: white;
+  font-size: 30rpx;
+  width: 30%;
+  line-height: 70rpx;
+  border-radius: 60rpx;
+  text-align: center;
+  margin:0 1.5%;
+
+}
+.delesub{
+  border:1px solid #29C3C7;
+  color: #15A7AA;
+  font-size: 30rpx;
+  width: 30%;
+  line-height: 66rpx;
+  border-radius: 60rpx;
+  text-align: center;
+  margin:0 2%;
+}
+.adress1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30rpx ;
+  background:white;
+}
+.addlogo{
+  width: 60rpx;
+  height: 60rpx;
+}
+.tit_wei{
+  width: 70%;
+  font-size:34rpx;
+
+}
+.addlogos{
+  width: 46rpx;
+  height: 46rpx;
+}
+.xtx1{
+  font-size: 26rpx;
+  color: #767676;
+}
+.listtxts{
+  /* width: 94%; */
+  margin: 0 auto;
+  padding:20rpx 0;
+}

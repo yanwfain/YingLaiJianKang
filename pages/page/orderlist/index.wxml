@@ -1,0 +1,51 @@
+<view class="listTab">
+  <view class="listv {{!tid||tid==0?'active':''}}" data-id="" bindtap="clickFn">全部</view>
+  <view class="listv {{tid==1?'active':''}}" data-id="1" bindtap="clickFn">待付款</view>
+  <view class="listv {{tid==2?'active':''}}" data-id="2" bindtap="clickFn">待发货</view>
+  <view class="listv {{tid==3?'active':''}}" data-id="3" bindtap="clickFn">待收货</view>
+  <view class="listv {{tid==4?'active':''}}" data-id="4" bindtap="clickFn">已完成</view>
+</view>
+<!-- <view class="listnull">
+  <image class="usernull" src="http://47.94.16.158:8001/182.png"></image>
+  <view class="null_txt">暂无订单</view>
+</view> -->
+<view class="list_cont" bindtap="delit" wx:for="{{movieList}}" data-id="{{item.id}}">
+  <view class="top_title">
+    <view class="tit_name">{{item.orderTypeName}} {{item.code}}</view>
+    <view class="status" >{{item.statusName}}</view>
+  </view>
+  <view class="cont" wx:for="{{item.productList}}" wx:for-item="ite">
+    <image class="shopimg" mode="aspectFill" src="{{ite.cartInfo.imgUrl}}" ></image>
+    <view class="shop">
+      <view class="shop_names">
+        <view class="title_shopname">
+          {{ite.cartInfo.name}}
+        </view>
+        <view class="nums">× {{ite.cartInfo.cartNum}} </view>
+      </view>
+      <view class="picker">
+        <view></view>
+        <view class="pickerNums">￥ {{ite.cartInfo.price*ite.cartInfo.cartNum}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="goubtn" wx:if="{{item.orderType==0&&item.payment==1}}">购买后可直接启动入营流程</view>
+  <view class="allpicker">
+        <view></view>
+        <view class="pickerNums"> 总计 ￥ {{item.cost}}</view>
+  </view>
+  <view class="btnsubmit">
+    <view></view>
+    <view class="dele" wx:if="{{item.payment==1}}" catchtap="deleFns" data-code="{{item.code}}">取消订单</view>
+
+    <view class="dele" wx:if="{{(item.status==3||item.status==2)&&item.payment==3}}" catchtap="deleFnshan" data-code="{{item.code}}">删除订单</view>
+    <view class="submit" wx:if="{{item.payment==1}}">立即支付</view>
+    <view class="pinji" wx:if="{{item.status==2&&item.payment==3}}" catchtap="pingjiaFn" data-id="{{item.id}}" data-img="{{}}">我要评价</view>
+    <!-- <view class="submit" wx:if="{{(item.status==3||item.status==2)&&item.payment==3}}">再次购买</view> -->
+    <view class="submit" wx:if="{{item.status==0&&item.payment==3}}" catchtap="tixinFn" data-code="{{item.code}}">提醒发货</view>
+    <view class="submit" wx:if="{{(item.status==1||item.status==2||item.status==3)&&item.payment==3}}" catchtap="wuliu" data-code="{{item.deliveryId}}">查看物流</view>
+    <view class="pinji" wx:if="{{item.status==1&&item.payment==3}}" catchtap="querenFn" data-code="{{item.code}}">确认收货</view>
+  </view>
+</view>
+
+<view class="leigms">没有更多订单了</view>

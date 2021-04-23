@@ -1,0 +1,68 @@
+/* pages/Meguanzhu/index.wxss */
+.right_top{
+  display: flex;
+  align-items: center;
+  width: 90%;
+  font-size: 26rpx;
+  height: 64rpx;
+  border-radius: 40rpx;
+  /* border:1px solid #F6F6F6; */
+  margin: 0 auto;
+  background: #EFEFEF;
+}
+.right_top image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right:14rpx;
+  margin-left:14rpx;
+ 
+}
+.inp_top{
+  /* color:#e4e4e4; */
+}
+.list{
+  padding: 30rpx;
+  border-bottom:1px solid #F6F6F6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list_name{
+  width: 70%;
+  display: flex;
+  align-items: center;
+
+}
+.list_name image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  margin-right: 20rpx;
+
+}
+.names{
+  font-size:34rpx;
+  overflow: hidden;
+  text-overflow:ellipsis; white-space: nowrap;
+}
+.btns{
+  padding: 10rpx 24rpx;
+  font-size:30rpx;
+  color: #767676;
+  display: flex;
+  align-items: center;
+  border-radius: 60rpx;
+  border:1px solid #EEEEEE;
+}
+.btns image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+
+}
+.meiyougengs{
+  padding: 30rpx;
+  text-align: center;
+  font-size:34rpx;
+  color: #BBBBBB;
+}

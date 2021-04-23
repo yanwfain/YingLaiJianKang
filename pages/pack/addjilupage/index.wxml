@@ -1,0 +1,45 @@
+<view class="title">
+  请用照片记录您今天的健康饮食
+</view>
+<view class="listtab">
+  <view  wx:for="{{list}}" bindtap="click" class="tabac {{tid==item.id?'active':''}}" data-txt="{{item.name}}" data-id="{{item.id}}">{{item.name}}</view>
+</view>
+
+  <view class='pages'>
+	<!-- 图片 -->
+	<view class="images_box">
+		<block wx:key="imgbox" wx:for="{{imgbox}}">
+			<view class='img-box' bindtap="topic_preview" data-url="{{item.url1}}">
+				<image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+				<view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1' wx:if="{{isbtn!=1||!isbtn}}">
+					<image class='img' src='http://47.94.16.158:8001/62.png'></image>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{isbtn!=1||!isbtn}}">
+			<view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length<3}}">
+				<image class='img' src='http://47.94.16.158:8001/123.png'></image>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="celiang" style="margin-top:150rpx">
+
+<view class="celText">{{text}}时间</view>
+<view class="left">
+  <picker bindchange="changeDate" mode="date" start="{{time}}" end="{{time}}" fields="day" value="{{date}}">
+      <view class="picker-area-text" style="font-size:28rpx;color:#999AA6">
+        {{date_time?date_time:'请选择日期'}}
+      </view>
+    </picker>
+    <view style="color:gray">-</view>
+    <picker bindchange="bindTimeChange" mode="time" start="09:00" end="22:00" value="{{timevalue}}">
+      <view class="picker-area-text" style="font-size:28rpx;color:#999AA6">
+        {{value_time?value_time:'请选择时间'}}
+      </view>
+    </picker>
+</view>
+<image src="http://47.94.16.158:8001/n5.png"></image>
+</view>
+<view style="height:200px"></view>
+<view class="bottoms" bindtap="binclick">完成</view>

@@ -1,0 +1,50 @@
+<view class="selrtal" wx:if="{{typeid==1}}">
+  	<picker bindchange="pickerProChangef" range="{{ pickerProDataf }}" range-key="{{'name'}}" value="{{countryIndex}}">
+			<view class="txt" style="">
+				{{pickerProDataf[countryIndex].name?pickerProDataf[countryIndex].name:"血糖录入时段"}}
+			</view>
+    </picker>
+    <view class="sanjiao"></view>
+</view>
+<view class="inpumole">
+  <input type="digit" bindinput="bloodSugar" value="{{bloodSugar}}" placeholder="请输入" />
+  <view class="tmengl">mmol/L</view>
+  <view class="tiels" wx:if="{{countryIndex!=0&&typeid==1}}">{{pickerProDataf[countryIndex].name}}目标血糖：4.0～10.0</view>
+  <!-- <view class="tiels" wx:if="{{typeid==2}}">目标血酮：0.5～3.0</view> -->
+
+</view>
+<view class="celiang" style="margin-top:150rpx">
+
+  <view class="celText">测量时间</view>
+  <view class="left">
+    <picker bindchange="changeDate" mode="date" fields="day" value="{{date}}">
+				<view class="picker-area-text" style="font-size:28rpx;color:#999AA6">
+					{{date_time?date_time:'请选择日期'}}
+				</view>
+			</picker>
+			<view style="color:gray">-</view>
+			<picker bindchange="bindTimeChange" mode="time" start="09:00" end="22:00" value="{{timevalue}}">
+				<view class="picker-area-text" style="font-size:28rpx;color:#999AA6">
+					{{value_time?value_time:'请选择时间'}}
+				</view>
+			</picker>
+  </view>
+  <image src="http://47.94.16.158:8001/n5.png"></image>
+</view>
+<view class="celiang">
+  <view class="celText">添加备注</view>
+  <input type="text" placeholder="如有特殊情况，请备注" bindtap="remark" value="{{remark}}" name="" id="" />
+</view>
+<view class="submites" bindtap="subamited">保存</view>
+<block wx:if="{{isModels}}">
+  <view class="back" bindtap="deles"></view>
+  <view class="isshowModele">
+    <image class="delesx" bindtap="jixsuFn" src="http://47.94.16.158:8001/28.png"></image>
+    <image class="jiangbei" src="http://47.94.16.158:8001/96.png"></image>
+    <view class="textsIsshow" style="padding-top:40rpx;">恭喜您完成了</view>
+    <view class="textsIsshow" style="padding-top:0;" wx:if="{{typeid==1}}">血糖任务</view>
+    <view class="textsIsshow" style="padding-top:0;" wx:if="{{typeid==2}}">血酮任务</view>
+    <view class="fontsinumS"> <text style=" font-weight: 600;">+ {{jifensnum}}</text>  积分</view>
+    <view class="jisubtnsubs" bindtap="jixsuFn">继续任务</view>
+  </view>
+</block>

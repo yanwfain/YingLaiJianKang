@@ -1,0 +1,157 @@
+
+<!-- 第一次进入显示 -->
+
+<block>
+	<view class="topbank" style="height:334px">
+		<image src="http://47.94.16.158:8001/25.png"></image>
+	</view>
+	<view class="contlist" style="width:100%;padding-bottom:130rpx;">
+		<view class="titpicek">选择您的逆转营方案</view>
+		<image mode="widthFix" lazy-load="true" class="imgshopds" src="http://47.94.16.158:8001/246.png"></image>
+		<image mode="widthFix" lazy-load="true" class="imgshopds" src="http://47.94.16.158:8001/247.png"></image>
+		<image mode="widthFix" lazy-load="true" class="imgshopds" src="http://47.94.16.158:8001/248.png"></image>
+		<!-- <view class="taocanCont">
+			<view class="left_list" style="border:1px solid #D5E4E4">
+				<view class="zunxiang">尊享版</view>
+				<view class="list_txt white">全方位健康测评</view>
+				<view class="list_txt blue">线上视频问诊</view>
+				<view class="list_txt white">健康指标监控</view>
+				<view class="list_txt blue">90天医师、营养师专业指导</view>
+				<view class="list_txt white">饮食管理</view>
+				<view class="list_txt blue">阶段性专家课程</view>
+				<view class="list_txt white">运动方案和指导视频</view>
+				<view class="list_txt blue">心理疗愈课程</view>
+				<view class="list_txt white">专用草本茶</view>
+				<view class="list_txt blue">90天营养餐包</view>
+				<view class="list_txt white">血糖血酮仪及试纸</view>
+				<view class="list_txt blue">智能体重体脂秤</view>
+				<view class="list_txt white" style="color:#15A7AA">28天个体针对性益生菌</view>
+				<view class="list_txt blue" style="color:#15A7AA:padding-top:24rpx;padding-bottom:0rpx;height:56px;">
+					14天动态血糖监测系统</view>
+				<view class="list_txt white">-</view>
+				<view class="list_txt blue" style="padding:24px 0;">-</view>
+				<view class="list_txt white">-</view>
+				<view class="list_txt blue">VIP年卡</view>
+				<view class="list_txt blue" style="background:#29C3C7;color:white;font-size:36rpx">￥12800</view>
+
+			</view>
+			<view class="left_list" style="border:1px solid #F49C5B">
+				<view class="qianghua">强化版</view>
+				<view class="list_txt resd">全方位健康测评</view>
+				<view class="list_txt yeelo">线上视频问诊</view>
+				<view class="list_txt resd">健康指标监控</view>
+				<view class="list_txt yeelo">90天医师、营养师专业指导</view>
+				<view class="list_txt resd">饮食管理</view>
+				<view class="list_txt yeelo">阶段性专家课程</view>
+				<view class="list_txt resd">运动方案和指导视频</view>
+				<view class="list_txt yeelo">心理疗愈课程</view>
+				<view class="list_txt resd">专用草本茶</view>
+				<view class="list_txt yeelo">90天营养餐包</view>
+				<view class="list_txt resd">血糖血酮仪及试纸</view>
+				<view class="list_txt yeelo">智能体重体脂秤</view>
+				<view class="list_txt resd" style="color:#EE2E00">56天个体针对性益生菌</view>
+				<view class="list_txt yeelo" style="color:#EE2E00;padding-top:24rpx;padding-bottom:0rpx;height:56px;">
+					90天动态血糖监测系统</view>
+				<view class="list_txt resd" style="color:#EE2E00">心理视频辅导3次</view>
+				<view class="list_txt yeelo" style="color:#EE2E00">视频中医体质辨证和个体化指导1次</view>
+				<view class="list_txt resd" style="color:#EE2E00">健康食品大礼包</view>
+				<view class="list_txt yeelo">VIP年卡</view>
+				<view class="list_txt resd" style="background:#EE7500;color:white;font-size:36rpx">￥18800</view>
+			</view>
+		</view> -->
+	</view>
+	<view class="posBnt">
+		<view class="lipin" bindtap="jihuoorderFn">激活礼品卡</view>
+		<view class="gobtn" bindtap="subMold">立即购买</view>
+	</view>
+</block>
+<!-- 第一次进入点击购买弹框 -->
+<block wx:if="{{isModel}}">
+	<view class="opct" bindtap="catabs"></view>
+	<view class="tanIsModel">
+		<view class="model_title">
+			<view>选择逆转营方案</view>
+			<image class="cha" bindtap="catabs" src="http://47.94.16.158:8001/28.png"> x </image>
+		</view>
+		<view class="distablist" style="display:block">
+		<block wx:for="{{listshop}}">
+			<view class="listcity {{tid==item.id?'activeOne':''}}" style="margin:3% 1%;  display: flex;justify-content: space-between;" bindtap="tabOne" data-id="{{item.id}}" data-txt="{{item.specifications}}" data-picker="{{item.price}}">
+				<image wx:if="{{tid==item.id}}" class="loabse" src="http://47.94.16.158:8001/icon-buy_checked@2x.png"></image>
+				<view class="tit_picker" style="margin-left:70rpx">{{item.specifications}}</view>
+				<view class="pickertxt" style="margin-right:50rpx"> <text style="text-decoration:line-through;margin-right:20rpx">￥{{item.marketPrice}}</text> ￥{{item.price}}</view>
+			</view>
+		</block>
+			<!-- <view class="listcity {{tid==2?'activeOne':''}}" bindtap="tabOne" data-id="2" data-txt="强化版" data-picker="18800">
+				<image wx:if="{{tid==2}}" class="loabse" src="http://47.94.16.158:8001/icon-buy_checked@2x.png"></image>
+				<view class="tit_picker">强化版</view>
+				<view class="pickertxt">￥18800</view>
+			</view> -->
+		</view>
+		<view class="model_title">选择使用方式</view>
+		<view class="distablist">
+			<view class="listcity {{cid==1?'activeOne':''}}" bindtap="tabTwo" data-id="1" data-txt="自用">
+				<image wx:if="{{cid==1}}" class="loabse" src="http://47.94.16.158:8001/icon-buy_checked@2x.png"></image>
+				<view class="tit_picker">自用</view>
+				<view class="pickertxt">购买后可立即开启</view>
+			</view>
+			<view class="listcity {{cid==2?'activeOne':''}}" bindtap="tabTwo" data-id="2" data-txt="送人 (礼品卡)">
+				<image wx:if="{{cid==2}}" class="loabse" src="http://47.94.16.158:8001/icon-buy_checked@2x.png"></image>
+				<view class="tit_picker">送人 (礼品卡)</view>
+				<view class="pickertxt">购买礼品卡馈赠亲友</view>
+				<view class="topSble">健康是最好的礼物</view>
+			</view>
+		</view>
+		<block wx:if="{{cid==2}}">
+			<view class="model_title">选择礼品卡样式</view>
+			<view class="distablist">
+				<view class="listcitybcg {{bid==item.id?'activek':''}}" bindtap="tabThree" data-txt="{{item.name}}" data-id="{{item.id}}" wx:for="{{listshopimg}}">
+					<image wx:if="{{bid==item.id}}" class="loabse" src="http://47.94.16.158:8001/icon-buy_checked@2x.png"></image>
+					<image class="img" catchtap="preview" data-img="{{item.img}}" src="{{item.img}}"></image>
+					<view class="pickertxt">{{item.name}}</view>
+				</view>
+			
+			</view>
+			<view class="botgraytxt">
+				<view class="listlipi">
+					<image src="http://47.94.16.158:8001/27.png"></image>
+					此礼品卡为实体卡
+				</view>
+				<view class="txlos">购买礼品卡后，您可以直接寄给亲朋好友，也可以收到礼品卡后亲自送出</view>
+			</view>
+
+		</block>
+
+		<view style="height:100px"></view>
+	</view>
+	<view class="bottomBtnsub">
+		<view class="left_Btnsub">
+			<view class="txtsele">已选:{{txtOne&&txtTwo? txtOne+'-'+txtTwo  : '--'}}</view>
+			<view class="btnselepicker">￥{{picker?picker:'0.00'}}</view>
+		</view>
+		<view class="btnsgoshop" bindtap="submitnotation">立即购买</view>
+	</view>
+</block>
+<view style="height:120px"></view>
+<view class="Btabview">
+	<view class="Btabs" bindtap="indexFn">
+		<image src="http://47.94.16.158:8001/tab2_2.png"></image>
+		<view class="Btab_txt">首页</view>
+	</view>
+	<view class="Btabs" bindtap="collegeFn">
+		<image src="http://47.94.16.158:8001/tab1.png"></image>
+		<view class="Btab_txt">糖学院</view>
+	</view>
+	<view class="Btabs" bindtap="campFn">
+		<image style="width:76px;height:76px;position: absolute;left:4px;top:-30px;" src="http://47.94.16.158:8001/tab4.png"></image>
+		<image></image>
+		<view class="Btab_txt" style="color:#29C3C7">逆转营</view>
+	</view>
+	<view class="Btabs" bindtap="shoppingFn">
+		<image src="http://47.94.16.158:8001/tab5.png"></image>
+		<view class="Btab_txt">商城</view>
+	</view>
+	<view class="Btabs" bindtap="myFn">
+		<image src="http://47.94.16.158:8001/tab3.png"></image>
+		<view class="Btab_txt">我的</view>
+	</view>
+</view>

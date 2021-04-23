@@ -1,0 +1,34 @@
+<view class="contrarion">
+  <image wx:if="{{remsg==1}}" src="http://47.94.16.158:8001/98.png"></image>
+  <image  wx:if="{{remsg==2}}" src="http://47.94.16.158:8001/100.png"></image>  
+  <!-- 链接失败 -->
+</view>
+<view class="imgslanya">
+  <image src="http://47.94.16.158:8001/99.png"></image>
+  <view class="lanyas" wx:if="{{!remsg}}">  蓝牙同步中…</view>
+  <!-- 链接失败 -->
+  <view class="lanyas" style="left:98rpx" wx:if="{{remsg==2}}">  连接异常</view>
+  <view class="lanyas" wx:if="{{remsg==1}}">  蓝牙同步成功</view>
+</view>
+
+<block>
+  <view class="tishi" bindtap="istrue">如何蓝牙连接体重秤</view>
+</block>
+<block>
+  <view class="chxlj">重新连接</view>
+  <view class="tishi1" style="marign-top:60rpx" bindtap="istrue">上秤失败解决方案</view>
+
+</block>
+<block wx:if="{{ishows}}">
+<view class="back" bindtap="delsl"></view>
+<view class="conts_tan">
+  <image bindtap="delsl" src="http://47.94.16.158:8001/28.png"></image>
+  <view class="title">
+    上秤失败解决方案
+  </view>
+  <view class="txte">
+    文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案
+  </view>
+  <view class="chxlj" bindtap="delsl">我知道了</view>
+</view>
+</block>

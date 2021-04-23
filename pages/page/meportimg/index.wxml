@@ -1,0 +1,31 @@
+<view class="txttiles" wx:if="{{chekend}}">
+  <view class="nun">1</view>   <view class="texts">选择需要对比的照片日期</view>
+</view>
+<view class="list" wx:for="{{listimg}}">
+  <view class="times">
+    <view class="times_nums">
+      <text style="font-weight:600;font-size:22px;margin-right:8px;margin-top:-10rpx">{{item.time1}}</text> 
+      <text>{{item.time}}</text>
+    </view>
+    <view class="nums" >
+      <view class="kgnum">
+        <view class="dian"></view>
+        <!-- <view>55kg</view> -->
+        <view></view>
+        <view class="ruyings" wx:if="{{indexs==index}}" style="font-size:24rpx;  color: white;">入营</view>
+      </view>
+      <view class="imglist">
+        <image mode="aspectFill" wx:for="{{item.positive}}" wx:for-item="ite" src="{{ite.url2}}"></image>
+        <image mode="aspectFill" wx:for="{{item.side}}" wx:for-item="ite" src="{{ite.url2}}" ></image>
+      </view>
+    </view>
+    <radio wx:if="{{chekend}}" data-id="{{item.id}}" data-chekend="{{item.chekend}}" bindtap="chekend"  checked="{{item.chekend?true:false}}"></radio>
+  </view>
+</view>
+<view class="subbtn" bindtap="submitd" wx:if="{{!chekend}}"><image src="http://47.94.16.158:8001/161.png"></image>分享对比海报</view>
+<view style="height:150px"></view>
+<view class="botms" wx:if="{{chekend}}">
+  <view class="nun">2</view>
+  <view class="texts">生成对比海报</view>
+  <view class="buntn" bindtap="shencheng">生成海报并分享</view>
+</view>

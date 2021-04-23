@@ -1,0 +1,484 @@
+
+<view class="Shouquan" wx:if="{{!hasUserInfo}}">
+	<view class="chaX" bindtap="ggopfn"> × </view>
+	<view class="logo">
+		<image src="http://47.94.16.158:8001/nlogo.png"></image>
+	</view>
+	<view class="logoTxt">盈来健康</view>
+	<button class="butn_bottys"  open-type="getUserInfo" bindtap='getUserProfile'>微信授权</button>
+	<view class="zhanbuNo" bindtap="ggopfn">暂不登录</view>
+</view>
+<view class="opsbjc" wx:if="{{isSiuser}}" bindtap="ggopfn"></view>
+<view class="Shouquan" wx:if="{{isSiuser}}">
+	<view class="chaX" bindtap="ggopfns"> × </view>
+	<view class="logo">
+		<image src="http://47.94.16.158:8001/nlogo.png"></image>
+	</view>
+	<view class="logoTxt">盈来健康</view>
+	<view class="logoTxt">申请获取您的手机号</view>
+	<button class="butn_bottys" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">允许</button>
+	<view class="zhanbuNo" bindtap="ggopfns">取消</view>
+</view>
+<view class="opsbjc" wx:if="{{!hasUserInfo}}" bindtap="ggopfns"></view>
+<view class="topbank">
+	<image src="http://47.94.16.158:8001/218.png"></image>
+</view>
+<view class="bannerTop">
+	<swiper class='swiper_one' circular="true" easing-function="easeOutCubic" duration="600" previous-margin="56px"
+		next-margin="56px" interval="5000" bindchange="bindchange">
+		<block wx:if="{{userList.status==0||!userList.status}}">
+			<block wx:for="{{indexpage.topSlideshowList}}" wx:key="index" wx:if="{{item.dataType!=1}}">
+				<swiper-item class="swiper1">
+					<view class="nigtor {{swiperCurrent == index ? 'actives' : ''}}">
+						<image class="slide-image {{swiperCurrent == index ? 'active' : ''}}" lazy-load="true" src="{{item.img}}"
+							bindtap="mjbind" data-page="{{item.jumpPage}}" data-id='{{item.id}}' data-type="{{item.type}}" />
+					</view>
+				</swiper-item>
+			</block>
+		</block>
+		<block wx:else>
+			<block wx:for="{{indexpage.topSlideshowList}}" wx:key="index" >
+				<swiper-item class="swiper1">
+					<view class="nigtor {{swiperCurrent == index ? 'actives' : ''}}">
+						<image class="slide-image {{swiperCurrent == index ? 'active' : ''}}" lazy-load="true" src="{{item.img}}"
+							bindtap="mjbind" data-page="{{item.jumpPage}}" data-id='{{item.id}}' data-type="{{item.type}}" />
+					</view>
+				</swiper-item>
+			</block>
+		</block>
+	</swiper>
+</view>
+<view class="btnsubms" bindtap="pageceshi">体脂称测试入口  </view>
+<view style="padding:10rpx;text-align:center;fiont-size:24rpx" bindtap="pageceshi"> 插件版本- "version": "0.2.10",小程序版本1.02/2021-03-24</view>
+<view class="contNav1">
+	<block>
+		<view class="index_user"  wx:if="{{userList.status&&userList.status!=0}}">
+		<!-- <view class="index_user"  > -->
+			<image class="user_head"
+				src="{{userList.headImg}}">
+			</image>
+			<view class="user_delit">
+				<view class="User_name">
+					<view class="userName">{{userList.userName}}</view>
+					<view class="topTg">Lv{{userList.userLevel}} </view>
+					<view class="huizhang" bindtap="huizhang">
+						<image src="http://47.94.16.158:8001/n9.png"></image>
+						<view class="txt_typeuser"> <text style="font-style:oblique ;  font-weight: 600;">{{userList.badgeNum}}</text> 枚徽章</view>
+					</view>
+				</view>
+				<view class="croeNum">我的积分 {{userList.usableScore}}</view>
+			</view>
+			<view class="liaolistNum" bindtap="listxiaoxi">
+				<view class="listliaonum" wx:if="{{userList.msgNum>0}}"> {{userList.msgNum}} </view>
+				<image src="http://47.94.16.158:8001/n10.png"></image>
+			</view>
+		</view>
+<!-- 1.您的健康档案尚未完成
+2.视频问诊
+3. 查看礼包详情及物流信息
+4.收到逆转营礼包开启逆转营
+5.所有流程结束后展示任务 -->
+		<!-- 填写健康档案 -->
+		<view class="carKan"  wx:if="{{userList.status==1}}">
+		<!-- <view class="carKan"> -->
+			<view class="txtCar1">您的健康档案尚未完成</view>
+			<view class="txtCar2">请准确填写您的健康档案 </view>
+			<view class="txtCar2">以便专业医师营养师团队为您定制</view>
+			<view class="txtCar2">精准健康管理方案</view>
+			<view class="btnform" bindtap="golistxt">去填写</view>
+		</view>
+		<!-- 购买后未开启 -->
+		<view class="congratulations" wx:if="{{userList.status==6}}">
+		<!-- <view class="congratulations" > -->
+			<image src="http://47.94.16.158:8001/15.png"></image>
+			<view class="txtCong1">购买成功</view>
+			<view class="txtCong2">明天正式进入糖尿病逆转营</view>
+			<view style="height:20px"></view>
+		</view>
+		<view class="congratulations" wx:if="{{userList.status==3}}">
+		<!-- <view class="congratulations" > -->
+			<image src="http://47.94.16.158:8001/15.png"></image>
+			<view class="txtCong1">恭喜您</view>
+			<view class="txtCong2">已经正式被录取进入糖尿病逆转营</view>
+			<view class="txtCong3">您的产品和设备正火速向您飞来</view>
+			<view class="txtCong3">请注意查收并确认收货</view>
+			<view class="look_btnwuliu" bindtap="lookgiftFn">查看礼包详情及物流信息</view>
+			<view style="height:20px"></view>
+		</view>
+		<!-- 视频问诊模块 -->
+		<view class="Consultation"  wx:if="{{userList.status==2}}">
+		<!-- <view class="Consultation"> -->
+			<view class="consult_tit">视频问诊</view>
+			<view class="consultTxt1">您预约的时间</view>
+			<view class="consultTxt2"> {{day}} {{clock}}</view>
+			<!-- 请等待您的专属医师发起问诊 -->
+			<block wx:if="{{!isoktrue}}">
+				<view class="consultTxt3">请等待您的专属医师发起问诊</view>
+			</block>
+			<block wx:if="{{isoktrue}}">
+				<view class="consultTxt3">您已错过预约时间请再次预约</view>
+			</block>
+			<!-- 进入视频问诊 -->
+			<block wx:if="{{!isoktrue}}">
+				<view class="consultTxt4" bindtap="jinrudeeliship">进入视频问诊</view>
+				<view style="height:14px"></view>
+			</block>
+			<block wx:if="{{isoktrue}}">
+				<view class="consultTxt4" bindtap="zaicile">再次预约</view>
+				<view style="height:14px"></view>
+			</block>
+		</view>
+		<!-- 收到逆转营礼包 开启逆转营 -->
+		<view class="congratulations" wx:if="{{userList.status==4}}">
+		<!-- <view class="congratulations" > -->
+			<image src="http://47.94.16.158:8001/15.png"></image>
+			<view class="txtCong1">恭喜您</view>
+			<view class="txtCong2">收到逆转营礼包</view>
+			<view class="txtCong3">您可以随时开启90天线上逆转营</view>
+			<view class="txtCong3">期待您的加入！</view>
+			<view class="consultTxt4" bindtap="startantFn">开启逆转营</view>
+			<view style="height:20px"></view>
+		</view>
+		<!-- 开启逆转营点击弹框 -->
+		<block wx:if="{{isloadview}}">
+			<view class="opcitons {{isload?'activeopc':''}}" wx:if="{{isloadview}}" bindtap="bunnotFns"></view>
+			<view class="imgload {{isload?'activeload':''}}" bindtap="bunnotFn">
+				<image src="http://47.94.16.158:8001/17.png"></image>
+			</view>
+		</block>
+		<!-- 所有流程结束后展示任务 -->
+		<block wx:if="{{userList.status==5}}">
+		<!-- <block > -->
+			<view class="renwu_view">
+				<view class="title_renwu">今日任务</view>
+				<view class="rightrenwu" bindtap="renwuFn">更多任务 <image src="http://47.94.16.158:8001/n5.png"></image>
+				</view>
+			</view>
+			<block wx:for="{{listdaywu}}" wx:if="{{index<=5}}">
+				<view class="renList" wx:if="{{item.status==0}}">
+					<view class="videfraw">
+						<image class="left_img1" src="{{item.img}}"></image>
+						<view class="tit_rw">{{item.type}}</view>
+					</view>
+					<view class="videfraw">
+						<view class="jifens">
+							<image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}
+						</view>
+						<view class="submite_gos" bindtap="xieqgoFn" data-id="{{item.id}}">去完成</view>
+					</view>
+				</view>
+			</block>
+			<block wx:for="{{listdaywu}}" wx:if="{{index<=5}}">
+				<view class="renList"  data-id="{{item.id}}" wx:if="{{item.status>0}}">
+					<view class="videfraw">
+						<image class="left_img1" src="{{item.img}}"></image>
+						<view class="tit_rw">{{item.type}}</view>
+					</view>
+					<view class="videfraw">
+					  <image class="yiwanc" src="http://47.94.16.158:8001/85.png"></image> 
+					</view>
+				</view>
+			</block>
+			<!-- <view class="renList">
+				<view class="videfraw">
+					<image class="left_img1" src="http://47.94.16.158:8001/70.png"></image>
+					<view class="tit_rw">血酮</view>
+				</view>
+				<view class="videfraw">
+					<view class="jifens">
+						<image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+					</view>
+					<view class="submite_gos" bindtap="xieqgoFn" data-id="2">去完成</view>
+				</view>
+			</view>
+			<view class="renList">
+				<view class="videfraw">
+					<image class="left_img1" src="http://47.94.16.158:8001/71.png"></image>
+					<view class="tit_rw">血压</view>
+				</view>
+				<view class="videfraw">
+					<view class="jifens">
+						<image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+					</view>
+					<view class="submite_gos" bindtap="goFnxie">去完成</view>
+				</view>
+			</view>
+			<view class="renList">
+				<view class="videfraw">
+					<image class="left_img1" src="http://47.94.16.158:8001/72.png"></image>
+					<view class="tit_rw">体重</view>
+				</view>
+				<view class="videfraw">
+					<view class="jifens">
+						<image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+					</view>
+					<view class="submite_gos" bindtap="qutizhangFn">去完成</view>
+				</view>
+			</view>
+			<view class="renList">
+				<view class="videfraw">
+					<image class="left_img1" src="http://47.94.16.158:8001/73.png"></image>
+					<view class="tit_rw">腹围</view>
+				</view>
+				<view class="videfraw">
+					<view class="jifens">
+						<image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+					</view>
+					<view class="submite_gos" bindtap="quwanchfu">去完成</view>
+				</view>
+			</view>
+			<view class="renList">
+				<view class="videfraw">
+					<image class="left_img1" src="http://47.94.16.158:8001/74.png"></image>
+					<view class="tit_rw">感受</view>
+				</view>
+				<view class="videfraw">
+					<view class="jifens">
+						<image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+					</view>
+					<view class="submite_gos" bindtap="subGoganshou">去完成</view>
+				</view>
+			</view> -->
+		</block>
+	</block>
+	<view class="topTitle">
+		<image src="http://47.94.16.158:8001/n1.png"></image>
+		<view class="titleNav">糖尿病逆转营</view>
+	</view>
+	<video style="width:100%;" bindwaiting="huanchong" bindplay="bindplay" bindpause="bindpause" bindtimeupdate="jinduFn"
+		show-fullscreen-btn="true" show-center-play-btn="true"
+		src="{{indexpage.indexVideo}}">
+	</video>
+
+	<view class="contTab" wx:if="{{userList.status!=5}}">
+		<view wx:for="{{indexpage.recommendList}}" class="listnavs" data-page="{{item.jumpPage}}" 
+			style="background:url({{item.img}}) no-repeat center;background-size: 100% 100%;"
+			bindtap="bindelit" >
+			<!-- <view class="tit">关于逆转营</view>
+			<view class="titxty">90天健康管理服务</view>
+			<view class="btns">去了解 > </view> -->
+		</view>
+		<!-- <view class="listnavs"
+			style="background:url(http://47.94.16.158:8001/4.jpg) no-repeat center;background-size: 100% 100%;">
+			<view class="tit">我要入营</view>
+			<view class="titxty">开启个性化管理方案</view>
+			<view class="btns">立即加入 > </view>
+		</view>
+		<view class="listnavs"
+			style="background:url(http://47.94.16.158:8001/5.jpg) no-repeat center;background-size: 100% 100%;">
+			<view class="tit">逆转原理</view>
+			<view class="titxty">减轻胰岛素抵抗</view>
+			<view class="btns">去学习 > </view>
+		</view>
+		<view class="listnavs"
+			style="background:url(http://47.94.16.158:8001/6.jpg) no-repeat center;background-size: 100% 100%;">
+			<view class="tit">专家团队</view>
+			<view class="titxty">跨学科知名专家</view>
+			<view class="btns">去看看 > </view>
+		</view>
+		<view class="listnavs"
+			style="background:url(http://47.94.16.158:8001/7.jpg) no-repeat center;background-size: 100% 100%;">
+			<view class="tit">视频问诊</view>
+			<view class="titxty">专业医师答疑解惑</view>
+			<view class="btns">去问诊 > </view>
+		</view>
+		<view class="listnavs"
+			style="background:url(http://47.94.16.158:8001/8.jpg) no-repeat center;background-size: 100% 100%;">
+			<view class="tit">在线咨询</view>
+			<view class="titxty">了解逆转营信息</view>
+			<view class="btns">去咨询 > </view>
+		</view> -->
+		<!-- <image src="http://47.94.16.158:8001/2.png"></image>
+		<image src="http://47.94.16.158:8001/2.png"></image>
+		<image src="http://47.94.16.158:8001/2.png"></image>
+		<image src="http://47.94.16.158:8001/2.png"></image>
+		<image src="http://47.94.16.158:8001/2.png"></image>
+		<image src="http://47.94.16.158:8001/2.png"></image> -->
+	</view>
+	<view class="cont_nirght" wx:if="{{userList.status==0||!userList.status}}" bindtap="jiaruni">
+		<image class="lonir" src="http://47.94.16.158:8001/n2.png"></image>
+		<view>加入糖尿病逆转营，90天科学精准逆转糖尿病</view>
+		<image class="lonj" src="http://47.94.16.158:8001/n3.png"> </image>
+	</view>
+	<view class="topTitle2">
+		<view class="lefts">
+			<image src="http://47.94.16.158:8001/n4.png"></image>
+			<view class="titleNav">人气推荐</view>
+		</view>
+		<view class="lefts1">
+			<!-- <view class="looktxt">查看更多</view>
+			<image src="http://47.94.16.158:8001/n5.png"></image> -->
+		</view>
+	</view>
+	<view class="chuchuangnav">
+		<view class="chuLeft" bindtap="delitdenixFn" data-id="{{indexpage.recommendArticleList[0].id}}">
+			<image class="lochu" src="{{indexpage.recommendArticleList[0].imageInput}}"></image>
+			<!-- <view class="posablole">
+				<image></image>
+				<view class="txthot">本周热门</view>
+			</view> -->
+			<view class="titleLeft">
+			{{indexpage.recommendArticleList[0].title}}
+			</view>
+			<view class="delits">{{indexpage.recommendArticleList[0].synopsis}}</view>
+		</view>
+		<view class="righthdelx">
+			<view class="imgrightdelt" bindtap="delitdenixFn" data-id="{{indexpage.recommendArticleList[1].id}}"
+				style="background:url({{indexpage.recommendArticleList[1].imageInput}}) no-repeat center;background-size: 100% 100%;margin-bottom:10rpx">
+				<view class="txt1">{{indexpage.recommendArticleList[1].title}}</view>
+				<view class="titleLeft1">{{indexpage.recommendArticleList[1].synopsis}}</view>
+				<!-- <view class="times">剩 <text>02</text> 天</view> -->
+			</view>
+			<view class="imgrightdelt" bindtap="delitdenixFn" data-id="{{indexpage.recommendArticleList[2].id}}" 
+				style="background:url({{indexpage.recommendArticleList[2].imageInput}}) no-repeat center;background-size: 100% 100%;">
+				<view class="txt1" style="color:#EE7500">社区热话</view>
+				<view class="titleLeft1">{{indexpage.recommendArticleList[2].title}}</view>
+				<view class="txt1">{{indexpage.recommendArticleList[2].synopsis}}</view>
+
+			</view>
+		</view>
+	</view>
+	<view class="imghotCont">
+		<image src="{{indexpage.advertisOne.img}}" bindtap="guanggaoFn" data-page="{{indexpage.advertisOne.path}}"></image>
+	</view>
+	<view class="topTitle2">
+		<view class="lefts">
+			<image src="http://47.94.16.158:8001/n6.png"></image>
+			<view class="titleNav">糖学院精选</view>
+		</view>
+		<view class="lefts1">
+			<view class="looktxt">查看更多</view>
+			<image src="http://47.94.16.158:8001/n5.png"></image>
+		</view>
+	</view>
+	<view class="list_new" bindtap="delitdenixFn" wx:for="{{indexpage.articleList}}" data-id="{{item.id}}">
+		<view class="left_del">
+			<view class="title_del">
+			{{item.title}}
+			</view>
+			<view class="del_txt">{{item.cName}} · {{item.visit}}阅读</view>
+		</view>
+		<image mode="aspectFill" src="{{item.imageInput}}"></image>
+	</view>
+	<!-- <view class="list_new">
+		<view class="left_del">
+			<view class="title_del">
+				一天吃一个鸡蛋，糖尿病风险增加60%？鸡蛋还能吃？
+			</view>
+			<view class="del_txt">饮食 · 345阅读</view>
+		</view>
+		<image src="http://47.94.16.158:8001/93a3874adfc43628e7c8df42109106f.png"></image>
+	</view>
+	<view class="list_new">
+		<view class="left_del">
+			<view class="title_del">
+				一天吃一个鸡蛋，糖尿病风险增加60%？鸡蛋还能吃？
+			</view>
+			<view class="del_txt">饮食 · 345阅读</view>
+		</view>
+		<image src="http://47.94.16.158:8001/93a3874adfc43628e7c8df42109106f.png"></image>
+	</view>
+	<view class="list_new">
+		<view class="left_del">
+			<view class="title_del">
+				一天吃一个鸡蛋，糖尿病风险增加60%？鸡蛋还能吃？
+			</view>
+			<view class="del_txt">饮食 · 345阅读</view>
+		</view>
+		<image src="http://47.94.16.158:8001/93a3874adfc43628e7c8df42109106f.png"></image>
+	</view> -->
+	<view style="height:40rpx"></view>
+	<view class="topTitle2">
+		<view class="lefts">
+			<image src="http://47.94.16.158:8001/n7.png"></image>
+			<view class="titleNav">健康商城</view>
+		</view>
+		<view class="lefts1" bindtap="shopFn">
+			<view class="looktxt">查看更多</view>
+			<image src="http://47.94.16.158:8001/n5.png"></image>
+		</view>
+	</view>
+	<view class="imghotCont">
+		<image src="{{indexpage.advertisTwo.img}}" bindtap="guanggaoFn" data-page="{{indexpage.advertisTwo.path}}"></image>
+	</view>
+	<view class="list_bunew">
+		<view class="list" bindtap="shopdelit" wx:for="{{indexpage.goodsList}}" data-id="{{item.id}}">
+			<image mode="aspectFill" src="{{item.imgUrl}}"></image>
+			<view class="tit_bunew">{{item.name}}</view>
+			<view class="botmodelt">
+				<view class="pick">￥{{item.price}}</view>
+				<view class="num_new">已售{{item.sales}}</view>
+			</view>
+		</view>
+		<!-- <view class="list">
+			<image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+			<view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+			<view class="botmodelt">
+				<view class="pick">￥49</view>
+				<view class="num_new">已售2312</view>
+			</view>
+		</view>
+		<view class="list">
+			<image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+			<view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+			<view class="botmodelt">
+				<view class="pick">￥49</view>
+				<view class="num_new">已售2312</view>
+			</view>
+		</view>
+		<view class="list">
+			<image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+			<view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+			<view class="botmodelt">
+				<view class="pick">￥49</view>
+				<view class="num_new">已售2312</view>
+			</view>
+		</view>
+		<view class="list">
+			<image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+			<view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+			<view class="botmodelt">
+				<view class="pick">￥49</view>
+				<view class="num_new">已售2312</view>
+			</view>
+		</view>
+		<view class="list">
+			<image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+			<view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+			<view class="botmodelt">
+				<view class="pick">￥49</view>
+				<view class="num_new">已售2312</view>
+			</view>
+		</view> -->
+	</view>
+</view>
+<view class="logoKefu">
+	<image src="http://47.94.16.158:8001/n8.png"></image>
+</view>
+<view style="height:120px"></view>
+<view class="Btabview">
+	<view class="Btabs" bindtap="indexFn">
+		<image src="http://47.94.16.158:8001/tab2.png"></image>
+		<view class="Btab_txt" style="color:#29C3C7">首页</view>
+	</view>
+	<view class="Btabs" bindtap="collegeFn">
+		<image src="http://47.94.16.158:8001/tab1.png"></image>
+		<view class="Btab_txt">糖学院</view>
+	</view>
+	<view class="Btabs" bindtap="campFn">
+
+		<image style="width:76px;height:76px;position: absolute;left:4px;top:-30px;" src="http://47.94.16.158:8001/tab4.png"></image>
+		<image></image>
+		<view class="Btab_txt">逆转营</view>
+	</view>
+	<view class="Btabs" bindtap="shoppingFn">
+		<image src="http://47.94.16.158:8001/tab5.png"></image>
+		<view class="Btab_txt">商城</view>
+	</view>
+	<view class="Btabs" bindtap="myFn">
+		<image src="http://47.94.16.158:8001/tab3.png"></image>
+		<view class="Btab_txt">我的</view>
+	</view>
+</view>
+<!-- 手写 -->
+<!-- <handwriting bindOnComplete="onHnadwritingComplete" /> -->

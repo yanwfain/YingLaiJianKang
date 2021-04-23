@@ -1,0 +1,28 @@
+<view class="lists">
+  <view class="title">提醒项目</view>
+  <view class="pickers">
+    <picker bindchange="pickerProChangef" range="{{ pickerProDataf }}" range-key="{{'name'}}" value="{{countryIndex}}">
+      <view class="txt" style="">
+        {{pickerProDataf[countryIndex].name?pickerProDataf[countryIndex].name:"请选择"}}
+      </view>
+    </picker>
+    <image class="txt_tt" src="http://47.94.16.158:8001/n5.png"></image>
+  </view>
+</view>
+<view class="lists">
+  <view class="title">提醒时间</view>
+  <view class="pickers" style="width:60%">
+    <picker style="width:50%" bindchange="pickerProChangef1" range="{{ pickerProDataf1 }}" range-key="{{'name'}}" value="{{countryIndex1}}">
+      <view class="txt" style="">
+        {{pickerProDataf1[countryIndex1].name?pickerProDataf1[countryIndex1].name:"请选择"}}
+      </view>
+    </picker>
+    <picker style="width:50%" mode="time" wx:if="{{countryIndex1&&countryIndex1!=0}}" value="{{time}}" bindchange="bindTimeChange">
+      <view class="picker">
+        {{time?time:'选择具体时间'}}
+        </view>
+      </picker>
+    <image class="txt_tt" src="http://47.94.16.158:8001/n5.png"></image>
+  </view>
+</view>
+<view class="subnmitAdd" bindtap="submites">保存</view>

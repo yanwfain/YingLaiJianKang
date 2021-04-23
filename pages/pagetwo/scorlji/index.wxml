@@ -1,0 +1,15 @@
+<view class="topBanner">
+  <view class="title">我的积分</view>
+  <view class="nums">{{num}}</view>
+</view>
+<view class="list_title" >
+  <view class="left_lf"><image src="http://47.94.16.158:8001/n1.png"></image>积分明细</view>
+ <image class="img_ld" src="http://47.94.16.158:8001/180.png"></image>
+</view> 
+<view class="list" wx:for="{{movieList}}">
+  <view class="list_txt">
+    <view class="title_txt">{{item.title}}</view>
+    <view class="txt_tit">{{item.createTime}}</view>
+  </view>
+  <view class="numscsrt"> + {{item.score}} </view>
+</view>

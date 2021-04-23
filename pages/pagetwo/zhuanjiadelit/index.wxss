@@ -1,0 +1,30 @@
+/* pages/renwudelit/index.wxss */
+.titlevideo{
+  width:90% ;
+  margin: 0 auto;
+}
+.titlevideo video{
+  width: 100%;
+  height: 400rpx;
+}
+.botos_oimg{
+  width: 90%;
+  margin: 0 auto;
+  height: 160rpx;
+  margin-top: 30rpx;
+}
+.botos_oimg image{
+  width: 100%;
+  height: 100%;
+}
+.bottoms{
+  position: fixed;
+  bottom: 50rpx;
+  width: 90%;
+  left: 5%;
+  line-height: 94rpx;
+  background: #29C3C7;
+  color: white;
+  text-align: center;
+  border-radius: 60rpx;
+}

@@ -1,0 +1,61 @@
+<view class="top_orderstatus">
+  <view class="status">订单支付成功</view>
+  <view class="pickers_order">￥{{cost}}</view>
+  <view class="lsit">
+    <image src="http://47.94.16.158:8001/216.png"></image>
+    <view class="txt_oerd">恭喜获得 20 积分</view>
+    <image src="http://47.94.16.158:8001/217.png"></image>
+  </view>
+  <view class="look_btn" bindtap="delitLook">查看详情</view>
+</view>
+<view class="gengduo">更多精选商品</view>
+<view class="list_bunew">
+  <view class="list" bindtap="shopdelit">
+    <image mode="aspectFill" src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+</view>

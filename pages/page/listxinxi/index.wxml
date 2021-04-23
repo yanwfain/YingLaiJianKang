@@ -1,0 +1,198 @@
+<view class="listcont" bindtap="tabsclick" data-id="1" wx:if="{{listuser.piece==1}}">
+  <image class="left_logo" src="http://47.94.16.158:8001/48.png"></image>
+  <view class="jichudenlit">
+    <view class="left_debtn">
+      <view class="left_top">
+        <view class="title">基础信息</view>
+        <view class="optscgb">
+          <view class="optbakck"  wx:if="{{listuser.piece==1}}" style="width:{{listuser.step/7*100}}%"></view>
+        </view>
+      </view>
+      <view class="btnsubmits">开始填写 <image src="http://47.94.16.158:8001/53.png"></image>
+      </view>
+    </view>
+    <view class="listcity">出生日期、性别、身高、体重、腹围</view>
+  </view>
+</view>
+<view class="listcont" bindtap="tabsclick" data-id="2"  wx:if="{{listuser.piece<=2}}">
+  <image class="left_logo" src="http://47.94.16.158:8001/49.png"></image>
+  <view class="jichudenlit">
+    <view class="left_debtn">
+      <view class="left_top">
+        <view class="title">病史信息</view>
+        <view class="optscgb">
+          <view class="optbakck"  wx:if="{{listuser.piece==2}}" style="width:{{listuser.step/7*100}}%"></view>
+        </view>
+      </view>
+      <view wx:if="{{listuser.piece==2}}" class="btnsubmits"  >开始填写 <image src="http://47.94.16.158:8001/53.png"></image>
+      </view>
+      <view wx:if="{{listuser.piece<2}}" class="btnsubmits" style="background:#EEEEEE;color:#767676">依次解锁
+      </view>
+    </view>
+    <view class="listcity">病程、日常血糖监控、用药方案、糖尿病并发症、既往史、家族史、中医体质</view>
+  </view>
+</view>
+<view class="listcont" bindtap="tabsclick" data-id="3"  wx:if="{{listuser.piece<=3}}">
+  <image class="left_logo" src="http://47.94.16.158:8001/50.png"></image>
+  <view class="jichudenlit">
+    <view class="left_debtn">
+      <view class="left_top">
+        <view class="title">生活方式</view>
+        <view class="optscgb">
+          <view class="optbakck" wx:if="{{listuser.piece==3}}" style="width:{{listuser.step/4*100}}%"></view>
+        </view>
+      </view>
+      <view wx:if="{{listuser.piece==3}}" class="btnsubmits"  >开始填写 <image src="http://47.94.16.158:8001/53.png"></image>
+      </view>
+      <view wx:if="{{listuser.piece<3}}" class="btnsubmits" style="background:#EEEEEE;color:#767676">依次解锁
+      </view>
+    </view>
+    <view class="listcity">个人史、饮食习惯、运动习惯、心理健康</view>
+  </view>
+</view>
+<view class="listcont" bindtap="tabsclick" data-id="4"  wx:if="{{listuser.piece<=4}}">
+  <image class="left_logo" src="http://47.94.16.158:8001/51.png"></image>
+  <view class="jichudenlit">
+    <view class="left_debtn">
+      <view class="left_top">
+        <view class="title">报告上传</view>
+        <view class="optscgb">
+          <view class="optbakck" wx:if="{{listuser.piece==4}}" style="width:{{listuser.step/2*100}}%"></view>
+        </view>
+      </view>
+      <view wx:if="{{listuser.piece==4}}" class="btnsubmits"  >开始填写 <image src="http://47.94.16.158:8001/53.png"></image>
+      </view>
+      <view wx:if="{{listuser.piece<4}}" class="btnsubmits" style="background:#EEEEEE;color:#767676">依次解锁
+      </view>
+    </view>
+    <view class="listcity">化验报告上传、检查报告上传</view>
+  </view>
+</view>
+
+<view class="listcont" bindtap="tabsclick" data-id="5"  wx:if="{{listuser.piece<=5}}">
+  <image class="left_logo" src="http://47.94.16.158:8001/52.png"></image>
+  <view class="jichudenlit">
+    <view class="left_debtn">
+      <view class="left_top">
+        <view class="title">照片上传</view>
+        <view class="optscgb">
+          <view class="optbakck" wx:if="{{listuser.piece==5}}" style="width:{{listuser.step/1*100}}%"></view>
+        </view>
+      </view>
+      <view wx:if="{{listuser.piece==5}}" class="btnsubmits"  >开始填写 <image src="http://47.94.16.158:8001/53.png"></image>
+      </view>
+      <view wx:if="{{listuser.piece<5}}" class="btnsubmits" style="background:#EEEEEE;color:#767676">依次解锁
+      </view>
+    </view>
+    <view class="listcity">出生日期、性别、身高、体重、腹围</view>
+  </view>
+</view>
+<block  wx:if="{{listuser.piece==6&&user.status<2}}">
+  <view class="congratulations" >
+    <image src="http://47.94.16.158:8001/15.png"></image>
+    <view class="txtCong1">您的健康档案已全部完成</view>
+
+			<view class="txtCong3">  马上预约视频问诊，准备正式入营吧！</view>
+      <view class="look_btnwuliu" bindtap="lookgiftFn">预约视频问诊</view>
+      <view style="height:50px"></view>
+  </view>
+</block>
+<block  wx:if="{{listuser.piece==6&&user.status==3}}">
+  <view class="congratulations" >
+    <image src="http://47.94.16.158:8001/15.png"></image>
+    <view class="txtCong1">您的健康档案已全部完成</view>
+
+			<view class="txtCong3">  您可以查看礼包详情及物流信息！</view>
+      <view class="look_btnwuliu" bindtap="lookchaknas">查看信息</view>
+      <view style="height:50px"></view>
+  </view>
+</block>
+<block  wx:if="{{listuser.piece==6&&user.status==4}}">
+  <view class="congratulations" >
+    <image src="http://47.94.16.158:8001/15.png"></image>
+    <view class="txtCong1">您的健康档案已全部完成</view>
+
+			<view class="txtCong3">  您可以立即开启逆转营！</view>
+      <view class="look_btnwuliu" bindtap="lokiaqi">立即开启</view>
+      <view style="height:50px"></view>
+  </view>
+</block>
+<view class="baccont">
+  <view class="tit_wanc">已完成</view>
+  <view class="listcont" bindtap="tabsclick" data-id="1"  wx:if="{{listuser.piece>1}}">
+    <image class="left_logo" src="http://47.94.16.158:8001/54.png"></image>
+    <view class="jichudenlit">
+      <view class="left_debtn">
+        <view class="left_top">
+          <view class="title">基础信息</view>
+          <view class="optscgb">
+            <view class="optbakck" style="background:#29C3C7;width:100%"></view>
+          </view>
+        </view>
+        <view class="btnsubmits" style="background:#EEEEEE;color:#767676">已完成</view>
+      </view>
+      <view class="listcity">出生日期、性别、身高、体重、腹围</view>
+    </view>
+  </view>
+  <view class="listcont"  wx:if="{{listuser.piece>2}}">
+    <image class="left_logo" src="http://47.94.16.158:8001/55.png"></image>
+    <view class="jichudenlit">
+      <view class="left_debtn">
+        <view class="left_top">
+          <view class="title">病史信息</view>
+          <view class="optscgb">
+            <view class="optbakck" style="background:#29C3C7;width:100%"></view>
+          </view>
+        </view>
+        <view class="btnsubmits" style="background:#EEEEEE;color:#767676">已完成</view>
+      </view>
+      <view class="listcity">病程、日常血糖监控、用药方案、糖尿病并发症、既往史、家族史、中医体质</view>
+    </view>
+  </view>
+  <view class="listcont"  wx:if="{{listuser.piece>3}}">
+    <image class="left_logo" src="http://47.94.16.158:8001/56.png"></image>
+    <view class="jichudenlit">
+      <view class="left_debtn">
+        <view class="left_top">
+          <view class="title">生活方式</view>
+          <view class="optscgb">
+            <view class="optbakck" style="background:#29C3C7;width:100%"></view>
+          </view>
+        </view>
+        <view class="btnsubmits" style="background:#EEEEEE;color:#767676">已完成</view>
+      </view>
+      <view class="listcity">个人史、饮食习惯、运动习惯、心理健康</view>
+    </view>
+  </view>
+  <view class="listcont"  wx:if="{{listuser.piece>4}}">
+    <image class="left_logo" src="http://47.94.16.158:8001/57.png"></image>
+    <view class="jichudenlit">
+      <view class="left_debtn">
+        <view class="left_top">
+          <view class="title">报告上传</view>
+          <view class="optscgb">
+            <view class="optbakck" style="background:#29C3C7;width:100%"></view>
+          </view>
+        </view>
+        <view class="btnsubmits" style="background:#EEEEEE;color:#767676">已完成</view>
+      </view>
+      <view class="listcity">化验报告上传、检查报告上传</view>
+    </view>
+  </view>
+  <view class="listcont" bindtap="tabsclick" data-id="5"  wx:if="{{listuser.piece>5}}">
+    <image class="left_logo" src="http://47.94.16.158:8001/58.png"></image>
+    <view class="jichudenlit">
+      <view class="left_debtn">
+        <view class="left_top">
+          <view class="title">照片上传</view>
+          <view class="optscgb">
+            <view class="optbakck" style="background:#29C3C7;width:100%"></view>
+          </view>
+        </view>
+        <view class="btnsubmits" style="background:#EEEEEE;color:#767676">已完成</view>
+      </view>
+      <view class="listcity">正面照和侧面照上传</view>
+    </view>
+  </view>
+  <view style="height:150px"></view>
+</view>

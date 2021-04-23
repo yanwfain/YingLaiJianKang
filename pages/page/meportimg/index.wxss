@@ -1,0 +1,121 @@
+/* pages/meportimg/index.wxss */
+page{
+  background: #F6F6F6;
+}
+.list{
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 34rpx;
+}
+.nums{
+  margin-left:40rpx;
+  width: 70%;
+}
+.times_nums{
+    display: flex;
+    /* align-items: center; */
+}
+.times_nums text{
+  display: block;
+  margin-top: 2rpx;
+}
+.times{
+  display: flex;
+  justify-content: space-between;
+}
+.kgnum{
+  display: flex;
+  align-items: center;
+
+}
+.dian{
+  width: 14rpx;
+  height: 14rpx;
+  background: #29C3C7;
+  border-radius: 100%;
+  margin-right: 10rpx;
+}
+.kgnum view{
+  font-size: 30rpx;
+  color: #767676;
+}
+.imglist{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.imglist image{
+  width: 220rpx;
+    height: 260rpx;
+    margin-right: 20rpx;
+}
+.ruyings{
+  padding: 6rpx 10rpx;
+  font-size: 26rpx;
+  color: white;
+  background: #29C3C7;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+.subbtn{
+  position: fixed;
+  bottom: 10%;
+  width: 70%;
+  left:15%;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border-radius: 60rpx;
+  line-height: 90rpx;
+  background-image: linear-gradient(to right, #FE2A77, #FF9062);
+}
+.subbtn image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.botms{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.nun{
+  font-size: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 100%;
+  background: #29C3C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30rpx;
+  color: white;
+}
+.texts{
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-left:20rpx;
+  color: #29C3C7;
+}
+.buntn{
+  width: 40%;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 60rpx;
+  background-image: linear-gradient(to right, #FE2A77, #FF9062);
+  color: white;
+  margin-left: 20%;
+}
+.txttiles{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  background: white;
+}

@@ -1,0 +1,83 @@
+/* pages/alllistpin/index.wxss */
+.title_shopp{
+  padding: 30rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.user_listp{
+  padding: 28rpx;
+
+}
+.user_topsl{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left_user{
+  display: flex;
+  width: 70%;
+  align-items: center;
+}
+.left_user image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+
+}
+.user_names{
+  margin-left: 14rpx;
+  font-size: 32rpx;
+
+}
+.xin_list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28%;
+}
+.stars {
+  background: url("http://47.94.16.158:8001/211.png");
+  width:34rpx;
+  height: 34rpx;
+  background-size: 34rpx 34rpx;
+  /* margin-left: 10rpx; */
+  transition: 600ms;
+}
+
+.on {
+  background: url("http://47.94.16.158:8001/210.png");
+  width:34rpx;
+  height: 34rpx;
+  background-size: 34rpx 34rpx;
+  transition: 1s;
+  transform: scale(1, 1);
+}
+.tit_usrcont{
+  font-size: 32rpx;
+  color: #4A4A4A;
+  padding: 14rpx 0;
+  /* display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; */
+}
+.xin_list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28%;
+}
+
+.timecert{
+  font-size: 26rpx;
+  color: #767676;
+}
+.imgslist{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  
+}
+.imgslist image{
+  width: 214rpx;
+  height: 214rpx;
+  border-radius: 10rpx;
+  margin: 1%;
+}

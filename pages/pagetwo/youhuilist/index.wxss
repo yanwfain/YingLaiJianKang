@@ -1,0 +1,89 @@
+/* pages/youhuilist/index.wxss */
+page{
+  background: #F6F6F6;
+}
+.list{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+  background: white;
+}
+.left1{
+  background: url(http://47.94.16.158:8001/184.png);
+  background-size: 100% 100%;
+  width: 32%;
+  height: 200rpx;
+}
+.left{
+  background: url(http://47.94.16.158:8001/183.png);
+  background-size: 100% 100%;
+  width: 32%;
+  height: 200rpx;
+
+}
+.right{
+  background: white;
+  width: 64%;
+  margin: 2%;
+}
+.title_le{
+
+  font-size: 32rpx;
+
+}
+.time{
+  font-size: 24rpx;
+  color: #191919;
+  margin-top: 36rpx;
+}
+.btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btnsubmit{
+  padding: 10rpx 24rpx;
+  font-size: 26rpx;
+  color: white;
+  background: #29C3C7;
+  border-radius: 60rpx;
+}
+.btnsubmits{
+  padding: 10rpx 24rpx;
+  font-size: 26rpx;
+  color: white;
+  background: #BBBBBB;
+  border-radius: 60rpx;
+}
+.money{
+  text-align: center;
+  padding-top: 30rpx;
+  color: white;
+}
+
+.money text{
+  font-size: 60rpx;
+  font-weight: 600;
+}
+.money_txt{
+  font-size: 26rpx;
+  color: white;
+  text-align: center;
+}
+.vip{
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.vip image{
+  width: 50rpx;
+  height: 22rpx;
+  margin-right: 4rpx;
+}
+.tit_hengs{
+  padding: 30rpx 0;
+  text-align: center;
+}

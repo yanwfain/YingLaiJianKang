@@ -1,0 +1,23 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px"></view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/19.png"></image>
+  <view class="title_page">入营宣言</view>
+</view>
+<view class="content">
+  <view class="txt_delit">
+    <rich-text nodes="{{indexpage}}" ></rich-text>
+  </view>
+  <textarea class="textearval" placeholder="请输入入营宣言" maxlength="999" name="" id="" value="{{textearval}}" bindinput="intextvalFn"></textarea>
+</view> 
+<view style="height:250rpx"></view>
+<view class="btn_tab" >
+  <view class="left_btn" bindtap="bindressing">生成海报并分享</view>
+  <view class="right_btn" bindtap="substopFn">保存并下一步</view>
+</view>
+<block wx:if="{{isloadview}}">
+  <view class="opcitons {{isload?'activeopc':''}}" wx:if="{{isloadview}}" bindtap="bunnotFn"></view>
+  <view class="imgload {{isload?'active':''}}" bindtap="bunnotFn">
+    <image src="http://47.94.16.158:8001/17.png"></image>
+  </view>
+</block>

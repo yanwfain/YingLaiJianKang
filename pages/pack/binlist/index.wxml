@@ -1,0 +1,107 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">病史信息</view>
+  <view class="tit_tab">
+    <view class="title">病程</view>
+    <view class="nums">1/7</view>
+  </view>
+  <view class="txt_tit">为了精准地为您定制健康管理方案，请如实填写</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">请选择糖尿病类型</view>
+    <view class="tabread">
+      <view class="tavb" bindtap="tab1" data-id="1">
+        <checkbox checked="{{tab1==1?true:false}}"></checkbox>
+        <view class="xstxs">2型糖尿病</view>
+      </view>
+      <view class="tavb" bindtap="tab1" data-id="2">
+        <checkbox checked="{{tab1==2?true:false}}"></checkbox>
+        <view class="xstxs">糖前期/肥胖</view>
+      </view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">请选择糖尿病类型</view>
+    <view class="tabread">
+      <picker mode="date" value="{{date}}" fields="year" bindchange="bindDateChange">
+        <view class="picker">
+          <block wx:if="{{!date}}">
+            请选择确诊年份
+          </block>
+          <block wx:if="{{date}}">确诊年份：{{date}}年 </block>
+          <image src="http://47.94.16.158:8001/n5.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">是否有高血压</view>
+    <view class="tabread">
+      <view class="tavb" bindtap="tab2" data-id="1">
+        <checkbox checked="{{tab2==1?true:false}}"></checkbox>
+        <view class="xstxs">有</view>
+      </view>
+      <view class="tavb" bindtap="tab2" data-id="2">
+        <checkbox checked="{{tab2==2?true:false}}"></checkbox>
+        <view class="xstxs">没有</view>
+      </view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">是否有高脂血症</view>
+    <view class="tabread">
+      <view class="tavb" bindtap="tab3" data-id="1">
+        <checkbox checked="{{tab3==1?true:false}}"></checkbox>
+        <view class="xstxs">有</view>
+      </view>
+      <view class="tavb" bindtap="tab3" data-id="2">
+        <checkbox checked="{{tab3==2?true:false}}"></checkbox>
+        <view class="xstxs">没有</view>
+      </view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">是否有高尿酸</view>
+    <view class="tabread">
+      <view class="tavb" bindtap="tab4" data-id="1">
+        <checkbox checked="{{tab4==1?true:false}}"></checkbox>
+        <view class="xstxs">有</view>
+      </view>
+      <view class="tavb" bindtap="tab4" data-id="2">
+        <checkbox checked="{{tab4==2?true:false}}"></checkbox>
+        <view class="xstxs">没有</view>
+      </view>
+    </view>
+
+    <view class="tabread" wx:if="{{tab4==1}}">
+      <picker mode="date" value="{{date}}" fields="year" bindchange="bindDateChange1">
+        <view class="picker">
+          <block wx:if="{{!date1}}">
+            请选择确诊年份
+          </block>
+          <block wx:if="{{date1}}">确诊年份：{{date1}}年 </block>
+          <image src="http://47.94.16.158:8001/n5.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view style="height:100px"></view>
+</view>
+<block wx:if="{{!pageid}}">
+  <view class="list_btn">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+</block>
+<block wx:if="{{pageid==1}}">
+  <view class="list_btn">
+    <view class="tabBtn2" bindtap="tijiaosubm">提交</view>
+  </view>
+</block>
+
+

@@ -1,0 +1,14 @@
+<view class="iomgyun">
+  <image mode="widthFix" src=""></image>
+</view>
+<view class="list_bunew">
+  <view class="list" bindtap="shopdelit" wx:for="{{movieList}}" data-id="{{item.id}}">
+    <image mode="aspectFill" src="{{item.imgUrl}}"></image>
+    <view class="tit_bunew">{{item.name}}</view>
+    <view class="botmodelt">
+      <view class="pick">￥{{item.price}}</view>
+      <view class="btnsubmit">马上购买</view>
+    </view>
+  </view>
+</view>
+<view style="padding:20rpx;text-align:center;color:gray;">没有更多数据了</view>

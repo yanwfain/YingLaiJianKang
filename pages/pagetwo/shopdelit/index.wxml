@@ -1,0 +1,288 @@
+<view class="swipTop">
+  <swiper class='shop_swiper' bindchange="swiperChange" autoplay="true" indicator-active-color="#fff" interval="3000"
+    duration="1000" circular='true' hidden='{{luboActive}}'>
+    <block wx:for="{{pageindex.goodsData.sliderImage}}" wx:key="index">
+      <swiper-item class="imgheight">
+        <image mode="aspectFill" src="{{item}}" style="height:100%;" class='lbImg' data-id='{{item.id}}'
+          data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel'
+          bindload="image_upload" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+    {{currentSwiper?currentSwiper:'1'}}/{{pageindex.goodsData.sliderImage.length}}
+  </view>
+</view>
+<view class="picker_shop">
+  <view class="left_shop">
+    <view class="picker_nums">
+     <block>￥{{pageindex.goodsData.price}} </block>  
+     <!-- <block>26000积分</block> -->
+       <text
+        style="text-decoration:line-through;color:#767676;font-size:24rpx;font-weight:200;margin-left:6rpx"> {{pageindex.goodsData.marketPrice}}</text>
+    </view>
+    <view class="yishou">已售 {{pageindex.goodsData.sales}}</view>
+  </view>
+  <view class="buttons">
+    <image src="http://47.94.16.158:8001/206.png"></image>
+    <view>分享</view>
+  </view>
+</view>
+<view class="vip_cont" wx:if="{{userList.isMember=='N'}}">
+  <view class="vips">
+    <image src="http://47.94.16.158:8001/207.png"></image>VIP会员
+  </view>
+  <view class="txt_vips">享受健康商城<text>8.8折</text>优惠</view>
+  <view class="jiVip">升级VIP <image src="http://47.94.16.158:8001/208.png"></image>
+  </view>
+</view>
+<view class="vip_cont" wx:if="{{userList.isMember=='Y'}}">
+  <view class="vips">
+    <image src="http://47.94.16.158:8001/207.png"></image>VIP会员
+  </view>
+  <view class="txt_vips" style="color:#EE7500">8.8折后¥{{we.toFixed(pageindex.goodsData.price*0.88)}}, 预计省¥{{we.toFixed(pageindex.goodsData.price-(pageindex.goodsData.price*0.88))}}</view>
+  <!-- <view class="jiVip">升级VIP <image src="http://47.94.16.158:8001/208.png"></image> 
+  </view>-->
+</view>
+<view class="shop_names">{{pageindex.goodsData.introduction}}</view>
+<view class="bosgray"></view>
+<view class="list_port">
+  <view class="left_port">
+    <view class="tit">服务</view>
+    <view class="port_cont">免运费，快递配送</view>
+  </view>
+  <!-- <image src="http://47.94.16.158:8001/209.png"></image> -->
+</view>
+<view class="bosgray"></view>
+<view class="list_port" bindtap="listhuoyioujk">
+  <view class="left_port" style="width:100%">
+    <view class="tit">优惠</view>
+    <view class="port_cont">
+      <view class="portcont_li" wx:for="{{pageindex.couponList}}" wx:if="{{index<2}}" data-id="{{item.id}}">{{item.cname}}</view>
+    </view>
+  </view>
+  <image src="http://47.94.16.158:8001/209.png"></image>
+</view>
+<view class="bosgray"></view>
+<view class="list_port">
+  <view class="left_port">
+    <view class="port_cont" style="font-weight:600">
+      商品评价（{{pageindex.replyNum}}）
+    </view>
+  </view>
+  <image bindtap="looklistuserFn" src="http://47.94.16.158:8001/209.png"></image>
+</view>
+<view class="user_listp" wx:for="{{listpl}}">
+  <view class="user_topsl">
+    <view class="left_user">
+      <image
+        src="{{item.headImg}}">
+      </image>
+      <view class="user_names">{{item.userName}}</view>
+    </view>
+    <view class="xin_list">
+      <view class="stars  {{item.productScore>=1? 'on': ''}}"></view>
+      <view class="stars  {{item.productScore>=2? 'on': ''}}"></view>
+      <view class="stars  {{item.productScore>=3? 'on': ''}}"></view>
+      <view class="stars  {{item.productScore>=4? 'on': ''}}"></view>
+      <view class="stars  {{item.productScore>=5? 'on': ''}}"></view>
+    </view>
+  </view>
+  <view class="tit_usrcont">
+   {{item.comment}}
+  </view>
+  <view class="imgslist">
+    <image mode="aspectFill" wx:for="{{item.pics}}" bindtap="topic_preview" data-id="{{item.id}}" wx:for-item="ite" data-url="{{ite.url2}}" src="{{ite.url2}}"></image>
+  </view>
+  <view class="lookplist" bindtap="looklistuserFn">查看更多评价</view>
+</view>
+<view class="bosgray"></view>
+<view class="list_port">
+  <view class="left_port">
+    <view class="port_cont" style="font-weight:600">
+      相关推荐
+    </view>
+  </view>
+
+</view>
+<view class="list_shoplop">
+  <view class="ist_shoplist">
+    <image mode="aspectFill" src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_shop_list">卡乐比日本进口水果苹果麦片礼袋礼…</view>
+    <view class="picker_listnumd">¥ 128.00</view>
+  </view>
+  <view class="ist_shoplist">
+    <image mode="aspectFill" src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_shop_list">卡乐比日本进口水果苹果麦片礼袋礼…</view>
+    <view class="picker_listnumd">¥ 128.00</view>
+  </view>
+  <view class="ist_shoplist">
+    <image mode="aspectFill" src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_shop_list">卡乐比日本进口水果苹果麦片礼袋礼…</view>
+    <view class="picker_listnumd">¥ 128.00</view>
+  </view>
+</view>
+<view class="bosgray"></view>
+<view class="delit_shoptxtxs">
+  <rich-text nodes="{{pageindex.goodsData.description}}"></rich-text>
+</view>
+<view class="bosgray"></view>
+<view class="list_port">
+  <view class="left_port">
+    <view class="port_cont" style="font-weight:600">
+      热门推荐
+    </view>
+  </view>
+ 
+</view>
+<view class="list_bunew">
+  <view class="list" bindtap="shopdelit">
+    <image mode="aspectFill" src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+    <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+    <view class="botmodelt">
+      <view class="pick">￥49</view>
+      <view class="num_new">已售2312</view>
+    </view>
+  </view>
+</view>
+<view style="height:180rpx"></view>
+<view class="bottomfeixd">
+  <view class="listicon">
+    <image src="http://47.94.16.158:8001/212.png"></image>
+    <view class="txtsicon">客服</view>
+  </view>
+  <view class="listicon" bindtap="shoucangshop" data-iscollect="{{pageindex.isCollect}}">
+    <image src="http://47.94.16.158:8001/213.png" wx:if="{{pageindex.isCollect==0}}"></image>
+    <image src="http://47.94.16.158:8001/194.png" wx:if="{{pageindex.isCollect>0}}"></image>
+    <view class="txtsicon">收藏</view>
+  </view>
+  <view class="listicon">
+    <image src="http://47.94.16.158:8001/214.png"></image>
+    <view class="txtsicon">购物车</view>
+  </view>
+  <view class="btnsubmit">
+    <view class="gouche" bindtap="shopGoucarFn">加入购物车</view>
+    <view class="goumai" bindtap="shopGouFn">立即购买</view>
+  </view>
+</view>
+<block wx:if="{{isMolde}}">
+  <view class="bkkoo"></view>
+  <view class="Modelindex">
+    <view class="shopMOdelTop">
+      <image mode="aspectFill" class="shop_img" src="{{modelpicke.image?modelpicke.image:pageindex.goodsData.imgUrl}}"></image>
+      <view class="cenetr_shop">
+        <view class="model_picer">￥{{modelpicke.price?modelpicke.price:pageindex.goodsData.price}}</view>
+        <view class="lijie">
+          <!-- <view class="lijiell">立减10元 到手价 ¥118</view>   -->
+          <view></view>
+        </view>
+      </view>
+      <image bindtap="deldeFn" src="http://47.94.16.158:8001/204.png" class="delirmoDel"></image>
+    </view>
+    <view class="listguigeve" > 
+      <block wx:for="{{pageindex.goodsData.productAttr}}" wx:for-index="index">
+        <view class="title_model">{{item.attrName}}</view>
+        <view class="listsku" >
+          <view  data-index="{{index}}" wx:for="{{item.attrValueArr}}"  wx:for-item="ite" wx:for-index="inde" class="sku_cont {{item.attrValues==ite?'active1':''}}" data-id="{{item.id}}" data-txt="{{ite}}" bindtap="clicksku">{{ite}}</view>
+        </view>
+      </block>
+    
+      <!-- <view class="list_guige {{tid==1?'active1':''}}" data-id="1" bindtap="clikFn">
+        <view class="gui_name">每日睡前 14袋/盒</view>
+        <view class="gui_pickelrs">¥128 </view>
+      </view>
+      <view class="list_guige {{tid==2?'active1':''}}" data-id="2" bindtap="clikFn">
+        <view class="gui_name">每日睡前 14袋/盒</view>
+        <view class="gui_pickelrs">¥128 </view>
+      </view> -->
+    </view>
+    
+    <view class="goumainums">
+      <view class="mougnuls">购买数量</view>
+      <view class="btn_jiajie">
+        <view class="jie_l" bindtap="jieFn">-</view>
+        <view class="num_val">{{valNum}}</view>
+        <view class="jia_l"  bindtap="jiaFn">+</view>
+
+      </view>
+    </view>
+    <view class="submitFor" bindtap="submitFor">确定</view>
+  </view>
+</block>
+<block wx:if="{{modelis}}">
+  <view class="bkkoo"></view>
+  <view class="modelIshow">
+    <view class="top_model">
+      <view class="yuhuijuqan">优惠券</view>
+      <image bindtap="deledishide" src="http://47.94.16.158:8001/204.png"></image>
+    </view>
+    <view class="listYouhuil">
+      <view class="title_models">可使用</view>
+      <view class="chckedFn" bindtap="chckedFn" wx:for="{{pageindex.couponList}}" data-id="{{item.id}}">
+        <view class="left">
+          <view class="money">￥ <text>{{item.couponPrice}}</text></view>
+          <view class="money_txt">满{{item.useMinPrice}}可用</view>
+        </view>
+        <view class="right">
+          <view class="title_le">{{item.cname}}</view>
+          <view class="time">{{item.startTime}}-{{item.endTime}}</view>
+          <view class="btnlinquyu">
+            <view></view>
+            <view class="linqulisbtns" data-id="{{item.id}}" wx:if="{{item.status==0}}" data-status="{{item.status}}" bindtap="linqulisty">立即领取</view>
+            <view class="linqulisbtns"  data-id="{{item.id}}" wx:if="{{item.status>0}}" data-status="{{item.status}}" >已领取</view>
+          </view>
+        </view>
+      </view>
+      <view class="meiyougeng">没有更多了</view>
+    </view>
+    <view class="subquedin" bindtap="queFn">完成</view>
+  </view>
+</block>
+<wxs module="we">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

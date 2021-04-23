@@ -1,0 +1,8 @@
+<view class="top">
+  <image src="{{userList.img}}" wx:if="{{userList.status>0}}"></image>
+  <image src="{{userList.imgTwo}}" wx:if="{{userList.status==0}}"></image>
+  <view class="txtnum">{{userList.name}}</view>
+  <view class="txts"><rich-text nodes="{{userList.introduction}}"></rich-text> </view>
+</view>
+<view class="btnsun" bindtap="submite">分享这一刻</view>
+<view class="txt">获得日期{{userList.createTime}}</view>

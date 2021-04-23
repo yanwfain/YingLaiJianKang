@@ -1,0 +1,184 @@
+<view class="tops">
+  <view class="title">入营必看</view>
+  <view class="titl_txt">本阶段的学习尤为重要，是您开始训练营务必观看的重要内容。您有2天时间完成以下学习。</view>
+</view>
+<view class="backgrounnums">
+  <view class="sunbancvk">
+    <view class="txt">观看{{list.totalNum}}个视频</view>
+    <view class="burgs">
+      <view class="buhy_numsk" style="width:{{list.hasNum/list.totalNum*100}}%;"></view>
+    </view>
+    <view class="num">{{ we.toFixed(list.hasNum/list.totalNum*100)}}%</view>
+  </view>
+</view>
+<view class="listcont">
+  <view class="viuebtn {{tid==1?'acrtive':''}}" bindtap="click" data-id="1">入营必看</view>
+  <view class="viuebtn {{tid==2?'acrtive':''}}" bindtap="click" data-id="2">阶段I</view>
+  <view class="viuebtn {{tid==3?'acrtive':''}}" bindtap="click" data-id="3">阶段II</view>
+  <view class="viuebtn {{tid==4?'acrtive':''}}" bindtap="click" data-id="4">阶段III</view>
+</view>
+<block wx:if="{{tid==1}}">
+
+<view class="listdewen" bindtap="zhuanjiadelit" wx:for="{{list.campLook.list}}" wx:if="{{item.status==0}}" data-id="{{item.id}}" data-url="{{item.video}}" data-name="{{item.name}}">
+  <view class="left">
+    <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
+    <view class="cont_times">
+      <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+    </view>
+  </view>
+  <view class="right">
+    <view class="titCont">{{item.name}}</view>
+    <view class="bennum">
+      <view class="jifensm">
+        <image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}
+      </view>
+      <view class="submitswan">去完成</view>
+    </view>
+  </view>
+</view>
+<!-- 已完成 -->
+<view wx:if="{{list.campLook.lookList.length>0}}">
+  <view class="titlso">已完成</view>
+  <view class="listdewen" wx:for="{{list.campLook.lookList}}" wx:if="{{item.status>0}}" data-id="{{item.id}}" data-url="{{item.video}}" bindtap="yiwanFn" data-name="{{item.name}}">
+    <view class="left">
+      <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
+      <view class="cont_times">
+        <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+      </view>
+    </view>
+    <view class="right">
+      <view class="titCont">{{item.name}}</view>
+      <view class="bennum" style="justify-content: space-between;">
+        <view></view>
+        <view class="submitswan" style="background:white;border:1px solid #EE7500;color:#EE7500;">再看一遍</view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<block wx:if="{{tid==2}}">
+
+<view class="listdewen" bindtap="zhuanjiadelit" wx:for="{{list.phaseOne.list}}" wx:if="{{item.status==0}}" data-url="{{item.video}}" data-id="{{item.id}}" data-name="{{item.name}}">
+  <view class="left">
+    <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
+    <view class="cont_times">
+      <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+    </view>
+  </view>
+  <view class="right">
+    <view class="titCont">{{item.name}}</view>
+    <view class="bennum">
+      <view class="jifensm">
+        <image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}
+      </view>
+      <view class="submitswan">去完成</view>
+    </view>
+  </view>
+</view>
+<!-- 已完成 -->
+<view wx:if="{{list.phaseOne.lookList.length>0}}">
+  <view class="titlso">已完成</view>
+  <view class="listdewen" wx:for="{{list.phaseOne.lookList}}" wx:if="{{item.status>0}}" data-url="{{item.video}}" data-id="{{item.id}}" bindtap="yiwanFn" data-name="{{item.name}}">
+    <view class="left">
+      <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
+      <view class="cont_times">
+        <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+      </view>
+    </view>
+    <view class="right">
+      <view class="titCont">{{item.name}}</view>
+      <view class="bennum" style="justify-content: space-between;">
+        <view></view>
+        <view class="submitswan" style="background:white;border:1px solid #EE7500;color:#EE7500;">再看一遍</view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<block wx:if="{{tid==3}}">
+
+<view class="listdewen" bindtap="zhuanjiadelit" wx:for="{{list.phaseTwo.list}}" data-url="{{item.video}}" wx:if="{{item.status==0}}" data-id="{{item.id}}" data-name="{{item.name}}">
+  <view class="left">
+    <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
+    <view class="cont_times">
+      <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+    </view>
+  </view>
+  <view class="right">
+    <view class="titCont">{{item.name}}</view>
+    <view class="bennum">
+      <view class="jifensm">
+        <image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}
+      </view>
+      <view class="submitswan">去完成</view>
+    </view>
+  </view>
+</view>
+<!-- 已完成 -->
+<view wx:if="{{list.phaseTwo.lookList.length>0}}">
+  <view class="titlso">已完成</view>
+  <view class="listdewen" wx:for="{{list.phaseTwo.lookList}}" wx:if="{{item.status>0}}" data-url="{{item.video}}" data-id="{{item.id}}" bindtap="yiwanFn" data-name="{{item.name}}">
+    <view class="left">
+      <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
+      <view class="cont_times">
+        <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+      </view>
+    </view>
+    <view class="right">
+      <view class="titCont">{{item.name}}</view>
+      <view class="bennum" style="justify-content: space-between;">
+        <view></view>
+        <view class="submitswan" style="background:white;border:1px solid #EE7500;color:#EE7500;">再看一遍</view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<block wx:if="{{tid==4}}">
+<view class="listdewen" bindtap="zhuanjiadelit" wx:for="{{list.phaseThree.list}}" data-url="{{item.video}}" wx:if="{{item.status==0}}" data-id="{{item.id}}" data-name="{{item.name}}">
+  <view class="left">
+    <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
+    <view class="cont_times">
+      <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+    </view>
+  </view>
+  <view class="right">
+    <view class="titCont">{{item.name}}</view>
+    <view class="bennum">
+      <view class="jifensm">
+        <image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}
+      </view>
+      <view class="submitswan">去完成</view>
+    </view>
+  </view>
+</view>
+<!-- 已完成 -->
+<view wx:if="{{list.phaseThree.lookList.length>0}}">
+  <view class="titlso">已完成</view>
+  <view class="listdewen" wx:for="{{list.phaseThree.lookList}}" wx:if="{{item.status>0}}" data-url="{{item.video}}" data-id="{{item.id}}" bindtap="yiwanFn" data-name="{{item.name}}">
+    <view class="left">
+      <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
+      <view class="cont_times">
+        <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+      </view>
+    </view>
+    <view class="right">
+      <view class="titCont">{{item.name}}</view>
+      <view class="bennum" style="justify-content: space-between;">
+        <view></view>
+        <view class="submitswan" style="background:white;border:1px solid #EE7500;color:#EE7500;">再看一遍</view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<view style="height:100rpx">
+</view>
+<wxs module="we">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

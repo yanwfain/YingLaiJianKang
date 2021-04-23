@@ -1,0 +1,56 @@
+<!--pages/zaixianzixun/index.wxml-->
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/128.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">逆转营</view>
+  <view class="tit_tab">
+    <view class="title">在线咨询</view>
+    <view class="nums"></view>
+  </view>
+</view>
+<view class="foedsIndex" bindtap="foedsIndex"> <image src="http://47.94.16.158:8001/86.png"></image></view>
+<view class="bottomsFed" bindtap="nizhuany">
+  <view class="vies" bindtap="nizhuan">
+    <image src="http://47.94.16.158:8001/142.png"></image>
+    <view class="txts_tab" >逆转营</view>
+  </view>
+  <view class="vies" bindtap="zaixianFn">
+    <image src="http://47.94.16.158:8001/127.png"></image>
+    <view class="txts_tab" style="color:#29C3C7;">在线咨询</view>
+  </view>
+  <view class="vies" bindtap="jialilist">
+    <image class="imgstops" src="http://47.94.16.158:8001/91.png"></image>
+    <view class="txts_tab" ></view>
+  </view>
+  <view class="vies" bindtap="memysql">
+    <image src="http://47.94.16.158:8001/93.png"></image>
+    <view class="txts_tab" >我的数据</view>
+  </view>
+  <view class="vies" bindtap="jiakang">
+    <image src="http://47.94.16.158:8001/95.png"></image>
+    <view class="txts_tab" >健康档案</view>
+  </view>
+</view>
+<view class="conttair">
+  <view class="tablistyi">
+    <block wx:if="{{doctorId}}">
+      <view class="listltys" wx:for="{{chatList}}" wx:if="{{doctorId==item.account}}" data-unread="{{item.unread}}" data-account="{{item.account}}"  bindtap="switchToChating">
+      <image src="http://47.94.16.158:8001/129.png"></image>
+      <view class="txtys">我的医师</view>
+      <view class="oplist" wx:if="{{item.unread>0}}">{{item.unread}}</view>
+    </view> 
+    </block>
+   
+    <block wx:if="{{dietitianId}}">
+      <view class="listltys" wx:for="{{chatList}}" wx:if="{{dietitianId==item.account}}" data-unread="{{item.unread}}" data-account="{{item.account}}"  bindtap="switchToChating">
+      <image src="http://47.94.16.158:8001/130.png"></image>
+      <view class="txtys">我的营养师</view>
+      <view class="oplist" wx:if="{{item.unread>0}}">{{item.unread}}</view>
+    </view> 
+    </block>
+   
+  </view>
+</view>
+<view style="height:200rpx"></view>

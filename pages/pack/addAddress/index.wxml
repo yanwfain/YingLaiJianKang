@@ -1,0 +1,35 @@
+<view class="topTierl" bindtap="binaddress">
+  <image class="imag1" src="http://47.94.16.158:8001/31.png"> </image>
+  <view class="title">使用微信地址收货</view>
+  <image class="imag2" src="http://47.94.16.158:8001/n5.png"></image>
+</view>
+<view class="list">
+  <view class="lefts">收货人</view>
+  <input class="rights" type="text" placeholder="收货人姓名" bindinput="userName" value="{{userName}}" />
+</view>
+<view class="list">
+  <view class="lefts">手机号</view>
+  <input class="rights" type="text" placeholder="收货人手机号" bindinput="telNumber" value="{{telNumber}}" />
+</view>
+<view class="list">
+  <view class="lefts">城市地区</view>
+  <picker  mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      <block wx:if="{{region[0]}}">
+        {{region[0]}}/{{region[1]}}/{{region[2]}}
+      </block>
+      <block wx:if="{{!region[0]&&zone}}">
+      {{zone}}
+      </block>
+      <block wx:if="{{!region[0]&&!zone}}">
+        选择省 / 市 / 区
+      </block>
+    </view>
+  </picker>
+</view>
+<view class="list">
+  <view class="lefts">详细地址</view>
+  <input class="rights" type="text" placeholder="街道门牌、楼层房间号等信息" bindinput="detailInfo" value="{{detailInfo}}" />
+</view>
+<view class="xinzengAdd" bindtap="addressFn">保存并使用</view>
+<view class="dele" bindtap="deleFn" wx:if="{{goid}}">删除收货地址</view>

@@ -1,0 +1,60 @@
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/145.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">逆转营</view>
+  <view class="tit_tab">
+    <view class="title">健康档案</view>
+    <view class="nums"></view>
+  </view>
+</view>
+<view class="foedsIndex" bindtap="foedsIndex"> <image src="http://47.94.16.158:8001/86.png"></image></view>
+<view class="bottomsFed" bindtap="nizhuany">
+  <view class="vies" bindtap="nizhuan">
+    <image src="http://47.94.16.158:8001/142.png"></image>
+    <view class="txts_tab" >逆转营</view>
+  </view>
+  <view class="vies" bindtap="zaixianFn">
+    <image src="http://47.94.16.158:8001/90.png"></image>
+    <view class="txts_tab" >在线咨询</view>
+  </view>
+  <view class="vies" bindtap="jialilist">
+    <image class="imgstops" src="http://47.94.16.158:8001/91.png"></image>
+    <view class="txts_tab" ></view>
+  </view>
+  <view class="vies" bindtap="memysql">
+    <image src="http://47.94.16.158:8001/93.png"></image>
+    <view class="txts_tab" >我的数据</view>
+  </view>
+  <view class="vies">
+    <image src="http://47.94.16.158:8001/144.png"></image>
+    <view class="txts_tab" style="color:#29C3C7;">健康档案</view>
+  </view>
+</view>
+<view class="conttair">
+  <view class="list_tab">
+    <view class="list" bindtap="gerenzil">
+      <image src="http://47.94.16.158:8001/146.png"></image>
+      <view class="tit">个人资料</view>
+    </view>
+    <view class="list" bindtap="jiankangqc">
+      <image src="http://47.94.16.158:8001/147.png"></image>
+      <view class="tit">健康评测</view>
+    </view>
+    <view class="list" bindtap="huayanFn">
+      <image src="http://47.94.16.158:8001/148.png"></image>
+      <view class="tit">化验报告</view>
+    </view>
+    <view class="list" bindtap="jianchabg">
+      <image src="http://47.94.16.158:8001/149.png"></image>
+      <view class="tit">检查报告</view>
+    </view>
+    <view class="list" bindtap="meporrtimg">
+      <image src="http://47.94.16.158:8001/150.png"></image>
+      <view class="tit">我的照片</view>
+    </view>
+    <view class="list">
+      <image src="http://47.94.16.158:8001/158.png"></image>
+      <view class="tit">肠道菌群报告</view>
+    </view>
+  </view>
+</view>
+<view style="height:200rpx"></view>

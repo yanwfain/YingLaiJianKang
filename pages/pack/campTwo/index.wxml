@@ -1,0 +1,140 @@
+<block>
+	<!-- 购买后进入显示 -->
+	<view class="topbank">
+		<image src="http://47.94.16.158:8001/23.png"></image>
+		<view class="title_page">入营流程介绍</view>
+		<view class="page_txt">稍后您将为您的逆转营完善信息</view>
+	</view>
+	<view class="contlist">
+		<view class="list">
+			<view class="num">第 <text>1</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<view class="shus"></view>
+			</view>
+			<view class="tit_delit">
+				<view class="tit">填写个人信息</view>
+				<view class="txt">姓名、联系方式、健康监护人联系方式、配套产品和设备收货信息</view>
+			</view>
+		</view>
+		<view class="list">
+			<view class="num">第 <text>2</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<view class="shus"></view>
+			</view>
+			<view class="tit_delit">
+				<view class="tit">建立健康档案</view>
+				<view class="txt">基本信息、病史信息、生活方式、报告上传、照片上传</view>
+			</view>
+		</view>
+		<view class="list">
+			<view class="num">第 <text>3</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<view class="shus"></view>
+			</view>
+			<view class="tit_delit">
+				<view class="tit">预约视频问诊时间</view>
+				<view class="txt">选择和您的专属医师、营养师的30分钟线上问诊时间</view>
+			</view>
+		</view>
+		<view class="list">
+			<view class="num">第 <text>4</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<view class="shus"></view>
+			</view>
+			<view class="tit_delit">
+				<view class="tit">视频问诊</view>
+				<view class="txt">您的专属医师、营养师将在指定时间发起线上视频通话</view>
+			</view>
+		</view>
+		<view class="list">
+			<view class="num">第 <text>5</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<view class="shus"></view>
+			</view>
+			<view class="tit_delit">
+				<view class="tit">正式入营</view>
+				<view class="txt">如果医师和营养师判断您的情况适合线上调理，您将被正式收入逆转营</view>
+			</view>
+		</view>
+		<view class="list">
+			<view class="num">第 <text>6</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<view class="shus"></view>
+			</view>
+			<view class="tit_delit">
+				<view class="tit">收到配套产品和设备</view>
+				<view class="txt">医师和营养师将根据您的情况为您配置个性化入营大礼包</view>
+			</view>
+		</view>
+		<view class="list">
+			<view class="num">第 <text>7</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<view class="shus"></view>
+			</view>
+			<view class="tit_delit">
+				<view class="tit">选择开启时间</view>
+				<view class="txt">收到入营大礼包后，您可在准备好的时候随时选择开启逆转营</view>
+			</view>
+		</view>
+		<view class="list">
+			<view class="num">第 <text>8</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<view class="shus"></view>
+			</view>
+			<view class="tit_delit">
+				<view class="tit">90天逆转营</view>
+				<view class="txt">在这90天里，我们将为您提供全方位的专业指导以及个性化的每日课程和任务，帮助您建立一个崭新的健康生活方式。</view>
+			</view>
+		</view>
+		<view class="list">
+			<view class="num">第 <text>9</text> 步</view>
+			<view class="rideos">
+				<view class="rideo"></view>
+				<!-- <view class="shus"></view> -->
+			</view>
+			<view class="tit_delit">
+				<view class="tit">结业</view>
+				<view class="txt">经过90天的专业训练与健康，您已经大大减少了对药物的依赖，学习了如何进行自我的监控与监控管理。在未来的生活中，您需要坚持这样健康的生活方式，并继续进行在线指标监控与定期的检查与随访。
+				</view>
+			</view>
+		</view>
+		<view class="posittop" bindtap="subStopone">
+			<view>下一步</view>
+		</view>
+	</view>
+
+</block>
+
+
+<view style="height:120px"></view>
+<view class="Btabview">
+	<view class="Btabs" bindtap="indexFn">
+		<image src="http://47.94.16.158:8001/tab2_2.png"></image>
+		<view class="Btab_txt">首页</view>
+	</view>
+	<view class="Btabs" bindtap="collegeFn">
+		<image src="http://47.94.16.158:8001/tab1.png"></image>
+		<view class="Btab_txt">糖学院</view>
+	</view>
+	<view class="Btabs" bindtap="campFn">
+		<image style="width:76px;height:76px;position: absolute;left:4px;top:-30px;" src="http://47.94.16.158:8001/tab4.png"></image>
+		<image></image>
+		<view class="Btab_txt" style="color:#29C3C7">逆转营</view>
+	</view>
+	<view class="Btabs" bindtap="shoppingFn">
+		<image src="http://47.94.16.158:8001/tab5.png"></image>
+		<view class="Btab_txt">商城</view>
+	</view>
+	<view class="Btabs" bindtap="myFn">
+		<image src="http://47.94.16.158:8001/tab3.png"></image>
+		<view class="Btab_txt">我的</view>
+	</view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "化验报告",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "scale": "/component/w-scale/w-scale"
+  }
+}

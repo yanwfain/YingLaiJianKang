@@ -1,0 +1,195 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">记录体重</view>
+  <view class="top_numsdelit">
+    <view class="left_fonts">
+      <view class="tizhongnum"> <text style="font-size:48rpx;font-weight:600;">{{weightData.weight_kg}}</text> 公斤</view>
+      <view class="itmes">
+        <image src="http://47.94.16.158:8001/102.png"></image>{{timeData}}
+      </view>
+    </view>
+    <view class="left_fonts">
+      <view class="tbdels">
+        <block wx:if="{{lists&&weightData.weight_kg-lists.weight>0}}">
+          <image src="http://47.94.16.158:8001/101.png"></image><text style="font-size:48rpx;font-weight:600;">{{we.toFixed(weightData.weight_kg-lists.weight)}}</text>
+        </block>
+        <block wx:if="{{lists&&weightData.weight_kg-lists.weight<0}}">
+          <image src="http://47.94.16.158:8001/112.png"></image><text style="font-size:48rpx;font-weight:600;">{{(we.toFixed(weightData.weight_kg-lists.weight)*-1)}}</text>
+        </block>
+        <block wx:if="{{!lists}}">
+         近期暂无数据
+        </block>
+      </view>
+      <view class="itmes">与上次测量相比</view>
+    </view>
+  </view>
+</view>
+
+<view class="cintent">
+  <view class="lisst" style="font-size:26rpx;color:gray;" wx:if="{{!weightData.isStabilized}}"> 当前测量数据天数未达数据稳定标准，以下数据目前只做展示，请坚持测量</view>
+  <view class="lisst" style="font-size:26rpx;color:gray;" wx:if="{{weightData.isStabilized}}"> 当前测量数据天数已达数据稳定标准，请坚持测量</view>
+  <view class="lisst">
+    <view class="gileft">
+      <view class="finubnun">
+        <image class="leftimg" src="http://47.94.16.158:8001/103.png"></image>
+        <view class="fontB">BMI</view>
+      </view>
+      <view class="finubnun" style="margin-left:40rpx">
+        <view class="fontwig" style="font-size:18px;font-weight:600;">{{weightData.bmi}}</view>
+        <view class="iimgtop" style="margin-left:20rpx">
+          <block wx:if="{{lists&&weightData.bmi-lists.bmi>0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/111.png"></image>{{we.toFixed(weightData.bmi-lists.bmi)}}
+          </block>
+          <block wx:if="{{lists&&weightData.bmi-lists.bmi<0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/112.png"></image>{{we.toFixed((weightData.bmi-lists.bmi)*-1)}}
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="typebtn">标准</view>
+  </view>
+  <view class="lisst">
+    <view class="gileft">
+      <view class="finubnun">
+        <image class="leftimg" src="http://47.94.16.158:8001/104.png"></image>
+        <view class="fontB">脂肪</view>
+      </view>
+      <view class="finubnun" style="margin-left:40rpx">
+        <view class="fontwig" style="font-size:18px;font-weight:600;">{{weightData.bodyFatPercent}}%</view>
+        <view class="iimgtop" style="margin-left:20rpx">
+          <block wx:if="{{lists&&weightData.bodyFatPercent-lists.fat>0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/111.png"></image>{{we.toFixed(weightData.bodyFatPercent-lists.fat)}}
+          </block>
+          <block wx:if="{{lists&&weightData.bodyFatPercent-lists.fat<0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/112.png"></image>{{we.toFixed((weightData.bodyFatPercent-lists.fat)*-1)}}
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="typebtn">标准</view>
+  </view>
+  <view class="lisst">
+    <view class="gileft">
+      <view class="finubnun">
+        <image class="leftimg" src="http://47.94.16.158:8001/105.png"></image>
+        <view class="fontB">肌肉</view>
+      </view>
+      <view class="finubnun" style="margin-left:40rpx">
+        <view class="fontwig" style="font-size:18px;font-weight:600;">{{weightData.musclePercent}}%</view>
+        <view class="iimgtop" style="margin-left:20rpx">
+          <block wx:if="{{lists&&weightData.musclePercent-lists.muscle>0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/111.png"></image>{{we.toFixed(weightData.musclePercent-lists.muscle)}}
+          </block>
+          <block wx:if="{{lists&&weightData.musclePercent-lists.muscle<0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/112.png"></image>{{we.toFixed((weightData.musclePercent-lists.muscle)*-1)}}
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="typebtn">标准</view>
+  </view>
+  <view class="lisst">
+    <view class="gileft">
+      <view class="finubnun">
+        <image class="leftimg" src="http://47.94.16.158:8001/106.png"></image>
+        <view class="fontB">水分</view>
+      </view>
+      <view class="finubnun" style="margin-left:40rpx">
+        <view class="fontwig" style="font-size:18px;font-weight:600;">{{weightData.moisturePercent}}%</view>
+        <view class="iimgtop" style="margin-left:20rpx">
+          <block wx:if="{{lists&&weightData.moisturePercent-lists.water>0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/111.png"></image>{{we.toFixed(weightData.moisturePercent-lists.water)}}
+          </block>
+          <block wx:if="{{lists&&weightData.moisturePercent-lists.water<0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/112.png"></image>{{we.toFixed((weightData.moisturePercent-lists.water)*-1)}}
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="typebtn">标准</view>
+  </view>
+  <view class="lisst">
+    <view class="gileft">
+      <view class="finubnun">
+        <image class="leftimg" src="http://47.94.16.158:8001/107.png"></image>
+        <view class="fontB">内脏脂肪</view>
+      </view>
+      <view class="finubnun" style="margin-left:40rpx">
+        <view class="fontwig" style="font-size:18px;font-weight:600;">{{weightData.visceralFat}}%</view>
+        <view class="iimgtop" style="margin-left:20rpx">
+          <block wx:if="{{lists&&weightData.visceralFat-lists.visceralFat>0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/111.png"></image>{{we.toFixed(weightData.visceralFat-lists.visceralFat)}}
+          </block>
+          <block wx:if="{{lists&&weightData.visceralFat-lists.visceralFat<0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/112.png"></image>{{we.toFixed((weightData.visceralFat-lists.visceralFat)*-1)}}
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="typebtn">标准</view>
+  </view>
+  <!-- <view class="lisst">
+    <view class="gileft">
+      <view class="finubnun">
+        <image class="leftimg" src="http://47.94.16.158:8001/108.png"></image>
+        <view class="fontB">肥胖级别</view>
+      </view>
+      <view class="finubnun" style="margin-left:40rpx">
+        <view class="fontwig" style="font-size:18px;font-weight:600;">2</view>
+        <view class="iimgtop" style="margin-left:20rpx">
+          <image style="margin-left:6rpx" src="http://47.94.16.158:8001/112.png"></image>0.3
+        </view>
+      </view>
+    </view>
+    <view class="typebtn">标准</view>
+  </view> -->
+  <view class="lisst">
+    <view class="gileft">
+      <view class="finubnun">
+        <image class="leftimg" src="http://47.94.16.158:8001/109.png"></image>
+        <view class="fontB">基础代谢率</view>
+      </view>
+      <view class="finubnun" style="margin-left:40rpx">
+        <view class="fontwig" style="font-size:18px;font-weight:600;">{{weightData.bmr}}kcal</view>
+        <view class="iimgtop" style="margin-left:20rpx">
+          <block wx:if="{{lists&&weightData.bmr-lists.metabolic>0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/111.png"></image>{{we.toFixed(weightData.bmr-lists.metabolic)}}
+          </block>
+          <block wx:if="{{lists&&weightData.bmr-lists.metabolic<0}}">
+            <image style="margin-left:6rpx" src="http://47.94.16.158:8001/112.png"></image>{{we.toFixed((weightData.bmr-lists.metabolic)*-1)}}
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="typebtn">标准</view>
+  </view>
+  <!-- <view class="lisst">
+    <view class="gileft">
+      <view class="finubnun">
+        <image class="leftimg" src="http://47.94.16.158:8001/110.png"></image>
+        <view class="fontB">体型</view>
+      </view>
+      <view class="finubnun" style="margin-left:40rpx">
+        <view class="fontwig" style="font-size:18px;font-weight:600;">健康型</view>
+      </view>
+    </view>
+    <view class="typebtn">标准</view>
+  </view> -->
+
+</view>
+<view class="list_btn">
+    <!-- <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view> -->
+    <view class="tabBtn2" bindtap="xiapageFn">保存</view>
+  </view>
+  <view style="height:100px"></view>
+  <wxs module="we">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

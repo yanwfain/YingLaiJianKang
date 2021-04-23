@@ -1,0 +1,74 @@
+<view class="listdelit" wx:for="{{indextxt.movementList}}" data-url="{{item.video}}" data-id="{{item.id}}" bindtap="clickab" wx:if="{{item.status==0}}">
+  <view class="list_title" wx:if="{{item.type==1}}">上午运动</view>
+  <view class="list_title" wx:if="{{item.type==2}}">下午运动</view>
+  <view class="list_title" wx:if="{{item.type==3}}">晚上运动</view>
+  <view class="list_cont">
+    <image src="{{item.img}}" class="left_logo"></image>
+    <view class="delitcont">
+      <view class="delit_title">{{item.name}}</view>
+      <view class="bot_contsds">
+        <view class="cont_times"><image src="http://47.94.16.158:8001/115.png"></image>{{item.videoTime}}</view>
+        <view class="jifensm"><image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}</view>
+      </view>
+    </view>
+    <view class="btnsunb" wx:if="{{item.status==0}}">去完成</view>
+  </view>
+</view>
+<!-- <view class="listdelit">
+  <view class="list_title">下午运动</view>
+  <view class="list_cont">
+    <image src="http://47.94.16.158:8001/116.png" class="left_logo"></image>
+    <view class="delitcont">
+      <view class="delit_title">糖尿病健康操</view>
+      <view class="bot_contsds">
+        <view class="cont_times"><image src="http://47.94.16.158:8001/115.png"></image>20:00</view>
+        <view class="jifensm"><image src="http://47.94.16.158:8001/n1.png"></image>积分+5</view>
+      </view>
+    </view>
+    <view class="btnsunb">去完成</view>
+  </view>
+</view>
+<view class="listdelit">
+  <view class="list_title">晚上运动</view>
+  <view class="list_cont">
+    <image src="http://47.94.16.158:8001/117.png" class="left_logo"></image>
+    <view class="delitcont">
+      <view class="delit_title">八段锦</view>
+      <view class="bot_contsds">
+        <view class="cont_times"><image src="http://47.94.16.158:8001/115.png"></image>20:00</view>
+        <view class="jifensm"><image src="http://47.94.16.158:8001/n1.png"></image>积分+5</view>
+      </view>
+    </view>
+    <view class="btnsunb">去完成</view>
+  </view>
+</view> -->
+<view class="listdelit" wx:if="{{indextxt.completeList.length>0}}">
+  <view class="list_title">已完成</view>
+  <view class="list_cont" wx:for="{{indextxt.completeList}}" wx:if="{{item.img}}" data-url="{{item.video}}" bindtap="listclick" data-id="{{item.id}}">
+    <image src="{{item.img}}" class="left_logo"></image>
+    <view class="delitcont">
+      <view class="delit_title">{{item.movementName}}</view>
+      <view class="bot_contsds">
+        <view class="cont_times"><image src="http://47.94.16.158:8001/115.png"></image>{{item.movementTime}}</view>
+        <view class="jifensm"><image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}</view>
+      </view>
+    </view>
+    <view class="btnsunbs">再做一遍</view>
+  </view>
+  <view class="list_cont" wx:for="{{indextxt.completeList}}" wx:if="{{!item.img}}" data-url="{{item.video}}"
+  bindtap="listclick" data-id="{{item.id}}">
+  <image src="http://47.94.16.158:8001/238.png" class="left_logo"></image>
+  <view class="delitcont">
+    <view class="delit_title">{{item.movementName}}</view>
+    <view class="bot_contsds">
+      <!-- <view class="cont_times"><image src="http://47.94.16.158:8001/115.png"></image>{{item.movementTime}}</view> -->
+      <view class="jifensm" style="margin-left:0;">{{item.startTime}}点开始 · 运动{{item.movementTime}}分钟</view>
+    </view>
+    <!-- <view class="btnsunbs">再做一遍</view> -->
+    
+  </view>
+  <view style="width:20%"></view>
+</view>
+</view>
+
+<view class="submit" bindtap="qitasubm">记录其他运动</view>

@@ -1,0 +1,26 @@
+<view class="title">
+  {{indexpage.title}}
+</view>
+<view class="user">
+  <image src="{{indexpage.authorHeadImg}}"></image>
+  <view class="name">{{indexpage.author}}</view>
+</view>
+<view class="timesfa">发布于{{indexpage.addTime}}</view>
+<view class="txt_bot">
+ <rich-text nodes="{{indexpage.content}}"></rich-text>
+</view> 
+<!-- <view class="title">
+  文章标题文章标题文章标题，文章标题文章标题文章标题
+</view>
+<view class="user">
+  <image src="https://wx.qlogo.cn/mmhead/dWYcndbpDnbLicQoSkCmlNOZZmiaay3SI0C98XM1kCLCZyFu1iaMEYIWQ/0"></image>
+  <view class="name">李玉康</view>
+</view>
+<view class="timesfa">发布于2021年1月1日</view>
+<view class="txt_bot">
+  <text>正文样式：你已经在控制饮食了，也做了运动，但是，血糖忽高忽低，很揪心？
+你明明按照医生的处方，<text style="color:#15A7AA">在吃降糖药</text>，甚至打胰岛素，血糖却一直降不下来？
+你的<text style="color:#15A7AA">糖化血红蛋白</text>结果看上去还不错，却依然出现了并发症痕迹？
+你多么希望，有一天，自己终于成功摆脱掉“糖尿病”。
+  </text>
+</view> -->

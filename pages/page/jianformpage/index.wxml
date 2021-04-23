@@ -1,0 +1,65 @@
+<view class="top_view">
+  <view class="time">最后更新时间 </view>
+  <view class="btnsub" bindtap="genxinFn">更新报告</view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>检查日期
+</view>
+<view class="listdiom">
+  <view class="times">
+    {{inspectDate}}
+  </view>
+  <view></view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>心电图
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{electrocardiogram}}">
+    <image mode="aspectFill" bindtap="electrocardiogram" data-url="{{item.url2}}"  src="{{item.url2}}"></image>
+    <view class="look" catchtap="electrocardiogram">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+  颈部血管超声
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{neck}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="neck" data-url="{{item.url2}}" ></image>
+    <view class="look" catchtap="neck">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+
+  腹部超声 （肝、胆、脾、肾）
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{abdomen}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="abdomen" data-url="{{item.url2}}"></image>
+    <view class="look" catchtap="abdomen">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+
+  眼底检查报告
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{fundus}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="fundus" data-url="{{item.url2}}"></image>
+    <view class="look" catchtap="fundus">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+
+  其他检查报告单（如肿瘤标志物报告）
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{other}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="other" data-url="{{item.url2}}"></image>
+    <view class="look" catchtap="other">查看大图</view>
+  </view>
+</view>

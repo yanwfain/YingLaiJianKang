@@ -1,0 +1,32 @@
+<view class="topTierl" bindtap="binaddress">
+  <image class="imag1" src="http://47.94.16.158:8001/31.png"> </image>
+  <view class="title">使用微信地址收货</view>
+  <image class="imag2" src="http://47.94.16.158:8001/n5.png"></image>
+</view>
+<!-- 没有收货地址展示 -->
+<block wx:if="{{movieList.length<1}}">
+  <view class="eror">
+    <image src="http://47.94.16.158:8001/32.png"></image>
+    <view class="error_tiot">您还没有收货地址哦</view>
+  </view>
+</block>
+<block wx:for="{{movieList}}">
+  <view class="list_address" bindtap="bincheck" data-id="{{item.id}}">
+    <view class="tit_wei">
+      <view class="xtx">{{item.receiver}} {{item.phone}}</view>
+      <view class="xtx1">{{item.zone}} {{item.address}}</view>
+    </view>
+    <view class="botpmbtn">
+      <checkbox checked="{{item.status==1?true:false}}">设为默认</checkbox>
+      <view class="listrights">
+        <view class="bianji" style="border:none" catchtap="bianjiFn" data-id="{{item.id}}">修改</view>
+        <view class="bianji" catchtap="deleFn" data-id="{{item.id}}">删除</view>
+      </view>
+   
+    </view>
+
+  </view>
+  <view class="backd"></view>
+</block>
+<view style="height:150rpx"></view>
+<view class="xinzengAdd" bindtap="addressFn">新增收货地址</view>

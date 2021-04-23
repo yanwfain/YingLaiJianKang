@@ -1,0 +1,71 @@
+<!-- <view class='box' style='position: relative;'>
+  <view class='left-choose'>选择时间:</view>
+  <view>
+    <view class="tips" wx:if='{{!isdate}}'>时间不能早于当前
+      <view class="triangle_border_right"></view>
+    </view>
+   
+    <view class="zan-cell zan-cell--access">
+      <view wx:if="{{date.dates}}" style='padding-right:30rpx;' class="zan-cell__ft" bindtap='showDate'>{{date.dates + '\t' + date.week + '\t' + hour + ':' + minute}}</view>
+      <view wx:if="{{!date.dates}}" style='padding-right:30rpx;' class="zan-cell__ft" bindtap='showDate'>{{dateList[0].dates + '\t' + dateList[0].week + '\t' + todayhour + ':' + todayminutes}}</view>
+      <view class='ft_right' style='border-color: #c8c8c8;'></view>
+    </view>
+  </view>
+</view> -->
+<view class="date_view">
+  <view class="viedclicktab" bindtap="clickFns" data-index="{{index}}" wx:for="{{dateList}}">
+    <view class="times_top {{tab_vie == index ?'activesd':'' }}" >{{item.week}}</view>
+    <view class="time_bot {{tab_vie == index ?'activesb':'' }}">{{item.dates}}</view>
+  </view>
+</view>
+<view class="text_lefts">
+    <view></view>
+    <view>左滑查看近7天 >></view>
+  </view>
+<view class="shangwu">
+  上午（ 9:00 - 12:00 ）
+</view>
+<view class="listcls">
+  <block wx:for="{{listdataTime}}" >
+    <view wx:if="{{item.noNum>0}}" data-index="{{item.id}}" class="listtime {{timeactive==item.id&&timeactive?'active' :''}}" bindtap="clickTime" data-id="{{item.noNum}}" data-todayhour="{{item.hours}}" data-todayminutes="{{item.minutes}}">{{item.clock}}</view>
+    <view wx:if="{{item.noNum==0}}" class="listtimes" bindtap="clickTimes" data-id="{{item.noNum}}" >{{item.clock}}</view>
+  </block> 
+  <!-- <view class="listtime {{timeactive==2?'active' :''}}" bindtap="clickTime" data-id="2" data-todayhour="9" data-todayminutes="30">09:30</view>
+  <view class="listtime {{timeactive==3?'active' :''}}" bindtap="clickTime" data-id="3" data-todayhour="10" data-todayminutes="00">10:00</view>
+  <view class="listtime {{timeactive==4?'active' :''}}" bindtap="clickTime" data-id="4" data-todayhour="10" data-todayminutes="30">10:30</view>
+  <view class="listtime {{timeactive==5?'active' :''}}" bindtap="clickTime" data-id="5" data-todayhour="11" data-todayminutes="00">11:00</view>
+  <view class="listtime {{timeactive==6?'active' :''}}" bindtap="clickTime" data-id="6" data-todayhour="11" data-todayminutes="30">11:30</view> -->
+</view>
+<view class="shangwu">
+  上午（ 13:00 - 18:00 ）
+</view>
+<view class="listcls">
+  <block wx:for="{{pmList}}" >
+    <view wx:if="{{item.noNum>0}}" data-index="{{item.id}}" class="listtime {{timeactive==item.id&&timeactive!=''?'active' :''}}" bindtap="clickTime" data-id="{{item.noNum}}" data-todayhour="{{item.hours}}" data-todayminutes="{{item.minutes}}">{{item.clock}}</view>
+    <view wx:if="{{item.noNum==0}}" class="listtimes" bindtap="clickTimes" data-id="{{item.noNum}}" >{{item.clock}}</view>
+  </block>
+  <!-- <view class="listtime {{timeactive==7?'active' :''}}" bindtap="clickTime" data-id="7" data-todayhour="13" data-todayminutes="00">13:00</view>
+  <view class="listtime {{timeactive==8?'active' :''}}" bindtap="clickTime" data-id="8" data-todayhour="13" data-todayminutes="30">13:30</view>
+  <view class="listtime {{timeactive==9?'active' :''}}" bindtap="clickTime" data-id="9" data-todayhour="14" data-todayminutes="00">14:00</view>
+  <view class="listtime {{timeactive==10?'active' :''}}" bindtap="clickTime" data-id="10" data-todayhour="14" data-todayminutes="30">14:30</view>
+  <view class="listtime {{timeactive==11?'active' :''}}" bindtap="clickTime" data-id="11" data-todayhour="15" data-todayminutes="00">15:00</view>
+  <view class="listtime {{timeactive==12?'active' :''}}" bindtap="clickTime" data-id="12" data-todayhour="15" data-todayminutes="30">15:30</view>
+  <view class="listtime {{timeactive==13?'active' :''}}" bindtap="clickTime" data-id="13" data-todayhour="16" data-todayminutes="00">16:00</view>
+  <view class="listtime {{timeactive==14?'active' :''}}" bindtap="clickTime" data-id="14" data-todayhour="16" data-todayminutes="30">16:30</view>
+  <view class="listtime {{timeactive==15?'active' :''}}" bindtap="clickTime" data-id="15" data-todayhour="17" data-todayminutes="00">17:00</view>
+  <view class="listtime {{timeactive==16?'active' :''}}" bindtap="clickTime" data-id="16" data-todayhour="17" data-todayminutes="30">17:30</view> -->
+</view>
+
+<view wx:if="{{showselect}}">
+  <picker-view indicator-style="height: 40px;z-index:1;" mask-style="z-index:1;" style="width: 100%;text-align: center; height: 120px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{dateList}}" wx:key="index" style="line-height: 40px;font-size:14px;text-align: center;">{{item.dates + "\t" + item.week}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{hours}}" wx:key="index" style="line-height: 40px;font-size:14px;text-align: center;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{minutes}}" wx:key="index" style="line-height: 40px;font-size:14px;text-align: center;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

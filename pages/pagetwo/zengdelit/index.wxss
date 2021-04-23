@@ -1,0 +1,298 @@
+/* pages/zengdelit/index.wxss */
+page{
+  background:#F6F6F6;
+}
+.backd{
+  width: 100%;
+  height: 24rpx;
+  background:#F6F6F6;
+}
+.adress1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30rpx ;
+  background:white;
+}
+.addlogo{
+  width: 60rpx;
+  height: 60rpx;
+}
+.tit_wei{
+  width: 70%;
+  font-size:34rpx;
+
+}
+.addlogos{
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.contdelit{
+  padding:30rpx;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  background:white;
+
+}
+
+.title{
+  font-size:34rpx;
+  color: #000A12;
+
+}
+.cont{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cont image{
+  width: 250rpx;
+  height: 170rpx;
+}
+.delit{
+  width: 60%;
+  
+}
+.listdelit{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.shoptitle{
+  font-size:28rpx;
+
+}
+.num{
+  font-size: 30rpx;
+  color: #4A4A4A;
+}
+.pickercont{
+  padding: 30rpx;
+  background:white;
+
+}
+.lost_picker{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:8rpx 0;
+}
+.txt{
+  font-size: 34rpx;
+}
+.botdisfex{
+  position: fixed;
+  padding:20rpx 2%;
+  width: 96%;
+  height: 110rpx;
+  /* line-height: 110rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  left:0;
+  background:white;
+}
+.left_botm{
+  width: 50%;
+
+}
+.txt_s{
+  font-size: 26rpx;
+  color: #767676;
+}
+.pickers{
+  color: #EE7500;
+  font-size: 34rpx;
+
+}
+.right_picker{
+  width: 48%;
+  color: white;
+  text-align: center;
+  font-size: 34rpx;
+  border-radius: 60rpx;
+  line-height: 96rpx;
+  background-image: linear-gradient(to right, #EE7500, #F5A776);
+}
+.xtx{
+  font-size: 34rpx;
+
+}
+.xtx1{
+  font-size: 26rpx;
+  color: #767676;
+}
+.louyan{
+  font-size: 28rpx;
+  padding: 10rpx;
+  width: 60%;
+  text-align: right;
+}
+.valuepicker{
+  color: #EE7500;
+  display: flex;
+  align-items: center;
+
+}
+.modelIshow{
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  background: #F6F6F6;
+  position: fixed;
+  height: 70%;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 99;
+
+}
+.listYouhuil{
+  height: 64%;
+  overflow-y:scroll;
+
+}
+.top_model{
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+
+}
+.ridoes{
+  margin-left:20rpx;
+  margin-right:30rpx;
+}
+.yuhuijuqan{
+  font-size: 34rpx;
+
+}
+.top_model image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.title_models{
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  padding-bottom: 0;
+}
+.list{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+  background: white;
+}
+
+.left{
+  background: url(http://47.94.16.158:8001/183.png);
+  background-size: 100% 100%;
+  width: 32%;
+  height: 200rpx;
+
+}
+.left1{
+  background: url(http://47.94.16.158:8001/215.png);
+  background-size: 100% 100%;
+  width: 32%;
+  height: 200rpx;
+
+}
+.right{
+  background: white;
+  width: 44%;
+  margin: 2%;
+}
+.title_le{
+
+  font-size: 32rpx;
+
+}
+.time{
+  font-size: 24rpx;
+  color: #191919;
+  margin-top: 36rpx;
+}
+.btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btnsubmit{
+  padding: 10rpx 24rpx;
+  font-size: 26rpx;
+  color: white;
+  background: #29C3C7;
+  border-radius: 60rpx;
+}
+.btnsubmits{
+  padding: 10rpx 24rpx;
+  font-size: 26rpx;
+  color: white;
+  background: #BBBBBB;
+  border-radius: 60rpx;
+}
+.money{
+  text-align: center;
+  padding-top: 30rpx;
+  color: white;
+}
+
+.money text{
+  font-size: 60rpx;
+  font-weight: 600;
+}
+.money_txt{
+  font-size: 26rpx;
+  color: white;
+  text-align: center;
+}
+.vip{
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.vip image{
+  width: 50rpx;
+  height: 22rpx;
+  margin-right: 4rpx;
+}
+.tit_hengs{
+  padding: 30rpx 0;
+  text-align: center;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+
+  border: none;
+  background: #29C3C7;
+}
+.subquedin{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  background: #29C3C7;
+  border-radius: 60rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: white;
+  font-size: 34rpx;
+
+}
+.buNOs{
+  padding: 20rpx;
+  text-align: center;
+  color: gray;
+}
+.meiyougeng{
+  padding: 20rpx;
+  text-align: center;
+  color: gray;
+}

@@ -1,0 +1,96 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">病史信息</view>
+  <view class="tit_tab">
+    <view class="title">糖尿病并发症</view>
+    <view class="nums">4/7</view>
+  </view>
+  <view class="txt_tit">为了精准地为您定制健康管理方案，请如实填写</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">您是否有以下并发症？（可多选）</view>
+    <view class="tabnab">
+      <view class="title_list">糖尿病视网膜病变</view>
+      <block wx:for="{{listWulist}}">
+        <view class="tavb" bindtap="tab" data-index="{{index}}">
+          <checkbox checked="{{item.isshow}}"></checkbox>
+          <view class="xstxs">{{item.text}}</view>
+        </view>
+      </block>
+      <block wx:if="{{isshowtxt}}">
+          <textarea class="txtare" catchtap="" bindinput="textartFn" data-index="{{index}}" value="{{textart}}"
+            placeholder="请填写" name="" maxlength="999"></textarea>
+          <view style="height:40rpx"></view>
+        </block>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="tabnab">
+      <view class="title_list">糖尿病神经病变</view>
+      <block wx:for="{{listWulist1}}">
+        <view class="tavb" bindtap="tab1" data-index="{{index}}">
+          <checkbox checked="{{item.isshow}}"></checkbox>
+          <view class="xstxs">{{item.text}}</view>
+        </view>
+      </block>
+      <block wx:if="{{isshowtxt1}}">
+          <textarea class="txtare" catchtap="" bindinput="textartFn1" data-index="{{index}}" value="{{textart1}}"
+            placeholder="请填写" name="" maxlength="999"></textarea>
+          <view style="height:40rpx"></view>
+        </block>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="tabnab">
+      <view class="title_list">糖尿病肾病 </view>
+      <block wx:for="{{listWulist2}}">
+        <view class="tavb" bindtap="tab2" data-index="{{index}}">
+          <checkbox checked="{{item.isshow}}"></checkbox>
+          <view class="xstxs">{{item.text}}</view>
+        </view>
+      </block>
+      <block wx:if="{{isshowtxt2}}">
+          <textarea class="txtare" catchtap="" bindinput="textartFn2" data-index="{{index}}" value="{{textart2}}"
+            placeholder="请填写" name="" maxlength="999"></textarea>
+          <view style="height:40rpx"></view>
+        </block>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="tabnab">
+      <view class="title_list">糖尿病下肢血管病变（包括糖尿病足） </view>
+      <block wx:for="{{listWulist3}}">
+        <view class="tavb" bindtap="tab3" data-index="{{index}}">
+          <checkbox checked="{{item.isshow}}"></checkbox>
+          <view class="xstxs">{{item.text}}</view>
+        </view>
+      </block>
+      <block wx:if="{{isshowtxt3}}">
+          <textarea class="txtare" catchtap="" bindinput="textartFn3" data-index="{{index}}" value="{{textart3}}"
+            placeholder="请填写" name="" maxlength="999"></textarea>
+          <view style="height:40rpx"></view>
+        </block>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="tabnab">
+        <view class="tavb" bindtap="tab4" data-index="{{index}}">
+          <checkbox checked="{{isshow4}}"></checkbox>
+          <view class="xstxs">以上都没有</view>
+        </view>
+    </view>
+  </view>
+  <view class="list_btn" wx:if="{{!pageid}}">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  <view class="list_btn" wx:if="{{pageid==1}}">
+
+    <view class="tabBtn2" bindtap="submiiti">提交</view>
+  </view>
+  <view style="height:100px"></view>
+</view>

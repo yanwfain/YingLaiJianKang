@@ -1,0 +1,40 @@
+<view class="title">您的身高 <block wx:if="{{weight}}"></block> {{weight}}cm </view>
+<view class="submits" bindtap="submitens">下一步</view>
+<view class='scale-title'>滑动标尺选择身高</view>
+<!--pages/index/index.wxml-->
+<view style="text-align:center;">
+  <image style="width:300rpx;height:246px" wx:if="{{xid==1}}" src="http://47.94.16.158:8001/35.png"></image>
+  <image style="width:300rpx;height:246px" wx:if="{{xid==2}}" src="http://47.94.16.158:8001/36.png"></image>
+</view>
+
+<view class='containers'>
+  <!-- <view class='scale-title'>滑动标尺选择身高</view> -->
+  <view class='scale-value'>{{weight}}cm</view> 
+  <scale min="80" 
+    max="230" 
+    int="{{false}}" 
+    single="10" 
+    h="60" 
+    active="{{weight}}" 
+    styles="{{styles}}" 
+    id="weight"
+    bindvalue="bindvalue"></scale>
+  
+  <!-- <view class='scale-title'>你的身高</view>
+  <view class='scale-container'>
+    <view class='scale-value'>{{height}}cm</view> 
+    <view class='scale-view'>
+      <scale min="80" 
+        max="230" 
+        int="{{false}}"
+        single="10" 
+        h="40" 
+        active="{{height}}" 
+        styles="{{styles}}" 
+        direction="vertical"
+        id="height"
+        bindvalue="bindvalue"></scale>
+    </view>
+  </view> -->
+</view>
+<view style="height:100px"></view>

@@ -1,0 +1,183 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">报告上传</view>
+  <view class="tit_tab">
+    <view class="title">化验报告上传</view>
+    <view class="nums">1/2</view>
+  </view>
+  <view class="txt_tit">为了精准地为您定制健康管理方案，请如实填写</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">化验日期</view>
+    <view class="listtabs">
+      <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{date?date:'请选择化验日期'}}
+        </view>
+      </picker>
+      <image src="http://47.94.16.158:8001/n5.png"></image>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="listtabs" style="background:inherit;padding:0;">
+     <view></view>
+     <view> <text style="color:red">*</text>为必填项</view>
+    </view>
+  </view>
+
+
+  <view class="titl_an"> <text style="color:red">*</text> 请上传您的生化化验单 （肝肾功、血脂）<image src="http://47.94.16.158:8001/63.png" data-id="1" bindtap="tabshowFn"></image></view>
+  <view class='pages'>
+	<!-- 图片 -->
+	<view class="images_box">
+		<block wx:key="imgbox" wx:for="{{imgbox}}">
+			<view class='img-box' bindtap="topic_preview" data-url="{{item.url1}}">
+				<image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+				<view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1' wx:if="{{isbtn!=1||!isbtn}}">
+					<image class='img' src='http://47.94.16.158:8001/62.png'></image>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{isbtn!=1||!isbtn}}">
+			<view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length<99}}">
+				<image class='img' src='http://47.94.16.158:8001/123.png'></image>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="titl_an"> <text style="color:red">*</text> 请上传您的血常规化验单<image src="http://47.94.16.158:8001/63.png" data-id="2" bindtap="tabshowFn"></image></view>
+<view class='pages'>
+	<!-- 图片 -->
+	<view class="images_box">
+		<block wx:key="imgboxs" wx:for="{{imgboxs}}">
+			<view class='img-box'  bindtap="topic_preview1" data-url="{{item.url1}}">
+				<image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+				<view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1s' wx:if="{{isbtn!=1||!isbtn}}">
+					<image class='img' src='http://47.94.16.158:8001/62.png'></image>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{isbtn!=1||!isbtn}}">
+			<view class='img-box' bindtap='addPic1s' wx:if="{{imgboxs.length<99}}">
+				<image class='img' src='http://47.94.16.158:8001/123.png'></image>
+			</view>
+		</block>
+	</view>
+	
+</view>
+<view class="titl_an"> <text style="color:red">*</text> 请上传您的糖化血红蛋白化验单（3个月血糖平均值）<image src="http://47.94.16.158:8001/63.png" data-id="3" bindtap="tabshowFn"></image></view>
+<view class='pages'>
+	<!-- 图片 -->
+	<view class="images_box">
+		<block wx:key="imgboxs1" wx:for="{{imgboxs1}}">
+			<view class='img-box' bindtap="topic_preview2" data-url="{{item.url1}}">
+				<image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+				<view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1s1' wx:if="{{isbtn!=1||!isbtn}}">
+					<image class='img' src='http://47.94.16.158:8001/62.png'></image>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{isbtn!=1||!isbtn}}">
+			<view class='img-box' bindtap='addPic1s1' wx:if="{{imgboxs1.length<99}}">
+				<image class='img' src='http://47.94.16.158:8001/123.png'></image>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="titl_an"> <text style="color:red">*</text> 请上传您的糖化血清蛋白化验单（2-3周血糖平均值）<image src="http://47.94.16.158:8001/63.png" data-id="4" bindtap="tabshowFn"></image></view>
+<view class='pages'>
+	<!-- 图片 -->
+	<view class="images_box">
+		<block wx:key="imgboxs12" wx:for="{{imgboxs12}}">
+			<view class='img-box' bindtap="topic_preview3" data-url="{{item.url1}}">
+				<image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+				<view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1s12' wx:if="{{isbtn!=1||!isbtn}}">
+					<image class='img' src='http://47.94.16.158:8001/62.png'></image>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{isbtn!=1||!isbtn}}">
+			<view class='img-box' bindtap='addPic1s12' wx:if="{{imgboxs12.length<99}}">
+				<image class='img' src='http://47.94.16.158:8001/123.png'></image>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="titl_an"> <text style="color:red">*</text> 请上传您的胰岛功能（胰岛素、C肽）化验单 <image src="http://47.94.16.158:8001/63.png" data-id="5" bindtap="tabshowFn"></image></view>
+<view class='pages'>
+	<!-- 图片 -->
+	<view class="images_box">
+		<block wx:key="imgboxs12" wx:for="{{imgboxs13}}">
+			<view class='img-box' bindtap="topic_preview4" data-url="{{item.url1}}">
+				<image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+				<view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1s13' wx:if="{{isbtn!=1||!isbtn}}">
+					<image class='img' src='http://47.94.16.158:8001/62.png'></image>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{isbtn!=1||!isbtn}}">
+			<view class='img-box' bindtap='addPic1s13' wx:if="{{imgboxs13.length<99}}">
+				<image class='img' src='http://47.94.16.158:8001/123.png'></image>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="titl_an"> <text style="color:red">*</text> 请上传您的C反应蛋白化验单 <image src="http://47.94.16.158:8001/63.png" data-id="6" bindtap="tabshowFn"></image></view>
+<view class='pages'>
+	<!-- 图片 -->
+	<view class="images_box">
+		<block wx:key="imgboxs12" wx:for="{{imgboxs14}}">
+			<view class='img-box' bindtap="topic_preview5" data-url="{{item.url1}}">
+				<image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+				<view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1s14' wx:if="{{isbtn!=1||!isbtn}}">
+					<image class='img' src='http://47.94.16.158:8001/62.png'></image>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{isbtn!=1||!isbtn}}">
+			<view class='img-box' bindtap='addPic1s14' wx:if="{{imgboxs13.length<99}}">
+				<image class='img' src='http://47.94.16.158:8001/123.png'></image>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="titl_an"> <text style="color:red">*</text> 请上传您的尿常规化验单 <image src="http://47.94.16.158:8001/63.png" data-id="7" bindtap="tabshowFn"></image></view>
+<view class='pages'>
+	<!-- 图片 -->
+	<view class="images_box">
+		<block wx:key="imgboxs12" wx:for="{{imgboxs15}}">
+			<view class='img-box' bindtap="topic_preview6" data-url="{{item.url1}}">
+				<image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+				<view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1s15' wx:if="{{isbtn!=1||!isbtn}}">
+					<image class='img' src='http://47.94.16.158:8001/62.png'></image>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{isbtn!=1||!isbtn}}">
+			<view class='img-box' bindtap='addPic1s15' wx:if="{{imgboxs13.length<99}}">
+				<image class='img' src='http://47.94.16.158:8001/123.png'></image>
+			</view>
+		</block>
+	</view>
+</view>
+
+  <view class="list_btn">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  <view style="height:100px"></view>
+</view>
+
+<block wx:if="{{isshowsd}}">
+	<view class="opbackgroud" bindtap="sislsd"></view>
+	<view class="ishow_went">
+		<image bindtap="isshowFn" bindtap="sislsd" class="imgs" src="http://47.94.16.158:8001/28.png"></image>
+		<view class="isshow_titles">血常规化验单</view>
+		<view class="txts_delit"></view>
+		<view class="submitszhi" bindtap="sislsd">我知道了</view>	
+	</view>
+</block>

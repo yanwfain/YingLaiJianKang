@@ -1,0 +1,208 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+view{
+  font-family: 'SourceHanSansCN';
+  font-size:28rpx;
+}
+.ql-align-center{
+  text-align: center;
+}
+.Btabview{
+  width: 100%;
+  position: fixed;
+  left:0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10rpx 0;
+  padding-bottom: 20rpx;
+  background:white;
+  /* box-shadow: 1px -10px 22px #E0E0E0; */
+  box-shadow: 1px -4px 16px #E0E0E0;
+  z-index: 1001;
+}
+.Btabs{
+  width: 20%;
+  text-align: center;
+  position: relative;
+}
+.Btabs image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.Btab_txt{
+  font-size: 26rpx;
+
+}
+checkbox{
+  margin-top: -2rpx;
+}
+checkbox .wx-checkbox-input {
+	width: 34rpx;
+	height: 34rpx;
+	border-radius: 50%;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #29C3C7;
+  border-color:#29C3C7;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 20rpx;
+  height: 20rpx;  
+  line-height: 20rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.bottomsFed{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  z-index: 99;
+  box-shadow: 1px -4px 16px #E0E0E0;
+}
+.vies {
+  width: 25%;
+  text-align: center;
+  position: relative;
+  color: gray;
+  font-size: 26rpx;
+}
+.vies image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.vies .imgstops{
+  position: absolute;
+  width: 160rpx;
+  height: 160rpx;
+  top: -122rpx;
+  left:0;
+  right: 0;
+}
+.back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: .7;
+  z-index: 98;
+}
+.isshowModele{
+  width: 90%;
+  position: fixed;
+  left: 5%;
+  top: 24%;
+  padding:20rpx 0;
+  z-index: 99;
+  background: white;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.delesx{
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+
+}
+.jiangbei{
+  width: 300rpx;
+  height: 146rpx;
+  margin: 0 auto;
+  margin-top: -82rpx;
+}
+.textsIsshow{
+  padding:10rpx 0;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.fontsinumS{
+  font-size: 34rpx;
+  color: #EE7500;
+  padding:10rpx 0;
+}
+.jisubtnsubs{
+  width: 80%;
+  margin: 0 auto;
+  line-height: 90rpx;
+  background: #29C3C7;
+  text-align: center;
+  color: white;
+  font-size: 34rpx;
+  border-radius: 60rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.foedsIndex{
+  position: fixed;
+  left: 0;
+  bottom: 160rpx;
+  z-index: 99;
+  width: 220rpx;
+  height:154rpx;
+}
+.foedsIndex image{
+  width: 100%;
+  height: 100%;
+}
+.logoKefu {
+  width: 140rpx;
+  height: 140rpx;
+  position: fixed;
+  bottom: 20%;
+  right: 8rpx;
+  z-index: 80;
+}
+
+.logoKefu image {
+  width: 100%;
+  height: 100%;
+}
+.meiyougengduo{
+  text-align: center;
+  padding: 30rpx;
+  font-size:34rpx;
+  color: #BBBBBB;
+}
+.bkkoo {
+  position: fixed;
+  z-index: 98;
+  background: black;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: .7;
+}
+
+
+
+
+
+
+

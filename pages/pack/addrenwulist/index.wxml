@@ -1,0 +1,30 @@
+<view class="lists">
+  <view class="title">运动类型</view>
+  <view class="pickers">
+    <picker bindchange="pickerProChangef" range="{{ pickerProDataf }}" range-key="{{'name'}}" value="{{countryIndex}}">
+      <view class="txt" style="">
+        {{pickerProDataf[countryIndex].name?pickerProDataf[countryIndex].name:"请选择"}}
+      </view>
+    </picker>
+    <image class="txt_tt" src="http://47.94.16.158:8001/n5.png"></image>
+  </view>
+</view>
+<view class="lists">
+  <view class="title">开始时间</view>
+  <view class="pickers" style="width:60%">
+  
+    <picker style="width:50%" mode="time" value="{{time}}" bindchange="bindTimeChange">
+      <view class="picker">
+        {{time?time:'选择开始时间'}}
+        </view>
+      </picker>
+    <image class="txt_tt" src="http://47.94.16.158:8001/n5.png"></image>
+  </view>
+</view>
+<view class="lists">
+  <view class="title">运动时长</view>
+  <view class="pickers" style="width:60%">
+    <input style="text-align:right" type="number" bindinput="minval" value="{{minval}}" placeholder="请输入" />分钟
+  </view>
+</view>
+<view class="subnmitAdd" bindtap="submites">保存</view>

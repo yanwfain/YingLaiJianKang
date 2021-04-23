@@ -1,0 +1,24 @@
+/* pages/weizhangfenxiang/index.wxss */
+.listbox{
+  width: 90%;
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btns{
+  width: 46%;
+  margin: 2%;
+  text-align: center;
+
+}
+.btns image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 10rpx;
+
+}
+.txt{
+  font-size: 32rpx;
+  
+}

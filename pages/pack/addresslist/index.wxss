@@ -1,0 +1,95 @@
+/* pages/addresslist/index.wxss */
+.topTierl{
+  background:#F6F6F6;
+  padding:20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.imag1{
+  width: 68rpx;
+  height: 68rpx;
+}
+.imag2{
+  width: 46rpx;
+  height: 46rpx;
+}
+.title{
+  width: 70%;
+}
+.eror{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 300rpx;
+  text-align: center;
+}
+.eror image{
+  width: 250rpx;
+  height: 250rpx;
+
+}
+.error_tiot{
+  font-size: 32rpx;
+  color: #767676;
+  margin-top: 20rpx;
+}
+.xinzengAdd{
+  font-size: 34rpx;
+  color: white;
+  width: 88%;
+  position: fixed;
+  bottom: 4%;
+  left:6%;
+  border-radius: 60rpx;
+  line-height: 100rpx;
+  background:#29C3C7;
+  text-align: center;
+
+}
+.list_address{
+  padding: 40rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tit_wei{
+  width: 70%;
+  font-size:34rpx;
+
+}
+.bianji{
+  color: #767676;
+  font-size: 28rpx;
+  padding: 20rpx;
+  border-left: 1px solid #F6F6F6;
+}
+.xtx1{
+  color: #767676;
+}
+checkbox .wx-checkbox-input {
+	width: 34rpx;
+	height: 34rpx;
+	border-radius: 50%;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #29C3C7;
+  border-color:#29C3C7;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 20rpx;
+  height: 20rpx;  
+  line-height: 20rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.backd{
+  height: 20rpx;
+  background: #F6F6F6;
+}

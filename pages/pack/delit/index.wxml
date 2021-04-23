@@ -1,0 +1,166 @@
+<view class="top_stype">
+  <view class="titl_pagestyle">
+    <view>{{orderlist.statusName}}</view>
+  
+    <view>￥{{orderlist.cost}}</view>
+  </view>
+  <view class="page_tile">
+    <block wx:if="{{orderlist.orderType==0}}">
+      <!-- 支付后展示 -->
+      <view class="tit" wx:if="{{orderlist.payment==3}}">您可以直接启动入营流程</view>
+      <!-- 待付款展示 -->
+      <view class="tit" wx:if="{{orderlist.payment==1}}" >购买后可直接启动入营流程</view>
+    </block>
+    <block wx:if="{{orderlist.orderType==3}}">
+      <view class="tit">
+      <!-- 待付款展示 -->
+      <view class="tit" wx:if="{{orderlist.payment==1}}">您的订单尚未付款</view>
+      <!-- 支付后展示 -->
+      <view class="tit" wx:if="{{orderlist.payment==3}}">已付款，礼品卡稍后为您寄出</view>
+      </view>
+    </block>
+   <block wx:if="{{orderlist.payment==3&&orderlist.orderType==0}}">
+    <view bindtap="lijiFn" class="subTitle">立即入营</view>
+   </block>
+   <block wx:else>
+    <view class="subTitle"></view>
+   </block>
+   
+  </view>
+</view>
+<!-- 赠送好友展示地址 -->
+<block wx:if="{{orderlist.orderType==3}}">
+  <view class="adress1" bindtap="bincapadd" >
+  <image class="addlogo" src="http://47.94.16.158:8001/30.png"></image>
+  <view class="tit_wei">
+    <view class="xtx" >{{orderlist.receiver}} {{orderlist.phone}}</view>
+    <!-- <view class="xtx1">{{provinceName}} {{cityName}} {{countyName}} {{detailInfo}}</view> -->
+    <view class="xtx1">{{orderlist.zone}}</view>
+  </view>
+  <image class="addlogos" src="http://47.94.16.158:8001/n5.png"></image>
+</view>
+<view class="backd"></view>
+</block>
+<!-- 送朋友礼品卡展示 -->
+<block wx:if="{{orderlist.orderType==3}}">
+  <view class="contdelit">
+  <view class="title">礼品卡信息</view>
+  <view class="cont" wx:for="{{orderlist.productList}}">
+    <image mode="aspectFill" style="width:220rpx" src="{{item.cartInfo.imgUrl}}"></image>
+    <view class="delit">
+      <view class="listdelit">
+        <view class="shoptitle">{{item.cartInfo.name}}</view>
+          <view class="num">x {{item.cartInfo.cartNum}}</view>
+      </view>
+      <view class="listdelit">
+        <view class="shoptitle">{{orderlist.cardName}}</view>
+      </view>
+      <view class="listdelit">
+        <view></view>
+        <view class="num">¥ {{item.cartInfo.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<!-- 自用展示 -->
+<block wx:if="{{orderlist.orderType==0}}">
+  <view class="contdelit">
+    <view class="title">逆转营信息</view>
+    <view class="cont" wx:for="{{orderlist.productList}}">
+      <image mode="aspectFill" style="width:220rpx" src="{{item.cartInfo.imgUrl}}"></image>
+      <view class="delit">
+        <view class="listdelit">
+          <view class="shoptitle">{{item.cartInfo.name}}</view>
+          <view class="num">x {{item.cartInfo.cartNum}}</view>
+
+          <view class="listdelit">
+            <!-- <view class="shoptitle">礼品卡名称</view> -->
+          </view>
+          <view class="listdelit">
+            <view></view>
+            <view class="num">¥ {{item.cartInfo.price}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+</block>
+<!-- 商品展示 -->
+<block wx:if="{{orderlist.orderType==1}}">
+  <view class="contdelit">
+  <view class="title">盈来健康</view>
+  <view class="cont" wx:for="{{orderlist.productList}}">
+    <image mode="aspectFill" src="{{item.cartInfo.imgUrl}}"></image>
+    <view class="delit" style="width:70%">
+      <view class="listdelit">
+        <view class="shoptitle">{{item.cartInfo.name}}</view>
+        <!-- <view class="num">x 1</view> -->
+      </view>
+      <view class="listdelit">
+        {{item.cartInfo.sku}}
+      </view>
+      <view class="listdelit">
+        <view class="num">¥ {{item.cartInfo.price}}</view>
+         <view class="num">x {{item.cartInfo.cartNum}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<view class="backd"></view>
+<view class="pickercont">
+  <view class="lost_picker">
+    <view class="txt">合计</view>
+    <view class="txt">¥ {{orderlist.totalPrice}}</view>
+  </view>
+  <view class="lost_picker" wx:if="{{orderlist.deductionPrice>0}}">
+    <view class="txt">优惠券</view>
+    <view class="txt">- ¥ {{orderlist.deductionPrice}}</view>
+  </view>
+  <view class="lost_picker" wx:if="{{orderlist.memberPrice>0}}">
+    <view class="txt">VIP专享88折</view>
+    <view class="txt">- ¥ {{orderlist.memberPrice}}</view>
+  </view>
+  <view class="lost_picker" >
+    <view class="txt_s"></view>
+    <view class="txt_s">实付款 <text class="pickers"> ¥ {{orderlist.cost}}</text></view>
+  </view>
+</view>
+<block wx:if="{{orderlist.jhCode}}">
+  <view class="backd"></view>
+<view class="pickercont" >
+
+  <view class="listtxts" bindtap="copy" data-code="{{orderlist.jhCode}}" wx:if="{{orderlist.jhCode}}">激活码：{{orderlist.jhCode}}</view>
+</view>
+</block>
+
+<view class="backd"></view>
+<view class="pickercont">
+  <view class="listtxts">订单编号：{{orderlist.code}}</view>
+  <view class="listtxts">创建时间：{{orderlist.createTime}}</view>
+  <view class="listtxts" wx:if="{{orderlist.tampstap}}">支付时间：{{orderlist.tampstap}}</view>
+  <view class="listtxts" wx:if="{{orderlist.actCode}}">激活码：{{orderlist.jhCode}}</view>
+</view>
+
+<view  style="height:180rpx"></view>
+<view class="botflex">
+  <view class="weactsub" wx:if="{{orderlist.payment==1}}" bindtap="wapyzhi">支付订单</view>
+  <view class="weactsub" wx:if="{{orderlist.payment==5}}" bindtap="zaicinioad">再次购买</view>
+  <view class="pinji" wx:if="{{orderlist.status==2&&orderlist.payment==3}}" data-id="{{item.id}}" bindtap="zaicinioad">我要评价</view>
+  <view class="weactsub" wx:if="{{orderlist.payment==3&&orderlist.status==0}}" data-code="{{orderlist.code}}" bindtap="tabtixin">提醒发货</view>
+  <view class="weactsub" bindtap="wuliu" wx:if="{{(orderlist.status==1||orderlist.status==2||orderlist.status==3)&&orderlist.payment==3}}">查看物流</view>
+  <view class="pinji" bindtap="querenFn" data-code="{{orderlist.code}}" wx:if="{{orderlist.status==1&&orderlist.payment==3}}">确认收货</view>
+  <view class="delesub" wx:if="{{orderlist.payment==1}}" bindtap="deleorder">删除订单</view>
+</view>
+<!-- Yanwfain:
+1待付款 2 付款成功 
+
+ Yanwfain:
+3已使用（已入营）
+
+ Yanwfain:
+4 已发货  只针对赠好友的订单
+
+ Yanwfain:
+5已收货  只针对赠好友的订单 -->

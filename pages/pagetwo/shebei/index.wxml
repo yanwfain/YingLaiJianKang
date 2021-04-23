@@ -1,0 +1,37 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px"></view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/18.png"></image>
+  <view class="title_page">智能设备</view>
+</view>
+
+<view class="content">
+  <!-- 1初始化蓝牙 -->
+
+  <!-- <view class="submit" bindtap="startBlue">搜索附近设备</view> -->
+  <view class="listshe" wx:for="{{indextxt}}">
+    <view class="lics_nt">
+      <image src="{{item.img}}"></image>
+      <view class="rigth_delit">
+        <view class="cont_title">{{item.name}}</view>
+        <view class="cont_delit">{{item.introduction}}</view>
+        <view class="cont_bottomBtn">
+          <block wx:if="{{item.status==0}}">
+            <view class="txt" style="color:#767676">未连接</view>
+            <view class="btnsub" style="background:#29C3C7;"  bindtap="lianjie" data-id="{{item.id}}">去连接</view>
+          </block>
+          <block wx:if="{{item.status==1}}">
+          <view class="txt" style="color:#29C3C7;">已连接</view>
+          <view class="btnsub" style="background:#E8E8E8;color:#767676">已连接</view>
+         </block>
+
+        </view>
+      </view>
+    </view>
+    <view class="hen"></view>
+  </view>
+</view>
+
+<view style="height:120rpx"></view>
+
+<view class="submits" bindtap="bindstopFn">完成</view>

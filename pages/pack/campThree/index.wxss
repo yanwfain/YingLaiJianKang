@@ -1,0 +1,285 @@
+/* pages/campThree/index.wxss */
+.topbank {
+  width: 100%;
+  height: 370rpx;
+  background-size: 100% 100%;
+  /* position: relative;
+  z-index: 1; */
+}
+.topbank image{
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.title_page{
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  left:0;
+  color: white;
+  font-size: 32rpx;
+  text-align: center;
+}
+.tit_tab{
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  top: 160rpx;
+  display:flex;
+  font-size: 36rpx;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+.title{
+  font-size: 32rpx;
+
+}
+.nums{
+  font-size: 38rpx;
+}
+.txt_tit{
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  top: 230rpx;
+  color: white;
+}
+.index_user {
+  width: 86%;
+  margin:0 auto;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  padding:30rpx 20rpx;
+  background: white;
+  box-shadow: 1px 2px 20px #E0E0E0;
+  position: relative;
+  z-index: 2;
+  margin-top: -120rpx;
+}
+
+.user_head {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.user_delit {
+  width: 80%;
+  margin-left: 20rpx;
+}
+
+.User_name {
+  display: flex;
+  align-items: center;
+
+}
+
+.userName {
+  font-size: 34rpx;
+
+
+}
+
+.croeNum {
+  font-size: 26rpx;
+  color: #767676;
+  display: flex;
+  align-items: center;
+  color: #15A7AA;
+  padding:10rpx 0;
+}
+.croeNum image{
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.topTg {
+  padding: 4rpx 20rpx;
+  padding-left: 16rpx;
+  /* italic    */
+  font-style: italic;
+  border-radius: 30rpx;
+  font-weight: 600;
+  color: white;
+  font-size: 20rpx;
+  background: #27C2C6;
+  margin: 0 20rpx
+}
+
+.huizhang {
+  display: flex;
+  align-items: center;
+  background: #F2F2F2;
+  /* padding: 0 6rpx; */
+  padding-right: 8rpx;
+  border-radius: 30rpx;
+}
+
+.txt_typeuser {
+  font-size: 24rpx;
+}
+
+.huizhang image {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.liaolistNum {
+  width: 74rpx;
+  height: 74rpx;
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.liaolistNum image {
+  width: 100%;
+  height: 100%;
+}
+
+.listliaonum {
+  position: absolute;
+  /* padding:4; */
+  border-radius: 100%;
+  background: #FF4C36;
+  color: white;
+  font-size: 20rpx;
+  right: -4px;
+  top: -2px;
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botoms_jifen{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.jifennum{
+  display: flex;
+  align-items: center;
+  color: #767676;
+  font-size:26rpx;
+}
+.jifennum image{
+  width: 38rpx;
+  height: 38rpx;
+}
+.list_btn{
+  padding: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.view_list{
+  width: 21%;
+  margin: 2%;
+  text-align: center;
+}
+.view_list image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.txts{
+  padding: 10rpx 0;
+  font-size: 30rpx;
+}
+.cont_titles{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left_leftiyt{
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.subTimes{
+  padding:14rpx 30rpx;
+  border-radius: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:1px solid #29C3C7;
+  color: #29C3C7;
+}
+.subTimes image{
+  width: 38rpx;
+  height: 38rpx;
+
+}
+.renList{
+  width: 84%;
+  padding: 26rpx 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 2px 20px #E0E0E0;
+  margin:0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  border-radius: 14rpx;
+}
+.videfraw{
+  display: flex;
+  align-items: center;
+}
+.left_img1{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+.tit_rw{
+  font-weight: 600;
+  font-size: 34rpx;
+
+}
+.jifens{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  margin-right: 50rpx;
+  color: #15A7AA;
+}
+.jifens image{
+  width: 28rpx;
+  height: 28rpx;
+  padding-right: 4rpx;
+}
+.jifens view{
+  color: #15A7AA;
+
+}
+.submite_gos{
+  font-size: 32rpx;
+  padding: 14rpx 40rpx;
+  color: white;
+  background-image: linear-gradient(to right, #EE7500, #F5A776);
+  border-radius: 60rpx;
+
+}
+.yiwanc{
+  width: 140rpx;
+  height: 100rpx;
+}
+
+.foedsIndex{
+  position: fixed;
+  left: 0;
+  bottom: 160rpx;
+  z-index: 99;
+  width: 220rpx;
+  height:154rpx;
+}
+.foedsIndex image{
+  width: 100%;
+  height: 100%;
+}

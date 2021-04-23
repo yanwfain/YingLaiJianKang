@@ -1,0 +1,23 @@
+<view class="cont_background">
+  <view class="tit_page">逆转营礼品卡</view>
+  <view class="txt_page">立即激活开启您的逆转之旅</view>
+  <view class="txt_btnwen" bindtap="whyFn">如何找到激活码</view>
+</view>
+<view class="inps">
+  <input type="text" placeholder="请输入激活码" bindinput="code" value="{{code}}" />
+</view>
+<view class="btnsubmit" bindtap="submit">确认激活</view>
+<view class="txt_tishi">每张礼品卡只能激活一次</view>
+<block wx:if="{{isshow}}">
+
+<view class="opct" bindtap="isshowFn"></view>
+<view class="contenr">
+  <image bindtap="isshowFn" class="imgs" src="http://47.94.16.158:8001/28.png"></image>
+  <view class="tit_top">
+    如何找到激活码
+  </view>
+  <view class="txts_delit">
+    文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案
+  </view>
+</view>
+</block>

@@ -1,0 +1,101 @@
+/* pages/yinshirj/index.wxss */
+.tabs{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin:0 auto;
+  margin-top: 20rpx;
+
+}
+.dv{
+  width: 34%;
+  font-size: 34rpx;
+  text-align: center;
+  padding-bottom: 10rpx;
+  border-bottom:8rpx solid white;
+}
+.active{
+  border-bottom:8rpx solid #29C3C7;
+
+}
+.imtwsd{
+  width: 90%;
+  padding: 26rpx 20rpx;
+  margin: 0 auto;
+}
+.list{
+  width: 84%;
+    padding: 26rpx 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 2px 20px #E0E0E0;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    border-radius: 14rpx;
+}
+.lefts{
+  width: 40%;
+
+}
+.imglist{
+  /* width: 60%; */
+  display: flex;
+  align-items: center;
+
+}
+.imglists{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.imglist image{
+  width: 110rpx;
+  height: 110rpx;
+  margin: 0 10rpx;
+  border-radius: 10rpx;
+}
+.jifen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.jifen image {
+  width: 28rpx;
+  height: 28rpx;
+  padding-right: 4rpx;
+}
+.btnjilu{
+  font-size: 32rpx;
+  padding: 14rpx 40rpx;
+  color: white;
+  background-image: linear-gradient(to right, #EE7500, #F5A776);
+  border-radius: 60rpx;
+}
+.tii{
+  font-size: 36rpx;
+  color: #191919;
+}
+.tit{
+  color: #4A4A4A;
+  margin-top: 10rpx;
+}
+.tabtimes{
+  display: flex;
+  align-items: center;
+  width: 94%;
+  margin: 0 auto;
+
+}
+.imgri{
+  width: 44rpx;
+  height: 44rpx;
+}
+.imgjiant{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left:10rpx;
+}

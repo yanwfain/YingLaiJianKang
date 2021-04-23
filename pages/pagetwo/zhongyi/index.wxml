@@ -1,0 +1,161 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">病史信息</view>
+  <view class="tit_tab">
+    <view class="title">中医体质</view>
+    <view class="nums">7/7</view>
+  </view>
+  <view class="txt_tit">根据近一年的体验和感觉回答以下问题</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">您是否比一般人更怕寒冷并容易手脚发凉？</view>
+    <view class="tavb" bindtap="tab1" data-id="1">
+      <checkbox checked="{{tab1==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab1" data-id="2">
+      <checkbox checked="{{tab1==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab1" data-id="3">
+      <checkbox checked="{{tab1==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您是否感到手脚心发热、口干舌燥？</view>
+    <view class="tavb" bindtap="tab2" data-id="1">
+      <checkbox checked="{{tab2==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab2" data-id="2">
+      <checkbox checked="{{tab2==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab2" data-id="3">
+      <checkbox checked="{{tab2==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您是否在活动后容易心慌、气短、出虚汗？</view>
+    <view class="tavb" bindtap="tab3" data-id="1">
+      <checkbox checked="{{tab3==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab3" data-id="2">
+      <checkbox checked="{{tab3==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab3" data-id="3">
+      <checkbox checked="{{tab3==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您是否舌苔白腻、平时痰多？</view>
+    <view class="tavb" bindtap="tab4" data-id="1">
+      <checkbox checked="{{tab4==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab4" data-id="2">
+      <checkbox checked="{{tab4==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab4" data-id="3">
+      <checkbox checked="{{tab4==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您平时痰多，特别是咽喉总感到有痰吗？</view>
+    <view class="tavb" bindtap="tab5" data-id="1">
+      <checkbox checked="{{tab5==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab5" data-id="2">
+      <checkbox checked="{{tab5==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab5" data-id="3">
+      <checkbox checked="{{tab5==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您是否舌苔黄腻、口苦、小便时有发热感、大便粘滞不爽？
+    </view>
+    <view class="tavb" bindtap="tab6" data-id="1">
+      <checkbox checked="{{tab6==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab6" data-id="2">
+      <checkbox checked="{{tab6==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab6" data-id="3">
+      <checkbox checked="{{tab6==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您是否面色晦暗、容易出现瘀斑？
+    </view>
+    <view class="tavb" bindtap="tab7" data-id="1">
+      <checkbox checked="{{tab7==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab7" data-id="2">
+      <checkbox checked="{{tab7==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab7" data-id="3">
+      <checkbox checked="{{tab7==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您是否闷闷不乐、无缘无故叹气？
+    </view>
+    <view class="tavb" bindtap="tab8" data-id="1">
+      <checkbox checked="{{tab8==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab8" data-id="2">
+      <checkbox checked="{{tab8==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab8" data-id="3">
+      <checkbox checked="{{tab8==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您是否容易对药物、食物、气味、花粉过敏？
+    </view>
+    <view class="tavb" bindtap="tab9" data-id="1">
+      <checkbox checked="{{tab9==1?true:false}}"></checkbox>
+      <view class="xstxs">没有</view>
+    </view>
+    <view class="tavb" bindtap="tab9" data-id="2">
+      <checkbox checked="{{tab9==2?true:false}}"></checkbox>
+      <view class="xstxs">有时候</view>
+    </view>
+    <view class="tavb" bindtap="tab9" data-id="3">
+      <checkbox checked="{{tab9==3?true:false}}"></checkbox>
+      <view class="xstxs">总是</view>
+    </view>
+  </view>
+  <view class="list_btn" wx:if="{{!pageid}}">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  <view class="list_btn" wx:if="{{pageid==1}}">
+    <view class="tabBtn2" bindtap="submiiti">提交</view>
+  </view>
+  <view style="height:100px"></view>
+</view>

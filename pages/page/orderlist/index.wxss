@@ -1,0 +1,154 @@
+/* pages/orderlist/index.wxss */
+page{
+  background: #F6F6F6;
+}
+.listTab{
+  padding: 20rpx;
+  display: flex;
+  background: white;
+}
+.listv{
+  padding: 14rpx;
+  border-bottom:4px solid white;
+  font-size:34rpx;
+  margin: 12rpx;
+  background: white;
+
+}
+.active{
+  color: #15A7AA;
+  border-bottom:4px solid #15A7AA;
+
+}
+.listnull{
+  text-align: center;
+  padding-top: 220rpx;
+
+}
+
+.usernull{
+  width: 180rpx;
+  height: 180rpx;
+}
+.null_txt{
+  color: #BBBBBB;
+  font-size:34rpx;
+}
+.list_cont{
+  padding: 30rpx 0;
+  background: white;
+  margin-top: 20rpx;
+}
+.top_title{
+  padding:0 30rpx;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.tit_name{
+  font-size: 30rpx;
+  color: #4A4A4A;
+}
+.status{
+  color: #15A7AA;
+  font-size: 30rpx;
+}
+.cont{
+  padding:10rpx 30rpx;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shopimg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+
+}
+.shop{
+  width: 70%;
+
+}
+.shop_names{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.title_shopname{
+  font-size: 30rpx;
+  font-weight: 600;
+
+}
+.allpicker{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 28rpx;
+  padding-top: 10rpx;
+
+}
+.allpicker .pickerNums{
+  font-size: 34rpx;
+  color:red
+}
+.picker{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10rpx;
+}
+.pickerNums{
+  font-size: 28rpx;
+  color: #4A4A4A;
+}
+.goubtn{
+  margin:0 30rpx;
+  padding: 2rpx 0;
+  font-size: 26rpx;
+  color: #EE7500;
+  width: 330rpx;
+  text-align: center;
+  background: #FFF6F0;
+  border-radius: 6rpx;
+  margin-top: 20rpx;
+}
+.btnsubmit{
+  padding: 20rpx;
+  border-top: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+.btnsubmit view{
+  width: 30%;
+  text-align: center;
+  margin: 1%;
+  border-radius: 60rpx;
+  padding: 10rpx 0;
+}
+
+.dele{
+  font-size: 32rpx;
+  color: #15A7AA;
+  border:1px solid #29C3C7;
+
+}
+.submit{
+  font-size: 32rpx;
+  color: #FFFFFF;
+  background: #29C3C7;
+  border:1px solid #29C3C7;
+}
+.leigms{
+  padding: 20rpx;
+  text-align: center;
+  color: #BBBBBB;
+}
+.pinji{
+  font-size: 32rpx;
+  color: #FFFFFF;
+  background: #EE7500;
+  border:1px solid #EE7500;
+}

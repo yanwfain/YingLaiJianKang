@@ -1,0 +1,39 @@
+<view class="right_top">
+	<image src="http://47.94.16.158:8001/195.png"></image>
+	<input class="inp_top" placeholder="搜索" bindconfirm="bindconfirm" confirm-type='search' type="text" />
+</view>
+<view class="content">
+  <view class="tab">
+    <view class="tab-view {{tabid==item.id?'active':''}}" wx:for="{{list}}"  data-id="{{item.id}}" bindtap="tabFn">
+      <view class="leftis" wx:if="{{tabid==item.id}}"></view>
+      {{item.cateName}}
+    </view>
+    <!-- <view class="tab-view {{tabid=='id2'?'active':''}}" data-id="id2" bindtap="tabFn">
+      <view class="leftis" wx:if="{{tabid=='id2'}}"></view>
+      分类11
+    </view>
+    <view class="tab-view {{tabid=='id3'?'active':''}}" data-id="id3" bindtap="tabFn">
+      <view class="leftis" wx:if="{{tabid=='id3'}}"></view>
+      分类22
+    </view>
+    <view class="tab-view {{tabid=='id4'?'active':''}}" data-id="id4" bindtap="tabFn">
+      <view class="leftis" wx:if="{{tabid=='id4'}}"></view>
+      商品分类
+    </view> -->
+  </view>
+  <scroll-view class="scrolls" style="height:1200rpx" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation="true">
+    <view class="con1" >
+      <!-- <view class="fenlei">分类</view> -->
+      <view class="listshop">
+        <view class="shop" wx:for="{{movieList}}" bindtap="shopdelit" data-id="{{item.id}}">
+          <image  mode="aspectFill" src="{{item.imgUrl}}"></image>
+          <view class="tit_name">{{item.name}}</view>
+          <view class="piclers">￥{{item.price}}</view>
+        </view>
+      </view>
+      <view style="padding:20rpx;text-align:center;color:gray;font-size:32rpx">没有更多数据了</view>
+    </view>
+
+    <view style="height:150rpx;"></view>
+  </scroll-view>
+</view>

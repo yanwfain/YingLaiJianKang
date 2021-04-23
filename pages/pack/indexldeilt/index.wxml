@@ -1,0 +1,112 @@
+<view class="tab_Top">
+  <view wx:for="{{indexpage}}" class="tab_view {{clid==item.id?'active':''}}" data-id="{{item.id}}" bindtap="clockTba">{{item.name}}</view>
+  <!-- <view class="tab_view {{clid==2?'active':''}}" data-id="2" bindtap="clockTba">逆转原理</view>
+  <view class="tab_view {{clid==3?'active':''}}" data-id="3" bindtap="clockTba">成功案例</view>
+  <view class="tab_view {{clid==4?'active':''}}" data-id="4" bindtap="clockTba">专家团队</view> -->
+</view>
+<view class="banner">
+  <swiper indicator-dots autoplay="true" indicator-color="gray" indicator-active-color="#29C3C7" interval="3000"
+    duration="1000" circular='true' bindchange="bindchange">
+    <block wx:for='{{pagedelit.shufflingImg}}'>
+      <swiper-item>
+        <image src="{{item}}" mode="aspectFill"  class="slide-image" bindtap="urlFn" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="title">
+ {{pagedelit.title}}
+</view>
+<view class="user">
+  <image src="{{pagedelit.authorHeadImg}}"></image>
+  <view class="name">{{pagedelit.authorName}}</view>
+</view>
+<view class="timesfa">发布于{{pagedelit.addTime}}</view>
+<view class="grat_txt"><rich-text nodes="{{pagedelit.introduction}}"></rich-text> </view>
+<view class="txtwhite">
+  <!-- 正文样式：你已经在控制饮食了，也做了运动，但是，血糖忽高忽低，很揪心？
+  你明明按照医生的处方，<text style="color:#15A7AA">在吃降糖药</text> ，甚至打胰岛素，血糖却一直降不下来？
+  你的<text style="color:#15A7AA">糖化血红蛋白</text>结果看上去还不错，却依然出现了并发症痕迹？
+  你多么希望，有一天，自己终于成功摆脱掉“糖尿病”。<text class="txtsurl" bindtap="copyBtn" data-url="1234">参考链接①</text>  -->
+  <rich-text nodes="{{pagedelit.content}}"></rich-text>
+</view>
+<!-- <view class="contzhongdian">
+  <view class="cont_pared">
+    <image src="http://47.94.16.158:8001/44.png"></image>
+    <view class="contzhontit">重点内容标题</view>
+  </view>
+  当初，被医生诊断血糖异常时，你简直不敢相信这种事情发生在自己身上。因为害怕血糖升高，你经常遇到饮食问题：这个可以吃吗？能吃多少？那个能不能吃？
+</view>
+<view class="contcentimg">
+  <image src=""></image>
+</view>
+<view class="cont-1">
+  <view class="tiles_cont1">这里是大标题一</view>
+
+  <view class="list_txts">
+    <view class="cont_tit1">
+      <view class="btnonde">1</view>
+      <view class="titl_cont1title">段落标题（字号18）</view>
+    </view>
+    <view class="cont_1ttx">当初，被医生诊断血糖异常时，你简直不敢相信这种事情发生在自己身上。</view>
+  </view>
+  <view class="list_txts">
+    <view class="cont_tit1">
+      <view class="btnonde">1</view>
+      <view class="titl_cont1title">段落标题（字号18）</view>
+    </view>
+    <view class="cont_1ttx">当初，被医生诊断血糖异常时，你简直不敢相信这种事情发生在自己身上。</view>
+  </view>
+  <view class="list_txts">
+    <view class="cont_tit1">
+      <view class="btnonde">1</view>
+      <view class="titl_cont1title">段落标题（字号18）</view>
+    </view>
+    <view class="cont_1ttx">当初，被医生诊断血糖异常时，你简直不敢相信这种事情发生在自己身上。</view>
+  </view>
+</view>
+<view class="videos">
+  <video src="http://1302411781.vod2.myqcloud.com/fde45c26vodtranscq1302411781/f50eaae65285890804834321821/v.f100030.mp4"></video>
+</view>
+<view class="tit-botoms">
+  <image src="http://47.94.16.158:8001/45.png"></image>
+  <view class="tit_bottxt">特殊标题样式</view>
+  <image src="http://47.94.16.158:8001/45.png"></image>
+</view>
+<view class="txt_bot">
+  <text>
+    正文样式：你已经在控制饮食了，也做了运动，但是，血糖忽高忽低，很揪心？
+
+你明明按照医生的处方，<text style="color:#15A7AA">在吃降糖药</text>，甚至打胰岛素，血糖却一直降不下来？
+
+你的<text style="color:#15A7AA">糖化血红蛋白</text>结果看上去还不错，却依然出现了并发症痕迹？
+
+你多么希望，有一天，自己终于成功摆脱掉“糖尿病”。
+  </text>
+</view>
+<view class="txt_bot">
+  <text>
+    <text style="color:#15A7AA"> ①正文小标题：</text> 你已经在控制饮食了，也做了运动，但是，血糖忽高忽低，很揪心？
+
+    <text style="color:#15A7AA"> ①正文小标题：</text> 你已经在控制饮食了，也做了运动，但是，血糖忽高忽低，很揪心？
+
+    <text style="color:#15A7AA"> ①正文小标题：</text> 你已经在控制饮食了，也做了运动，但是，血糖忽高忽低，很揪心？
+  </text>
+</view> -->
+<view class="grat_txt">
+  <view class="geraybottxt">参考链接：</view>
+  <view class="txx" bindtap="copyBtn1" wx:for="{{pagedelit.referenceAddress}}" data-url="{{item}}">{{item}}</view>
+
+</view>
+<view style="height:150px"></view>
+<view class="botpoflexd">
+  <view class="contvie1">
+    <image src="http://47.94.16.158:8001/46.png"></image>
+    <view class="botfextxt">咨询</view>
+  </view>
+  <view class="contvie1">
+    <image src="http://47.94.16.158:8001/47.png"></image>
+    <view class="botfextxt">分享</view>
+  </view>
+  <view class="btnsubmit" bindtap="btnsubmit">立即加入</view>
+</view>

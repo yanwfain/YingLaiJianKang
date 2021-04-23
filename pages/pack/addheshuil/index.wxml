@@ -1,0 +1,9 @@
+<view class="title">
+  您今天喝了多少水
+</view>
+<view class="inob">
+  <input type="number" bindinput="value" value="{{value}}" placeholder="" />ml
+</view>
+<view class="baosuncs" bindtap="submitms">
+  保存
+</view>

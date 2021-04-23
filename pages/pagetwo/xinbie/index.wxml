@@ -1,0 +1,18 @@
+<view class="title">您的性别 ：
+  <block wx:if="{{tsxid==1}}">男</block>
+  <block wx:if="{{tsxid==2}}">女</block>
+</view>
+<view class="imgxinbie">
+  <view class="img1" data-id="1" bindtap="binclick">
+    <view wx:if="{{tsxid==2}}" class="active"></view>
+
+    <image style="height:390px" src="http://47.94.16.158:8001/33.png"></image>
+    <view class="xtx">男</view>
+  </view>
+  <view class="img1" data-id="2" bindtap="binclick">
+    <view wx:if="{{tsxid==1}}" class="active"></view>
+    <image style="height:390px" src="http://47.94.16.158:8001/34.png"></image>
+    <view class="xtx">女</view>
+  </view>
+</view>
+<view class="submits" bindtap="submitens">下一步</view>

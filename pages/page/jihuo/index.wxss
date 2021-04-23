@@ -1,0 +1,29 @@
+/* pages/jihuo/index.wxss */
+.content{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 200rpx;
+  text-align: center;
+}
+.content image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.titles{
+  font-size:38rpx;
+  margin:30rpx 0;
+}
+.tit{
+  font-size: 32rpx;
+  color: #4A4A4A;
+}
+.submit{
+  font-size:34rpx;
+  color: white;
+  width: 100%;
+  margin-top: 200rpx;
+  background:#29C3C7;
+  text-align: center;
+  border-radius: 56rpx;
+  line-height: 98rpx;
+}

@@ -1,0 +1,7 @@
+
+<view class="content">
+  <image src="http://47.94.16.158:8001/29.png"></image>
+  <view class="titles">您的礼品卡已激活</view>
+  <view class="tit">现在您可以开始启动入营流程了！</view>
+  <view class="submit" bindtap="lookFn">查看入营流程</view>
+</view>

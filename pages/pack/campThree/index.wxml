@@ -1,0 +1,191 @@
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/75.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px"></view>
+  <view class="tit_tab">
+    <view class="title">下午好，您已入营{{userList.dayNum}}天啦！</view>
+    <view class="nums"></view>
+  </view>
+</view>
+<view class="index_user">
+  <image class="user_head"
+    src="{{userList.headImg}}">
+  </image>
+  <view class="user_delit">
+    <view class="User_name">
+      <view class="userName">{{userList.userName}}</view>
+      <view class="topTg">Lv{{userList.userLevel?userList.userLevel:''}} </view>
+      <view class="huizhang" bindtap="huizhang">
+        <image src="http://47.94.16.158:8001/n9.png"></image>
+        <view class="txt_typeuser"> <text style="font-style:oblique ;  font-weight: 600;">{{userList.badgeNum?userList.badgeNum:'0'}}</text> 枚徽章</view>
+      </view>
+    </view>
+    <view class="botoms_jifen">
+      <view class="croeNum">我的积分 <image src="http://47.94.16.158:8001/n1.png"></image> {{userList.totalScore?userList.totalScore:'0'}}</view>
+      <view class="jifennum" bindtap="jifenmx">积分明细 <image src="http://47.94.16.158:8001/n5.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="list_btn">
+  <view class="view_list" bindtap="clickFns" data-id="1">
+    <image src="http://47.94.16.158:8001/76.png"></image>
+    <view class="txts">饮食日记</view>
+  </view>
+  <view class="view_list" bindtap="clickFns" data-id="2">
+    <image src="http://47.94.16.158:8001/77.png"></image>
+    <view class="txts">今日运动</view>
+  </view>
+  <view class="view_list" bindtap="clickFns" data-id="3">
+    <image src="http://47.94.16.158:8001/78.png"></image>
+    <view class="txts">用药记录</view>
+  </view>
+  <view class="view_list" bindtap="clickFns" data-id="4">
+    <image src="http://47.94.16.158:8001/79.png"></image>
+    <view class="txts">专家讲堂</view>
+  </view>
+  <view class="view_list" bindtap="clickFns" data-id="5">
+    <image src="http://47.94.16.158:8001/80.png"></image>
+    <view class="txts">心理疗愈</view>
+  </view>
+  <view class="view_list" bindtap="clickFns" data-id="6">
+    <image src="http://47.94.16.158:8001/81.png"></image>
+    <view class="txts">对比照片</view>
+  </view>
+  <view class="view_list" bindtap="clickFns" data-id="7">
+    <image src="http://47.94.16.158:8001/82.png"></image>
+    <view class="txts">化验报告</view>
+  </view>
+  <view class="view_list" bindtap="clickFns" data-id="8">
+    <image src="http://47.94.16.158:8001/83.png"></image>
+    <view class="txts">检查报告</view>
+  </view>
+</view>
+<view class="cont_titles">
+  <view class="left_leftiyt" >数据任务</view>
+  <view class="subTimes" bindtap="shujutimeFn">
+    <image src="http://47.94.16.158:8001/84.png"></image>测量提醒
+  </view>
+</view>
+<block wx:for="{{listdaywu}}" wx:if="{{index<=5}}">
+  <view class="renList" wx:if="{{item.status==0}}">
+    <view class="videfraw">
+      <image class="left_img1" src="{{item.img}}"></image>
+      <view class="tit_rw">{{item.type}}</view>
+    </view>
+    <view class="videfraw">
+      <view class="jifens">
+        <image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}
+      </view>
+      <view class="submite_gos" bindtap="xieqgoFn" data-id="{{item.id}}">去完成</view>
+    </view>
+  </view>
+</block>
+<block wx:for="{{listdaywu}}" wx:if="{{index<=5}}">
+  <view class="renList" wx:if="{{item.status>0}}">
+    <view class="videfraw">
+      <image class="left_img1" src="{{item.img}}"></image>
+      <view class="tit_rw">{{item.type}}</view>
+    </view>
+    <view class="videfraw">
+      <image class="yiwanc" src="http://47.94.16.158:8001/85.png"></image>
+    </view>
+  </view>
+</block>
+<!-- <view class="renList">
+  <view class="videfraw">
+    <image class="left_img1" src="http://47.94.16.158:8001/69.png"></image>
+    <view class="tit_rw">血糖</view>
+  </view>
+  <view class="videfraw">
+    <view class="jifens">
+      <image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+    </view>
+    <view class="submite_gos" bindtap="xieqgoFn" data-id="1">去完成</view>
+  </view>
+</view>
+<view class="renList">
+  <view class="videfraw">
+    <image class="left_img1" src="http://47.94.16.158:8001/70.png"></image>
+    <view class="tit_rw">血酮</view>
+  </view>
+  <view class="videfraw">
+    <view class="jifens">
+      <image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+    </view>
+    <view class="submite_gos" bindtap="xieqgoFn" data-id="2">去完成</view>
+  </view>
+</view>
+<view class="renList">
+  <view class="videfraw">
+    <image class="left_img1" src="http://47.94.16.158:8001/71.png"></image>
+    <view class="tit_rw">血压</view>
+  </view>
+  <view class="videfraw">
+    <view class="jifens">
+      <image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+    </view>
+    <view class="submite_gos" bindtap="goFnxie">去完成</view>
+  </view>
+</view>
+<view class="renList">
+  <view class="videfraw">
+    <image class="left_img1" src="http://47.94.16.158:8001/72.png"></image>
+    <view class="tit_rw">体重</view>
+  </view>
+  <view class="videfraw">
+    <view class="jifens">
+      <image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+    </view>
+    <view class="submite_gos" bindtap="qutizhangFn">去完成</view>
+  </view>
+</view>
+<view class="renList">
+  <view class="videfraw">
+    <image class="left_img1" src="http://47.94.16.158:8001/73.png"></image>
+    <view class="tit_rw">腹围</view>
+  </view>
+  <view class="videfraw">
+    <view class="jifens">
+      <image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+    </view>
+    <view class="submite_gos" bindtap="quwanchfu">去完成</view>
+  </view>
+</view>
+<view class="renList">
+  <view class="videfraw">
+    <image class="left_img1" src="http://47.94.16.158:8001/74.png"></image>
+    <view class="tit_rw">感受</view>
+  </view>
+  <view class="videfraw">
+    <view class="jifens">
+      <image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+    </view>
+    <view class="submite_gos" bindtap="subGoganshou">去完成</view>
+  </view> -->
+  <!-- 已完成图片 -->
+  <!-- <image class="yiwanc" src="http://47.94.16.158:8001/85.png"></image> --> 
+<!-- </view> -->
+<view style="height:200rpx"></view>
+<view class="foedsIndex" bindtap="foedsIndex"> <image src="http://47.94.16.158:8001/86.png"></image></view>
+<view class="bottomsFed">
+  <view class="vies" bindtap="nizhuan">
+    <image src="http://47.94.16.158:8001/142.png"></image>
+    <view class="txts_tab" style="color:#29C3C7;">逆转营</view>
+  </view>
+  <view class="vies" bindtap="zaixianFn">
+    <image src="http://47.94.16.158:8001/90.png"></image>
+    <view class="txts_tab" >在线咨询</view>
+  </view>
+  <view class="vies" bindtap="jialilist">
+    <image class="imgstops" src="http://47.94.16.158:8001/91.png"></image>
+    <view class="txts_tab" ></view>
+  </view>
+  <view class="vies" bindtap="memysql">
+    <image src="http://47.94.16.158:8001/93.png"></image>
+    <view class="txts_tab" >我的数据</view>
+  </view>
+  <view class="vies" bindtap="jiakang">
+    <image src="http://47.94.16.158:8001/95.png"></image>
+    <view class="txts_tab" >健康档案</view>
+  </view>
+</view>

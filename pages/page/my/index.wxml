@@ -1,0 +1,193 @@
+<view class="topbank">
+	<image src="http://47.94.16.158:8001/163.png"></image>
+</view>
+<view class="userdelit">
+	<view class="btnerro" wx:if="{{userList.isMember=='N'}}" >升级VIP</view>
+	<image class="vipimg" wx:if="{{userList.isMember=='Y'}}" src="http://47.94.16.158:8001/164.png"></image>
+	<image class="user_img" src="{{userList.headImg}}"></image>
+	<view class="user_name">
+	
+		<view class="cont_txt">
+			<view class="name">{{userList.userName}}</view>
+			<view class="topTg">L v {{userList.userLevel}}</view>
+		</view>
+		<view class="uset_botms">
+			<view class="huizhang" bindtap="huizhangFn">
+				<image src="http://47.94.16.158:8001/n9.png"></image>
+				<view class="txt_typeuser">
+					<text style="font-style:oblique ;  font-weight: 600;">{{userList.badgeNum}}</text> 枚徽章
+				</view>
+			</view>
+			<view></view>
+		</view>
+	</view>
+</view>
+<view class="cont_portnum">
+	<view class="cont_topli">
+		<block wx:if="{{userList.status>0&&userList.status!=6}}">
+			<view class="txt" >您已经入营 <text wx:if="{{userList.status==5}}">{{userList.dayNum}}天了！</text></view>
+			<view class="btnsub" wx:if="{{userList.status==5}}" bindtap="zuorenwu">做任务赢积分</view>	
+			<view wx:if="{{userList.status!=5}}"></view>
+		</block>
+		<block wx:if="{{userList.status==6}}">
+			<view class="txt" >明天正式进入逆转营 </view>
+			<view ></view>	
+		</block>
+		<block wx:if="{{userList.status==0||!userList.status}}">
+			<view class="txt">90天科学精准逆转糖尿病</view>
+				<view class="btnsubs" bindtap="jiaruNzhuan">立即加入</view>	
+		</block>
+		<!-- <block>
+			<view class="txt">您的逆转营还剩3天结束！</view>
+			<view class="btnsubs">立即续费</view>
+		</block>
+		<block>
+			<view class="txt">您的逆转营已经结束</view>
+			<view class="btnsubs">立即续费</view>
+		</block>
+	 -->
+	
+
+	</view>
+	<view class="cont_lsits">
+		<view class="list_li" bindtap="scorljiFn">
+			<view class="nums">{{userList.totalScore}}</view>
+			<view class="txtsf">积分</view>
+		</view>
+		<view class="list_li" bindtap="shoucangFn">
+			<view class="nums">{{userList.collectNum}}</view>
+			<view class="txtsf">收藏</view>
+		</view>
+		<view class="list_li" bindtap="youhui">
+			<view class="nums">{{userList.couponNum}}</view>
+			<view class="txtsf">优惠券</view>
+		</view>
+		<view class="list_li" bindtap="dongtai">
+			<view class="nums">{{userList.dynamicNum}}</view>
+			<view class="txtsf">动态</view>
+		</view>
+	</view>
+	
+</view>
+<view class="title_tit">健康管理</view>
+<view class="listGaun">
+	<view class="lostview">
+		<image src="http://47.94.16.158:8001/165.png"></image>
+		<view class="txt_Guan">我的医师</view>
+	</view>
+	<view class="lostview">
+		<image src="http://47.94.16.158:8001/166.png"></image>
+		<view class="txt_Guan">我的营养师</view>
+	</view>
+	<view class="lostview">
+		<image src="http://47.94.16.158:8001/167.png"></image>
+		<view class="txt_Guan">我的数据</view>
+	</view>
+	<view class="lostview">
+		<image src="http://47.94.16.158:8001/168.png"></image>
+		<view class="txt_Guan">健康档案</view>
+	</view>
+</view>
+<view class="bgck"></view>
+<view class="title_tit">
+	<view class="tit_l">我的订单</view>
+	<view class="alloko" bindtap="lookalldelit" data-id="">查看全部 <image src="http://47.94.16.158:8001/169.png"></image></view>
+	</view>
+<view class="listGaun">
+	<view class="lostview" bindtap="lookalldelit" data-id="1">
+		<view class="trioid" wx:if="{{userList.nonPayment&&userList.nonPayment>0}}">{{userList.nonPayment}}</view>
+		<image src="http://47.94.16.158:8001/170.png"></image>
+		<view class="txt_Guan">未支付</view>
+	</view>
+	<view class="lostview" bindtap="lookalldelit" data-id="2">
+		<view class="trioid" wx:if="{{userList.sendGoods&&userList.sendGoods>0}}">{{userList.sendGoods}}</view>
+
+		<image src="http://47.94.16.158:8001/171.png"></image>
+		<view class="txt_Guan">待发货</view>
+	</view>
+	<view class="lostview" bindtap="lookalldelit" data-id="3">
+		<view class="trioid" wx:if="{{userList.waitGoods&&userList.waitGoods>0}}">{{userList.waitGoods}}</view>
+
+		<image src="http://47.94.16.158:8001/172.png" ></image>
+		<view class="txt_Guan">待收货</view>
+	</view>
+	<view class="lostview" bindtap="lookalldelit" data-id="4">
+		<image src="http://47.94.16.158:8001/173.png" data-tid="4"></image>
+		<view class="txt_Guan">已完成</view>
+	</view>
+</view>
+<view class="bgck"></view>
+<view class="listbtn">
+	<image class="leftimg" src="http://47.94.16.158:8001/174.png"></image>
+	<view class="lits_btns">
+		<view class="text_btns">个人信息</view>
+		<image src="http://47.94.16.158:8001/169.png"></image>
+	</view> 
+</view>
+<view class="listbtn" bindtap="addressMe">
+	<image class="leftimg" src="http://47.94.16.158:8001/175.png"></image>
+	<view class="lits_btns">
+		<view class="text_btns">收货地址</view>
+		<image src="http://47.94.16.158:8001/169.png"></image>
+	</view> 
+</view>
+<view class="listbtn" bindtap="">
+	<image class="leftimg" src="http://47.94.16.158:8001/176.png"></image>
+	<view class="lits_btns">
+		<view class="text_btns">推荐有礼</view>
+		<image src="http://47.94.16.158:8001/169.png"></image>
+	</view> 
+</view>
+<view class="listbtn">
+	<image class="leftimg" src="http://47.94.16.158:8001/177.png"></image>
+	<view class="lits_btns" bindtap="xiaoximessg">
+		<view class="text_btns">消息中心</view>
+		<image src="http://47.94.16.158:8001/169.png"></image>
+	</view> 
+</view>
+<view class="listbtn">
+	<image class="leftimg" src="http://47.94.16.158:8001/178.png"></image>
+	<view class="lits_btns">
+		<view class="text_btns">我的客服</view>
+		<image src="http://47.94.16.158:8001/169.png"></image>
+	</view> 
+</view>
+<view class="listbtn">
+	<image class="leftimg" src="http://47.94.16.158:8001/179.png"></image>
+	<view class="lits_btns">
+		<view class="text_btns">帮助与反馈</view>
+		<image src="http://47.94.16.158:8001/169.png"></image>
+	</view> 
+</view>
+<view class="bgck"></view>
+<view class="tuidele">
+	退出登录
+</view>
+<view class="bgck"></view>
+<view style="height:120px"></view>
+<view class="Btabview">
+	<view class="Btabs" bindtap="indexFn">
+		<image src="http://47.94.16.158:8001/tab2_2.png"></image>
+		<view class="Btab_txt">首页</view>
+	</view>
+	<view class="Btabs" bindtap="collegeFn">
+		<image src="http://47.94.16.158:8001/tab1.png"></image>
+		<view class="Btab_txt">糖学院</view>
+	</view>
+	<view class="Btabs" bindtap="campFn">
+		<image style="width:76px;height:76px;position: absolute;left:4px;top:-30px;" src="http://47.94.16.158:8001/tab4.png"></image>
+		<image></image>
+		<view class="Btab_txt">逆转营</view>
+	</view>
+	<view class="Btabs" bindtap="shoppingFn">
+		<image src="http://47.94.16.158:8001/tab5.png"></image>
+		<view class="Btab_txt">商城</view>
+	</view>
+	<view class="Btabs" bindtap="myFn">
+		<image src="http://47.94.16.158:8001/tab3_3.png"></image>
+		<view class="Btab_txt" style="color:#29C3C7">我的</view>
+	</view>
+</view>
+<view class="logoKefu">
+	<image src="http://47.94.16.158:8001/n8.png"></image>
+</view>

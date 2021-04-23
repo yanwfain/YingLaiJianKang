@@ -1,0 +1,79 @@
+
+
+<!--pages/zaixianzixun/index.wxml-->
+<!-- <view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view> -->
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/141.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">逆转营</view>
+  <view class="tit_tab">
+    <view class="title">我的数据</view>
+    <view class="nums"></view>
+  </view>
+</view>
+<view class="foedsIndex" bindtap="foedsIndex"> <image src="http://47.94.16.158:8001/86.png"></image></view>
+<view class="bottomsFed" bindtap="nizhuany">
+  <view class="vies" bindtap="nizhuan">
+    <image src="http://47.94.16.158:8001/142.png"></image>
+    <view class="txts_tab" >逆转营</view>
+  </view>
+  <view class="vies" bindtap="zaixianFn">
+    <image src="http://47.94.16.158:8001/90.png"></image>
+    <view class="txts_tab" >在线咨询</view>
+  </view>
+  <view class="vies" bindtap="jialilist">
+    <image class="imgstops" src="http://47.94.16.158:8001/91.png"></image>
+    <view class="txts_tab" ></view>
+  </view>
+  <view class="vies" bindtap="memysql">
+    <image src="http://47.94.16.158:8001/140.png"></image>
+    <view class="txts_tab" style="color:#29C3C7;">我的数据</view>
+  </view>
+  <view class="vies" bindtap="jiakang">
+    <image src="http://47.94.16.158:8001/95.png"></image>
+    <view class="txts_tab" >健康档案</view>
+  </view>
+</view>
+
+<view class="conttair">
+  <view class="list_tab">
+    <view class="list" bindtap="glucoseFn">
+      <image src="http://47.94.16.158:8001/131.png"></image>
+      <view class="tit">血糖数据</view>
+    </view>
+    <view class="list" bindtap="ketone">
+      <image src="http://47.94.16.158:8001/132.png"></image>
+      <view class="tit">血酮数据</view>
+    </view>
+    <view class="list" bindtap="weight">
+      <image src="http://47.94.16.158:8001/133.png"></image>
+      <view class="tit">体重数据</view>
+    </view>
+    <view class="list" bindtap="circumference">
+      <image src="http://47.94.16.158:8001/134.png"></image>
+      <view class="tit">腹围数据</view>
+    </view>
+    <view class="list" bindtap="pressure">
+      <image src="http://47.94.16.158:8001/135.png"></image>
+      <view class="tit">血压数据</view>
+    </view>
+    <view class="list" bindtap="feel">
+      <image src="http://47.94.16.158:8001/136.png"></image>
+      <view class="tit">感受数据</view>
+    </view>
+    <view class="list" bindtap="redprotein">
+      <image src="http://47.94.16.158:8001/137.png"></image>
+      <view class="tit">糖化血红蛋白</view>
+    </view>
+    <view class="list" bindtap="protein">
+      <image src="http://47.94.16.158:8001/138.png"></image>
+      <view class="tit">糖化血清蛋白</view>
+    </view>
+    <view class="list" bindtap="whiteprotein">
+      <image src="http://47.94.16.158:8001/139.png"></image>
+      <view class="tit">糖化白蛋白</view>
+    </view>
+  </view>
+</view>
+<view style="height:200rpx"></view>

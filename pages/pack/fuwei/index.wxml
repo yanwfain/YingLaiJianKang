@@ -1,0 +1,53 @@
+<view class="title">您的腹围 <block wx:if="{{weight}}"></block> {{weight}}cm  <image bindtap="sishow" src="http://47.94.16.158:8001/41.png"></image></view>
+<view class="submits" bindtap="submitens">保存</view>
+<view class='scale-title'>滑动标尺选择腹围</view>
+<!--pages/index/index.wxml-->
+<view style="text-align:center;">
+  <image style="width:300rpx;height:246px" wx:if="{{xid==1}}" src="http://47.94.16.158:8001/39.png"></image>
+  <image style="width:300rpx;height:246px" wx:if="{{xid==2}}" src="http://47.94.16.158:8001/40.png"></image>
+</view>
+
+<view class='containers'>
+  <!-- <view class='scale-title'>滑动标尺选择身高</view> -->
+  <view class='scale-value'>{{weight}}cm</view> 
+  <scale min="20" 
+    max="200" 
+    int="{{false}}" 
+    single="10" 
+    h="60" 
+    active="{{weight}}" 
+    styles="{{styles}}" 
+    id="weight"
+    bindvalue="bindvalue"></scale>
+  
+  <!-- <view class='scale-title'>你的身高</view>
+  <view class='scale-container'>
+    <view class='scale-value'>{{height}}cm</view> 
+    <view class='scale-view'>
+      <scale min="80" 
+        max="230" 
+        int="{{false}}"
+        single="10" 
+        h="40" 
+        active="{{height}}" 
+        styles="{{styles}}" 
+        direction="vertical"
+        id="height"
+        bindvalue="bindvalue"></scale>
+    </view>
+  </view> -->
+</view>
+<view style="height:100px"></view>
+<block wx:if="{{isshows}}">
+  <view class="opsitcv" bindtap="isshowfas" ></view>
+<view class="contshow">
+  <image class="chasx" bindtap="isshowfas" src="http://47.94.16.158:8001/43.png"></image>
+  <view class="cont_titles">腹围 (腰节围) 测量方法</view>
+  <view class="txts_conts">每天早上同一时间（排便后），身体轻松站立，肩自然放松，手臂自然贴着身体。
+在腋中线上，髂嵴上缘和肋骨下缘之间的中点，拿有刻度的软皮尺，水平绕两侧腰节点围成一周，测得的数值即为我们所需的数值。</view>
+<view class="imagsst"> <image src="http://47.94.16.158:8001/42.png"></image></view>
+<view class="mezhi" bindtap="isshowfas">我知道了</view>
+<view style="height:100rpx"></view>
+</view>
+
+</block>

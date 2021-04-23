@@ -1,0 +1,63 @@
+<!-- 
+<view class="backd"></view>
+<view class="adress1" bindtap="bincapadd" wx:if="{{!userName}}">
+  <image class="addlogo" src="http://47.94.16.158:8001/30.png"></image>
+  <view class="tit_wei">请填写礼品卡收货地址</view>
+  <image class="addlogos" src="http://47.94.16.158:8001/n5.png"></image>
+</view>
+<view class="adress1" bindtap="bincapadd" wx:if="{{userName}}">
+  <image class="addlogo" src="http://47.94.16.158:8001/30.png"></image>
+  <view class="tit_wei">
+    <view class="xtx" >{{userName}} {{telNumber}}</view>
+    <view class="xtx1">{{provinceName}} {{cityName}} {{countyName}} {{detailInfo}}</view>
+  </view>
+  <image class="addlogos" src="http://47.94.16.158:8001/n5.png"></image>
+</view> -->
+<view class="backd"></view>
+<view class="contdelit">
+  <view class="title">逆转营信息</view>
+  <view class="cont" wx:for="{{pagedelit}}">
+    <image src="{{item.image}}"></image>
+    <view class="delit">
+      <view class="listdelit">
+        <view class="shoptitle">{{item.name}}</view>
+        <view class="num">x {{item.cartNum}}</view>
+      </view>
+      <view class="listdelit">
+        <!-- <view class="shoptitle">礼品卡名称</view> -->
+      </view>
+      <view class="listdelit">
+        <view></view>
+        <view class="num">¥ {{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="titles">购买后可直接启动入营流程</view>
+
+</view>
+<view class="backd"></view>
+<view class="pickercont">
+  <view class="lost_picker">
+    <view class="txt">合计</view>
+    <view class="txt">¥ {{contldelit.totalPrice}}</view>
+  </view>
+  <!-- <view class="lost_picker">
+    <view class="txt">优惠券</view>
+    <view class="txt">- ¥ 200</view>
+  </view> -->
+  <view class="lost_picker" wx:if="{{contldelit.memberPrice>0}}">
+    <view class="txt">会员88折优惠</view>
+    <view class="txt">- ¥ {{contldelit.memberPrice}}</view>
+  </view>
+  <view class="lost_picker">
+    <view class="txt"></view>
+    <view class="txt">实付款 ¥ {{contldelit.cost}}</view>
+  </view>
+</view>
+<view class="botdisfex">
+  <view class="left_botm">
+    <view class="txt_s">实付款</view>
+    <view class="pickers">¥ {{contldelit.cost}}</view>
+  </view>
+  <view class="right_picker" bindtap="submit">去支付</view>
+</view>

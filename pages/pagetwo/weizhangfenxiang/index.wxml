@@ -1,0 +1,13 @@
+<view style="text-align:center">
+  <image style="width:100%" mode="widthFix" src="{{list}}"></image>
+</view>
+<view class="listbox">
+  <view class="btns" bindtap="fenxs">
+    <image src="http://47.94.16.158:8001/153.png"></image>
+    <view class="txt">分享给微信好友</view>
+  </view>
+  <view class="btns" bindtap="fenxs">
+    <image src="http://47.94.16.158:8001/154.png"></image>
+    <view class="txt">保存分享朋友圈</view>
+  </view>
+</view>

@@ -1,0 +1,121 @@
+/* pages/lookgift/index.wxss */
+.txt_jt {
+  position: fixed;
+  left: 40rpx;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(225deg);
+  z-index: 999;
+}
+.topbank {
+  width: 100%;
+  height: 450rpx;
+  background-size: 100% 100%;
+  position: relative;
+  z-index: 1;
+
+}
+
+.topbank image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.title_page{
+  font-size: 52rpx;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  bottom:170rpx;
+  z-index: 2;
+  color: white;
+}
+.content{
+  background: white;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  margin-top: -80rpx;
+
+}
+.txt_delit{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 34rpx;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+.wulist{
+  width:90%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.list_delits{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+}
+.delit{
+  margin-left: 20rpx;
+  width: 92%;
+}
+
+.txt{
+  color: #767676;
+}
+.left{
+  width: 22rpx;
+  height: 22rpx;
+  background: #29C3C7;
+  border-radius: 100%;
+}
+.wuTitle{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: #F6F6F6;
+  border-radius: 12rpx;
+}
+.wu_txt{
+  font-size: 28rpx;
+
+}
+.order_num {
+  margin-left:10rpx;
+  font-size: 28rpx;
+  display:flex;
+  align-items: center;
+}
+.order_num image{
+  width: 30rpx;
+  height: 30rpx;
+  
+}
+.hens{
+  width: 100%;
+  height: 18rpx;
+  background: #F6F6F6;
+}
+.wuliuTitle{
+  font-size: 38rpx;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  padding-bottom: 0;
+}
+.brnsubm{
+  width: 90%;
+  margin: 0 auto;
+  height: 100rpx;
+  font-size: 34rpx;
+  color: white;
+  text-align: center;
+  line-height: 96rpx;
+  border-radius: 60rpx;
+  background: #29C3C7;
+}

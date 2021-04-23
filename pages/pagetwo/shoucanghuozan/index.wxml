@@ -1,0 +1,159 @@
+<view class="listab">
+  <view class="listvie {{tid==1?'active':''}}" data-id="1" bindtap="clickFn">文章</view>
+  <view class="listvie {{tid==2?'active':''}}" data-id="2" bindtap="clickFn">视频</view>
+  <view class="listvie {{tid==3?'active':''}}" data-id="3" bindtap="clickFn">直播</view>
+  <view class="listvie {{tid==4?'active':''}}" data-id="4" bindtap="clickFn">帖子</view>
+  <view class="listvie {{tid==5?'active':''}}" data-id="5" bindtap="clickFn">商品</view>
+</view>
+<block wx:if="{{tid==1}}">
+  <block wx:for="{{movieList}}">
+    <view class="backh"></view>
+    <view class="cont" data-id="{{item.id}}">
+      <view class="titles">
+        {{item.title}}
+      </view>
+      <view class="timess">{{item.addTime}}</view>
+      <view class="cont_dlit">
+        <image src="{{item.imageInput}}"></image>
+        <view class="txt actives">
+          <rich-text nodes="{{item.content}}"></rich-text>
+        </view>
+      </view>
+      <view class="listicont">
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/189.png"></image>{{item.shareNum}}
+        </view>
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/190.png"></image>{{item.commentsNum}}
+        </view>
+        <view class="icon" bindtap="collectArticle" data-id="{{item.id}}">
+          <image src="http://47.94.16.158:8001/194.png"></image>
+          {{item.collectionNum}}
+        </view>
+        <view class="icon" data-id="{{item.id}}" data-id="{{item.id}}" bindtap="givelikeArticle">
+          <image src="http://47.94.16.158:8001/193.png"></image>
+          {{item.giveLikeNum}}
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="znashu" wx:if="{{movieList.length==0}}">
+    <image src="http://47.94.16.158:8001/199.png"></image>
+    <view class="zantxt">暂无数据</view>
+  </view>
+</block>
+<block wx:if="{{tid==2}}">
+  <view class="backh"></view>
+  <view class="cont">
+    <view class="titles">
+      文章题目文章题目文章题目
+    </view>
+    <view class="timess">2021-01-12 10:32</view>
+    <view class="deiImgse">
+      <image mode="aspectFill" src=""></image>
+      <view class="listtimess">10:05</view>
+    </view>
+    <view class="listicont">
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/189.png"></image>896
+      </view>
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/190.png"></image>896
+      </view>
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/194.png"></image>
+        896
+      </view>
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/193.png"></image>
+        896
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{tid==3}}">
+  <view class="backh"></view>
+  <view class="cont">
+    <view class="titles">
+      直播视频名称 直播视频名称 直播视频名称
+    </view>
+    <view class="timess">2021-01-12 10:32</view>
+    <view class="deiImgse">
+      <image mode="aspectFill" src=""></image>
+      <view class="listtimess">10:05</view>
+      <!-- <view class="hikan"><image src=""></image></view> -->
+    </view>
+    <view class="listicont">
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/189.png"></image>896
+      </view>
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/190.png"></image>896
+      </view>
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/194.png"></image>
+        896
+      </view>
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/193.png"></image>
+        896
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{tid==4}}">
+  <block wx:for="{{movieList}}">
+    <view class="backh"></view>
+    <view class="cont">
+      <view class="user_contlist">
+        <image
+          src="{{item.authorHeadImg}}">
+        </image>
+        <view class="cont_userRight">
+          <view class="conn_name">{{item.author}}</view>
+          <view class="times_cont">{{item.createTime}}</view>
+        </view>
+      </view>
+      <view class="title_cont">
+       {{item.introduction}}
+      </view>
+      <view class="imglust">
+        <image mode="aspectFill" src="{{item.imgs}}"></image>
+        <image mode="aspectFill" src=""></image>
+        <image mode="aspectFill" src=""></image>
+      </view>
+      <view class="listicont">
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/189.png"></image>{{item.shareNum}}
+        </view>
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/190.png"></image>{{item.commentsNum}}
+        </view>
+        <view class="icon" bindtap="tieshouFn" data-id="{{item.id}}">
+          <image src="http://47.94.16.158:8001/194.png"></image>
+          {{item.collectionNum}}
+        </view>
+        <view class="icon" bindtap="tiedianzanFn" data-id="{{item.id}}">
+          <image src="http://47.94.16.158:8001/193.png"></image>
+          {{item.giveLikeNum}}
+        </view>
+      </view>
+    </view>
+  </block>
+ 
+</block>
+<block wx:if="{{tid==5}}">
+
+  <view class="shoplisy">
+    <view class="list_shop" wx:for="{{movieList}}" bindtap="shopdelit" data-id="{{item.productId}}">
+      <image mode="aspectFill" src="{{item.imgUrl}}" class="shopimg"></image>
+      <view class="shopName">{{item.name}}</view>
+      <view class="listhso_bot">
+        <view class="pickers">￥{{item.price}}</view>
+        <image catchtap="shopshou" data-id="{{item.productId}}" src="http://47.94.16.158:8001/194.png"></image>
+      </view>
+    </view>
+   
+  </view>
+</block>
+<!-- <view class="meiyou">没有更多内容了</view> -->

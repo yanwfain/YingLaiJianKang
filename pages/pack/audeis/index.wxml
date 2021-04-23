@@ -1,0 +1,44 @@
+<view style=" background: url({{img}}) no-repeat center;background-size: 100% 100%;height:{{heights}}px" >
+
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view  style="width:50%;height:60rpx;position: fixed;z-index: 998;left:0;top:{{statusBarHeight+8}}px;text-align:center;width:100%;font-size:34rpx;color:white">正在收听
+</view>
+<view class='audioPlayer'>
+  <!-- <audio src="{{audiolist[0].audiosrc}}" poster="{{poster}}" name="{{name}}" author="{{author}}"></audio> -->
+  <view class='player'>
+    <!-- <image src='{{audiolist[0].coverimg}}' class='audioBack'></image> -->
+
+    <view class='audioControls'>
+      <view class='flex'>
+        <view class='time'>
+          {{showTime1}}
+        </view>
+        <view class='slider'>
+          <slider bindchange='sliderChange' activeColor='white' backgroundColor="gray" block-color="white"
+            block-size="12" value='{{audioTime}}' />
+
+        </view>
+        <view class='time'>
+          {{showTime2}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="start" catchtap='playAudio'>
+  <!-- 按钮 -->
+  <view class="ltitle">——————  第{{day}}天 ——————</view>
+  <view class="titless">{{name}}</view>
+  <view class="lo1" wx:if="{{isPlayAudio}}">
+    <image class="img_stbtn" src='http://47.94.16.158:8001/zanting.png' />
+  </view>
+  <view class="lo1" wx:else>
+    <image class="img_stbtn" src='http://47.94.16.158:8001/bofang.png' />
+  </view>
+</view>
+
+  
+</view>

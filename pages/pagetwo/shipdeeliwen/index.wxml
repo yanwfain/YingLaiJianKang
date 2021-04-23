@@ -1,0 +1,4 @@
+<view class="cont">
+  {{tit}}
+</view>
+<view wx:if="{{isbtn}}" bindtap="switchToChating" class="submit">进入问诊</view>

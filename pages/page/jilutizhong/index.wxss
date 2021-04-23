@@ -1,0 +1,153 @@
+page{
+  background: #40C2BD;
+}
+.txt_jt {
+  position: fixed;
+  left: 40rpx;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(225deg);
+  z-index: 999;
+}
+.topbank {
+  width: 100%;
+  height: 430rpx;
+  background-size: 100% 100%;
+  /* position: relative;
+  z-index: 1; */
+  
+}
+.topbank image{
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.title_page{
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  left:0;
+  color: white;
+  font-size: 32rpx;
+  text-align: center;
+}
+.top_numsdelit{
+  position: absolute;
+  top: 200rpx;
+  width: 90%;
+  align-items: center;
+  left: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.left_fonts{
+  width: 50%;
+  text-align: center;
+}
+.tizhongnum{
+  color: white;
+  padding: 10rpx 0; 
+} 
+.itmes{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #C9EBEB;
+}
+.itmes image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+.tbdels {
+  color: white;
+  padding: 10rpx 0;
+}
+.tbdels image{
+  width: 26rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.cintent{
+  width: 90%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 14rpx;
+  margin-top: -30rpx;
+  position: relative;
+  z-index: 3;
+
+}
+.lisst{
+  width: 90%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: space-between;                                                                          
+  align-items: center;
+  margin: 0 auto;
+}
+.finubnun{
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.gileft{
+  width: 82%;
+  display: flex;
+  align-items: center;
+}
+
+.iimgtop image{
+  width: 24rpx;
+  height: 24rpx;
+  padding:10rpx 0;
+}
+.leftimg{
+  width: 58rpx;
+  height: 58rpx;
+  display: flex;
+  align-items: center;
+}
+.iimgtop{
+  display: flex;
+  align-items: center;
+}
+.typebtn{
+  font-size: 26rpx;
+  color: white;
+  padding:10rpx 14rpx;
+  border-radius: 14rpx;
+  background: #29C3C7;
+
+}
+.fontB{
+  margin-left:16rpx;
+}
+.list_btn{
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 20rpx 0;
+  margin-top: 30rpx;
+}
+.list_btn view{
+  width: 78%;
+  border-radius: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96rpx;
+}
+.tabBtn2{
+  background: white;
+  color:  #29C3C7;
+}

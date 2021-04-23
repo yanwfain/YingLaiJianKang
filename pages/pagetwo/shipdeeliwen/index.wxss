@@ -1,0 +1,18 @@
+/* pages/shipdeeliwen/index.wxss */
+.cont{
+  padding: 20rpx;
+  text-align:center;
+  
+}
+.submit{
+  width: 60%;
+  border-radius: 60rpx;
+  line-height: 90rpx;
+  background: #29C3C7;
+  margin: 0 auto;
+  margin-top: 200rpx;
+  color: white;
+  font-size: 32rpx;
+  text-align: center;
+  
+}

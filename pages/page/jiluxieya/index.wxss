@@ -1,0 +1,61 @@
+page{
+  width:92%;
+  margin: 0 auto;
+
+}
+.listsinp{
+  display: flex;
+  align-items: center;
+  padding: 28rpx 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+.tetxLeft{
+  width: 32%;
+
+}
+.inps{
+  width: 64%;
+  text-align: right;
+  padding: 10rpx;
+
+}
+.left{
+  width: 64%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+.listsinp image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.optitles{
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-top: 80rpx;
+  margin-bottom: 50rpx;
+}
+.img{
+  width: 100%;
+  height: 700rpx;
+}
+.img image{
+  width: 100%;
+  height: 100%;
+}
+.submits{
+  width: 90%;
+  margin: 0 auto;
+  line-height: 90rpx;
+  text-align: center;
+  border-radius: 60rpx;
+  background: #29C3C7;
+  color: white;
+  font-size: 34rpx;
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
+  position: fixed;
+  bottom: 3%;
+  left: 5%;
+}

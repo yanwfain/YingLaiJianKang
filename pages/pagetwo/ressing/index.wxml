@@ -1,0 +1,7 @@
+<view class="haibaoImg">
+  <image mode="widthFix" src="{{indexpage}}"></image>
+</view>
+<view class="tab_fenx">
+  <view class="fenleft" bindtap="fenxs" data-url="{{indexpage}}">分享给好友</view>
+  <view class="quright" bindtap="llofs">去逆转营</view>
+</view>

@@ -1,0 +1,45 @@
+<view class="list" wx:for="{{movieList}}">
+  <view class="left">
+    <view class="money">￥ <text>{{item.couponPrice}}</text></view>
+    <view class="money_txt">满{{item.useMinPrice}}可用</view>
+  </view>
+  <view class="right">
+    <view class="title_le">{{item.couponTitle}}</view>
+    <view class="time">2021-02-22-2021-03-22</view>
+    <view class="btn">
+      <view></view>
+      <!-- <view class="vip"><image src="http://47.94.16.158:8001/164.png"></image> 会员专享</view> -->
+      <view class="btnsubmit">立即使用</view>
+    </view>
+  </view>
+</view>
+<view class="tit_hengs" wx:if="{{movieList1.length>0}}">已失效的优惠券</view>
+<view class="list" wx:for="{{movieList1}}">
+  <view class="left1">
+    <view class="money">￥ <text>{{item.couponPrice}}</text></view>
+    <view class="money_txt">满{{item.useMinPrice}}可用</view>
+  </view>
+  <view class="right">
+    <view class="title_le">{{item.couponTitle}}</view>
+    <view class="time">2021-02-22-2021-03-22</view>
+    <view class="btn">
+      <view></view>
+      <!-- <view class="vip"><image src="http://47.94.16.158:8001/164.png"></image> 会员专享</view> -->
+      <view class="btnsubmits">已失效</view>
+    </view>
+  </view>
+</view>
+<!-- <view class="list">
+  <view class="left1">
+    <view class="money">￥ <text>10</text></view>
+    <view class="money_txt">满59可用</view>
+  </view>
+  <view class="right">
+    <view class="title_le">店铺指定优惠券</view>
+    <view class="time">2021-02-22-2021-03-22</view>
+    <view class="btn">
+      <view class="vip"><image src="http://47.94.16.158:8001/164.png"></image> 会员专享</view>
+      <view class="btnsubmits">已使用</view>
+    </view>
+  </view>
+</view> -->

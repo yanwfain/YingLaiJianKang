@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarBackgroundColor": "#FFF",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "my-date": "../../../component/date/index"
+  }
+}

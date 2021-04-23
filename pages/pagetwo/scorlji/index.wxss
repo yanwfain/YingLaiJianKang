@@ -1,0 +1,65 @@
+/* pages/scorlji/index.wxss */
+.topBanner{
+  background-image: linear-gradient(to right, #29C3C7, #65CCCE);
+  height: 300rpx;
+  text-align: center;
+}
+.title{
+  font-size: 28rpx;
+  color: white;
+  padding-top: 80rpx;
+  text-align: center;
+}
+.nums{
+  font-size: 60rpx;
+  color: white;
+  font-weight: 600;
+  padding-top: 12rpx;
+  text-align: center;
+}
+.list_title{
+  padding: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left_lf{
+  display: flex;
+  align-items: center;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.left_lf image{
+  width: 46rpx;
+  height: 46rpx;
+}
+.img_ld{
+  width: 50rpx;
+  height: 50rpx;
+}
+.list{
+  padding: 40rpx;
+  border-bottom:1px solid #F6F6F6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.list_txt{
+  width: 70%;
+  
+}
+.title_txt{
+  font-size:32rpx;
+
+}
+.txt_tit{
+  margin-top: 10rpx;
+  color: #767676;
+  font-size:26rpx;
+}
+.numscsrt{
+  font-size:36rpx;
+  font-weight: 600;
+  color: #EE7500;
+}

@@ -1,0 +1,65 @@
+<!--pages/zaixianzixun/index.wxml-->
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/128.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">逆转营</view>
+  <view class="tit_tab">
+    <view class="title">录入数据</view>
+    <view class="nums"></view>
+  </view>
+</view>
+<view class="foedsIndex" bindtap="foedsIndex"> <image src="http://47.94.16.158:8001/86.png"></image></view>
+<view class="bottomsFed" bindtap="nizhuany">
+  <view class="vies" bindtap="nizhuan">
+    <image src="http://47.94.16.158:8001/142.png"></image>
+    <view class="txts_tab" >逆转营</view>
+  </view>
+
+  <view class="vies" bindtap="zaixianFn">
+    <image src="http://47.94.16.158:8001/90.png"></image>
+    <view class="txts_tab">在线咨询</view>
+  </view>
+  <view class="vies" bindtap="jialilist">
+    <image class="imgstops" src="http://47.94.16.158:8001/91.png"></image>
+    <view class="txts_tab" ></view>
+  </view>
+  <view class="vies" bindtap="memysql">
+    <image src="http://47.94.16.158:8001/93.png"></image>
+    <view class="txts_tab" >我的数据</view>
+  </view>
+  <view class="vies" bindtap="jiakang">
+    <image src="http://47.94.16.158:8001/95.png"></image>
+    <view class="txts_tab" >健康档案</view>
+  </view>
+</view>
+<view class="conttair">
+  <view class="tablistyi">
+    <view class="list_conts" bindtap="xieqgoFn" data-id="1">
+      <image src="http://47.94.16.158:8001/240.png"></image>
+      <view class="txts">记录血糖</view>
+    </view>
+    <view class="list_conts" bindtap="xieqgoFn" data-id="2">
+      <image src="http://47.94.16.158:8001/241.png"></image>
+      <view class="txts">记录血酮</view>
+    </view>
+    <view class="list_conts" bindtap="xieqgoFn" data-id="3">
+      <image src="http://47.94.16.158:8001/242.png"></image>
+      <view class="txts">记录血压</view>
+    </view>
+    <view class="list_conts" bindtap="xieqgoFn" data-id="4">
+      <image src="http://47.94.16.158:8001/243.png"></image>
+      <view class="txts">记录腹围</view>
+    </view>
+    <view class="list_conts" bindtap="xieqgoFn" data-id="5">
+      <image src="http://47.94.16.158:8001/244.png"></image>
+      <view class="txts">测量体重</view>
+    </view>
+    <view class="list_conts" bindtap="xieqgoFn" data-id="6">
+      <image src="http://47.94.16.158:8001/245.png"></image>
+      <view class="txts">记录感受</view>
+    </view>
+  </view>
+</view>
+<view style="height:200rpx"></view>

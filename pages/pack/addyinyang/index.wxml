@@ -1,0 +1,9 @@
+<view class="title">
+  您今天吃了多少营养参保
+</view>
+<view class="inob">
+  <input type="number" bindinput="value" value="{{value}}" placeholder="" />包
+</view>
+<view class="baosuncs" bindtap="submitms">
+  保存
+</view>

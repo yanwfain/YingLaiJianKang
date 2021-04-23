@@ -1,0 +1,169 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/188.png"></image>
+</view>
+<view class="userdelit">
+  <view class="btnerro" wx:if="{{userList.isMember=='N'}}" >升级VIP</view>
+  <image class="vipimg" wx:if="{{userList.isMember=='Y'}}"  src="http://47.94.16.158:8001/164.png"></image>
+  <image class="user_img"
+    src="{{userList.headImg}}">
+  </image>
+  <view class="user_name">
+    <view class="cont_txt">
+      <view class="name">{{userList.userName}}</view>
+      <view class="topTg">L v {{userList.userLevel}}</view>
+    </view>
+    <view class="uset_botms">
+      <view class="huizhang" bindtap="huizhangFn">
+        <image src="http://47.94.16.158:8001/n9.png"></image>
+        <view class="txt_typeuser">
+          <text style="font-style:oblique ;  font-weight: 600;">{{userList.badgeNum}}</text> 枚徽章
+        </view>
+      </view>
+      <view></view>
+    </view>
+  </view>
+</view>
+<view class="list_city">
+  <view class="list_ll" bindtap="linGuanzhu">
+    <view class="nums_1">{{userList.attentionNum}}</view>
+    <view class="guanzhu">关注</view>
+  </view>
+  <view class="list_ll" bindtap="fensiFn" style="border-left:1px solid #78D2CE;border-right:1px solid #78D2CE">
+    <view class="nums_1">{{userList.fansNum}}</view>
+    <view class="guanzhu">粉丝</view>
+  </view>
+  <view class="list_ll" bindtap="shoucangFn">
+    <view class="nums_1">{{userList.wonPraiseNum}}</view>
+    <view class="guanzhu">获赞与收藏</view>
+  </view>
+</view>
+<view class="listtab">
+  <view class="listview {{tid==1?'active':''}}" data-id="1" bindtap="clickFn">帖子</view>
+  <view class="listview {{tid==2?'active':''}}" data-id="2" bindtap="clickFn">评论</view>
+  <view class="listview {{tid==3?'active':''}}" data-id="3" bindtap="clickFn">赞过</view>
+</view>
+<block wx:if="{{tid==1}}">
+  <block wx:for="{{movieList}}">
+
+
+    <view class="cont_list">
+      <view class="user_contlist">
+        <image
+          src="{{item.headImg}}">
+        </image>
+        <view class="cont_userRight">
+          <view class="conn_name">{{item.userName}}</view>
+          <view class="times_cont">{{item.createTime}}</view>
+        </view>
+      </view>
+      <view class="title_cont">
+        {{item.title}}
+      </view>
+      <view class="imglust">
+        <image src="{{item.imgs}}"></image>
+        <image src=""></image>
+        <image src=""></image>
+      </view>
+      <view class="listicont">
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/189.png"></image>{{item.shareNum}}
+        </view>
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/190.png"></image>{{item.commentsNum}}
+        </view>
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/191.png"></image>{{item.collectionNum}}
+        </view>
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/192.png"></image>
+          <!-- <image src="http://47.94.16.158:8001/193.png"></image> -->
+          {{item.giveLikeNum}}
+        </view>
+      </view>
+    </view>
+    <view class="botds"></view>
+  </block>
+</block>
+<block wx:if="{{tid==2}}">
+  <block wx:for="{{movieList}}">
+
+
+    <view class="cont_list">
+      <view class="user_contlist">
+        <image
+          src="{{item.headImg}}">
+        </image>
+        <view class="cont_userRight">
+          <view class="conn_name">{{item.userName}}</view>
+          <view class="times_cont">{{item.createTime}}</view>
+          <view class="title_cont">
+            {{item.comment}}
+          </view>
+          <view class="wendeelitCon">
+            <view class="titlexli">
+              {{item.title}}
+            </view>
+            <image src="{{item.imgs}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="botds"></view>
+  </block>
+</block>
+<block wx:if="{{tid==3}}">
+  <block>
+    <view class="cont_list">
+      <view class="user_contlist">
+        <image
+          src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132">
+        </image>
+        <view class="cont_userRight">
+          <view class="conn_name">霍桂秋</view>
+          <view class="times_cont">2010-02-23</view>
+        </view>
+      </view>
+      <view class="title_cont">
+        有人说吃糖会更容易得糖尿病,有的人直接说“我看过科普说糖尿病与吃糖没关系”。那么糖尿病究竟与吃糖有多少的关系呢?
+      </view>
+      <view class="imglust">
+        <image src=""></image>
+        <image src=""></image>
+        <image src=""></image>
+      </view>
+      <view class="listicont">
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/189.png"></image>896
+        </view>
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/190.png"></image>896
+        </view>
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/194.png"></image>
+          896
+        </view>
+        <view class="icon">
+          <image src="http://47.94.16.158:8001/193.png"></image>
+          896
+        </view>
+      </view>
+    </view>
+    <view class="botds"></view>
+  </block>
+</block>
+<view class="meiyou">没有更多数据了</view>
+<block wx:if="{{ishows}}">
+  <view class="back"></view>
+  <view class="ModelTan">
+    <image class="deless" bindtap="isMOdels" src="http://47.94.16.158:8001/204.png"></image>
+    <view class="moldeTit">获赞与收藏</view>
+    <view class="list_smodel"><image src="http://47.94.16.158:8001/200.png"></image>当前发布帖子数 {{numallds.invitationNum}}</view>
+    <view class="list_smodel"><image src="http://47.94.16.158:8001/201.png"></image>当前获得点赞数 {{numallds.giveLikeNum}}</view>
+    <view class="list_smodel"><image src="http://47.94.16.158:8001/202.png"></image>当前获得收藏数 {{numallds.collectNum}}</view>
+    <view class="list_smodel"><image src="http://47.94.16.158:8001/203.png"></image>当前获得评论数 {{numallds.commentNum}}</view>
+    <view class="btnMOdel" bindtap="isMOdels">我知道了</view>
+  </view>
+</block>

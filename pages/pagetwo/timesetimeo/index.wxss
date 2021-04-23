@@ -1,0 +1,73 @@
+/* pages/timesetimeo/index.wxss */
+.contens{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.txt_times{
+  font-size: 54rpx;
+  font-weight: 600;
+}
+.txt{
+  color: #767676;
+  padding:20rpx 0;
+}
+.titXt{
+  font-size: 32rpx;
+  padding: 40rpx 0 20rpx 0 ;
+}
+.submits{
+  
+  width: 60%;
+  margin: 0 auto;
+  font-size: 34rpx;
+  color: white;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 60rpx;
+  background-image: linear-gradient(to right, #29C3C7, #41E9D5);
+  margin-top: 50rpx;
+}
+.subnmitAdd{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 34rpx;
+  color: white;
+  background: #29C3C7;
+  border-radius: 60rpx;
+  text-align: center;
+  line-height: 96rpx;
+  position: fixed;
+  bottom: 4%;
+  left:5%;
+}
+.lists{
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:1px solid #EEEEEE;
+}
+.left{
+  display: flex;
+
+}
+.left image{
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 16rpx;
+
+}
+.title_times{
+  text-align: left;
+}
+.tui-fr {
+  color: #29C3C7;
+}
+.tit_time{
+  font-size: 36rpx;
+  /* font-weight: 600; */
+}
+.tit_txt{
+  color: #767676;
+}

@@ -1,0 +1,104 @@
+/* pages/xuetang/index.wxss */
+.sanjiao{
+  width:0;
+  height:0;
+  border:8px solid transparent; 
+  border-top-color:#FFFFFF;
+  margin-top: 16rpx;
+  margin-left:10rpx
+}
+.selrtal{
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280rpx;
+  margin: 0 auto;
+  height: 80rpx;
+  background:#29C3C7;
+  border-radius: 60rpx;
+  margin-top:50rpx;
+}
+picker{
+  /* width: 100%; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.txt{
+  /* width: 100%; */
+  text-align: center;
+  font-size: 32rpx;
+  color: white;
+}
+.inpumole{
+  width: 70%;
+  margin:0 auto;
+  margin-top: 200rpx;
+
+
+}
+.inpumole input{
+  width: 80%;
+  font-size: 42rpx;
+  border-bottom: 1px solid #29C3C7;
+  margin: 0 auto;
+  text-align: center;
+  padding:20rpx;
+}
+.tmengl{
+  font-size: 26rpx;
+  color: #15A7AA;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
+  text-align: center;
+  
+}
+.tiels{
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #15A7AA;
+  text-align: center;
+}
+.celiang{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.celText{
+  width: 20%;
+}
+.left{
+  width: 70%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+.celiang image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.celiang input{
+  width: 78%;
+  font-size: 28rpx;
+  padding:10rpx 0 ;
+}
+.submites{
+  width: 80%;
+  margin: 0 auto;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  margin-top: 180rpx;
+  border-radius: 60rpx;
+  background:#29C3C7;
+  color: white;
+  font-size: 32rpx;
+
+}

@@ -1,0 +1,31 @@
+/* pages/ressing/index.wxss */
+.tab_fenx{
+  position: fixed;
+  width: 92%;
+  left:4%;
+  bottom: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.tab_fenx view{
+  width: 44%;
+  border-radius: 50rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: white;
+}
+.fenleft{
+  background:#F5A776
+}
+.quright{
+  background:#29C3C7;
+}
+.haibaoImg{
+  text-align: center;
+}

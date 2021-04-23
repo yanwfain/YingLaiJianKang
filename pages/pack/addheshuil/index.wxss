@@ -1,0 +1,36 @@
+/* pages/addyinyang/index.wxss */
+.title{
+  padding-top:150rpx;
+  text-align: center;
+  font-size: 34rpx;
+}
+.inob{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+  color: #15A7AA;
+  align-items: center;
+}
+.inob input{
+  width: 70%;
+  padding:0rpx 20rpx;
+  height: 70rpx;  
+  text-align: center;
+  font-size: 54rpx;
+  border-bottom:1px solid #15A7AA;
+}
+.baosuncs {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 34rpx;
+  color: white;
+  background: #29C3C7;
+  border-radius: 60rpx;
+  text-align: center;
+  line-height: 96rpx;
+  position: fixed;
+  bottom: 4%;
+  left: 5%;
+}

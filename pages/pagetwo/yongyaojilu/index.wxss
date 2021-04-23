@@ -1,0 +1,301 @@
+
+.cont{
+  /* width: 94%; */
+  /* padding:0 3%; */
+  position: relative;
+  z-index: 10;
+  overflow-y:scroll ;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  background:white;
+  /* height: 80%; */
+  /* margin-top: -90rpx; */
+  /* height: 1000rpx; */
+}
+.title_list{
+  width: 100%;
+  font-size: 34rpx;
+  padding:14rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tabread{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:14rpx 0;
+}
+.listtabs{
+  padding: 26rpx ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F0F3F4;
+  border-radius: 10rpx;
+  /* margin-top: 20rpx; */
+}
+.listtabs image{
+  width: 46rpx;
+  height: 46rpx;
+}
+.tavb{
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  padding:20rpx 0;
+  background: #F0F3F4;
+  border-radius: 12rpx;
+}
+.xstxs{
+  font-size: 28rpx; 
+  margin-left:14rpx;
+}
+picker{
+  width: 100%;
+
+}
+.picker{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F0F3F4;
+  /* padding: 0 20rpx; */
+  border-radius: 12rpx;
+}
+.picker image{
+  width: 48rpx;
+  height: 48rpx;
+  padding: 20rpx 0;
+
+}
+.tit_tab{
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  top: 160rpx;
+  display:flex;
+  font-size: 36rpx;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+.title{
+  font-size: 38rpx;
+
+}
+.nums{
+  font-size: 38rpx;
+}
+.txt_tit{
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  top: 230rpx;
+  color: white;
+}
+.lists{
+  width: 90%;
+  margin: 0 auto;
+  padding:20rpx 0;
+
+}
+
+.timgTxttop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #15A7AA;
+}
+.timgTxttop image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 4rpx;
+}
+.title_list{
+  width: 100%;
+  font-size: 34rpx;
+  padding:14rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabBtn1{
+  background: #F6F6F6;
+  color: #767676;
+}
+.tabBtn2{
+  background: #29C3C7;
+  color: white;
+}
+/* ----------------------- */
+.tavb{
+  padding:26rpx;
+  display: flex;
+  align-items: center;
+  background: #F0F3F4;
+  border-radius: 12rpx;
+  margin:20rpx 0;
+}
+.xstxs{
+  margin-left:10rpx
+}
+.tabvbcont{
+  padding: 24rpx;
+  background: #F0F3F4;
+  border-radius: 12rpx;
+  margin: 20rpx 0;
+}
+.title_ckenmk{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tits{
+  font-size: 30rpx;
+
+}
+.chnekeons{
+  width: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #15A7AA;
+  border: 1px solid #29C3C7;
+  background: #F5FFFF;
+  padding: 8rpx;
+  border-radius: 50rpx;
+}
+.chnekeons image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.listo{
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 34rpx;
+  color: #BBBBBB;
+}
+.lists{
+  width: 94%;
+  margin: 0 auto;
+  padding:20rpx 0;
+
+}
+.title_list{
+  width: 100%;
+  font-size: 34rpx;
+  padding:14rpx 0;
+}
+.list_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  margin-top: 30rpx;
+  position: fixed;
+  left: 0;
+  bottom: 3%;
+}
+.list_btn view{
+  width: 90%;
+  border-radius: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96rpx;
+}
+.tabBtn1{
+  background: #F6F6F6;
+  color: #767676;
+}
+.tabBtn2{
+  background: #29C3C7;
+  color: white;
+}
+.list_getwuli{
+  width: 100%;
+  padding:24rpx 0;
+
+}
+.title_wu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.tit_wu{
+  width: 58%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#707070;
+  padding:14rpx;
+  color: white;
+  border-radius: 8rpx;
+}
+.tit_wu image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.listinp{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:18rpx 0;
+}
+.listinp view{
+  display: flex;
+  align-items: center;
+  
+}
+.listinp  input{
+  width: 128rpx;
+  padding:10rpx;
+  border: 1px solid #C9C9C9;
+  background: white;
+  border-radius: 10rpx;
+  margin: 0 20rpx;
+  text-align: center;
+}
+.tabnab{
+  background:#F0F3F4 ;
+  /* padding-bottom: 40rpx; */
+  border-radius: 12rpx;
+}
+.txtare{
+  padding:2%;
+  border:1px solid #C9C9C9;
+  background:white;  
+  margin: 0 auto;
+  margin-top: 0rpx;
+  height: 70px;
+  width: 96%;
+}
+.yongtime{
+  padding: 24rpx;
+  background: #F6F6F6;
+  display: flex;
+  align-items: center;
+}
+.txtyao{
+  padding: 30rpx 24rpx;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.zanwu{
+  color:#BBBBBB;
+  padding:30rpx 0;
+  text-align: center;
+  font-size: 34rpx;
+}

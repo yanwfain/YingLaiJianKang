@@ -1,0 +1,42 @@
+/* pages/xiaoximessg/index.wxss */
+page{
+  background: #F6F6F6;
+}
+.list{
+  width: 86%;
+  padding: 24rpx;
+  background: white;
+  box-shadow: 1px 2px 6px #E0E0E0;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-radius: 16rpx;
+}
+.title{
+  font-size:34rpx;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+
+}
+.titles{
+  font-size:30rpx;
+  overflow: hidden;
+  text-overflow:ellipsis; white-space: nowrap;
+}
+.times{
+  margin-top: 10rpx;
+  font-size:26rpx;
+  color: #767676;
+}
+.meis{
+  color: #BBBBBB;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.images{
+  padding-top: 230rpx;
+  text-align: center;
+}
+.images image{
+  width: 160rpx;
+  height: 160rpx;
+}

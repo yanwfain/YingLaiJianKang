@@ -1,0 +1,27 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/22.png"></image>
+  <view class="title_page">礼包详情</view>
+</view>
+<view class="content">
+  <view class="txt_delit"><rich-text nodes="{{indextxt.description}}"></rich-text> </view>
+  <view class="hens"></view>
+  <view class="wuliuTitle">物流信息</view>
+  <view class="wulist">
+    <view class="wuTitle">
+      <view class="wu_txt">{{indextxt.deliveryName}}</view>
+      <view class="order_num" bindtap="copyBtn" data-order="{{indextxt.deliveryId}}"> {{indextxt.deliveryId}}　<image src="http://47.94.16.158:8001/n11.png"></image></view>
+    </view>
+    <view class="list_delits" wx:for="{{list}}">
+      <view class="left"></view>
+      <view class="delit">
+        <view class="times">{{item.time}}</view>
+        <view class="txt">{{item.context}}</view>
+      </view>
+    </view>
+   
+  </view>
+</view>
+<view class="brnsubm" bindtap="submit">确认收到礼包</view>
+
+<view style="height:100rpx"></view>

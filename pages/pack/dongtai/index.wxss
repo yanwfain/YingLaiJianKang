@@ -1,0 +1,284 @@
+/* pages/dongtai/index.wxss */
+.topbank {
+  width: 100%;
+  height: 500rpx;
+}
+
+.txt_jt {
+  position: fixed;
+  left: 40rpx;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(225deg);
+  z-index: 999;
+}
+
+.topbank image {
+  width: 100%;
+  height: 100%;
+}
+.topTg {
+  padding: 4rpx 20rpx;
+  padding-left: 16rpx;
+  font-style: italic;
+  border-radius: 30rpx;
+  font-weight: 600;
+  color: black;
+  font-size: 20rpx;
+  background: white;
+  margin: 0 20rpx;
+}
+.userdelit{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  margin-top: -340rpx;
+  position: relative;
+}
+.btnerro{
+  padding: 10rpx 0;
+  width: 160rpx;
+  text-align: center;
+  font-size: 28rpx;
+  position: absolute;
+  color: white;
+  background-image: linear-gradient(to right, #FE2A77, #FF9062);
+  border-radius: 60rpx;
+  top: 40rpx;
+  right: 10rpx;
+}
+.user_img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+
+}
+.user_name{
+  width: 60%;
+  margin-left: 3%;
+}
+.huizhang {
+  display: flex;
+  align-items: center;
+  background: #F2F2F2;
+  padding-right: 24rpx;
+  border-radius: 30rpx;
+}
+.huizhang image {
+  width: 46rpx;
+  height: 46rpx;
+}
+.txt_typeuser {
+  font-size: 24rpx;
+}
+.cont_txt{
+  display: flex;
+  align-items: center;
+}
+.uset_botms{
+  margin-top: 14rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.name{
+  color: white;
+  font-size: 32rpx;
+}
+.vipimg{
+  width: 64rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 110rpx;
+  left: 24rpx;
+}
+.list_city{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 90rpx;
+}
+.list_ll{
+  width: 31%;
+  text-align: center;
+  margin: 1%;
+
+}
+.nums_1{
+  color: white;
+}
+.guanzhu{
+  color: white;
+}
+.listtab{
+  padding: 20rpx;
+  display: flex;
+  margin-top: 50rpx;
+  align-items: center;
+}
+.listview{
+  padding: 10rpx 0;
+  margin: 10rpx 20rpx;
+  text-align: center;
+
+  font-size: 32rpx;
+  border-bottom: 4px solid white;
+}
+.active{
+  font-size: 38rpx;
+  font-weight: 600;
+  border-bottom: 4px solid #29C3C7;
+
+}
+.cont_list{
+  padding: 20rpx;
+
+}
+.botds{
+  height: 20rpx;
+  background: #F6F6F6;
+}
+.user_contlist{
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+
+}
+.user_contlist image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  margin-right: 16rpx;
+}
+.cont_userRight{
+  width: 86%;
+}
+.conn_name{
+  font-size:28rpx;
+  margin-bottom: 6rpx;
+
+}
+.times_cont{
+  color:#767676;
+  font-size:24rpx;
+}
+.title_cont{
+  font-size:32rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+}
+.imglust{
+  display: flex;
+  flex-wrap: wrap;
+  padding:10rpx 0;
+}
+.imglust image{
+  width: 220rpx;
+  height: 220rpx;
+  margin: 1%;
+  border-radius: 16rpx;
+}
+.listicont{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.icon{
+  /* width: 23%; */
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.icon image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 6rpx;
+}
+.meiyou{
+  padding: 20rpx;
+  font-size:34rpx;
+  color: #BBBBBB;
+  text-align: center;
+}
+.wendeelitCon{
+  padding:20rpx;
+  font-size:28rpx;
+  color: #4A4A4A;
+  background: #F6F6F6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 14rpx;
+}
+.titlexli{
+  font-size:28rpx;
+  margin-right: 14rpx;
+  width: 70%;
+  height: 132rpx;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+}
+.wendeelitCon image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 14rpx;
+}
+.ModelTan{
+  position:fixed;
+  z-index: 99;
+  width: 80%;
+  left: 10%;
+  top: 25%;
+  border-radius: 26rpx;
+  background: white;
+
+}
+
+.moldeTit{
+  padding:20rpx;
+  font-size: 38rpx;
+  font-weight: 600;
+
+  text-align: center;
+}
+.list_smodel{
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 34rpx;
+  padding: 20rpx 0;
+}
+.list_smodel image{
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 20rpx;
+}
+.btnMOdel{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  line-height: 94rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: white;
+  border-radius: 60rpx;
+  background: #29C3C7;
+}
+.deless{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 30rpx;
+  right: 30rpx;
+}

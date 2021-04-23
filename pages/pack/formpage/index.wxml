@@ -1,0 +1,88 @@
+<view class="top_view">
+  <view class="time">最后更新时间 </view>
+  <view class="btnsub" bindtap="genxinFn">更新报告</view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>检查日期
+</view>
+<view class="listdiom">
+  <view class="times">
+    {{testDate}}
+  </view>
+  <view></view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>生化化验单
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{biochemistry}}">
+    <image mode="aspectFill" bindtap="topic_preview" data-url="{{item.url2}}"  src="{{item.url2}}"></image>
+    <view class="look" catchtap="topic_preview">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+血常规化验单
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{routineBlood}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="routineBlood" data-url="{{item.url2}}" ></image>
+    <view class="look" catchtap="routineBlood">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+
+  糖化血红蛋白化验单
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{saccharify}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="saccharify" data-url="{{item.url2}}"></image>
+    <view class="look" catchtap="saccharify">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+
+  尿常规化验单
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{urinalysis}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="urinalysis" data-url="{{item.url2}}"></image>
+    <view class="look" catchtap="urinalysis">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+
+  糖化血清蛋白化验单
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{serumAlbumin}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="serumAlbumin" data-url="{{item.url2}}"></image>
+    <view class="look" catchtap="serumAlbumin">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+
+  胰岛功能化验单
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{islets}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="islets" data-url="{{item.url2}}"></image>
+    <view class="look" catchtap="islets">查看大图</view>
+  </view>
+</view>
+<view class="title">
+  <image src="http://47.94.16.158:8001/n1.png"></image>
+
+  C反应蛋白化验单
+
+</view>
+<view class="listimg" >
+  <view class="imgss" wx:for="{{cReactive}}">
+    <image mode="aspectFill" src="{{item.url2}}" bindtap="cReactive" data-url="{{item.url2}}"></image>
+    <view class="look" catchtap="cReactive">查看大图</view>
+  </view>
+</view>

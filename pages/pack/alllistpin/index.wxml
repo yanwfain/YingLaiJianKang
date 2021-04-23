@@ -1,0 +1,27 @@
+<view class="title_shopp">
+  商品评价（{{total}}）
+</view>
+<view class="user_listp" wx:for="{{movieList}}">
+  <view class="user_topsl">
+    <view class="left_user">
+      <image
+        src="{{item.headImg}}">
+      </image>
+      <view class="user_names">{{item.userName}}</view>
+    </view>
+    <view class="xin_list">
+      <view class="stars  {{item.productScore>=1? 'on': ''}}"></view>
+      <view class="stars  {{item.productScore>=2? 'on': ''}}"></view>
+      <view class="stars  {{item.productScore>=3? 'on': ''}}"></view>
+      <view class="stars  {{item.productScore>=4? 'on': ''}}"></view>
+      <view class="stars  {{item.productScore>=5? 'on': ''}}"></view>
+    </view>
+  </view>
+  <view class="tit_usrcont">
+  {{item.comment}}
+  </view>
+  <view class="imgslist">
+    <image mode="aspectFill" wx:for="{{item.pics}}" bindtap="topic_preview" data-id="{{item.id}}" wx:for-item="ite" data-url="{{ite.url2}}" src="{{ite.url2}}"></image>
+  </view>
+  <view class="timecert">购买日期：{{item.addTime}}</view>
+</view>

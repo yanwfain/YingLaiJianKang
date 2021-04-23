@@ -1,0 +1,83 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">生活方式</view>
+  <view class="tit_tab">
+    <view class="title">个人史</view>
+    <view class="nums">1/4</view>
+  </view>
+  <view class="txt_tit">为了精准地为您定制健康管理方案，请如实填写</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">您是否抽烟？</view>
+    <view class="tavb" bindtap="tab1" data-id="1">
+      <checkbox checked="{{tab1==1?true:false}}"></checkbox>
+      <view class="xstxs">从不抽烟</view>
+    </view>
+    <view class="tavb" bindtap="tab1" data-id="2">
+      <checkbox checked="{{tab1==2?true:false}}"></checkbox>
+      <view class="xstxs">每天抽烟1包以下</view>
+    </view>
+    <view class="tavb" bindtap="tab1" data-id="3">
+      <checkbox checked="{{tab1==3?true:false}}"></checkbox>
+      <view class="xstxs">每天抽烟1-2包</view>
+    </view>
+    <view class="tavb" bindtap="tab1" data-id="4">
+      <checkbox checked="{{tab1==4?true:false}}"></checkbox>
+      <view class="xstxs">每天抽烟2包以上</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您喝酒的频次是？</view>
+    <view class="tavb" bindtap="tab2" data-id="1">
+      <checkbox checked="{{tab2==1?true:false}}"></checkbox>
+      <view class="xstxs">每天</view>
+    </view>
+    <view class="tavb" bindtap="tab2" data-id="2">
+      <checkbox checked="{{tab2==2?true:false}}"></checkbox>
+      <view class="xstxs">1-2天</view>
+    </view>
+    <view class="tavb" bindtap="tab2" data-id="3">
+      <checkbox checked="{{tab2==3?true:false}}"></checkbox>
+      <view class="xstxs">3-4天</view>
+    </view>
+    <view class="tavb" bindtap="tab2" data-id="4">
+      <checkbox checked="{{tab2==4?true:false}}"></checkbox>
+      <view class="xstxs">偶然</view>
+    </view>
+    <view class="tavb" bindtap="tab2" data-id="5">
+      <checkbox checked="{{tab2==5?true:false}}"></checkbox>
+      <view class="xstxs">从不</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您平常喝什么酒，每次喝多少量？</view>
+    <view class="tabInp">
+      <view class="left_inptxt">白酒</view>
+      <input class="inpKun" bindinput="spirit" value="{{spirit}}" type="number" /> 两(50毫升)
+    </view>
+    <view class="tabInp">
+      <view class="left_inptxt">啤酒</view>
+      <input class="inpKun" bindinput="beer" value="{{beer}}" type="number" /> 毫升
+    </view>
+    <view class="tabInp">
+      <view class="left_inptxt">葡萄酒</view>
+      <input class="inpKun" bindinput="wine" value="{{wine}}" type="number" /> 毫升
+    </view>
+    <view class="tabInp" style="align-items: inherit">
+      <view class="left_inptxt">其他</view>
+      <textarea class="inpKuns" bindinput="other" value="{{other}}" maxlength="200" type="text"> </textarea>
+    </view>
+  </view>
+  <view class="list_btn" wx:if="{{!pageid}}">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  <view class="list_btn" wx:if="{{pageid==1}}">
+    <view class="tabBtn2" bindtap="submiiti">提交</view>
+  </view>
+  <view style="height:100px"></view>
+</view>

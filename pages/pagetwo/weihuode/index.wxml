@@ -1,0 +1,7 @@
+<view class="top">
+  <image src="http://47.94.16.158:8001/187.png"></image>
+  <view class="txtnum">徽章名称</view>
+  <view class="txts">徽章描述徽章描述徽章描述徽章描述徽章描述徽章描述</view>
+</view>
+<view class="btnsun" bindtap="submite">去升级</view>
+<view class="txt">尚未获得</view>

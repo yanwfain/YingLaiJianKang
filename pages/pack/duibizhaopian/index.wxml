@@ -1,0 +1,85 @@
+
+<view class="cont">
+  <text>
+    * 请尽量在干净的背景下拍摄，如有可能选择和入营时相同的背景、动作
+  </text>
+  <view class="jifen">
+    <view></view>
+    <view class="jifennums">
+      <image src="http://47.94.16.158:8001/n1.png"></image>积分+5
+    </view>
+  </view>
+  <view class="titl_an">正面照 <view style="margin-left:114px">示例</view></view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgbox" wx:for="{{imgbox}}">
+        <view class='img-box' bindtap="topic_preview" data-url="{{item.url1}}">
+          <image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1' wx:if="{{isbtn!=1||!isbtn}}">
+            <image class='img' src='http://47.94.16.158:8001/62.png'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isbtn!=1||!isbtn}}">
+        <view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length<1}}">
+          <image class='img' src='http://47.94.16.158:8001/66.png'></image>
+        </view>
+        <view class='img-box'>
+          <image class='img' src='http://47.94.16.158:8001/64.png'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="titl_an">  侧面照 <view style="margin-left:114px">示例</view></view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgboxs" wx:for="{{imgboxs}}">
+        <view class='img-box' bindtap="topic_preview1" data-url="{{item.url1}}">
+          <image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1s' wx:if="{{isbtn!=1||!isbtn}}">
+            <image class='img' src='http://47.94.16.158:8001/62.png'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isbtn!=1||!isbtn}}">
+        <view class='img-box' bindtap='addPic1s' wx:if="{{imgboxs.length<1}}">
+          <image class='img' src='http://47.94.16.158:8001/88341403898e1edaceeae78cfbcd6c4.png'></image>
+        </view>
+        <view class='img-box'>
+          <image class='img' src='http://47.94.16.158:8001/65.png'></image>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+
+  <view class="list_btn">
+    <!-- <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view> -->
+    <view class="tabBtn2" bindtap="xiapageFn">保存</view>
+  </view>
+  <view style="height:100px"></view>
+</view>
+
+<block wx:if="{{isshowsd}}">
+  <view class="opbackgroud" bindtap="sislsd"></view>
+  <view class="ishow_went">
+    <image bindtap="isshowFn" bindtap="sislsd" class="imgs" src="http://47.94.16.158:8001/28.png"></image>
+    <view class="isshow_titles">血常规化验单</view>
+    <view class="txts_delit"></view>
+    <view class="submitszhi" bindtap="sislsd">我知道了</view>
+  </view>
+</block>
+<block wx:if="{{isModels}}">
+  <view class="back" bindtap="jixsuFn"></view>
+  <view class="isshowModele">
+    <image class="delesx" bindtap="jixsuFn" src="http://47.94.16.158:8001/28.png"></image>
+    <image class="jiangbei" src="http://47.94.16.158:8001/96.png"></image>
+    <view class="textsIsshow" style="padding-top:40rpx;">恭喜您完成了</view>
+    <view class="textsIsshow" style="padding-top:0;">腹围任务</view>
+    <view class="fontsinumS"> <text style=" font-weight: 600;">+ {{jifensnum}}</text>  积分</view>
+    <view class="jisubtnsubs" bindtap="jixsuFn">继续任务</view>
+  </view>
+</block>

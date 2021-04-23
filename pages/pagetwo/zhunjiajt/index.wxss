@@ -1,0 +1,153 @@
+/* pages/zhunjiajt/index.wxss */
+.title{
+  font-size: 34rpx;
+  padding: 14rpx 0;
+
+}
+.titl_txt{
+  font-size: 30rpx;
+}
+.tops{
+  width: 90%;
+  margin: 0 auto;
+}
+.backgrounnums{
+  padding: 20px 0;
+  background: #F6F6F6;
+  margin: 20rpx 0;
+}
+.sunbancvk{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.txt{
+  width: 26%;
+  margin-right: 2%;
+}
+.burgs{
+  width: 58%;
+  border-radius: 40rpx;
+  height: 20rpx;
+  background: #EEEEEE;
+  position: relative;
+}
+.buhy_numsk{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 20rpx;
+  background-image: linear-gradient(to right, #FE2A77, #FF9062);
+  border-radius: 40rpx;
+}
+.num{
+  width: 10%;
+  text-align: center;
+  margin-left: 2%;
+  font-size: 24rpx;
+}
+.listcont{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.viuebtn{
+  width: 22.5%;
+  text-align: center;
+  border:1px solid #29C3C7;
+  border-radius: 10rpx;
+  padding:18rpx 0;
+  margin: 1%;
+  color: #15A7AA;
+}
+.acrtive{
+  color: white;
+  background: #29C3C7;
+}
+.listdewen{
+  width: 86%;
+  padding: 2%;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20rpx;
+  box-shadow: 1px 2px 20px #E0E0E0;
+  margin-bottom: 24rpx;
+  padding-bottom: 30rpx;
+  margin-top: 24rpx;
+}
+.left{
+  width: 40%;
+  margin-right: 2%;
+  text-align: center;
+}
+.inghs{
+  width: 250rpx;
+  height: 170rpx;
+}
+.cont_times{
+  display: flex;
+  align-items: center;
+  padding:4rpx 0;
+  width: 110rpx;
+  border-radius: 6rpx;
+  background:#EEEEEE;
+  font-size: 24rpx;
+  /* margin: 0 auto; */
+  margin-top: 16rpx;
+  justify-content: center;
+  
+}
+.cont_times image{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 4rpx;
+}
+.right{
+  width: 58%;
+
+}
+.titCont{
+  font-size: 34rpx;
+  font-weight: 600;
+  padding-bottom: 80rpx;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+.bennum{
+  display: flex;
+  align-items: center;
+}
+.jifensm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+  margin-left: 60rpx;
+  color: #15A7AA;
+}
+.jifensm image{ 
+  width: 28rpx;
+  height: 28rpx;
+}
+.submitswan{
+  width: 180rpx;
+  text-align: center;
+  padding:16rpx 0;
+  color: white;
+  border-radius: 60rpx;
+  background-image: linear-gradient(to right, #EE7500, #F5A776);
+}
+.titlso{
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx 0;
+
+}

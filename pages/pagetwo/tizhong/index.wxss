@@ -1,0 +1,62 @@
+/* pages/shenggao/index.wxss */
+.submits{
+  width: 90%;
+  margin: 0 auto;
+  height: 96rpx;
+  font-size: 34rpx;
+  color: white;
+  text-align: center;
+  line-height: 96rpx;
+  border-radius: 60rpx;
+  background: #29C3C7;
+  position: fixed;
+  z-index: 99;
+  left: 5%;
+  bottom: 3%;
+}
+.title{
+  font-size:40rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  width: 90%;
+
+}
+.nums{
+  font-size:34rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  width: 90%;
+}
+.containers {
+  /* padding:  20rpx; */
+}
+.scale-value{
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  font-size:38rpx;
+}
+.scale-vaule{
+  font-weight: 600;
+}
+.scale-title{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.scale-container{
+  display: flex;
+}
+.scale-container .scale-value{
+  flex: 1;
+  line-height: 600rpx;
+}
+.scale-view{
+  width: 500rpx;
+  height: 600rpx;
+  flex: 1;
+}
+
+.zz{
+  background:#29C3C7 !important;
+}

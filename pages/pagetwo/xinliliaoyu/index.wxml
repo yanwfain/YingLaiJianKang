@@ -1,0 +1,42 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/120.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">心理疗愈</view>
+  <view class="tit_tab">
+    这个为期21天的心理疗愈课程由杭大夫和著名催眠大师蔡仲淮共同研发制作，将帮助您激发潜意识里自愈的本能，养成良好的生活习惯。
+  </view>
+</view>
+<view style="height:200rpx"></view>
+<view class="listdelit" bindtap="clickab" wx:for="{{list.heartList}}" wx:if="{{item.status==0}}" data-id="{{item.id}}" data-name="{{item.name}}" data-img="{{item.img}}" data-audio="{{item.audio}}" data-day="{{item.day}}">
+  <view class="tit_leftop">第{{item.day}}天</view>
+  <view class="list_cont">
+    <image src="{{item.img}}" class="left_logo"></image>
+    <view class="delitcont">
+      <view class="delit_title">{{item.name}}</view>
+      <view class="bot_contsds">
+        <view class="cont_times"><image src="http://47.94.16.158:8001/115.png"></image>{{item.audioTime}}</view>
+        <view class="jifensm"><image src="http://47.94.16.158:8001/n1.png"></image>积分+{{item.integral}}</view>
+      </view>
+    </view>
+    <view class="btnsunb">去完成</view>
+  </view>
+</view>
+
+<!-- 已完成 -->
+<view class="list_title">已完成</view>
+<view class="listdelit" bindtap="clickabs" wx:for="{{list.heartList}}" wx:if="{{item.status>0}}" data-id="{{item.id}}" data-name="{{item.name}}" data-img="{{item.img}}" data-audio="{{item.audio}}" data-day="{{item.day}}">
+  <view class="tit_leftop">第{{item.day}}天</view>
+  <view class="list_cont">
+    <image src="{{item.img}}" class="left_logo"></image>
+    <view class="delitcont">
+      <view class="delit_title">{{item.name}}</view>
+      <view class="bot_contsds">
+        <view class="cont_times"><image src="http://47.94.16.158:8001/115.png"></image>{{item.audioTime}}</view>
+        <!-- <view class="jifensm"><image src="http://47.94.16.158:8001/n1.png"></image>积分+5</view> -->
+      </view>
+    </view>
+    <view class="btnsunbs" >再听一遍</view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">时间预约</view>
+  <view class="tit_tab">
+    <view class="title">预约视频问诊</view>
+    <view class="nums"></view>
+  </view>
+  <view class="txt_tit">请选择跟您的专属医师和营养师的线上</view>
+  <view class="txt_tit2">视频问诊时间 （时长30分钟）</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">选择时间</view>
+    <view>
+      <my-date bind:bindSelect="bindSelect"></my-date>
+    </view>
+  </view>
+  <view class="list_btn">
+    <!-- <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view> -->
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  <view style="height:100px"></view>
+</view>
+
+<block wx:if="{{isshowsd}}">
+  <view class="opbackgroud" bindtap="sislsd"></view>
+  <view class="ishow_went">
+    <image bindtap="isshowFn" bindtap="sislsd" class="imgs" src="http://47.94.16.158:8001/28.png"></image>
+    <view class="isshow_titles">血常规化验单</view>
+    <view class="txts_delit"></view>
+    <view class="submitszhi" bindtap="sislsd">我知道了</view>
+  </view>
+</block>

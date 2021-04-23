@@ -1,0 +1,93 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">病史信息</view>
+  <view class="tit_tab">
+    <view class="title">日常血糖检测情况</view>
+    <view class="nums">2/7</view>
+  </view>
+  <view class="txt_tit">为了精准地为您定制健康管理方案，请如实填写</view>
+</view>
+
+<view class="cont">
+  <view style="padding:20rpx 0;width:90%;margin:0 auto;font-size:26rpx;color:gray">血糖数值范围：小于50大于2之间</view>
+  <view class="lists">
+    <view class="title_list">空腹血糖（必填）</view>
+    <view class="intab">
+      <input type="digit" bindinput="fasting_s" value="{{fasting_s}}" />
+      -
+      <input type="digit" bindinput="fasting_l" value="{{fasting_l}}" />
+      mmol/L 区间
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">早餐后2小时后血糖</view>
+    <view class="intab">
+      <input type="digit" bindinput="breakfast_s" value="{{breakfast_s}}" />
+      -
+      <input type="digit" bindinput="breakfast_l" value="{{breakfast_l}}" />
+      mmol/L 区间
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">午餐后2小时后血糖</view>
+    <view class="intab">
+      <input type="digit" bindinput="lunch_s" value="{{lunch_s}}" />
+      -
+      <input type="digit" bindinput="lunch_l" value="{{lunch_l}}" />
+      mmol/L 区间
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">晚餐后2小时后血糖</view>
+    <view class="intab">
+      <input type="digit" bindinput="dinner_s" value="{{dinner_s}}" />
+      -
+      <input type="digit" bindinput="dinner_l" value="{{dinner_l}}" />
+      mmol/L 区间
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">睡前血糖</view>
+    <view class="intab">
+      <input type="digit" bindinput="sleep_s" value="{{sleep_s}}" />
+      -
+      <input type="digit" bindinput="sleep_l" value="{{sleep_l}}" />
+      mmol/L 区间
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您测量血糖的频率</view>
+    <view class="tavb" bindtap="tab1" data-id="1">
+      <checkbox checked="{{tab1==1?true:false}}"></checkbox>
+      <view class="xstxs">每日多次</view>
+    </view>
+    <view class="tavb" bindtap="tab1" data-id="2">
+      <checkbox checked="{{tab1==2?true:false}}"></checkbox>
+      <view class="xstxs">一周多次</view>
+    </view>
+    <view class="tavb" bindtap="tab1" data-id="3">
+      <checkbox checked="{{tab1==3?true:false}}"></checkbox>
+      <view class="xstxs">一个月多次</view>
+    </view>
+    <view class="tavb" bindtap="tab1" data-id="4">
+      <checkbox checked="{{tab1==4?true:false}}"></checkbox>
+      <view class="xstxs">几个月一次</view>
+    </view>
+  </view>
+  <block wx:if="{{!pageid}}">
+    <view class="list_btn">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  </block>
+  <block wx:if="{{pageid==1}}">
+    <view class="list_btn">
+
+    <view class="tabBtn2" bindtap="tijiaosubm">提交并下一步</view>
+  </view>
+  </block>
+  <view style="height:100px"></view>
+</view>

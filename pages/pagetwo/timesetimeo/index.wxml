@@ -1,0 +1,41 @@
+<view class="contens">
+  <view class="titXt">餐后两小时测量提醒</view>
+  <view class="txt_times" wx:if="{{is_timestatus}}">{{countdown.hour}}:{{countdown.minute}}:{{countdown.second}}</view>
+  <view class="txt">餐后2小时从第一口主食开始倒计时</view>
+  <view class="submits" wx:if="{{!isok}}"  bindtap="submtin">开始</view>
+  <view class="submits"  wx:if="{{isok}}" bindtap="submtin">取消倒计时</view>
+  <!-- <view class="lists" style="margin-top:50rpx">
+    <view class="left">
+      <image src="http://47.94.16.158:8001/113.png"></image>
+      <view class="title_times">
+        <view class="tit_time">08:00 </view>
+        <view class="tit_txt">血糖提醒 午餐前</view>
+      </view>
+   
+    </view>
+    <switch class="tui-fr" color="#29C3C7" checked="{{isChecked1}}" bindchange="changeSwitch1"/>
+  </view>
+  <view class="lists">
+    <view class="left">
+      <image src="http://47.94.16.158:8001/113.png"></image>
+      <view class="title_times">
+        <view class="tit_time">17:30 </view>
+        <view class="tit_txt">服药提醒 晚餐前</view>
+      </view>
+   
+    </view>
+    <switch class="tui-fr" color="#29C3C7" checked="{{isChecked2}}" bindchange="changeSwitch2"/>
+  </view> -->
+  <view class="lists" wx:for="{{list}}">
+    <view class="left">
+      <image src="http://47.94.16.158:8001/113.png"></image>
+      <view class="title_times">
+        <view class="tit_time">{{item.mTime}}</view>
+        <view class="tit_txt">{{item.mProject}} {{item.mType}}</view>
+      </view>
+   
+    </view>
+    <switch class="tui-fr" color="#29C3C7" data-id="{{item.id}}" data-isopen="{{item.isOpen}}" data-index="{{index}}" checked="{{item.isOpen==0?true:false}}" bindchange="changeSwitch2"/>
+  </view>
+</view>
+<view class="subnmitAdd" bindtap="submitAdd">添加提醒</view>

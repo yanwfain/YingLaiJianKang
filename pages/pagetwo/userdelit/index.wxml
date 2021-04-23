@@ -1,0 +1,66 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+	<image src="http://47.94.16.158:8001/23.png"></image>
+	<view class="title_page" style="top:{{statusBarHeight+10}}px">个人信息</view>
+
+</view>
+<view class="cont">
+	<image class="head" src="{{head}}">
+	</image>
+	<view style="height:100rpx"></view>
+	<view class="list">
+		<view class="name">姓名</view>
+		<input class="inps" type="text" data-id="1" bindfocus="bindfocus1" bindblur="bindblur1" bindinput="resName"
+			placeholder="请输入真实姓名" value="{{resName}}" />
+		<view class="cha" wx:if="{{showId==1}}" catchtap="bindfocusone"> x </view>
+	</view>
+	<view class="list">
+		<view class="name">昵称</view>
+		<input class="inps" type="text" placeholder="请输入昵称" disabled="false" value="{{nickName}}" />
+	</view>
+	<view class="list">
+		<view class="name">手机号</view>
+		<input class="inps" type="number" placeholder="请输入手机号" data-id="2" bindfocus="bindfocus1" bindblur="bindblur1"
+			bindinput="tel" value="{{tel}}" />
+		<view class="cha" wx:if="{{showId==2}}" catchtap="bindfocusone"> x </view>
+	</view>
+	<view class="list">
+		<view class="name">健康监护人1 (选填)</view>
+		<input class="inps" type="text" placeholder="姓名" data-id="4" bindfocus="bindfocus1" bindblur="bindblur1"
+			bindinput="custody1" value="{{custody1}}" />
+	</view>
+	<view class="list">
+		<view class="name"></view>
+		<input class="inps" type="text" placeholder="关系" data-id="5" bindfocus="bindfocus1" bindblur="bindblur1"
+			bindinput="relation1" value="{{relation1}}" />
+		<!-- <view class="cha" wx:if="{{showId==3}}" catchtap="bindfocusone"> x </view> -->
+	</view>
+	<view class="list">
+		<view class="name"></view>
+		<input class="inps" type="number" placeholder="手机号" data-id="6" bindfocus="bindfocus1" bindblur="bindblur1"
+			bindinput="phone1" value="{{phone1}}" />
+		<!-- <view class="cha" wx:if="{{showId==3}}" catchtap="bindfocusone"> x </view> -->
+	</view>
+	<view class="list">
+		<view class="name">健康监护人2 (选填)</view>
+		<input class="inps" type="text" placeholder="姓名" data-id="7" bindfocus="bindfocus1" bindblur="bindblur1"
+			bindinput="custody2" value="{{custody2}}" />
+		<!-- <view class="cha" wx:if="{{showId==4}}" catchtap="bindfocusone"> x </view> -->
+	</view>
+	<view class="list">
+		<view class="name"></view>
+		<input class="inps" type="text" placeholder="关系" data-id="8" bindfocus="bindfocus1" bindblur="bindblur1"
+			bindinput="relation2" value="{{relation2}}" />
+		<!-- <view class="cha" wx:if="{{showId==4}}" catchtap="bindfocusone"> x </view> -->
+	</view>
+	<view class="list">
+		<view class="name"></view>
+		<input class="inps" type="number" placeholder="手机号" data-id="9" bindfocus="bindfocus1" bindblur="bindblur1"
+			bindinput="phone2" value="{{phone2}}" />
+		<!-- <view class="cha" wx:if="{{showId==4}}" catchtap="bindfocusone"> x </view> -->
+	</view>
+	<view style="height:200rpx"></view>
+</view>
+<view class="submits" bindtap="submitens">下一步</view>

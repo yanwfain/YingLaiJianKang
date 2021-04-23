@@ -1,0 +1,54 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">个人信息</view>
+  <view class="tilet">收货地址</view>
+  <view class="ti_txt">请正确填写收货地址，方便接收配套产品设备</view>
+</view>
+<view class="cont">
+  <view class="topTierl" bindtap="binaddress">
+    <image class="imag1" src="http://47.94.16.158:8001/31.png"> </image>
+    <view class="title">使用微信地址收货</view>
+    <image class="imag2" src="http://47.94.16.158:8001/n5.png"></image>
+  </view>
+  <view class="list">
+    <view class="name">收货人</view>
+    <input class="inps" type="text" data-id="1" bindfocus="bindfocus1" bindblur="bindblur1" bindinput="userName"
+      placeholder="请输入收货人" value="{{userName}}" />
+    <view class="cha" wx:if="{{showId==1}}" catchtap="bindfocusone"> x </view>
+  </view>
+  <view class="list">
+    <view class="name">手机号</view>
+    <input class="inps" type="number" placeholder="请输入手机号" data-id="2" bindfocus="bindfocus1" bindblur="bindblur1"
+      bindinput="telNumber" value="{{telNumber}}" />
+    <view class="cha" wx:if="{{showId==2}}" catchtap="bindfocusone"> x </view>
+  </view>
+  <view class="list">
+    <view class="name">城市地区</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        <block wx:if="{{region.length>0}}">
+          {{region[0]}}/{{region[1]}}/{{region[2]}}
+        </block>
+        <block wx:elif="{{city&&region.length==0}}">
+          {{city}}
+        </block>
+        <block wx:else>
+          选择省 / 市 / 区
+        </block>
+
+      </view>
+    </picker>
+    <!-- <view class="cha" wx:if="{{showId==2}}" catchtap="bindfocusone"> x </view> -->
+  </view>
+  <view class="list">
+    <view class="name">详细地址</view>
+    <input class="inps" type="number" placeholder="街道门牌、楼层房间号等信息" data-id="3" bindfocus="bindfocus1" bindblur="bindblur1"
+      bindinput="detailInfo" value="{{detailInfo}}" />
+    <view class="cha" wx:if="{{showId==3}}" catchtap="bindfocusone"> x </view>
+  </view>
+  <view style="height:100rpx"></view>
+</view>
+<view class="submits" bindtap="submitens">下一步</view>

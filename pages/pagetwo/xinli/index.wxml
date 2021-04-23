@@ -1,0 +1,146 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">心理健康</view>
+  <view class="tit_tab">
+    <view class="title">心理健康</view>
+    <view class="nums">4/4</view>
+  </view>
+  <view class="txt_tit">为了精准地为您定制健康管理方案，请如实填写</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">您经常处在高度紧张的工作压力状态吗？</view>
+    <view class="tavb2" bindtap="tab2" data-id="1">
+      <checkbox checked="{{tab2==1?true:false}}"></checkbox>
+      <view class="xstxs">从不</view>
+    </view>
+    <view class="tavb2" bindtap="tab2" data-id="2">
+      <checkbox checked="{{tab2==2?true:false}}"></checkbox>
+      <view class="xstxs">偶尔</view>
+    </view>
+    <view class="tavb2" bindtap="tab2" data-id="3">
+      <checkbox checked="{{tab2==3?true:false}}"></checkbox>
+      <view class="xstxs">经常</view>
+    </view>
+    <view class="tavb2" bindtap="tab2" data-id="4">
+      <checkbox checked="{{tab2==4?true:false}}"></checkbox>
+      <view class="xstxs">每日</view>
+    </view>
+
+  </view>
+  <view class="lists">
+    <view class="title_list">您每天工作的时间平均为？</view>
+    <view class="tavb2" bindtap="tab3" data-id="1">
+      <checkbox checked="{{tab3==1?true:false}}"></checkbox>
+      <view class="xstxs">6-8小时</view>
+    </view>
+    <view class="tavb2" bindtap="tab3" data-id="2">
+      <checkbox checked="{{tab3==2?true:false}}"></checkbox>
+      <view class="xstxs">8-12小时</view>
+    </view>
+    <view class="tavb2" bindtap="tab3" data-id="3">
+      <checkbox checked="{{tab3==3?true:false}}"></checkbox>
+      <view class="xstxs">6小时以下</view>
+    </view>
+    <view class="tavb2" bindtap="tab3" data-id="4">
+      <checkbox checked="{{tab3==4?true:false}}"></checkbox>
+      <view class="xstxs">12小时以上</view>
+    </view>
+    <view class="tavb2" bindtap="tab3" data-id="5">
+      <checkbox checked="{{tab3==5?true:false}}"></checkbox>
+      <view class="xstxs">已经退休/不工作</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您是否经常有以下情绪（可多选）</view>
+    <view class="tabnab">
+      <block wx:for="{{listWulist}}">
+        <view class="tavb" bindtap="tab" data-index="{{index}}">
+          <checkbox checked="{{item.isshow}}"></checkbox>
+          <view class="xstxs">{{item.text}}</view>
+        </view>
+        <block wx:if="{{item.istext&&item.isshow}}">
+          <textarea class="txtare" catchtap="" bindinput="textartFn" data-index="{{index}}" value="{{item.textart}}"
+            placeholder="请填写" name="" maxlength="999"></textarea>
+          <view style="height:40rpx"></view>
+        </block>
+      </block>
+    </view>
+  </view>
+  <view class="lists" style="padding:0;margin-top:-40rpx">
+    <view class="tabnab" style="padding:0;">
+        <view class="tavb" bindtap="tab4" data-index="{{index}}">
+          <checkbox checked="{{isshow4?true:false}}"></checkbox>
+          <view class="xstxs">以上都没有</view>
+        </view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您平时精力如何？</view>
+    <view class="tavb2" bindtap="tab5" data-id="1">
+      <checkbox checked="{{tab5==1?true:false}}"></checkbox>
+      <view class="xstxs">精力充沛，充满活力</view>
+    </view>
+    <view class="tavb2" bindtap="tab5" data-id="2">
+      <checkbox checked="{{tab5==2?true:false}}"></checkbox>
+      <view class="xstxs">精力一般</view>
+    </view>
+    <view class="tavb2" bindtap="tab5" data-id="3">
+      <checkbox checked="{{tab5==3?true:false}}"></checkbox>
+      <view class="xstxs">经常感觉到困倦或疲乏</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您每天睡眠时间为?</view>
+    <view class="tavb2" bindtap="tab6" data-id="1">
+      <checkbox checked="{{tab6==1?true:false}}"></checkbox>
+      <view class="xstxs">6-8小时</view>
+    </view>
+    <view class="tavb2" bindtap="tab6" data-id="2"> 
+      <checkbox checked="{{tab6==2?true:false}}"></checkbox>
+      <view class="xstxs">8小时以上</view>
+    </view>
+    <view class="tavb2" bindtap="tab6" data-id="3">
+      <checkbox checked="{{tab6==3?true:false}}"></checkbox>
+      <view class="xstxs">4-6小时</view>
+    </view>
+    <view class="tavb2" bindtap="tab6" data-id="4">
+      <checkbox checked="{{tab6==4?true:false}}"></checkbox>
+      <view class="xstxs">4小时以下</view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您的睡眠质量如何?</view>
+    <view class="tavb2" bindtap="tab7" data-id="1">
+      <checkbox checked="{{tab7==1?true:false}}"></checkbox>
+      <view class="xstxs">经常失眠</view>
+    </view>
+    <view class="tavb2" bindtap="tab7" data-id="2"> 
+      <checkbox checked="{{tab7==2?true:false}}"></checkbox>
+      <view class="xstxs">经常早醒</view>
+    </view>
+    <view class="tavb2" bindtap="tab7" data-id="3">
+      <checkbox checked="{{tab7==3?true:false}}"></checkbox>
+      <view class="xstxs">多梦</view>
+    </view>
+    <view class="tavb2" bindtap="tab7" data-id="4">
+      <checkbox checked="{{tab7==4?true:false}}"></checkbox>
+      <view class="xstxs">经常做噩梦</view>
+    </view>
+    <view class="tavb2" bindtap="tab7" data-id="5">
+      <checkbox checked="{{tab7==5?true:false}}"></checkbox>
+      <view class="xstxs">睡眠好</view>
+    </view>
+  </view>
+  <view class="list_btn" wx:if="{{!pageid}}">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  <view class="list_btn" wx:if="{{pageid==1}}">
+    <view class="tabBtn2" bindtap="submiiti">提交</view>
+  </view>
+  <view style="height:100px"></view>
+</view>

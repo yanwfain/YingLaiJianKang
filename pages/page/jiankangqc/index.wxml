@@ -1,0 +1,484 @@
+<view class="tab">
+  <view class="listtab {{tid==1?'active':''}}" data-id="1" bindtap="binchenlist">病程</view>
+  <view class="listtab {{tid==2?'active':''}}" data-id="2" bindtap="binchenlist">日常血糖监控</view>
+  <view class="listtab {{tid==3?'active':''}}" data-id="3" bindtap="binchenlist">糖尿病并发症</view>
+  <view class="listtab {{tid==4?'active':''}}" data-id="4" bindtap="binchenlist">既往史</view>
+  <view class="listtab {{tid==5?'active':''}}" data-id="5" bindtap="binchenlist">家族史</view>
+  <view class="listtab {{tid==6?'active':''}}" data-id="6" bindtap="binchenlist">中医体质 </view>
+  <view class="listtab {{tid==7?'active':''}}" data-id="7" bindtap="binchenlist">个人史</view>
+  <view class="listtab {{tid==8?'active':''}}" data-id="8" bindtap="binchenlist">饮食习惯 </view>
+  <view class="listtab {{tid==9?'active':''}}" data-id="9" bindtap="binchenlist">运动习惯 </view>
+  <view class="listtab {{tid==10?'active':''}}" data-id="10" bindtap="binchenlist">心理健康</view>
+</view>
+<view class="lits_tiomes">
+  <view class="timws">最后更新 2021-01-12</view>
+  <block></block>
+  <view wx:if="{{tid==1}}" class="titBtn" bindtap="chongxFn1">重新测评</view>
+  <view wx:if="{{tid==2}}" class="titBtn" bindtap="chongxFn2">重新测评</view>
+  <view wx:if="{{tid==3}}" class="titBtn" bindtap="chongxFn3">重新测评</view>
+  <view wx:if="{{tid==4}}" class="titBtn" bindtap="chongxFn4">重新测评</view>
+  <view wx:if="{{tid==5}}" class="titBtn" bindtap="chongxFn5">重新测评</view>
+  <view wx:if="{{tid==6}}" class="titBtn" bindtap="chongxFn6">重新测评</view>
+  <view wx:if="{{tid==7}}" class="titBtn" bindtap="chongxFn7">重新测评</view>
+  <view wx:if="{{tid==8}}" class="titBtn" bindtap="chongxFn8">重新测评</view>
+  <view wx:if="{{tid==9}}" class="titBtn" bindtap="chongxFn9">重新测评</view>
+  <view wx:if="{{tid==10}}" class="titBtn" bindtap="chongxFn10">重新测评</view>
+</view>
+<block wx:if="{{tid==1}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>糖尿病类型
+    </view>
+    <view class="conts" wx:if="{{listuser.diseaseType==1}}">
+      <view class="cont_txtxs">2型糖尿病</view>
+    </view>
+    <view class="conts" wx:if="{{listuser.diseaseType==2}}">
+      <view class="cont_txtxs">糖前期/肥胖</view>
+    </view>
+  </view>
+
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>糖尿病确诊时间
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs">{{listuser.diagnosisTime}}年</view>
+      <view></view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>是否有高血压
+    </view>
+    <view class="conts" wx:if="{{listuser.hypertension==1}}">
+      <view class="cont_txtxs">有</view>
+    </view>
+    <view class="conts" wx:if="{{listuser.hypertension==2}}">
+      <view class="cont_txtxs">没有</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>是否有高脂血症
+    </view>
+    <view class="conts" wx:if="{{listuser.hyperlipemia==1}}">
+      <view class="cont_txtxs">有</view>
+    </view>
+    <view class="conts" wx:if="{{listuser.hyperlipemia==2}}">
+      <view class="cont_txtxs">没有</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>是否有高尿酸
+    </view>
+    <view class="conts" wx:if="{{listuser.hyperuricemia==1}}">
+      <view class="cont_txtxs">有</view>
+    </view>
+    <view class="conts" wx:if="{{listuser.hyperuricemia==2}}">
+      <view class="cont_txtxs">没有</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>高尿酸确诊时间
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs">{{listuser.diagnosisTime2}}年</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+<block wx:if="{{tid==2}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>空腹血糖
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs">{{listuser.fastingS}}-{{listuser.fastingL}} mmol/L</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>早餐后2小时后血糖
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs">{{listuser.breakfastS}}-{{listuser.breakfastL}} mmol/L</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>午餐后2小时后血糖
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs">{{listuser.lunchS}}-{{listuser.lunchL}} mmol/L</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>晚餐后2小时后血糖
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs">{{listuser.dinnerS}}-{{listuser.dinnerL}} mmol/L</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>睡前血糖
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs">{{listuser.sleepS}} - {{listuser.sleepL}} mmol/L</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您测量血糖的频率
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.frequency==1}}">每日多次</view>
+      <view class="cont_txtxs" wx:if="{{listuser.frequency==2}}">一周多次</view>
+      <view class="cont_txtxs" wx:if="{{listuser.frequency==3}}">一个月多次</view>
+      <view class="cont_txtxs" wx:if="{{listuser.frequency==4}}">几个月一次</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+<block wx:if="{{tid==3}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>糖尿病视网膜病变
+    </view>
+    <view class="conts" wx:for="{{retinopathy}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs">{{item.text}}</view>
+    </view>
+    <view class="conts" wx:if="{{peripheralNeuropathy}}">
+      <view class="cont_txtxs"> 其他：{{peripheralNeuropathy}}</view>
+    </view>
+    
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>糖尿病神经病变
+    </view>
+    <view class="conts" wx:for="{{numbness}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs">{{item.text}}</view>
+    </view>
+    <view class="conts" wx:if="{{abdominalDistention}}">
+      <view class="cont_txtxs"> 其他：{{abdominalDistention}}</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>糖尿病肾病 
+    </view>
+    <view class="conts" wx:for="{{pain}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs">{{item.text}}</view>
+    </view>
+    <view class="conts" wx:if="{{sweating}}">
+      <view class="cont_txtxs"> 其他：{{sweating}}</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>糖尿病下肢血管病变（包括糖尿病足）
+    </view>
+    <view class="conts" wx:for="{{urination}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs">{{item.text}}</view>
+    </view>
+    <view class="conts" wx:if="{{impotentia}}">
+     <view class="cont_txtxs"> 其他：{{impotentia}}</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+<block wx:if="{{tid==4}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否曾经患有以下疾病？
+    </view>
+    <view class="conts" wx:for="{{coronary}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs">{{item.text}}</view>
+    </view>
+    <view class="conts" wx:if="{{other}}">
+     <view class="cont_txtxs"> 其他：{{other}}</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+<block wx:if="{{tid==5}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您的家族中是否有人患有以下疾病 ？
+    </view>
+    <view class="conts" wx:for="{{diabetes}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs">{{item.text}}</view>
+    </view>
+    <view class="conts" wx:if="{{other}}">
+     <view class="cont_txtxs"> 其他：{{other}}</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+<block wx:if="{{tid==6}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否比一般人更怕寒冷并容易手脚发凉？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.cold==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.cold==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.cold==3}}">总是</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否感到手脚心发热、口干舌燥？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.scorched==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.scorched==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.scorched==3}}">总是</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否在活动后容易心慌、气短、出虚汗？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.sweating==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.sweating==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.sweating==3}}">总是</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否舌苔白腻、平时痰多？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.phlegm==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.phlegm==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.phlegm==3}}">总是</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您平时痰多，特别是咽喉总感到有痰吗？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.throat==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.throat==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.throat==3}}">总是</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否舌苔黄腻、口苦、小便时有发热感、大便粘滞不爽？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.stool==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.stool==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.stool==3}}">总是</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否面色晦暗、容易出现瘀斑？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.ecchymosis==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.ecchymosis==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.ecchymosis==3}}">总是</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否闷闷不乐、无缘无故叹气？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.sighing==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.sighing==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.sighing==3}}">总是</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否容易对药物、食物、气味、花粉过敏？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.allergy==1}}">没有</view>
+      <view class="cont_txtxs" wx:if="{{listuser.allergy==2}}">有时候</view>
+      <view class="cont_txtxs" wx:if="{{listuser.allergy==3}}">总是</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+<block wx:if="{{tid==7}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否抽烟？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.smoking==1}}">从不抽烟</view>
+      <view class="cont_txtxs" wx:if="{{listuser.smoking==2}}">每天抽烟1包以下</view>
+      <view class="cont_txtxs" wx:if="{{listuser.smoking==3}}">每天抽烟1-2包</view>
+      <view class="cont_txtxs" wx:if="{{listuser.smoking==4}}">每天抽烟2包以上</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您喝酒的频次是？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.drinking==1}}">每天</view>
+      <view class="cont_txtxs" wx:if="{{listuser.drinking==2}}">1-2天</view>
+      <view class="cont_txtxs" wx:if="{{listuser.drinking==3}}">3-4天</view>
+      <view class="cont_txtxs" wx:if="{{listuser.drinking==4}}">偶然</view>
+      <view class="cont_txtxs" wx:if="{{listuser.drinking==5}}">从不</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您平常喝什么酒，每次喝多少量？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{listuser.spirit}}">白酒{{listuser.spirit}} 两</view>
+      <view class="cont_txtxs" wx:if="{{listuser.beer}}">啤酒 {{listuser.beer}} 毫升</view>
+      <view class="cont_txtxs" wx:if="{{listuser.wine}}">葡萄酒 {{listuser.wine}} 毫升</view>
+      <view class="cont_txtxs" wx:if="{{listuser.other}}">其他：{{listuser.other}}</view>
+      
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+<block wx:if="{{tid==8}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>请选择以下符合您饮食偏好和习惯的描述？
+    </view>
+    <view class="conts" wx:for="{{listuser}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs" >{{item.text}}</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+
+<block wx:if="{{tid==9}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您喜欢的运动类型？
+    </view>
+    <view class="conts" wx:for="{{sportType}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs" >{{item.text}}</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您一般在什么时间段做运动？
+    </view>
+    <view class="conts" wx:for="{{slot}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs" >{{item.text}}</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>请问您一周平均运动几天？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{days==1}}">不运动</view>
+      <view class="cont_txtxs" wx:if="{{days==2}}">1-2天</view>
+      <view class="cont_txtxs" wx:if="{{days==3}}">3-4天</view>
+      <view class="cont_txtxs" wx:if="{{days==4}}">5-7天</view>
+      <view class="cont_txtxs" wx:if="{{days==5}}">不固定</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您平均每次运动多长时间？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{duration==1}}">不运动</view>
+      <view class="cont_txtxs" wx:if="{{duration==2}}">少于30分钟</view>
+      <view class="cont_txtxs" wx:if="{{duration==3}}">30-60分钟</view>
+      <view class="cont_txtxs" wx:if="{{duration==4}}">多于60分钟</view>
+      <view class="cont_txtxs" wx:if="{{duration==5}}">运动时长不固定</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您运动后的感受一般是？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{feeling==1}}">轻松</view>
+      <view class="cont_txtxs" wx:if="{{feeling==2}}">一般</view>
+      <view class="cont_txtxs" wx:if="{{feeling==3}}">疲乏</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>
+<block wx:if="{{tid==10}}">
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您经常处在高度紧张的工作压力状态吗？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{pressure==1}}">从不</view>
+      <view class="cont_txtxs" wx:if="{{pressure==2}}">偶尔</view>
+      <view class="cont_txtxs" wx:if="{{pressure==3}}">经常</view>
+      <view class="cont_txtxs" wx:if="{{pressure==4}}">每日</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您每天工作的时间平均为？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{duration==1}}">6-8小时</view>
+      <view class="cont_txtxs" wx:if="{{duration==2}}">8-12小时</view>
+      <view class="cont_txtxs" wx:if="{{duration==3}}">6小时以下</view>
+      <view class="cont_txtxs" wx:if="{{duration==4}}">12小时以上</view>
+      <view class="cont_txtxs" wx:if="{{duration==5}}">已经退休/不工作</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您是否经常有以下情绪
+    </view>
+    <view class="conts" wx:for="{{emotion}}" wx:if="{{item.isshow}}">
+      <view class="cont_txtxs" >{{item.text}}</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您平时精力如何？
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{energy==1}}">精力充沛，充满活力</view>
+      <view class="cont_txtxs" wx:if="{{energy==2}}">精力一般</view>
+      <view class="cont_txtxs" wx:if="{{energy==3}}">经常感觉到困倦或疲乏</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您每天睡眠时间为?
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{sleepTime==1}}">6-8小时</view>
+      <view class="cont_txtxs" wx:if="{{sleepTime==2}}">8小时以上</view>
+      <view class="cont_txtxs" wx:if="{{sleepTime==3}}">4-6小时</view>
+      <view class="cont_txtxs" wx:if="{{sleepTime==4}}">4小时以下</view>
+    </view>
+  </view>
+  <view class="listCont">
+    <view class="list_title">
+      <image src="http://47.94.16.158:8001/n1.png"></image>您的睡眠质量如何?
+    </view>
+    <view class="conts">
+      <view class="cont_txtxs" wx:if="{{sleep==1}}">经常失眠</view>
+      <view class="cont_txtxs" wx:if="{{sleep==2}}">经常早醒</view>
+      <view class="cont_txtxs" wx:if="{{sleep==3}}">多梦</view>
+      <view class="cont_txtxs" wx:if="{{sleep==4}}">经常做噩梦</view>
+      <view class="cont_txtxs" wx:if="{{sleep==5}}">睡眠好</view>
+    </view>
+  </view>
+  <view style="font-size:26rpx;color:gray;text-align:center">没有更多数据了</view>
+</block>

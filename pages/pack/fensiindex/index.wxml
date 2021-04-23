@@ -1,0 +1,10 @@
+
+<view class="list" wx:for="{{movieList}}">
+  <view class="list_name">
+    <image src="{{item.headImg}}"></image>
+  <view class="names">{{item.userName}}</view>
+  </view>
+  <view class="btns1" wx:if="{{item.status==0}}"> <image src="http://47.94.16.158:8001/198.png"></image> 关注</view>
+  <view class="btns" wx:if="{{item.status>0}}"> <image src="http://47.94.16.158:8001/197.png"></image> 互相关注</view>
+</view>
+<view class="meiyougengs">没有更多内容了</view>

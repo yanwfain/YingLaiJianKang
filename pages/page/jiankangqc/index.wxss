@@ -1,0 +1,74 @@
+/* pages/jiankangqc/index.wxss */
+.tab{
+  padding:20rpx;
+  display: flex;
+  overflow-x: scroll;
+  /* overflow: hidden; */
+  display: -webkit-box;
+  -webkit-overflow-scrolling: touch;
+}
+.listtab{
+  padding:0 4rpx;
+  margin: 0 20rpx;
+  padding-bottom: 6rpx;
+  border-bottom:4px solid white;
+}
+.active{
+  font-size:32rpx;
+  font-weight: 600;
+  border-bottom:4px solid #29C3C7;
+}
+.lits_tiomes{
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.timws{
+  font-size: 26rpx;
+  color: #767676;
+}
+.titBtn{
+  padding: 10rpx 0;
+  width: 150rpx;
+  color:#15A7AA;
+  border:1px solid #15A7AA;
+  background: #F5FFFF;
+  text-align: center;
+  border-radius: 60rpx;
+}
+.listCont{
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+
+}
+.list_title{
+  font-size: 34rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+
+}
+.list_title image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right:4rpx;
+
+}
+.conts{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cont_txtxs{
+  padding: 24rpx;
+  font-size: 30rpx;
+  margin:20rpx 0;
+  background: #F0F3F4;
+  border-radius: 12rpx;
+}

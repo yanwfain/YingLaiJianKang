@@ -1,0 +1,10 @@
+<view style="padding:20rpx;font-size:34rpx;font-weight:600;">
+  {{name}}
+</view>
+<view class="titlevideo">
+  <video how-fullscreen-btn="true" show-center-play-btn="true" src="{{video}}"></video>
+</view>
+<view class="botos_oimg">
+  <image src="http://47.94.16.158:8001/118.png"></image>
+</view>
+<view class="bottoms" bindtap="binclick" wx:if="{{!type}}">完成</view>

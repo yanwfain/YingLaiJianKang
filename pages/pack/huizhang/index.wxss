@@ -1,0 +1,52 @@
+/* pages/huizhang/index.wxss */
+page{
+  background: #001A19;
+}
+.top{
+  text-align: center;
+  padding-top: 100rpx;
+}
+.txtnum{
+  font-size: 34rpx;
+  color: white;
+  margin-top: 14rpx;
+}
+.top image{
+  width: 350rpx;
+  height: 130rpx;
+}
+.cont{
+  width: 86%;
+  padding:20rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background: #063136;
+  border-radius: 20rpx;
+}
+.lisy{
+  width: 31%;
+  margin:2% 1%;
+  text-align: center;
+}
+.lisy image{
+  width: 140rpx;
+  height: 140rpx;
+}
+.tit{
+  color: white;
+  text-align: center;
+}
+.btnsun{
+  margin: 0 auto;
+  width: 90%;
+  line-height: 94rpx;
+  margin-top: 100rpx;
+  font-size: 34rpx;
+  color: white;
+  background-image: linear-gradient(to right, #FE2A77, #FF9062);
+  text-align: center;
+  border-radius: 60rpx;
+  margin-bottom: 100rpx;
+}

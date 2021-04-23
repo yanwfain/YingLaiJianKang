@@ -1,0 +1,113 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">病史信息</view>
+  <view class="tit_tab">
+    <view class="title">用药情况</view>
+    <view class="nums">3/7</view>
+  </view>
+  <view class="txt_tit">为了精准地为您定制健康管理方案，请如实填写</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">选择您目前的糖尿病用药方案（可多选）</view>
+    <view class="tavb" bindtap="tab" data-id="1">
+      <checkbox checked="{{tab==1?true:false}}"></checkbox>
+      <view class="xstxs">没有用药</view>
+    </view>
+    <view class="tabvbcont">
+      <view class="title_ckenmk">
+        <view class="tits">胰岛素（可多选）</view>
+        <view class="chnekeons" bindtap="listywu" data-id="1"><image src="http://47.94.16.158:8001/59.png"></image>选择胰岛素</view>
+      </view>
+      <view class="listo" wx:if="{{listYidao.length<1&&!typetxtars1}}">您还没有选择</view>
+      <view class="list_getwuli" wx:for="{{listYidao}}">
+        <view class="title_wu">
+          <view class="tit_wu">{{item.text}} <image bindtap="delelist" data-index="{{index}}" data-type="{{item.typeId}}" src="http://47.94.16.158:8001/61.png"></image></view>
+          <view class="num_wu" wx:if="{{item.allnum}}">共计：{{item.allnum}}u</view>
+        </view>
+        <view class="listinp" >
+          <view>
+            早上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zaoinp" value="{{item.zaoNum}}"  name="" id="" /> u
+          </view>
+          <view>
+            中午 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zhonginp" value="{{item.zhongNum}}" name="" id="" /> u
+          </view>
+        </view>
+        <view class="listinp">
+          <view>
+            晚上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="waninp" value="{{item.wanNum}}" name="" id="" /> u
+          </view>
+          <view>
+            睡前 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="shuiinp" value="{{item.shuiNum}}" name="" id="" /> u
+          </view>
+        </view>
+      </view>
+      <view class="list_getwuli" wx:if="{{typetxtars1==1}}">
+        <view class="title_wu">
+          <view class="tit_wu">其他药物<image bindtap="delelist1" data-index="{{index}}" data-type="{{item.typeId}}" src="http://47.94.16.158:8001/61.png"></image></view>
+          <view class="num_wu"></view>
+        </view>
+        <textarea class="txtare" catchtap="" bindinput="textartFn1" data-index="{{index}}" value="{{textartFn1}}" placeholder="请填写" name="" maxlength="999" ></textarea>
+      </view>
+    </view>
+    <view class="tabvbcont">
+      <view class="title_ckenmk">
+        <view class="tits">口服药（可多选）</view>
+        <view class="chnekeons" bindtap="listywu" data-id="2"><image src="http://47.94.16.158:8001/59.png"></image>选择口服药</view>
+      </view>
+      <view class="listo" wx:if="{{listKoufu.length<1&&!typetxtars2}}">您还没有选择</view>
+      <view class="list_getwuli" wx:for="{{listKoufu}}">
+        <view class="title_wu">
+          <view class="tit_wu">{{item.text}} <image bindtap="delelist" data-index="{{index}}" data-type="{{item.typeId}}" src="http://47.94.16.158:8001/61.png"></image></view>
+          <view class="num_wu"  wx:if="{{item.allnum}}">共计：{{item.allnum}}u</view>
+        </view>
+        <view class="listinp" >
+          <view>
+            早上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zaoinp" value="{{item.zaoNum}}"  name="" id="" /> u
+          </view>
+          <view>
+            中午 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zhonginp" value="{{item.zhongNum}}" name="" id="" /> u
+          </view>
+        </view>
+        <view class="listinp">
+          <view>
+            晚上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="waninp" value="{{item.wanNum}}" name="" id="" /> u
+          </view>
+          <view>
+            睡前 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="shuiinp" value="{{item.shuiNum}}" name="" id="" /> u
+          </view>
+        </view>
+      </view>
+      <view class="list_getwuli" wx:if="{{typetxtars2==2}}">
+        <view class="title_wu">
+          <view class="tit_wu">其他药物<image bindtap="delelist2" data-index="{{index}}" data-type="{{item.typeId}}" src="http://47.94.16.158:8001/61.png"></image></view>
+          <view class="num_wu"></view>
+        </view>
+        <textarea class="txtare" catchtap="" bindinput="textartFn2" data-index="{{index}}" value="{{textartFn2}}" placeholder="请填写" name="" maxlength="999" ></textarea>
+      </view>
+    </view>
+  </view>
+  <view class="lists">
+    <view class="title_list">您现在是否服用以下药物？（可多选）</view>
+    <view class="tabnab" wx:for="{{listWulist}}">
+      <view class="tavb"  bindtap="tab1" data-index="{{index}}">
+        <checkbox checked="{{item.isshow}}"></checkbox>
+        <view class="xstxs">{{item.text}}</view>
+      </view>
+      <block wx:if="{{item.isshow}}">
+        <textarea class="txtare" catchtap="" bindinput="textartFn" data-index="{{index}}" value="{{item.textart}}" placeholder="请填写{{item.text}}" name="" maxlength="999" ></textarea>
+      <view style="height:40rpx"></view>
+      </block>
+    
+    </view>
+
+  </view>
+  <view class="list_btn">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  <view style="height:100px"></view>
+</view>

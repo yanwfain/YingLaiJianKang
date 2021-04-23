@@ -1,0 +1,105 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/151.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">个人资料</view>
+</view>
+<view class="listcard">
+  <image style="width:160rpx;height:350rpx" wx:if="{{listuser.sex==1}}" src="http://47.94.16.158:8001/159.png"></image>
+  <image src="http://47.94.16.158:8001/160.png" wx:if="{{listuser.sex==2}}"></image>
+  <view class="chushne">
+    <view class="chu_txt">出生日期</view>
+    <view class="time_num">{{listuser.birthday}}</view>
+    <view class="list_userdelit">
+      <view class="listdelt">
+        <view class="txts">身高</view>
+        <view class="txt_nn"> <text style="font-weight：600"> {{listuser.height}} </text> cm</view>
+      </view>
+      <view class="listdelt">
+        <view class="txts">体重</view>
+        <view class="txt_nn"> <text style="font-weight：600"> {{listuser.weight}} </text> kg</view>
+      </view>
+      <view class="listdelt">
+        <view class="txts">腹围</view>
+        <view class="txt_nn"> <text style="font-weight：600"> {{listuser.waist}} </text> cm</view>
+      </view>
+    </view>
+    <!-- <view class="zuihou"><view></view> <view>最后更新时间：2020-01-12</view> </view> -->
+  </view>
+
+</view>
+<view class="litTit">
+  <view class="left_tyit"><image src="http://47.94.16.158:8001/n1.png"></image>我的信息</view>
+  <view class="true" wx:if="{{xui==1}}" bindtap="xuigaiFns"> 修改信息</view>
+  <view class="true" wx:if="{{xui==2}}" style=" background: #29C3C7;color: white;" bindtap="submitbao"> 保存</view>
+</view>
+<block wx:if="{{xui==1}}">
+  <view class="userloiy">
+  <view class="left_txts">姓名</view>
+  <view class="conrks">{{listuser.name}}</view>
+</view>
+<view class="userloiy">
+  <view class="left_txts">昵称</view>
+  <view class="conrks">{{listuser.nickName}}</view>
+</view>
+<view class="userloiy">
+  <view class="left_txts">手机号</view>
+  <view class="conrks">{{listuser.phone}}</view>
+</view>
+<view class="userloiy">
+  <view class="left_txts">健康监护人1</view>
+  <view class="conrks">{{listuser.custody1?listuser.custody1:''}}</view>
+</view>
+<view class="userloiy">
+  <view class="left_txts">健康监护人2</view>
+  <view class="conrks">{{listuser.custody2?listuser.custody2:''}}</view>
+</view>
+</block>
+<block wx:if="{{xui==2}}">
+  <view class="userloiy">
+  <view class="left_txts">姓名</view>
+  <input type="text" placeholder="请填写姓名" bindinput="name" value="{{listuser.name}}" />
+</view>
+<view class="userloiy">
+  <view class="left_txts">昵称</view>
+  <input type="text" placeholder="请填写昵称" bindinput="nickName" value="{{listuser.nickName}}" />
+</view>
+<view class="userloiy">
+  <view class="left_txts">手机号</view>
+  <input type="text" placeholder="请填写手机号" bindinput="phone" value="{{listuser.phone}}" />
+
+</view>
+<view class="userloiy">
+  <view class="left_txts">健康监护人1</view>
+
+  <input type="text" placeholder="请填写健康监护人1" bindinput="custody1" value="{{listuser.custody1}}" />
+
+</view>
+<view class="userloiy">
+  <view class="left_txts">健康监护人2</view>
+  <input type="text" placeholder="请填写健康监护人2" bindinput="custody2" value="{{listuser.custody2}}" />
+
+</view>
+<view class="userloiy">
+  <view class="left_txts">身高</view>
+  <input type="text" placeholder="请填写身高" bindinput="custody3" value="{{listuser.height}}" />
+</view>
+<view class="userloiy">
+  <view class="left_txts">腹围</view>
+  <input type="text" placeholder="请填写腹围" bindinput="custody4" value="{{listuser.waist}}" />
+</view>
+</block>
+<view class="userloiy">
+  <view class="left_txts">积分</view>
+  <view class="conrks">{{listuser.usableScore?listuser.usableScore:'0'}}</view>
+</view>
+<view class="userloiy">
+  <view class="left_txts">入营日期</view>
+  <view class="conrks">{{listuser.campTime}}</view>
+</view>
+<view class="userloiy">
+  <view class="left_txts">入营天数</view>
+  <view class="conrks">{{listuser.dayNum}}天</view>
+</view>
+<!-- <view class="btnsubmite" wx:if="{{xui==2}}" bindtap="submitesd"> 修改 </view> -->

@@ -1,0 +1,57 @@
+/* pages/yaowulist/index.wxss */
+.searc{
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 50rpx;
+  background: #EFEFEF;
+  font-size: 28rpx;
+  display: flex;
+  padding:2%;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.searc image{
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 14rpx;
+}
+.searc input{
+  width: 90%;
+
+}
+.list{
+  width: 100%;
+
+}
+.title{
+  padding: 28rpx;
+  font-size: 32rpx;
+  background: #F6F6F6;
+}
+.txt{
+  padding:38rpx;
+  border-bottom:1px solid #EFEFEF;
+}
+.chnekeons{
+  width: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #15A7AA;
+  border: 1px solid #29C3C7;
+  background: #F5FFFF;
+  padding: 8rpx;
+  border-radius: 50rpx;
+  margin: 14rpx 0;
+}
+.chnekeons image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.lengin{
+  width: 90%;
+  margin: 0 auto;
+  padding:30rpx 0;
+}

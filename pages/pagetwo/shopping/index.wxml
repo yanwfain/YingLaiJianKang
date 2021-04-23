@@ -1,0 +1,87 @@
+<view class="right_top">
+	<image src="http://47.94.16.158:8001/195.png"></image>
+	<input class="inp_top" placeholder="搜索" bindconfirm="bindconfirm" confirm-type='search' type="text" />
+</view>
+<view class="swipTop">
+	<swiper class='shop_swiper' bindchange="swiperChange" autoplay="true" indicator-active-color="#fff" interval="3000"
+		duration="1000" circular='true' hidden='{{luboActive}}'>
+		<block wx:for="{{pageindex.topSlideList}}" wx:key="index">
+			<swiper-item class="imgheight">
+				<image mode="aspectFill" src="{{item.img}}" style="height:100%;" class='lbImg' data-jumppage="{{item.jumppage}}" data-id='{{item.id}}'
+					data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel'
+					bindload="image_upload" />
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="dots">
+		<block wx:for="{{pageindex.topSlideList}}" wx:key>
+			<view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+		</block>
+	</view>
+</view>
+<view class="listcont">
+	<view class="lcontlop" bindtap="classcity">
+		<view class="left_txt">
+			<view class="lop_txt">分类</view>
+			<view class="lop_txts">所有商品分类</view>
+		</view>
+		<image src=""></image>
+	</view>
+	<view class="lcontlop" bindtap="zhuanquFn" data-id="1">
+		<view class="left_txt">
+			<view class="lop_txt">推荐专区</view>
+			<view class="lop_txts">杭大夫精选推荐</view>
+		</view>
+		<image src=""></image>
+	</view>
+	<view class="lcontlop" bindtap="zhuanquFn" data-id="2">
+		<view class="left_txt">
+			<view class="lop_txt">排行专区</view>
+			<view class="lop_txts">杭大夫精选推荐</view>
+		</view>
+		<image src=""></image>
+	</view>
+	<view class="lcontlop">
+		<view class="left_txt" bindtap="zhuanquFn" data-id="3">
+			<view class="lop_txt">热门商品</view>
+			<view class="lop_txts">商城最热卖</view>
+		</view>
+		<image src=""></image>
+	</view>
+</view>
+<view class="title_hot">热门推荐</view>
+<view class="tab_shoplist">
+	<view class="list" wx:for="{{pageindex.goodsList}}" data-id="{{item.id}}" bindtap="shopdelit">
+		<image mode="aspectFill" src="{{item.imgUrl}}"></image>
+		<view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+		<view class="botmodelt">
+			<view class="pick">￥49</view>
+			<view class="num_new">已售2312</view>
+		</view>
+	</view>
+</view>
+<view class="meiyougengduo">没有更多内容了</view>
+<view style="height:120px"></view>
+<view class="Btabview">
+	<view class="Btabs" bindtap="indexFn">
+		<image src="http://47.94.16.158:8001/tab2_2.png"></image>
+		<view class="Btab_txt">首页</view>
+	</view>
+	<view class="Btabs" bindtap="collegeFn">
+		<image src="http://47.94.16.158:8001/tab1.png"></image>
+		<view class="Btab_txt">糖学院</view>
+	</view>
+	<view class="Btabs" bindtap="campFn">
+		<image style="width:76px;height:76px;position: absolute;left:4px;top:-30px;" src="http://47.94.16.158:8001/tab4.png"></image>
+		<image></image>
+		<view class="Btab_txt">逆转营</view>
+	</view>
+	<view class="Btabs" bindtap="shoppingFn">
+		<image src="http://47.94.16.158:8001/tab5_5.png"></image>
+		<view class="Btab_txt" style="color:#29C3C7">商城</view>
+	</view>
+	<view class="Btabs" bindtap="myFn">
+		<image src="http://47.94.16.158:8001/tab3.png"></image>
+		<view class="Btab_txt">我的</view>
+	</view>
+</view>

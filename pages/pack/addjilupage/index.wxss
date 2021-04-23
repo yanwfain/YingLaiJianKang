@@ -1,0 +1,136 @@
+/* pages/addjilupage/index.wxss */
+.title{
+  font-size: 34rpx;
+  width: 94%;
+  margin: 0 auto;
+
+}
+.listtab{
+  width: 94%;
+  margin:0 auto;
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tabac{
+  padding:14rpx 26rpx;
+  color: #15A7AA;
+  border:1px solid #15A7AA;
+  font-size: 32rpx;
+  margin: 10rpx;
+  border-radius: 50rpx;
+}
+.active{
+  color: white;
+  background: #15A7AA;
+}
+/* 图片 */
+
+.images_box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: white;
+}
+
+.img-box {
+  border: 5rpx;
+  /* border-style: solid;
+  border-color: rgba(0, 0, 0, 0.452); */
+  width: 260rpx;
+  height: 260rpx;
+  margin-left: 35rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+/* 删除图片 */
+
+.img-delect {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.jiage {
+  height: 60rpx;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rmb {
+  width: 280rpx;
+  border: 2rpx solid rgb(199, 197, 197);
+}
+.titl_an {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10rpx 0;
+  font-size: 34rpx;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+}
+.titl_an view{
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.titl_an image{
+  width: 50rpx;
+  height:50rpx;
+  position: absolute;
+  top: 4px;
+  right: -44rpx;
+
+}
+.celiang{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.celText{
+  width: 30%;
+}
+.left{
+  width: 46%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+.celiang image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.bottoms {
+  position: fixed;
+  bottom: 50rpx;
+  width: 90%;
+  left: 5%;
+  line-height: 94rpx;
+  background: #29C3C7;
+  color: white;
+  text-align: center;
+  border-radius: 60rpx;
+}

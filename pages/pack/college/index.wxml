@@ -1,0 +1,140 @@
+<view class="tablist">
+	<view>
+		<view class="list_txt {{tid==1?'active':''}}" bindtap="clickFn" data-id="1">讲糖</view>
+		<view class="borders1 {{tid==1?'actborder':''}}"></view>
+	</view>
+	<view>
+		<view class="list_txt {{tid==2?'active':''}}" bindtap="clickFn" data-id="2">直播间</view>
+		<view class="borders1 {{tid==2?'actborder':''}}"></view>
+	</view>
+	<view>
+		<view class="list_txt {{tid==3?'active':''}}" bindtap="clickFn" data-id="3">社区</view>
+		<view class="borders1 {{tid==3?'actborder':''}}"></view>
+	</view>
+</view>
+<block wx:if="{{tid==2}}">
+	<view class="listing">
+		<view class="imgfen">
+			<!-- 直播封面 -->
+			<image mode="aspectFill" class="fenimg" src="http://47.94.16.158:8001/231.jpg"></image>
+			<!-- 播放按钮 -->
+			<image class="bofang" src="http://47.94.16.158:8001/230.png"></image>
+			<view class="stsuats">
+					<!-- 正在直播 -->
+				<view class="zhengzai"><image class="zhibo" src="http://47.94.16.158:8001/232.png"></image>正在直播</view>
+			<!-- VIP专享 -->
+			<image class="vipimg" src="http://47.94.16.158:8001/233.png"></image>
+			</view>
+		</view>
+		<view class="user_llop">
+			<view class="user_delit">
+				<image src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132"></image>
+				张妍 | 专家医师
+			</view>
+			<view class="tiwen">提问墙</view>
+		</view>
+	</view>
+	<view class="borbakcheng"></view>
+	<view class="listzhiboyu">
+		<!-- <view class="title_tops">直播预告 · 明日19:00</view> -->
+		<view class="title_tops"><image class="vip_title" src="http://47.94.16.158:8001/235.png"></image> VIP专享直播 · 明日19:00</view>
+		<view class="contenusert">
+			<image mode="aspectFill" class="leftimgs" src=""></image>
+			<view class="tit_yut">
+				<view class="tit_tops">
+				 <image src="http://47.94.16.158:8001/234.png"></image>	直播标题直播标题直播标题直播标题直播标题
+				</view>
+				<view class="users">
+					张妍 | 专家医师
+				</view>
+				<view class="btn">
+					<view class="btn_tiwen">提问墙</view>
+					<view class="yuyue_btn">预约</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="borbakcheng"></view>
+	<view class="contquwei">
+		<image mode="aspectFill" src="http://47.94.16.158:8001/236.png"></image>
+	</view>
+	<view class="wangqi">往期直播</view>
+	<view class="listing">
+		<view class="imgfen">
+			<!-- 直播封面 -->
+			<image mode="aspectFill" class="fenimg" src="http://47.94.16.158:8001/231.jpg"></image>
+			<!-- 播放按钮 -->
+			<image class="bofang" src="http://47.94.16.158:8001/230.png"></image>
+			<view class="stsuats">
+				<!-- 回看直播 -->
+				<view class="zhengzai" style="width:150rpx;background:black"><image class="zhibo" src="http://47.94.16.158:8001/237.png"></image>回看</view>
+				<!-- VIP专享 -->
+			<image class="vipimg" src="http://47.94.16.158:8001/233.png"></image>
+			</view>
+			<view class="time">10:05</view>
+		</view>
+		<view class="user_llop">
+			<view class="user_delit">
+				<image src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132"></image>
+				张妍 | 专家医师
+			</view>
+			<view class="tiwen">提问墙</view>
+		</view>
+	</view>
+</block>
+<block wx:if="{{tid==1}}">
+	<view class="right_top">
+		<image src="http://47.94.16.158:8001/195.png"></image>
+		<input class="inp_top" placeholder="搜索" bindconfirm="bindconfirm" confirm-type='search' type="text" />
+	</view>
+	<view class="swipTop">
+		<swiper class='shop_swiper' bindchange="swiperChange" autoplay="true" indicator-active-color="#fff" interval="3000"
+			duration="1000" circular='true' hidden='{{luboActive}}'>
+			<block wx:for="{{pageindex.topSlideList}}" wx:key="index">
+				<swiper-item class="imgheight">
+					<image mode="aspectFill" src="{{item.img}}" style="height:100%;" class='lbImg' data-jumppage="{{item.jumppage}}"
+						data-id='{{item.id}}' data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel'
+						bindload="image_upload" />
+				</swiper-item>
+			</block>
+		</swiper>
+		<view class="dots">
+			<block wx:for="{{pageindex.topSlideList}}" wx:key>
+				<view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+			</block>
+		</view>
+	</view>
+</block>
+
+
+
+
+
+
+
+
+
+<view style="height:120px"></view>
+<view class="Btabview">
+	<view class="Btabs" bindtap="indexFn">
+		<image src="http://47.94.16.158:8001/tab2_2.png"></image>
+		<view class="Btab_txt" >首页</view>
+	</view>
+	<view class="Btabs" bindtap="collegeFn">
+		<image src="http://47.94.16.158:8001/tab1_1.png"></image>
+		<view class="Btab_txt" style="color:#29C3C7">糖学院</view>
+	</view>
+	<view class="Btabs" bindtap="campFn">
+		<image style="width:76px;height:76px;position: absolute;left:4px;top:-30px;" src="http://47.94.16.158:8001/tab4.png"></image>
+		<image></image>
+		<view class="Btab_txt">逆转营</view>
+	</view>
+	<view class="Btabs" bindtap="shoppingFn">
+		<image src="http://47.94.16.158:8001/tab5.png"></image>
+		<view class="Btab_txt">商城</view>
+	</view>
+	<view class="Btabs" bindtap="myFn">
+		<image src="http://47.94.16.158:8001/tab3.png"></image>
+		<view class="Btab_txt">我的</view>
+	</view>
+</view>

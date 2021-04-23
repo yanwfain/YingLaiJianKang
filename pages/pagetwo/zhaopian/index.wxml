@@ -1,0 +1,86 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px">
+</view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/23.png"></image>
+  <view class="title_page" style="top:{{statusBarHeight+10}}px">报告上传</view>
+  <view class="tit_tab">
+    <view class="title">化验报告上传</view>
+    <view class="nums">1/1</view>
+  </view>
+  <view class="txt_tit">为了精准地为您定制健康管理方案，请如实填写</view>
+</view>
+<view class="cont">
+  <view class="lists">
+    <view class="title_list">请上传您的全身照片</view>
+    <view>
+      <text>
+        * 请尽量在纯色或干净的背景下拍摄
+
+        * 未来我们还会定期邀请您上传照片，请尽量选择相同的背景和姿势以便进行对比</text>
+    </view>
+  </view>
+
+  <view class="titl_an">正面照 <view style="margin-left:114px">示例</view></view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgbox" wx:for="{{imgbox}}">
+        <view class='img-box' bindtap="topic_preview" data-url="{{item.url1}}">
+          <image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1' wx:if="{{isbtn!=1||!isbtn}}">
+            <image class='img' src='http://47.94.16.158:8001/62.png'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isbtn!=1||!isbtn}}">
+        <view class='img-box' bindtap='addPic1' wx:if="{{imgbox.length<1}}">
+          <image class='img' src='http://47.94.16.158:8001/66.png'></image>
+        </view>
+        <view class='img-box'>
+          <image class='img' src='http://47.94.16.158:8001/64.png'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="titl_an">  侧面照 <view style="margin-left:114px">示例</view></view>
+  <view class='pages'>
+    <!-- 图片 -->
+    <view class="images_box">
+      <block wx:key="imgboxs" wx:for="{{imgboxs}}">
+        <view class='img-box' bindtap="topic_preview1" data-url="{{item.url1}}">
+          <image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+          <view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1s' wx:if="{{isbtn!=1||!isbtn}}">
+            <image class='img' src='http://47.94.16.158:8001/62.png'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{isbtn!=1||!isbtn}}">
+        <view class='img-box' bindtap='addPic1s' wx:if="{{imgboxs.length<1}}">
+          <image class='img' src='http://47.94.16.158:8001/88341403898e1edaceeae78cfbcd6c4.png'></image>
+        </view>
+        <view class='img-box'>
+          <image class='img' src='http://47.94.16.158:8001/65.png'></image>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+
+  <view class="list_btn">
+    <view class="tabBtn1" bindtap="baocunsx">保存下次再填</view>
+    <view class="tabBtn2" bindtap="xiapageFn">提交并下一步</view>
+  </view>
+  <view style="height:100px"></view>
+</view>
+
+<block wx:if="{{isshowsd}}">
+  <view class="opbackgroud" bindtap="sislsd"></view>
+  <view class="ishow_went">
+    <image bindtap="isshowFn" bindtap="sislsd" class="imgs" src="http://47.94.16.158:8001/28.png"></image>
+    <view class="isshow_titles">血常规化验单</view>
+    <view class="txts_delit"></view>
+    <view class="submitszhi" bindtap="sislsd">我知道了</view>
+  </view>
+</block>

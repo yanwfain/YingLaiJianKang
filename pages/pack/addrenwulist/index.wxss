@@ -1,0 +1,43 @@
+/* pages/addtixin/index.wxss */
+.lists{
+  width: 94%;
+  margin: 0 auto;
+  padding:20rpx 0;
+  border-bottom:1px solid #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title{
+  width: 26%;
+  font-size: 30rpx;
+
+}
+.pickers{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.pickers picker{
+  width: 92%;
+  text-align: right;
+
+}
+.txt_tt{
+  width: 40rpx;
+  height: 40rpx;
+}
+.subnmitAdd {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 34rpx;
+  color: white;
+  background: #29C3C7;
+  border-radius: 60rpx;
+  text-align: center;
+  line-height: 96rpx;
+  position: fixed;
+  bottom: 4%;
+  left: 5%;
+}

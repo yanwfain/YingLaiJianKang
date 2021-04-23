@@ -1,0 +1,20 @@
+<view class="txt_jt" bindtap="notiro" style="top:{{statusBarHeight+15}}px"></view>
+<view bindtap="notiro" style="width:50%;height:60rpx;position: fixed;z-index: 999;left:0;top:{{statusBarHeight+15}}px"></view>
+<view class="topbank">
+  <image src="http://47.94.16.158:8001/20.png"></image>
+  <view class="title_page">视频指导</view>
+</view>
+<view class="content">
+  <view class="txt_delit">
+    <text>以下视频将帮助您了解在未来的90天内，您将如何使用这个小程序来帮助您实现糖尿病的成功逆转。
+      您只需有一个初步了解，未来每个步骤我们都还会给您提供详细的指导和帮助。
+    </text>
+  </view>
+  <view class="video_vont">
+    <video style="width:100%;" show-fullscreen-btn="true" show-center-play-btn="true"
+      src="http://1302411781.vod2.myqcloud.com/fde45c26vodtranscq1302411781/f50eaae65285890804834321821/v.f100030.mp4">
+    </video>
+  </view>
+</view>
+<view style="height:120rpx"></view>
+<view class="submits" bindtap="bindstopFn">下一步</view>

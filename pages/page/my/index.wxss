@@ -1,0 +1,242 @@
+/* pages/my/index.wxss */
+.topbank {
+  width: 100%;
+  height: 500rpx;
+}
+
+.topbank image {
+  width: 100%;
+  height: 100%;
+}
+.topTg {
+  padding: 4rpx 20rpx;
+  padding-left: 16rpx;
+  font-style: italic;
+  border-radius: 30rpx;
+  font-weight: 600;
+  color: black;
+  font-size: 20rpx;
+  background: white;
+  margin: 0 20rpx;
+}
+.userdelit{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  margin-top: -340rpx;
+  position: relative;
+}
+.btnerro{
+  padding: 10rpx 0;
+  width: 160rpx;
+  text-align: center;
+  font-size: 28rpx;
+  position: absolute;
+  color: white;
+  background-image: linear-gradient(to right, #FE2A77, #FF9062);
+  border-radius: 60rpx;
+  top: 40rpx;
+  right: 10rpx;
+}
+.user_img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+
+}
+.user_name{
+  width: 60%;
+  margin-left: 3%;
+}
+.huizhang {
+  display: flex;
+  align-items: center;
+  background: #F2F2F2;
+  padding-right: 24rpx;
+  border-radius: 30rpx;
+}
+.huizhang image {
+  width: 46rpx;
+  height: 46rpx;
+}
+.txt_typeuser {
+  font-size: 24rpx;
+}
+.cont_txt{
+  display: flex;
+  align-items: center;
+}
+.uset_botms{
+  margin-top: 14rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.name{
+  color: white;
+  font-size: 32rpx;
+}
+.vipimg{
+  width: 64rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 110rpx;
+  left: 24rpx;
+}
+.cont_portnum{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  position: relative;
+}
+.cont_topli{
+  width: 80%;
+  margin: 0 auto;
+  background-image: linear-gradient(to right, #103A3D, #0B2136);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22rpx 3%;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+.txt{
+  color: #FABA00;
+  font-size: 28rpx;
+
+}
+.btnsub{
+  padding:8rpx 26rpx ;
+  border-radius: 60rpx;
+  font-size: 26rpx;
+  color:white;
+  background-image: linear-gradient(to right, #EE7500, #F5A776);
+}
+.btnsubs{
+  padding:8rpx 26rpx ;
+  border-radius: 60rpx;
+  font-size: 26rpx;
+  color:white;
+  background-image: linear-gradient(to right, #EABC3D, #FFE68A);
+}
+.cont_lsits{
+  padding: 28rpx;
+  border-radius: 30rpx;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 6px 20px #E0E0E0;
+}
+.list_li{
+  width: 25%;
+  text-align: center;
+
+}
+.nums{
+  color: #15A7AA;
+  margin-bottom: 14rpx;
+}
+.txtsf{
+  color: #767676;
+}
+.title_tit{
+  font-size: 34rpx;
+  font-weight: 600;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listGaun{
+  width: 88%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  padding-bottom: 60rpx;
+}
+.lostview{
+  width: 22%;
+  margin: 1%;
+  text-align: center;
+  position: relative;
+}
+.trioid{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 100%;
+  background: red;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  line-height: 36rpx;
+  justify-content: center;
+  position: absolute;
+  top: 2rpx;
+  right: 4rpx;
+  color: white;
+  font-size: 24rpx;
+}
+.lostview image{
+  width:100rpx;
+  height: 100rpx;
+}
+.txt_Guan{
+  margin-top: 10rpx;
+}
+.bgck{
+  height: 20rpx;
+  background: #F6F6F6;
+}
+.alloko{
+  color: #767676;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.alloko image{
+  width: 38rpx;
+  height: 38rpx;
+}
+.tit_l{
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.listbtn{
+  padding: 40rpx;
+  display: flex;
+  align-items: center;
+  border-bottom:1px solid #F6F6F6;
+  
+}
+.leftimg{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+.lits_btns{
+  width: 90%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+
+}
+.lits_btns image{
+  width: 38rpx;
+  height: 38rpx;
+
+}
+.lits_btns view{
+  font-size: 34rpx;
+  color: #191919;
+}
+.tuidele{
+  padding: 50rpx 0;
+  font-size: 34rpx;
+  color: #15A7AA;
+  text-align: center;
+}

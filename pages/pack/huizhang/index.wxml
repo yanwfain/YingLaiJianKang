@@ -1,0 +1,40 @@
+<view class="top">
+  <image src="http://47.94.16.158:8001/185.png"></image>
+  <view class="txtnum">已获得 {{obtainNum}} 枚徽章</view>
+</view>
+<view class="cont">
+    <view class="lisy" bindtap="huode" wx:for="{{userList}}" data-id="{{item.id}}" data-status="{{item.status}}">
+      <image src="{{item.img}}" wx:if="{{item.status>=1}}"></image>
+      <image src="{{item.imgTwo}}" wx:if="{{item.status==0}}"></image>
+      <view class="tit"> {{item.name}} </view>
+    </view>
+    <!-- <view class="lisy">
+      <image src="http://47.94.16.158:8001/186.png"></image>
+      <view class="tit">徽章名称</view>
+    </view>
+    <view class="lisy">
+      <image src="http://47.94.16.158:8001/186.png"></image>
+      <view class="tit">徽章名称</view>
+    </view>
+    <view class="lisy">
+      <image src="http://47.94.16.158:8001/186.png"></image>
+      <view class="tit">徽章名称</view>
+    </view>
+    <view class="lisy" bindtap="weihuode">
+      <image src="http://47.94.16.158:8001/187.png"></image>
+      <view class="tit">徽章名称</view>
+    </view>
+    <view class="lisy">
+      <image src="http://47.94.16.158:8001/187.png"></image>
+      <view class="tit">徽章名称</view>
+    </view>
+    <view class="lisy">
+      <image src="http://47.94.16.158:8001/187.png"></image>
+      <view class="tit">徽章名称</view>
+    </view>
+    <view class="lisy">
+      <image src="http://47.94.16.158:8001/187.png"></image>
+      <view class="tit">徽章名称</view>
+    </view> -->
+</view>
+<view class="btnsun" bindtap="submite">分享我的徽章墙</view>

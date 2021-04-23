@@ -1,0 +1,9 @@
+<view class="list" bindtap="delitFn" wx:for="{{listimg}}" data-id="{{item.id}}" data-type="{{item.type}}">
+  <image class="lefimg" mode="aspectFill" src="{{item.biochemistry[0].url2}}"></image>
+  <view class="content">
+    <view class="times">{{item.testDate}}</view>
+    <view class="jiantime">检查日期 {{item.testDate}}</view>
+    <view class="nums">{{allnun}}张</view>
+  </view>
+  <image class="jtou" src="http://47.94.16.158:8001/162.png"></image>
+</view>
