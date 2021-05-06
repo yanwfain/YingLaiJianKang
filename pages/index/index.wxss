@@ -364,7 +364,7 @@ video {
 
 .imgrightdelt {
   width: 100%;
-  height: 214rpx;
+  height: 212rpx;
   border-radius: 18rpx;
   overflow: hidden;
 

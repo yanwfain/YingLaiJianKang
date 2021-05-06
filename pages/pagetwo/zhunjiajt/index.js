@@ -22,7 +22,7 @@ Page({
   },
   zhuanjiadelit:function(e){
     wx.navigateTo({
-      url: '/pages/pagetwo/zhuanjiadelit/index?id=' + e.currentTarget.dataset.id + '&video=' + e.currentTarget.dataset.url + '&type=' + '' + '&name=' + e.currentTarget.dataset.name,
+      url: '/pages/pagetwo/zhuanjiadelit/index?id=' + e.currentTarget.dataset.id + '&video=' + e.currentTarget.dataset.url + '&type=' + '' + '&name=' + e.currentTarget.dataset.name + '&integral=' + e.currentTarget.dataset.integral,
     })
   },
   yiwanFn:function(e){

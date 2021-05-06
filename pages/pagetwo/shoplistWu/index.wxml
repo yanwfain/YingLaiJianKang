@@ -1,0 +1,53 @@
+<view class="toptxt" wx:if="{{num>0}}">共{{num}}件商品</view>
+<view class="list" wx:for="{{validList}}" data-id="{{item.id}}" data-unique="{{item.unique}}">
+  <checkbox bindtap="chenkFn" data-id="{{item.id}}" data-ischenk="{{item.ischenk}}" checked="{{item.ischenk?true:false}}"></checkbox>
+  <image class="shopimg" mode="aspectFill" src="{{item.image}}"></image>
+  <view class="right_delit">
+    <view class="tit_shopname">
+      {{item.name}}
+    </view>
+    <view class="name">{{item.suk}}</view>
+    <view class="picker">
+      <view class="picker_moeny">￥{{item.price}}</view>
+      <view class="btn_jiajie">
+        <view class="jie_l" bindtap="jieFn" data-id="{{item.id}}" data-cartNum="{{item.cartNum}}">-</view>
+        <view class="num_val">{{item.cartNum}}</view>
+        <view class="jia_l" bindtap="jiaFn" data-id="{{item.id}}" data-cartNum="{{item.cartNum}}">+</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="toptxt">已失效的商品</view>
+<view class="list" wx:for="{{invalidList}}">
+  <view class="opriotmn"></view>
+  <image class="shopimg" mode="aspectFill" src="{{item.image}}"></image>
+  <view class="right_delit">
+    <view class="tit_shopname">
+      {{item.name}}
+    </view>
+    <view class="name">{{item.suk}}</view>
+    <view class="picker">
+      <view class="picker_moeny">￥{{item.price}}</view>
+      <view class="btn_jiajie">
+      </view>
+    </view>
+  </view>
+</view>
+<view style="padding:20rpx;text-align:center;color:gray;">没有更多了</view>
+<view style="height:200rpx"></view>
+<view class="bottom_flexd">
+  <view class="lefts">
+
+    <view class="leftckenk">
+      <checkbox bindtap="chenkAll" checked="{{allChenk?true:false}}"></checkbox>
+      全选
+    </view>
+    <view class="hejipocilker" wx:if="{{totalPrice}}">
+      <view class="hejiTop">
+        合计： <text class="mokent">￥{{totalPrice}}</text>
+      </view>
+      <!-- <view class="textheji">优惠减：<text class="jianmoen">￥51.45</text> <text class="youhimk">优惠明细</text></view> -->
+    </view>
+  </view>
+  <view class="jiesuanbtn" wx:if="{{totalPrice}}" bindtap="submit">结算</view>
+</view>

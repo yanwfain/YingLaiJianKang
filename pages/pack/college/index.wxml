@@ -100,7 +100,7 @@
 		</swiper>
 		<view class="dots">
 			<block wx:for="{{pageindex.topSlideList}}" wx:key>
-				<view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+				<view class="dot{{index == currentSwiper ? ' active1' : ''}}"></view>
 			</block>
 		</view>
 	</view>

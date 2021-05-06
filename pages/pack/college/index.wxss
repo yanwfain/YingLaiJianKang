@@ -279,7 +279,7 @@
 
 }
 
-.active{
+.active1{
   width: 60rpx;
   transition: all .7s;
   height: 14rpx;

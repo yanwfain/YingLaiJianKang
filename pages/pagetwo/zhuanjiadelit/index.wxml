@@ -8,3 +8,15 @@
   <image src="http://47.94.16.158:8001/118.png"></image>
 </view>
 <view class="bottoms" bindtap="binclick" wx:if="{{!type}}">完成</view>
+<block wx:if="{{isModels}}">
+  <view class="back" bindtap="deles"></view>
+  <view class="isshowModele">
+    <image class="delesx" bindtap="jixsuFn" src="http://47.94.16.158:8001/28.png"></image>
+    <image class="jiangbei" src="http://47.94.16.158:8001/96.png"></image>
+    <view class="textsIsshow" style="padding-top:40rpx;">恭喜您完成了</view>
+    <view class="textsIsshow" style="padding-top:0;" >专家讲堂视频任务</view>
+
+    <view class="fontsinumS"> <text style=" font-weight: 600;">+ {{integral}}</text>  积分</view>
+    <view class="jisubtnsubs" bindtap="jixsuFn">继续任务</view>
+  </view>
+</block>

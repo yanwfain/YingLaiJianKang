@@ -69,6 +69,11 @@ Page({
       console.log(err.errMsg)
     })
   },
+  shoplistFn:function(e){
+    wx.navigateTo({
+      url: '/pages/pagetwo/shoplistWu/index',
+    })
+  },
   listhuoyioujk:function(e){
     this.setData({
       modelis:true
@@ -240,17 +245,47 @@ Page({
       isMolde:false
     })
     // this.data.modelpicke.unique
-    if(this.data.isshoptype==1){
-      wx.showToast({
-        title: '加入成功',
-      })
-    }
     var unique;
     if(this.data.modelpicke){
       unique = this.data.modelpicke.unique
     }else{
       unique=''
     }
+    if(this.data.isshoptype==1){
+      wx.showLoading({
+        title: '加载中',
+      })
+      var that = this
+      var url = app.globalData.url + '/api/cart/add';
+      var data = {
+        userId:app.globalData.user_id,
+        productId:that.data.id,
+        cartNum:that.data.valNum,
+        isNew:0,
+        productAttrUnique:unique
+      }
+      app.wxRequest('POST', url, data, (res) => {
+        console.log(res)
+        wx.hideLoading()
+        if (res.success) {
+          wx.showToast({
+            title: '加入成功',
+          })
+        } else {
+          wx.showToast({
+            title: res.error_message,
+            icon:'none'
+          })
+        }
+      }, (err) => {
+        wx.showToast({
+          title: '提交失败',
+        })
+        console.log(err.errMsg)
+      })
+     
+    }
+
     console.log(this.data.modelpicke)
     if(this.data.isshoptype==2){
       wx.navigateTo({
@@ -268,6 +303,7 @@ Page({
       isMolde:true,
       isshoptype:1,
     })
+    
   },  
   shopGouFn:function(e){
     this.setData({

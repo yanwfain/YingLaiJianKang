@@ -17,7 +17,8 @@ Page({
       id:options.id,
       type:options.type,
       video:options.video,
-      name:options.name
+      name:options.name,
+      integral:options.integral
     })
   },
   binclick:function(e){
@@ -31,8 +32,11 @@ Page({
       console.log(res)
       wx.hideLoading()
       if (res.success) {
-        wx.navigateBack({
-          delta: 1,
+        // wx.navigateBack({
+        //   delta: 1,
+        // })
+        that.setData({
+          isModels:true
         })
       } else {
         wx.showToast({
@@ -47,6 +51,19 @@ Page({
       console.log(err.errMsg)
     })
  
+  },
+  deles:function(e){
+    this.setData({
+      isModels:false
+    })
+  },
+  jixsuFn:function(e){
+    this.setData({
+      isModels:false
+    })
+    wx.navigateBack({
+      delta: 1,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

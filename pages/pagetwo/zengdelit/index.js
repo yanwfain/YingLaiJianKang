@@ -13,6 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     this.setData({
       txtOne:options.txtOne,
       cost:options.picker,
@@ -20,76 +21,116 @@ Page({
       typeids:options.typeids,
       shopid:options.shopid,
       bid:options.bid,
+     
+      gouche:JSON.parse(options.gouche),
       ltxt:options.ltxt,
       unique:options.unique
     })
-    var that = this
-    var url = app.globalData.url + '/api/cart/add';
-    var data = {
-      userId:app.globalData.user_id,
-      productId:this.data.shopid,
-      cartNum :this.data.cartNum?this.data.cartNum:'1',
-      isNew:1,
-      // productAttrUnique:options.unique
-    }
-    if(this.data.typeids){
-      // data.specifications= 2
-      // data.giftcard=1
-    } else{
-      data.productAttrUnique = options.unique
-    }
-    
-    
-    app.wxRequest('POST', url, data, (res) => {
-      console.log(res)
-      wx.hideLoading()
-      if (res.success) {
-        that.data.cartIdslist.push(res.data.cartId)
-        that.setData({
-          cartIds:res.data.cartId,
-          cartIdslist: that.data.cartIdslist
-        })
-       
-
-        var url = app.globalData.url + '/api/order/confirm';
-        var data = {
-          userId:app.globalData.user_id,
-          cartIds:res.data.cartId
-    
-        }
-        
-        app.wxRequest('POST', url, data, (res) => {
-          console.log(res)
-          wx.hideLoading()
-          if (res.success) {
-            that.setData({
-              pagedelit:res.data.cartList,
-              contldelit:res.data
-            })
-          } else {
-            wx.showToast({
-              title: res.data,
-              icon:'none'
-            })
-          }
-        }, (err) => {
-          wx.showToast({
-            title: '提交失败',
-          })
-          console.log(err.errMsg)
-        })
-      } else {
-        wx.showToast({
-          title: res.data,
-          icon:'none'
-        })
-      }
-    }, (err) => {
-      wx.showToast({
-        title: '提交失败',
+    if(options.gouche){
+      this.setData({
+        cartIdslist:JSON.parse(options.gouche),
       })
-      console.log(err.errMsg)
-    })
+    }
+    if(this.data.shopid){
+      var that = this
+      var url = app.globalData.url + '/api/cart/add';
+      var data = {
+        userId:app.globalData.user_id,
+        productId:this.data.shopid,
+        cartNum :this.data.cartNum?this.data.cartNum:'1',
+        isNew:1,
+        // productAttrUnique:options.unique
+      }
+      if(this.data.typeids){
+        // data.specifications= 2
+        // data.giftcard=1
+      } else{
+        data.productAttrUnique = options.unique
+      }
+      
+      
+      app.wxRequest('POST', url, data, (res) => {
+        console.log(res)
+        wx.hideLoading()
+        if (res.success) {
+          that.data.cartIdslist.push(res.data.cartId)
+          that.setData({
+            cartIds:res.data.cartId,
+            cartIdslist: that.data.cartIdslist
+          })
+         
+  
+          var url = app.globalData.url + '/api/order/confirm';
+          var data = {
+            userId:app.globalData.user_id,
+            cartIds:res.data.cartId
+      
+          }
+          
+          app.wxRequest('POST', url, data, (res) => {
+            console.log(res)
+            wx.hideLoading()
+            if (res.success) {
+              that.setData({
+                pagedelit:res.data.cartList,
+                contldelit:res.data
+              })
+            } else {
+              wx.showToast({
+                title: res.data,
+                icon:'none'
+              })
+            }
+          }, (err) => {
+            wx.showToast({
+              title: '提交失败',
+            })
+            console.log(err.errMsg)
+          })
+        } else {
+          wx.showToast({
+            title: res.data,
+            icon:'none'
+          })
+        }
+      }, (err) => {
+        wx.showToast({
+          title: '提交失败',
+        })
+        console.log(err.errMsg)
+      })
+    }
+    if(this.data.gouche){
+      var that = this
+      var url = app.globalData.url + '/api/order/confirm';
+      var data = {
+        userId:app.globalData.user_id,
+        cartIds:this.data.cartIdslist
+  
+      }
+      
+      app.wxRequest('POST', url, data, (res) => {
+        console.log(res)
+        wx.hideLoading()
+        if (res.success) {
+          that.setData({
+            pagedelit:res.data.cartList,
+            contldelit:res.data
+          })
+        } else {
+          wx.showToast({
+            title: res.data,
+            icon:'none'
+          })
+        }
+      }, (err) => {
+        wx.showToast({
+          title: '提交失败',
+        })
+        console.log(err.errMsg)
+      })
+    }
+   
   },
   deNolFn:function(e){
     wx.showToast({

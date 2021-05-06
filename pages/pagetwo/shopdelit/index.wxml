@@ -196,7 +196,7 @@
     <image src="http://47.94.16.158:8001/194.png" wx:if="{{pageindex.isCollect>0}}"></image>
     <view class="txtsicon">收藏</view>
   </view>
-  <view class="listicon">
+  <view class="listicon" bindtap="shoplistFn">
     <image src="http://47.94.16.158:8001/214.png"></image>
     <view class="txtsicon">购物车</view>
   </view>

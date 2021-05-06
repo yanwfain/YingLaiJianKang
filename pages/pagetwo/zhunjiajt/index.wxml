@@ -19,7 +19,7 @@
 </view>
 <block wx:if="{{tid==1}}">
 
-<view class="listdewen" bindtap="zhuanjiadelit" wx:for="{{list.campLook.list}}" wx:if="{{item.status==0}}" data-id="{{item.id}}" data-url="{{item.video}}" data-name="{{item.name}}">
+<view class="listdewen" bindtap="zhuanjiadelit" wx:for="{{list.campLook.list}}" wx:if="{{item.status==0}}" data-id="{{item.id}}" data-url="{{item.video}}" data-name="{{item.name}}" data-integral="{{item.integral}}">
   <view class="left">
     <image class="inghs" mode="aspectFill" src="{{item.img}}"></image>
     <view class="cont_times">
