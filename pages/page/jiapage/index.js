@@ -51,12 +51,12 @@ Page({
         url: '/pages/page/jiluxieya/index?id=' + e.currentTarget.dataset.id,
       })
     }
-    if(e.currentTarget.dataset.id==4){
+    if(e.currentTarget.dataset.id==5){
       wx.navigateTo({
         url: '/pages/pagetwo/tizhongjiance/index?id=' + e.currentTarget.dataset.id,
       })
     }
-    if(e.currentTarget.dataset.id==5){
+    if(e.currentTarget.dataset.id==4){
       wx.navigateTo({
         url: '/pages/page/jilifuwei/index?id=' + e.currentTarget.dataset.id,
       })

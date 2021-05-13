@@ -1,0 +1,66 @@
+<view class="right_top">
+  <image src="http://47.94.16.158:8001/195.png"></image>
+  <input class="inp_top" placeholder="搜索" bindconfirm="bindconfirm" confirm-type='search' type="text" />
+</view>
+<view class="tablist">
+  <view class="view">
+    <view class="list_txt {{!tid||tid==0?'active':''}}" bindtap="clickFn" data-id="0">全部</view>
+    <view class="borders1 {{!tid||tid==0?'actborder':''}}"></view>
+  </view>
+  <view class="view">
+    <view class="list_txt {{tid==1?'active':''}}" bindtap="clickFn" data-id="1">专家讲糖</view>
+    <view class="borders1 {{tid==1?'actborder':''}}"></view>
+  </view>
+  <view class="view">
+    <view class="list_txt {{tid==3?'active':''}}" bindtap="clickFn" data-id="3">控糖知识</view>
+    <view class="borders1 {{tid==3?'actborder':''}}"></view>
+  </view>
+  <view class="view">
+    <view class="list_txt {{tid==5?'active':''}}" bindtap="clickFn" data-id="5">运动饮食</view>
+    <view class="borders1 {{tid==5?'actborder':''}}"></view>
+  </view>
+  <view class="view">
+    <view class="list_txt {{tid==4?'active':''}}" bindtap="clickFn" data-id="4">前沿进展</view>
+    <view class="borders1 {{tid==4?'actborder':''}}"></view>
+  </view>
+</view>
+<block wx:for="{{movieList}}">
+  <block wx:if="{{item.cName!='专家讲糖'}}">
+    <view class="Jiangt_list" data-id="{{item.id}}" bindtap="delit">
+      <view class="left_jt">
+        <view class="jt_title">{{item.title}}</view>
+        <view class="jt_tit_botm">
+          <view class="jt_icons" wx:if="{{item.cName=='运动饮食'}}">{{item.cName}}</view>
+          <view class="jt_icons" style="border:1px solid #15A7AA;color:#15A7AA" wx:if="{{item.cName=='控糖知识'}}">
+            {{item.cName}}</view>
+          <view class="jt_icons" style="border:1px solid #CD9800;color:#CD9800" wx:if="{{item.cName=='前沿进展'}}">
+            {{item.cName}}</view>
+
+          <view class="jt_numlook">{{item.visit}}阅读</view>
+        </view>
+      </view>
+      <image class="jt_img" mode="aspectFill" src="{{item.imageInput}}"></image>
+
+    </view>
+    <view class="backgrays"></view>
+  </block>
+  <block wx:if="{{item.cName=='专家讲糖'}}">
+    <view class="Jiangt_list" data-id="{{item.id}}" bindtap="delitvideo">
+      <view class="left_jt">
+        <view class="jt_title">{{item.title}}</view>
+        <view class="jt_tit_botm">
+          <view class="jt_icons">{{item.cName}}</view>
+          <view class="jt_numlook">{{item.visit}}阅读</view>
+        </view>
+      </view>
+      <image class="jt_img" mode="aspectFill" src="{{item.imageInput}}"></image>
+
+    </view>
+    <view class="backgrays"></view>
+  </block>
+</block>
+
+<view class="contquwei">
+  <image mode="aspectFill" src="http://47.94.16.158:8001/236.png"></image>
+</view>
+<view style="color:gray;padding:30rpx;text-align:center;font-size:34rpx">没有更多内容了</view>

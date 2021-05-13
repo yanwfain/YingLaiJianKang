@@ -10,13 +10,13 @@
 <view class="list" wx:if="{{typeId==1}}">
   <block wx:for="{{list}}">
     <view class="title" >{{item.name}}</view>
-    <view class="txt" bindtap="capclick" wx:for="{{item.children}}" wx:for-item="ite" data-id="{{ite.id}}" data-text="{{ite.name}}">{{ite.name}}</view>
+    <view class="txt" bindtap="capclick" wx:for="{{item.children}}" wx:for-item="ite" data-id="{{ite.id}}" data-text="{{ite.name}}" data-unit="{{ite.unit}}">{{ite.name}}</view>
   </block>
  
 </view>
 <view class="list" wx:if="{{typeId==2}}">
   <block wx:for="{{list}}">
     <view class="title" >{{item.name}}</view>
-    <view class="txt" bindtap="capclick" wx:for="{{item.children}}" wx:for-item="ite" data-id="{{ite.id}}" data-text="{{ite.name}}">{{ite.name}}</view>
+    <view class="txt" bindtap="capclick" wx:for="{{item.children}}" wx:for-item="ite" data-id="{{ite.id}}" data-text="{{ite.name}}" data-unit="{{ite.unit}}">{{ite.name}}</view>
   </block>
 </view>

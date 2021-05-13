@@ -15,6 +15,44 @@ Page({
   onLoad: function (options) {
     
   },
+  metorterl:function(e){
+    if(!this.data.userList.doctorId){
+      wx.showToast({
+        title: '暂未分配医师',
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/pagetwo/zaixianzixun/index',
+      })
+    }
+  },
+  meYinyang:function(e){
+    if(!this.data.userList.dietitianId){
+      wx.showToast({
+        title: '暂未分配营养师',
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/pagetwo/zaixianzixun/index',
+      })
+    }
+  },
+  meShuju:function(e){
+    wx.navigateTo({
+      url: '/pages/page/mesqlistshu/index',
+    })
+  },
+  meJianKang:function(e){
+    wx.navigateTo({
+      url: '/pages/page/jiangkangda/index',
+    })
+  },
+  // pages/pagetwo/zaixianzixun/index
+  kefuFn:function(e){
+    wx.navigateTo({
+      url: '/pages/pagetwo/kefu/index',
+    })
+  },
   jiaruNzhuan:function(e){
     wx.reLaunch({
       url: '/pages/pack/camp/index',
@@ -148,6 +186,8 @@ Page({
       console.log(res)
       wx.hideLoading()
       if (res.success) {
+        app.globalData.doctorId = res.data.userData.doctorId,
+        app.globalData.dietitianId = res.data.userData.dietitianId,
         that.setData({
           userList:res.data.userData
         })

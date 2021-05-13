@@ -136,6 +136,7 @@ App( Provider(store)({
   globalData: {
     userInfo: null,
     url:'https://wxapi.dilighthealth.com',
+    // url:'http://192.168.0.149:64661',
     statusBarHeight: wx.getSystemInfoSync()['statusBarHeight'],
     openId:'',
     user_id:'',

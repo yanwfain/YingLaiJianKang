@@ -36,16 +36,22 @@ let pageConfig = {
       type: 'CurrentChatTo_Change',
       payload: ''
     })
-    // app.globalData.nim.destroy({
-    //   done: function () {
-    //     console.log('destroy nim done !!!')
-    //   }
-    // })
+    if(this.data.fid==1){
+      app.globalData.nim.destroy({
+          done: function () {
+            console.log('destroy nim done !!!')
+          }
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    this.setData({
+      fid:options.fid
+    })
     let chatWrapperMaxHeight = wx.getSystemInfoSync().windowHeight - 52 - 35
     // 初始化聊天对象
     let self = this

@@ -1,0 +1,126 @@
+<view class="cont_list">
+  <view class="user_contlist">
+    <view class="left_usersd" bindtap="user_delitks" data-id="{{userList.userId}}">
+      <image src="{{userList.headImg}}">
+      </image>
+      <view class="cont_userRight">
+        <view class="conn_name">{{userList.userName}} <image wx:if="{{userList.isMember=='Y'}}" class="vipimgs"
+            src="http://47.94.16.158:8001/164.png"></image>
+        </view>
+        <view class="times_cont">{{userList.createTime}}</view>
+      </view>
+    </view>
+    <block wx:if="{{usid!=userList.userId}}">
+
+    <view class="btns1" bindtap="gusnabiz"  wx:if="{{userList.isAuthorStatus==0}}">
+      <image src="http://47.94.16.158:8001/198.png"></image> 关注
+    </view>
+    <view class="btns1" bindtap="gusnabiz" style="color:gray;border:1px solid gray"
+      wx:if="{{userList.isAuthorStatus>0}}">
+      已关注
+    </view>
+    
+  </block>
+  </view>
+  <view class="title_cont" bindtap="shequdelit">
+    {{userList.introduction}}
+  </view>
+  <view class="imglust">
+    <image mode="aspectFill" wx:for="{{userList.imgs}}" src="{{item}}"></image>
+
+  </view>
+  <view class="listicont">
+    <view class="icon">
+      <image src="http://47.94.16.158:8001/189.png"></image>{{userList.shareNum}}
+    </view>
+    <view class="icon">
+      <image src="http://47.94.16.158:8001/190.png"></image>{{userList.commentsNum}}
+    </view>
+    <view class="icon" catchtap="shoucangs" data-collectstatus="{{userList.collectStatus}}" data-id="{{userList.id}}">
+      <image src="http://47.94.16.158:8001/191.png" wx:if="{{userList.collectStatus==0}}"></image>
+      <image src="http://47.94.16.158:8001/263.png" wx:if="{{userList.collectStatus>0}}"></image>{{userList.collectionNum}}
+    </view>
+    <view class="icon" catchtap="dianzans" data-givelikestatus="{{userList.givelikeStatus}}" data-id="{{userList.id}}">
+      <image src="http://47.94.16.158:8001/192.png" wx:if="{{userList.givelikeStatus==0}}"></image>
+      <image src="http://47.94.16.158:8001/193.png" wx:if="{{userList.givelikeStatus>0}}"></image>
+      {{userList.giveLikeNum}}
+    </view>
+  </view>
+</view>
+<view class="bodds"></view>
+<view class="cont_userlistp">
+  <view class="zhibotitle">评论（{{userList.commentsNum}}）</view>
+  <view class="pllist" wx:for="{{movieList}}">
+    <image class="ol_img"
+      src="{{item.headImg}}">
+    </image>
+    <view class="right_pl">
+      <view class="ol_name">{{item.userName}} <image wx:if="{{item}}" class="vipimgs" src="http://47.94.16.158:8001/164.png"></image>
+      </view>
+      <view class="content">{{item.comment}}</view>
+      <view class="bott_con">
+        <view class="botm_leftc">{{item.addTime}}</view>
+        <view class="btn_rugtc">
+          <view class="huifu" bindtap="huifus" data-id="{{item.id}}">
+            <image src="http://47.94.16.158:8001/190.png"></image>回复
+          </view>
+          <view class="huifu" bindtap="dianzanspl" data-id="{{item.id}}" data-givelikestatus="{{item.giveLikeStatus}}">
+            <image src="http://47.94.16.158:8001/192.png" wx:if="{{item.giveLikeStatus==0}}"></image>
+            <image src="http://47.94.16.158:8001/193.png" wx:if="{{item.giveLikeStatus>0}}"></image>
+            {{item.giveLikeNum}}
+          </view>
+        </view>
+      </view>
+      <!-- 回复 -->
+      <view class="list_lp" wx:if="{{item.children.length>0}}">
+        <view class="txt_userlist" wx:for="{{item.children}}" wx:for-item="ite">
+          <text style="color:#15A7AA">{{ite.userName}}:</text>{{ite.comment}}
+        </view>
+      </view>
+    </view>
+  </view>
+ 
+</view>
+<view style="color:gray;padding:30rpx;text-align:center;font-size:34rpx">没有更多内容了</view>
+<view style="height:200rpx"></view>
+<view class="bottfixed" wx:if="{{!inptxt}}">
+  <view class="left_taet" bindtap="inpgour">
+    <block wx:if="{{!inptxt}}">
+      <image src="http://47.94.16.158:8001/265.png"></image>
+      <view class="txt_b">{{inptxtval?inptxtval:'写评论'}}</view>
+    </block>
+
+    <!-- <textarea wx:if="{{inptxt}}" focus="{{inptxt?true:false}}" bindinput="inptxtval" placeholder="写评论" bindblur="bindblur" value="{{inptxtval}}" auto-height="true" show-confirm-bar="" fixed="true" bindconfirm="bindconfirm" confirm-type="send" maxlength="-1"></textarea> -->
+  </view>
+  <view class="rigth_btof">
+    <view class="shoucang" catchtap="shoucangs" data-collectstatus="{{userList.collectStatus}}" data-id="{{userList.id}}">
+      <image wx:if="{{userList.collectStatus==0}}" src="http://47.94.16.158:8001/191.png"></image>
+      <image wx:if="{{userList.collectStatus>0}}" src="http://47.94.16.158:8001/263.png"></image>
+      <view class="chouTxt">收藏</view>
+    </view>
+    <button open-type="share" class="shoucang">
+      <image src="http://47.94.16.158:8001/189.png"></image>
+      <view class="chouTxt">分享</view>
+    </button>
+  </view>
+</view>
+<block wx:if="{{inptxt}}">
+  <view class="back" bindtap="guanbi"></view>
+  <view class="ttxtaer_bo">
+    <textarea class="txear" focus="{{inptxt?true:false}}" bindinput="inptxtval" placeholder="写评论" value="{{inptxtval}}"
+      show-confirm-bar="" fixed="true" model="{{inptxtval}}" bindconfirm="bindconfirm" confirm-type="send" maxlength="-1"></textarea>
+    <view class="butnfaub" bindtap="bindconfirm">发布</view>
+  </view>
+
+</block>
+<block wx:if="{{isModels}}">
+  <view class="back" bindtap="jixsuFn"></view>
+  <view class="isshowModele">
+    <image class="delesx" bindtap="jixsuFn" src="http://47.94.16.158:8001/28.png"></image>
+    <!-- <image class="jiangbei" src="http://47.94.16.158:8001/96.png"></image> -->
+    <view class="textsIsshow">发布成功</view>
+    <view class="textsIsshow" style="padding-top:40rpx;">恭喜您评论成功并获得</view>
+    <view class="fontsinumS"> <text style=" font-weight: 600;">+ {{jifensnum}}</text> 积分</view>
+    <view class="jisubtnsubs" bindtap="jixsuFn">确认</view>
+  </view>
+</block>

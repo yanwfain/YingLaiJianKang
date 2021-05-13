@@ -26,22 +26,22 @@
       <view class="list_getwuli" wx:for="{{listYidao}}">
         <view class="title_wu">
           <view class="tit_wu">{{item.text}} <image bindtap="delelist" data-index="{{index}}" data-type="{{item.typeId}}" src="http://47.94.16.158:8001/61.png"></image></view>
-          <view class="num_wu" wx:if="{{item.allnum}}">共计：{{item.allnum}}u</view>
+          <view class="num_wu" wx:if="{{item.allnum}}">共计：{{item.allnum}}{{item.unit}}</view>
         </view>
         <view class="listinp" >
           <view>
-            早上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zaoinp" value="{{item.zaoNum}}"  name="" id="" /> u
+            早上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zaoinp" value="{{item.zaoNum}}"  name="" id="" /> {{item.unit}}
           </view>
           <view>
-            中午 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zhonginp" value="{{item.zhongNum}}" name="" id="" /> u
+            中午 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zhonginp" value="{{item.zhongNum}}" name="" id="" /> {{item.unit}}
           </view>
         </view>
         <view class="listinp">
           <view>
-            晚上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="waninp" value="{{item.wanNum}}" name="" id="" /> u
+            晚上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="waninp" value="{{item.wanNum}}" name="" id="" /> {{item.unit}}
           </view>
           <view>
-            睡前 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="shuiinp" value="{{item.shuiNum}}" name="" id="" /> u
+            睡前 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="shuiinp" value="{{item.shuiNum}}" name="" id="" /> {{item.unit}}
           </view>
         </view>
       </view>
@@ -62,22 +62,22 @@
       <view class="list_getwuli" wx:for="{{listKoufu}}">
         <view class="title_wu">
           <view class="tit_wu">{{item.text}} <image bindtap="delelist" data-index="{{index}}" data-type="{{item.typeId}}" src="http://47.94.16.158:8001/61.png"></image></view>
-          <view class="num_wu"  wx:if="{{item.allnum}}">共计：{{item.allnum}}u</view>
+          <view class="num_wu"  wx:if="{{item.allnum}}">共计：{{item.allnum}}{{item.unit}}</view>
         </view>
         <view class="listinp" >
           <view>
-            早上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zaoinp" value="{{item.zaoNum}}"  name="" id="" /> u
+            早上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zaoinp" value="{{item.zaoNum}}"  name="" id="" /> {{item.unit}}
           </view>
           <view>
-            中午 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zhonginp" value="{{item.zhongNum}}" name="" id="" /> u
+            中午 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="zhonginp" value="{{item.zhongNum}}" name="" id="" /> {{item.unit}}
           </view>
         </view>
         <view class="listinp">
           <view>
-            晚上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="waninp" value="{{item.wanNum}}" name="" id="" /> u
+            晚上 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="waninp" value="{{item.wanNum}}" name="" id="" /> {{item.unit}}
           </view>
           <view>
-            睡前 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="shuiinp" value="{{item.shuiNum}}" name="" id="" /> u
+            睡前 <input type="number" data-type="{{item.typeId}}" data-index="{{index}}" bindinput="shuiinp" value="{{item.shuiNum}}" name="" id="" /> {{item.unit}}
           </view>
         </view>
       </view>

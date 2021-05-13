@@ -13,53 +13,64 @@
 	</view>
 </view>
 <block wx:if="{{tid==2}}">
-	<view class="listing">
+	<block wx:for="{{studio.nowList}}" data-doctorid="{{item.doctorId}}" data-id="{{item.id}}">
+		<view class="listing" data-id="{{item.id}}" bindtap="tiwentFn">
 		<view class="imgfen">
 			<!-- 直播封面 -->
-			<image mode="aspectFill" class="fenimg" src="http://47.94.16.158:8001/231.jpg"></image>
+			<image mode="aspectFill" class="fenimg" src="{{item.img}}"></image>
 			<!-- 播放按钮 -->
 			<image class="bofang" src="http://47.94.16.158:8001/230.png"></image>
 			<view class="stsuats">
-					<!-- 正在直播 -->
-				<view class="zhengzai"><image class="zhibo" src="http://47.94.16.158:8001/232.png"></image>正在直播</view>
-			<!-- VIP专享 -->
-			<image class="vipimg" src="http://47.94.16.158:8001/233.png"></image>
+				<!-- 正在直播 -->
+				<view class="zhengzai">
+					<image class="zhibo" src="http://47.94.16.158:8001/232.png"></image>正在直播
+				</view>
+				<!-- VIP专享 -->
+				<image wx:if="{{item.type==1}}" class="vipimg" src="http://47.94.16.158:8001/233.png"></image>
 			</view>
 		</view>
 		<view class="user_llop">
 			<view class="user_delit">
-				<image src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132"></image>
-				张妍 | 专家医师
+				<image
+					src="{{item.headimg}}">
+				</image>
+				{{item.anchorName}} | {{item.technical}}
 			</view>
-			<view class="tiwen">提问墙</view>
+			<view class="tiwen" >提问墙</view>
 		</view>
 	</view>
 	<view class="borbakcheng"></view>
-	<view class="listzhiboyu">
-		<!-- <view class="title_tops">直播预告 · 明日19:00</view> -->
-		<view class="title_tops"><image class="vip_title" src="http://47.94.16.158:8001/235.png"></image> VIP专享直播 · 明日19:00</view>
+	</block>
+	<block wx:for="{{studio.tomorrowList}}">
+		<view class="listzhiboyu">
+		<view class="title_tops" wx:if="{{item.type==0}}">直播预告 · {{item.startTime}}</view>
+		<view class="title_tops" wx:if="{{item.type==1}}">
+			<image class="vip_title" src="http://47.94.16.158:8001/235.png"></image> VIP专享直播 · {{item.startTime}}
+		</view>
 		<view class="contenusert">
-			<image mode="aspectFill" class="leftimgs" src=""></image>
+			<image mode="aspectFill" class="leftimgs" src="{{item.img}}"></image>
 			<view class="tit_yut">
 				<view class="tit_tops">
-				 <image src="http://47.94.16.158:8001/234.png"></image>	直播标题直播标题直播标题直播标题直播标题
+					<image wx:if="{{item.type==1}}" src="http://47.94.16.158:8001/234.png"></image> {{item.introduce}}
 				</view>
 				<view class="users">
-					张妍 | 专家医师
+					{{item.name}} | {{item.technical}}
 				</view>
 				<view class="btn">
-					<view class="btn_tiwen">提问墙</view>
+					<view class="btn_tiwen" bindtap="tiwentFn1" data-id="{{item.id}}">提问墙</view>
 					<view class="yuyue_btn">预约</view>
 				</view>
 			</view>
 		</view>
 	</view>
 	<view class="borbakcheng"></view>
+	</block>
+
 	<view class="contquwei">
 		<image mode="aspectFill" src="http://47.94.16.158:8001/236.png"></image>
 	</view>
 	<view class="wangqi">往期直播</view>
-	<view class="listing">
+	<view class="listing" wx:for="{{studio.historyList}}" bindtap="tiwentFn2" data-id="{{item.id}}">
 		<view class="imgfen">
 			<!-- 直播封面 -->
 			<image mode="aspectFill" class="fenimg" src="http://47.94.16.158:8001/231.jpg"></image>
@@ -67,16 +78,20 @@
 			<image class="bofang" src="http://47.94.16.158:8001/230.png"></image>
 			<view class="stsuats">
 				<!-- 回看直播 -->
-				<view class="zhengzai" style="width:150rpx;background:black"><image class="zhibo" src="http://47.94.16.158:8001/237.png"></image>回看</view>
+				<view class="zhengzai" style="width:150rpx;background:black">
+					<image class="zhibo" src="http://47.94.16.158:8001/237.png"></image>回看
+				</view>
 				<!-- VIP专享 -->
-			<image class="vipimg" src="http://47.94.16.158:8001/233.png"></image>
+				<image wx:if="{{item.type==1}}" class="vipimg" src="http://47.94.16.158:8001/233.png"></image>
 			</view>
-			<view class="time">10:05</view>
+			<!-- <view class="time">10:05</view> -->
 		</view>
 		<view class="user_llop">
 			<view class="user_delit">
-				<image src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132"></image>
-				张妍 | 专家医师
+				<image
+					src="{{item.img}}">
+				</image>
+				{{item.name}} | {{item.technical}}
 			</view>
 			<view class="tiwen">提问墙</view>
 		</view>
@@ -90,51 +105,168 @@
 	<view class="swipTop">
 		<swiper class='shop_swiper' bindchange="swiperChange" autoplay="true" indicator-active-color="#fff" interval="3000"
 			duration="1000" circular='true' hidden='{{luboActive}}'>
-			<block wx:for="{{pageindex.topSlideList}}" wx:key="index">
+			<block wx:for="{{speaking.slideList}}" wx:key="index">
 				<swiper-item class="imgheight">
-					<image mode="aspectFill" src="{{item.img}}" style="height:100%;" class='lbImg' data-jumppage="{{item.jumppage}}"
-						data-id='{{item.id}}' data-id="{{item.id}}" data-activities_id='{{item.activities_id}}' bindtap='goChannel'
-						bindload="image_upload" />
+					<image mode="aspectFill" src="{{item.img}}" style="height:100%;" class='lbImg'
+						data-jumppage="{{item.jumppage}}" data-id='{{item.id}}' data-id="{{item.id}}"
+					 bindtap='goChannel' bindload="image_upload" />
 				</swiper-item>
 			</block>
 		</swiper>
 		<view class="dots">
-			<block wx:for="{{pageindex.topSlideList}}" wx:key>
+			<block wx:for="{{listarr}}" wx:key>
 				<view class="dot{{index == currentSwiper ? ' active1' : ''}}"></view>
 			</block>
 		</view>
 	</view>
-</block>
-
-
-
-
-
-
-
-
-
-<view style="height:120px"></view>
-<view class="Btabview">
-	<view class="Btabs" bindtap="indexFn">
-		<image src="http://47.94.16.158:8001/tab2_2.png"></image>
-		<view class="Btab_txt" >首页</view>
+	<view class="list_Jiangtab">
+		<view class="Jianglis"  wx:for="{{speaking.articleTypeList}}" bindtap="delitcilss" data-id="{{item.id}}">
+			<image src="{{item.img}}"></image>
+			<view class="txt_Jxt">{{item.name}}</view>
+		</view>
+		<!-- <view class="Jianglis" bindtap="delitcilss" data-id="2">
+			<image src="http://47.94.16.158:8001/259.png"></image>
+			<view class="txt_Jxt">控糖知识</view>
+		</view>
+		<view class="Jianglis" bindtap="delitcilss" data-id="3">
+			<image src="http://47.94.16.158:8001/260.png"></image>
+			<view class="txt_Jxt">运动饮食</view>
+		</view>
+		<view class="Jianglis" bindtap="delitcilss" data-id="4">
+			<image src="http://47.94.16.158:8001/261.png"></image>
+			<view class="txt_Jxt">前沿进展</view>
+		</view> -->
 	</view>
-	<view class="Btabs" bindtap="collegeFn">
-		<image src="http://47.94.16.158:8001/tab1_1.png"></image>
-		<view class="Btab_txt" style="color:#29C3C7">糖学院</view>
+	<block wx:for="{{speaking.articleList}}">
+		<block wx:if="{{item.cName!='专家讲糖'}}">
+			<view class="Jiangt_list" data-id="{{item.id}}" bindtap="delit">
+				<view class="left_jt">
+					<view class="jt_title">{{item.title}}</view>
+					<view class="jt_tit_botm">
+						<view class="jt_icons" wx:if="{{item.cName=='运动饮食'}}">{{item.cName}}</view>
+						<view class="jt_icons" style="border:1px solid #15A7AA;color:#15A7AA" wx:if="{{item.cName=='控糖知识'}}">
+							{{item.cName}}</view>
+						<view class="jt_icons" style="border:1px solid #CD9800;color:#CD9800" wx:if="{{item.cName=='前沿进展'}}">
+							{{item.cName}}</view>
+
+						<view class="jt_numlook">{{item.visit}}阅读</view>
+					</view>
+				</view>
+				<image class="jt_img" mode="aspectFill" src="{{item.imageInput}}"></image>
+			</view>
+			<view class="backgrays"></view>
+		</block>
+		<block wx:if="{{item.cName=='专家讲糖'}}">
+			<view class="Jiangt_list" data-id="{{item.id}}" bindtap="delitvideo">
+				<view class="left_jt">
+					<view class="jt_title">{{item.title}}</view>
+					<view class="jt_tit_botm">
+						<view class="jt_icons">{{item.cName}}</view>
+						<view class="jt_numlook">{{item.visit}}阅读</view>
+					</view>
+				</view>
+				<image class="jt_img" mode="aspectFill" src="{{item.imageInput}}"></image>
+
+			</view>
+			<view class="backgrays"></view>
+		</block>
+	</block>
+
+		<view class="contquwei">
+			<image mode="aspectFill" src="http://47.94.16.158:8001/236.png"></image>
+		</view>
+		<view style="color:gray;padding:30rpx;text-align:center;font-size:34rpx">没有更多内容了</view>
+	</block>
+	<block wx:if="{{tid==3}}">
+		<view class="shequHuati">社区话题</view>
+		<view class="quotations">
+			<swiper class="swiperimg" duration="1000" display-multiple-items="2.2" hidden='{{luboActive}}'>
+				<block wx:for="{{selectTopicList}}">
+					<swiper-item class="swiper1">
+						<view class="cotntsimg" bindtap="kachihua" data-name="{{item.name}}">
+							<view class="tit_zhid">{{item.name}}</view>
+							<image lazy-load="true" src="{{item.img}}" mode="aspectFill" class='imgsper' />
+						</view>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+		<block wx:for="{{movieList}}">
+
+			<view class="cont_list" bindtap="shequdelit" data-id="{{item.id}}">
+				<view class="user_contlist" >
+					<image
+						src="{{item.headImg}}">
+					</image>
+					<view class="cont_userRight">
+						<view class="conn_name">{{item.userName}} <image wx:if="{{item.isMember=='Y'}}" class="vipimgs" src="http://47.94.16.158:8001/164.png"></image>
+						</view>
+						<view class="times_cont">{{item.createTime}}</view>
+					</view>
+				</view>
+				<view class="title_cont" >
+					{{item.introduction}}
+				</view>
+				<view class="imglust">
+					<image mode="aspectFill" wx:for="{{item.imgs}}" wx:for-item="ite" src="{{ite}}"></image>
+
+				</view>
+				<view class="listicont">
+					<view class="icon">
+						<image src="http://47.94.16.158:8001/189.png"></image>{{item.commentsNum}}
+					</view>
+					<view class="icon">
+						<image src="http://47.94.16.158:8001/190.png"></image>{{item.commentsNum}}
+					</view>
+					<view class="icon" catchtap="shoucangs" data-collectstatus="{{item.collectStatus}}" data-id="{{item.id}}">
+						<image src="http://47.94.16.158:8001/191.png" wx:if="{{item.collectStatus==0}}"></image>
+						<image src="http://47.94.16.158:8001/263.png" wx:if="{{item.collectStatus>0}}"></image>{{item.collectionNum}}
+					</view>
+					<view class="icon" catchtap="dianzans" data-givelikestatus="{{item.givelikeStatus}}" data-id="{{item.id}}">
+						<image src="http://47.94.16.158:8001/192.png" wx:if="{{item.givelikeStatus==0}}"></image>
+						<image src="http://47.94.16.158:8001/193.png"  wx:if="{{item.givelikeStatus>0}}"></image>
+						{{item.giveLikeNum}}
+					</view>
+				</view>
+			</view>
+			<view class="botds"></view>
+		</block>
+		<view class="contquwei">
+			<image mode="aspectFill" src="http://47.94.16.158:8001/236.png"></image>
+		</view>
+		<view style="color:gray;padding:30rpx;text-align:center;font-size:34rpx">没有更多内容了</view>
+		<view class="fatieBtn" bindtap="fatieFn">发帖</view>
+	</block>
+
+
+
+
+
+
+
+
+	<view style="height:120px"></view>
+	<view class="Btabview">
+		<view class="Btabs" bindtap="indexFn">
+			<image src="http://47.94.16.158:8001/tab2_2.png"></image>
+			<view class="Btab_txt">首页</view>
+		</view>
+		<view class="Btabs" bindtap="collegeFn">
+			<image src="http://47.94.16.158:8001/tab1_1.png"></image>
+			<view class="Btab_txt" style="color:#29C3C7">糖学院</view>
+		</view>
+		<view class="Btabs" bindtap="campFn">
+			<image style="width:76px;height:76px;position: absolute;left:4px;top:-30px;"
+				src="http://47.94.16.158:8001/tab4.png"></image>
+			<image></image>
+			<view class="Btab_txt">逆转营</view>
+		</view>
+		<view class="Btabs" bindtap="shoppingFn">
+			<image src="http://47.94.16.158:8001/tab5.png"></image>
+			<view class="Btab_txt">商城</view>
+		</view>
+		<view class="Btabs" bindtap="myFn">
+			<image src="http://47.94.16.158:8001/tab3.png"></image>
+			<view class="Btab_txt">我的</view>
+		</view>
 	</view>
-	<view class="Btabs" bindtap="campFn">
-		<image style="width:76px;height:76px;position: absolute;left:4px;top:-30px;" src="http://47.94.16.158:8001/tab4.png"></image>
-		<image></image>
-		<view class="Btab_txt">逆转营</view>
-	</view>
-	<view class="Btabs" bindtap="shoppingFn">
-		<image src="http://47.94.16.158:8001/tab5.png"></image>
-		<view class="Btab_txt">商城</view>
-	</view>
-	<view class="Btabs" bindtap="myFn">
-		<image src="http://47.94.16.158:8001/tab3.png"></image>
-		<view class="Btab_txt">我的</view>
-	</view>
-</view>

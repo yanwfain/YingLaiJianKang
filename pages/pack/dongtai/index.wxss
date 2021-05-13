@@ -57,7 +57,7 @@
 
 }
 .user_name{
-  width: 60%;
+  width: 57%;
   margin-left: 3%;
 }
 .huizhang {
@@ -281,4 +281,36 @@
   height: 40rpx;
   top: 30rpx;
   right: 30rpx;
+}
+.btns{
+  padding: 10rpx 24rpx;
+  font-size:30rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 60rpx;
+  border:1px solid white;
+}
+.btns image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+
+}
+
+.btns1{
+  padding: 10rpx 24rpx;
+  font-size:28rpx;
+  color: #15A7AA;
+  display: flex;
+  align-items: center;
+  border-radius: 60rpx;
+  border:1px solid #29C3C7;
+  background: white;
+}
+.btns1 image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+
 }

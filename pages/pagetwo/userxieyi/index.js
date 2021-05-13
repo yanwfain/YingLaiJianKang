@@ -79,6 +79,7 @@ Page({
     wx.showLoading({
       title:'上传中'
     })
+    console.log(that.data.imgurl)
     wx.uploadFile({
       url: app.globalData.url + '/imgUpload/upload',      //此处换上你的接口地址
       filePath: that.data.imgurl,
@@ -123,6 +124,7 @@ Page({
       },
       fail: function (res) {
         console.log('fail');
+        console.log(res)
         wx.hideLoading({
           success: (res) => { },
         })

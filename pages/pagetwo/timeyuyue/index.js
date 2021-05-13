@@ -50,11 +50,16 @@ Page({
       })
       return
     }
-    wx.navigateTo({
-      url: '/pages/pagetwo/userxieyi/index?time=' + this.data.time,
+    var that = this
+    wx.requestSubscribeMessage({
+      tmplIds: ['y4YAHWJw_V4W_JBJqk4b5mFyAUOx54ZLdudV_kA_Hbs'],
+      success (res) {
+        console.log(res)
+        wx.navigateTo({
+          url: '/pages/pagetwo/userxieyi/index?time=' + that.data.time,
+        })
+       }
     })
-    
-  
    
   },
   /**

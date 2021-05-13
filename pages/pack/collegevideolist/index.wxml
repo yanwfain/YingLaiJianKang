@@ -1,0 +1,128 @@
+<video class="videos" bindwaiting="huanchong" bindplay="bindplay" bindpause="bindpause" bindtimeupdate="jinduFn"
+  show-fullscreen-btn="true" show-center-play-btn="true" src="{{videoUrl}}"></video>
+<view class="tab">
+  <view class="tab-view {{tabid=='id1'?'active':''}}" id="ops" data-id="id1" bindtap="tabFn">
+    介绍
+  </view>
+  <view class="tab-view {{tabid=='id2'?'active':''}}" data-id="id2" bindtap="tabFn">
+    目录 <text style="color:#15A7AA;font-size:26rpx">{{userList.videoList.length}}</text>
+  </view>
+  <view class="tab-view {{tabid=='id3'?'active':''}}" data-id="id3" bindtap="tabFn">
+    评论<text style="color:#15A7AA;font-size:26rpx">{{userList.commentsNum}}</text>
+  </view>
+</view>
+<scroll-view style="height:1200rpx" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation="true">
+  <view class="con1" id="id1">
+    <view class="title">{{userList.title}}</view>
+    <view class="user_llop">
+      <view class="user_delit">
+        <image
+          src="{{userList.authorHeadImg}}">
+        </image>
+        {{userList.author}}
+      </view>
+      <view class="btns1" bindtap="gusnabiz" wx:if="{{userList.isAuthorStatus==0}}">
+        <image src="http://47.94.16.158:8001/198.png"></image> 关注
+      </view>
+      <view class="btns1" bindtap="gusnabiz" style="color:gray;border:1px solid gray"
+        wx:if="{{userList.isAuthorStatus>0}}">
+        已关注
+      </view>
+    </view>
+    <view class="shipvideo">{{userList.synopsis}}</view>
+
+  </view>
+  <view class="backbs"></view>
+  <view class="con1" style="padding:0" id="id2">
+    <view class="zhibotitle">讲糖目录（{{userList.videoList.length}}）</view>
+    <view wx:for="{{userList.videoList}}" class="mulist {{videoid==item.id?'backgrounds':''}}" data-id="{{item.id}}" data-video="{{item.video}}" data-type="{{item.type}}" bindtap="bindvideo">
+      <view class="leftNum">{{index+1}}</view>
+      <view class="rigth_delit">
+        <view class="delit_txt">{{item.name}}</view>
+        <view class="cont_times">
+          <image src="http://47.94.16.158:8001/115.png"></image> {{item.videoTime}}
+        </view>
+      </view>
+    </view>
+    <view class="backbs"></view>
+
+  </view>
+  <view class="con1" style="padding:0" id="id3">
+    <view class="zhibotitle">评论（{{userList.commentsNum}}）</view>
+    <view class="pllist" wx:for="{{movieList}}">
+      <image class="ol_img" src="{{item.headImg}}">
+      </image>
+      <view class="right_pl">
+        <view class="ol_name">{{item.userName}} <image wx:if="{{item.isMember=='Y'}}" class="vipimgs"
+            src="http://47.94.16.158:8001/164.png"></image>
+        </view>
+        <view class="content">{{item.comment}}</view>
+        <view class="bott_con">
+          <view class="botm_leftc">{{item.addTime}}</view>
+          <view class="btn_rugtc">
+            <view class="huifu" bindtap="huifus" data-id="{{item.id}}">
+              <image src="http://47.94.16.158:8001/190.png"></image>回复
+            </view>
+            <view class="huifu" bindtap="dianzans" data-id="{{item.id}}" data-givelikestatus="{{item.givelikeStatus}}">
+              <image src="http://47.94.16.158:8001/192.png" wx:if="{{item.givelikeStatus==0}}"></image>
+              <image src="http://47.94.16.158:8001/193.png" wx:if="{{item.givelikeStatus>0}}"></image>
+
+              {{item.givelikeNum}}
+            </view>
+          </view>
+        </view>
+        <!-- 回复 -->
+        <view class="list_lp" wx:if="{{item.children.length>0}}">
+          <view class="txt_userlist" wx:for="{{item.children}}" wx:for-item="ite">
+            <text style="color:#15A7AA">{{ite.userName}}:</text>{{ite.comment}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style="color:gray;padding:30rpx;text-align:center;font-size:34rpx">没有更多内容了</view>
+
+    <view style="height:250rpx;"></view>
+  </view>
+</scroll-view>
+<block wx:if="{{isModels}}">
+  <view class="back" bindtap="jixsuFn"></view>
+  <view class="isshowModele">
+    <image class="delesx" bindtap="jixsuFn" src="http://47.94.16.158:8001/28.png"></image>
+    <!-- <image class="jiangbei" src="http://47.94.16.158:8001/96.png"></image> -->
+    <view class="textsIsshow">发布成功</view>
+    <view class="textsIsshow" style="padding-top:40rpx;">恭喜您评论成功等待审核，通过后</view>
+    <view class="fontsinumS"> <text style=" font-weight: 600;">+ {{jifensnum}}</text> 积分</view>
+    <view class="jisubtnsubs" bindtap="jixsuFn">确认</view>
+  </view>
+</block>
+
+<block wx:if="{{inptxt}}">
+  <view class="back" bindtap="guanbi"></view>
+  <view class="ttxtaer_bo">
+    <textarea class="txear" focus="{{inptxt?true:false}}" bindinput="inptxtval" placeholder="写评论" value="{{inptxtval}}"
+      show-confirm-bar="" fixed="true" bindconfirm="bindconfirm" confirm-type="send" maxlength="-1"></textarea>
+    <view class="butnfaub" bindtap="bindconfirm">发布</view>
+  </view>
+
+</block>
+<view class="bottfixed" wx:if="{{!inptxt}}">
+  <view class="left_taet" bindtap="inpgour">
+    <block wx:if="{{!inptxt}}">
+      <image src="http://47.94.16.158:8001/265.png"></image>
+      <view class="txt_b">{{inptxtval?inptxtval:'写评论'}}</view>
+    </block>
+
+    <!-- <textarea wx:if="{{inptxt}}" focus="{{inptxt?true:false}}" bindinput="inptxtval" placeholder="写评论" bindblur="bindblur" value="{{inptxtval}}" auto-height="true" show-confirm-bar="" fixed="true" bindconfirm="bindconfirm" confirm-type="send" maxlength="-1"></textarea> -->
+  </view>
+  <view class="rigth_btof">
+    <view class="shoucang">
+      <image src="http://47.94.16.158:8001/191.png"></image>
+      <!-- <image src="http://47.94.16.158:8001/263.png"></image> -->
+      <view class="chouTxt">收藏</view>
+    </view>
+    <button open-type="share" class="shoucang">
+      <image src="http://47.94.16.158:8001/189.png"></image>
+      <view class="chouTxt">分享</view>
+    </button>
+  </view>
+</view>

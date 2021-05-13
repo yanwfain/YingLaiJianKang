@@ -1,0 +1,151 @@
+<view class="imgfen">
+  <!-- 直播封面 -->
+  <image mode="aspectFill" class="fenimg" src="{{userList.img}}"></image>
+  <!-- 播放按钮 -->
+  <image class="bofang" src="http://47.94.16.158:8001/230.png"></image>
+  <view class="stsuats">
+    <!-- 正在直播 -->
+    <view class="zhengzai" wx:if="{{typeid==1}}">
+      <image class="zhibo" src="http://47.94.16.158:8001/232.png"></image>正在直播
+    </view>
+    <!-- 正在直播绿色预约直播 -->
+    <view class="zhengzai lv" wx:if="{{typeid==2}}">
+      <image class="zhibo" src="http://47.94.16.158:8001/232.png"></image>{{userList.startTime}}开始
+    </view>
+    <!-- VIP专享 -->
+    <image class="vipimg" wx:if="{{userList.type==1}}" src="http://47.94.16.158:8001/233.png"></image>
+  </view>
+</view>
+<view class="vip_ress" wx:if="{{isMember!='Y'&&userList.type==1}}">
+  <view class="vip_txt1">
+    <!-- <view class="txt_v1">即将开始的直播为VIP专属内容</view> -->
+    <view class="txt_v1">该直播为VIP专属内容</view>
+    <view class="txt_v2">马上升级VIP，畅享全部优质内容</view>
+  </view>
+  <view class="btn_vips" bindtap="shenjiVip">升级VIP</view>
+</view>
+<view class="zhiboTitle">{{userList.name}}</view>
+<view class="user_llop">
+  <view class="user_delit">
+    <image
+      src="{{userList.headimg}}">
+    </image>
+    {{userList.anchorName}} | {{userList.technical}}
+  </view>
+  <view class="btns1" bindtap="gusnabiz" wx:if="{{userList.isAuthorStatus==0}}"> <image src="http://47.94.16.158:8001/198.png"></image> 关注</view>
+  <view class="btns1" bindtap="gusnabiz" style="color:gray;border:1px solid gray" wx:if="{{userList.isAuthorStatus>0}}"> 已关注</view>
+</view>
+<view class="user_txt">{{userList.introduce}}</view>
+<view class="bords"></view>
+<view class="cont_userlistp">
+  <view class="zhibotitle">直播提问区（{{userList.questionNum}}）</view>
+  <view class="pllist" wx:for="{{movieList}}">
+    <image class="ol_img" src="{{item.headImg}}"></image>
+    <view class="right_pl">
+      <view class="ol_name">{{item.userName}} <image wx:if="{{item.isNember=='Y'}}" class="vipimgs" src="http://47.94.16.158:8001/164.png"></image></view>
+      <view class="content">{{item.content}}</view>
+      <view class="bott_con">
+        <view class="botm_leftc">{{item.createTime}}</view>
+        <view class="btn_rugtc">
+          <!-- <view class="tongwen">同问</view>（0） -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="pllist">
+    <image class="ol_img" src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132"></image>
+    <view class="right_pl">
+      <view class="ol_name">赖凝盛 <image class="vipimgs" src="http://47.94.16.158:8001/164.png"></image></view>
+      <view class="content">有人说吃糖会更容易得糖尿病,有的人直接说“我看过科普说糖尿病与吃糖没关系”。那么糖尿病究竟与吃糖有多少的关系呢?</view>
+      <view class="bott_con">
+        <view class="botm_leftc">2010-02-23</view>
+        <view class="btn_rugtc">
+          <view class="tongwen1">已同问</view>（1）
+        </view>
+      </view>
+    </view>
+  </view> -->
+</view>
+<view style="color:gray;padding:30rpx;text-align:center;font-size:34rpx">没有更多内容了</view>
+<image class="zhanwei" src="http://47.94.16.158:8001/264.png"></image>
+<view style="height:200rpx"></view>
+<view class="bottfixed" wx:if="{{!inptxt}}">
+  <view class="left_taet" bindtap="inpgour">
+    <block wx:if="{{!inptxt}}">
+      <image src="http://47.94.16.158:8001/265.png"></image>
+    <view class="txt_b">{{inptxtval?inptxtval:'写评论'}}</view>
+    </block>
+
+    <!-- <textarea wx:if="{{inptxt}}" focus="{{inptxt?true:false}}" bindinput="inptxtval" placeholder="写评论" bindblur="bindblur" value="{{inptxtval}}" auto-height="true" show-confirm-bar="" fixed="true" bindconfirm="bindconfirm" confirm-type="send" maxlength="-1"></textarea> -->
+  </view>
+  <view class="rigth_btof">
+    <view class="shoucang">
+      <image src="http://47.94.16.158:8001/191.png"></image>
+      <!-- <image src="http://47.94.16.158:8001/263.png"></image> -->
+      <view class="chouTxt">收藏</view>
+    </view>
+    <button open-type="share" class="shoucang">
+      <image src="http://47.94.16.158:8001/189.png"></image>
+      <view class="chouTxt">分享</view>
+    </button>
+  </view>
+</view>
+<block wx:if="{{inptxt}}">
+  <view class="back" bindtap="guanbi"></view>
+  <view class="ttxtaer_bo">
+    <textarea class="txear" focus="{{inptxt?true:false}}" bindinput="inptxtval" placeholder="写评论" value="{{inptxtval}}"  show-confirm-bar="" fixed="true" bindconfirm="bindconfirm"  maxlength="-1"></textarea>
+    <view class="butnfaub" bindtap="bindconfirm">发布</view>
+  </view>
+
+</block>
+<block wx:if="{{isDvip}}">
+
+
+<view class="back" bindtap="isDvipFn"></view>
+<view class="moadovip">
+  <image class="chasx" bindtap="isDvipFn" src="http://47.94.16.158:8001/267.png"></image>
+  <view class="title_vipmo">升级VIP继续观看</view>
+  <image class="img_zuan" src="http://47.94.16.158:8001/266.png"></image>
+  <view class="txt_mole">
+    <view>专家讲糖课程 · 权威控糖知识</view>
+    <view>专家名医互动 · 健康商城优惠</view>
+  </view>
+  <view class="list_vip">
+    <view class="list_v">
+      <image src="http://47.94.16.158:8001/268.png"></image>
+      <view class="vip_t">专家讲糖</view>
+      <view class="vip_b">免费学</view>
+    </view>
+    <view class="list_v">
+      <image src="http://47.94.16.158:8001/269.png"></image>
+      <view class="vip_t">专家直播间</view>
+      <view class="vip_b">免费看</view>
+    </view>
+    <view class="list_v">
+      <image src="http://47.94.16.158:8001/270.png"></image>
+      <view class="vip_t">VIP文章</view>
+      <view class="vip_b">免费读</view>
+    </view>
+    <view class="list_v">
+      <image src="http://47.94.16.158:8001/271.png"></image>
+      <view class="vip_t">健康商城</view>
+      <view class="vip_b">8.8折</view>
+    </view>
+  </view>
+  <view class="vip_shenbtm" bindtap="submitBtn">
+    <view class="top_mpic">盈来健康会员 ￥39/12个月 原价 <text style="text-decoration:line-through;">￥198</text></view>
+    <view class="txt_btn1">马上升级</view>
+  </view>
+</view>
+</block>
+<block wx:if="{{isModels}}">
+  <view class="back" bindtap="jixsuFn"></view>
+  <view class="isshowModele">
+    <image class="delesx" bindtap="jixsuFn" src="http://47.94.16.158:8001/28.png"></image>
+    <!-- <image class="jiangbei" src="http://47.94.16.158:8001/96.png"></image> -->
+    <view class="textsIsshow" >发布成功</view>
+    <view class="textsIsshow" style="padding-top:40rpx;">恭喜您评论成功并获得</view>
+    <view class="fontsinumS"> <text style=" font-weight: 600;">+ {{jifensnum}}</text>  积分</view>
+    <view class="jisubtnsubs" bindtap="jixsuFn">确认</view>
+  </view>
+</block>

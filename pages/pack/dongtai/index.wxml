@@ -5,10 +5,12 @@
   <image src="http://47.94.16.158:8001/188.png"></image>
 </view>
 <view class="userdelit">
-  <view class="btnerro" wx:if="{{userList.isMember=='N'}}" >升级VIP</view>
-  <image class="vipimg" wx:if="{{userList.isMember=='Y'}}"  src="http://47.94.16.158:8001/164.png"></image>
-  <image class="user_img"
-    src="{{userList.headImg}}">
+
+    <view class="btnerro" wx:if="{{userList.isMember=='N'&&user_id==uid}}">升级VIP</view>
+  <image class="vipimg" wx:if="{{userList.isMember=='Y'&&user_id==uid}}" src="http://47.94.16.158:8001/164.png"></image>
+
+ 
+  <image class="user_img" src="{{userList.headImg}}">
   </image>
   <view class="user_name">
     <view class="cont_txt">
@@ -25,8 +27,13 @@
       <view></view>
     </view>
   </view>
+  <block wx:if="{{user_id !=uid}}">
+
+  <view class="btns1" bindtap="isGuan" wx:if="{{isGuan==0}}"> <image src="http://47.94.16.158:8001/198.png"></image> 关注</view>
+  <view class="btns" bindtap="isGuan" wx:if="{{isGuan>0}}"> 已关注</view>
+</block>
 </view>
-<view class="list_city">
+<view class="list_city" wx:if="{{user_id==uid||!uid}}">
   <view class="list_ll" bindtap="linGuanzhu">
     <view class="nums_1">{{userList.attentionNum}}</view>
     <view class="guanzhu">关注</view>
@@ -36,6 +43,20 @@
     <view class="guanzhu">粉丝</view>
   </view>
   <view class="list_ll" bindtap="shoucangFn">
+    <view class="nums_1">{{userList.wonPraiseNum}}</view>
+    <view class="guanzhu">获赞与收藏</view>
+  </view>
+</view>
+<view class="list_city" wx:if="{{user_id!=uid&&uid}}">
+  <view class="list_ll">
+    <view class="nums_1">{{userList.attentionNum}}</view>
+    <view class="guanzhu">关注</view>
+  </view>
+  <view class="list_ll" style="border-left:1px solid #78D2CE;border-right:1px solid #78D2CE">
+    <view class="nums_1">{{userList.fansNum}}</view>
+    <view class="guanzhu">粉丝</view>
+  </view>
+  <view class="list_ll">
     <view class="nums_1">{{userList.wonPraiseNum}}</view>
     <view class="guanzhu">获赞与收藏</view>
   </view>
@@ -51,8 +72,7 @@
 
     <view class="cont_list">
       <view class="user_contlist">
-        <image
-          src="{{item.headImg}}">
+        <image src="{{item.headImg}}">
         </image>
         <view class="cont_userRight">
           <view class="conn_name">{{item.userName}}</view>
@@ -63,9 +83,7 @@
         {{item.title}}
       </view>
       <view class="imglust">
-        <image src="{{item.imgs}}"></image>
-        <image src=""></image>
-        <image src=""></image>
+        <image mode="aspectFill" wx:for="{{item.imgs}}" wx:for-item="ite" src="{{ite}}"></image>
       </view>
       <view class="listicont">
         <view class="icon">
@@ -74,14 +92,30 @@
         <view class="icon">
           <image src="http://47.94.16.158:8001/190.png"></image>{{item.commentsNum}}
         </view>
-        <view class="icon">
-          <image src="http://47.94.16.158:8001/191.png"></image>{{item.collectionNum}}
+        <block wx:if="{{user_id==uid||!uid}}">
+          <view class="icon" bindtap="shouTFn" data-id="{{item.id}}" data-collectionstatus="{{item.collectionStatus}}">
+          <image src="http://47.94.16.158:8001/191.png" wx:if="{{item.collectionStatus == 0}}"></image>
+          <image src="http://47.94.16.158:8001/263.png" wx:if="{{item.collectionStatus > 0}}"></image>
+          {{item.collectionNum}}
         </view>
-        <view class="icon">
-          <image src="http://47.94.16.158:8001/192.png"></image>
-          <!-- <image src="http://47.94.16.158:8001/193.png"></image> -->
+        <view class="icon" bindtap="TiezanFn" data-id="{{item.id}}" data-givelikestatus="{{item.giveLikeStatus}}">
+          <image src="http://47.94.16.158:8001/192.png" wx:if="{{item.giveLikeStatus == 0}}"></image>
+          <image src="http://47.94.16.158:8001/193.png" wx:if="{{item.giveLikeStatus > 0}}"></image>
           {{item.giveLikeNum}}
         </view>
+        </block>
+        <block wx:if="{{user_id!=uid&&uid}}">
+          <view class="icon" bindtap="shouTFn2" data-id="{{item.id}}" data-collectionstatus="{{item.collectionTwoStatus}}">
+          <image src="http://47.94.16.158:8001/191.png" wx:if="{{item.collectionTwoStatus == 0}}"></image>
+          <image src="http://47.94.16.158:8001/263.png" wx:if="{{item.collectionTwoStatus > 0}}"></image>
+          {{item.collectionNum}}
+        </view>
+        <view class="icon" bindtap="TiezanFn1" data-id="{{item.id}}" data-givelikestatus="{{item.giveLikeTwoStatus}}">
+          <image src="http://47.94.16.158:8001/192.png" wx:if="{{item.giveLikeTwoStatus == 0}}"></image>
+          <image src="http://47.94.16.158:8001/193.png" wx:if="{{item.giveLikeTwoStatus > 0}}"></image>
+          {{item.giveLikeNum}}
+        </view>
+        </block>
       </view>
     </view>
     <view class="botds"></view>
@@ -93,8 +127,7 @@
 
     <view class="cont_list">
       <view class="user_contlist">
-        <image
-          src="{{item.headImg}}">
+        <image src="{{item.headImg}}">
         </image>
         <view class="cont_userRight">
           <view class="conn_name">{{item.userName}}</view>
@@ -115,39 +148,40 @@
   </block>
 </block>
 <block wx:if="{{tid==3}}">
-  <block>
+  <block wx:for="{{movieList}}">
+
+
     <view class="cont_list">
       <view class="user_contlist">
-        <image
-          src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132">
+        <image src="{{item.headImg}}">
         </image>
         <view class="cont_userRight">
-          <view class="conn_name">霍桂秋</view>
-          <view class="times_cont">2010-02-23</view>
+          <view class="conn_name">{{item.userName}}</view>
+          <view class="times_cont">{{item.createTime}}</view>
         </view>
       </view>
       <view class="title_cont">
-        有人说吃糖会更容易得糖尿病,有的人直接说“我看过科普说糖尿病与吃糖没关系”。那么糖尿病究竟与吃糖有多少的关系呢?
+        {{item.title}}
       </view>
       <view class="imglust">
-        <image src=""></image>
-        <image src=""></image>
-        <image src=""></image>
+        <image mode="aspectFill" wx:for="{{item.imgs}}" wx:for-item="ite" src="{{ite}}"></image>
       </view>
       <view class="listicont">
         <view class="icon">
-          <image src="http://47.94.16.158:8001/189.png"></image>896
+          <image src="http://47.94.16.158:8001/189.png"></image>{{item.shareNum}}
         </view>
         <view class="icon">
-          <image src="http://47.94.16.158:8001/190.png"></image>896
+          <image src="http://47.94.16.158:8001/190.png"></image>{{item.commentsNum}}
         </view>
-        <view class="icon">
-          <image src="http://47.94.16.158:8001/194.png"></image>
-          896
+        <view class="icon" bindtap="shouTFn" data-id="{{item.id}}" data-collectionstatus="{{item.collectionStatus}}">
+          <image src="http://47.94.16.158:8001/191.png" wx:if="{{item.collectionStatus == 0}}"></image>
+          <image src="http://47.94.16.158:8001/263.png" wx:if="{{item.collectionStatus > 0}}"></image>
+          {{item.collectionNum}}
         </view>
-        <view class="icon">
+        <view class="icon" bindtap="zanquFn" data-id="{{item.id}}">
+          <!-- <image src="http://47.94.16.158:8001/192.png"></image> -->
           <image src="http://47.94.16.158:8001/193.png"></image>
-          896
+          {{item.giveLikeNum}}
         </view>
       </view>
     </view>
@@ -160,10 +194,18 @@
   <view class="ModelTan">
     <image class="deless" bindtap="isMOdels" src="http://47.94.16.158:8001/204.png"></image>
     <view class="moldeTit">获赞与收藏</view>
-    <view class="list_smodel"><image src="http://47.94.16.158:8001/200.png"></image>当前发布帖子数 {{numallds.invitationNum}}</view>
-    <view class="list_smodel"><image src="http://47.94.16.158:8001/201.png"></image>当前获得点赞数 {{numallds.giveLikeNum}}</view>
-    <view class="list_smodel"><image src="http://47.94.16.158:8001/202.png"></image>当前获得收藏数 {{numallds.collectNum}}</view>
-    <view class="list_smodel"><image src="http://47.94.16.158:8001/203.png"></image>当前获得评论数 {{numallds.commentNum}}</view>
+    <view class="list_smodel">
+      <image src="http://47.94.16.158:8001/200.png"></image>当前发布帖子数 {{numallds.invitationNum}}
+    </view>
+    <view class="list_smodel">
+      <image src="http://47.94.16.158:8001/201.png"></image>当前获得点赞数 {{numallds.giveLikeNum}}
+    </view>
+    <view class="list_smodel">
+      <image src="http://47.94.16.158:8001/202.png"></image>当前获得收藏数 {{numallds.collectNum}}
+    </view>
+    <view class="list_smodel">
+      <image src="http://47.94.16.158:8001/203.png"></image>当前获得评论数 {{numallds.commentNum}}
+    </view>
     <view class="btnMOdel" bindtap="isMOdels">我知道了</view>
   </view>
 </block>

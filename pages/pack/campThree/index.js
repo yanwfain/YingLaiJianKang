@@ -1,7 +1,7 @@
 // pages/campThree/index.js
-import IMController from '../../../controller/im.js'
-import { connect } from '../../../redux/index.js'
-import formatTime from '../../../utils/util.js'
+// import IMController from '../../../controller/im.js'
+// import { connect } from '../../../redux/index.js'
+// import formatTime from '../../../utils/util.js'
 let app = getApp()
 let store = app.store
 Page({
@@ -67,6 +67,16 @@ Page({
     })
   },
   shujutimeFn:function(e){
+    // wx.requestSubscribeMessage({
+    //   tmplIds: ['UHlhSupKI9tEHvl15hgS7tB3zqgcqFcCaWebuOnl67M','1q7XE7jETEGjw2TizIq0PaxpptbnujTtJc_DUv7ItWk','UWBuUG3Ujl4tP2Bu5qIZ1CbFa7BxP6tXBLPKtG4rtds'],
+    //   success (res) {
+    //     console.log(res)
+    //     wx.navigateTo({
+    //       url: '/pages/guanli/index',
+    //     })
+
+    //    }
+    // })
     wx.navigateTo({
       url: '/pages/pagetwo/timesetimeo/index',
     })
@@ -180,6 +190,17 @@ Page({
       url: '/pages/page/jiapage/index',
     })
   },
+  shenJi:function(e){
+    wx.navigateTo({
+      url: '/pages/pack/shenJi/index?pid=' + this.data.userList.productId,
+    })
+  },
+  chongxiRuyin:function(e){
+    wx.reLaunch({
+      url: '/pages/pack/camp/index',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -203,13 +224,41 @@ Page({
       console.log(res)
       wx.hideLoading()
       if (res.success) {
-        // app.globalData.token = res.data.yxToken,
-        // app.globalData.account = res.data.id,
         app.globalData.doctorId = res.data.userData.doctorId,
         app.globalData.dietitianId = res.data.userData.dietitianId,
         that.setData({
           userList:res.data.userData
         })
+        var arr = res.data.userData.endTime
+        var date = new Date(arr.replace(/-/g, '/'));
+        console.log(date)
+        // 到期时间
+        var time1 = date.getTime();
+        // 当前时间
+        var timestamp = Date.parse(new Date());
+        console.log(time1)
+        console.log(timestamp)
+        // 到期后三天
+        var timestampTwo = time1 + 259200000
+        // 判断是否到期
+        if(time1<timestamp){
+          that.setData({
+            isGuo:true
+          })
+        }
+        // 判断到期后是否过3天续费时间
+        if(timestampTwo<timestamp){
+          that.setData({
+            isThree:true
+          })
+        }else{
+          var timeMl =(timestampTwo - timestamp)/86400000
+          var timeMli = Math.ceil(timeMl)
+          console.log(Math.ceil(timeMl))
+          this.setData({
+            timeMli:timeMli
+          })
+        }
       } else {
         wx.showToast({
           title: res.error_message,
@@ -248,6 +297,7 @@ Page({
       })
       console.log(err.errMsg)
     })
+   
   },
 
   /**
@@ -290,4 +340,3 @@ Page({
 
   },
 })
-

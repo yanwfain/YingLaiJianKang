@@ -2,8 +2,16 @@
   <image src="http://47.94.16.158:8001/75.png"></image>
   <view class="title_page" style="top:{{statusBarHeight+10}}px"></view>
   <view class="tit_tab">
-    <view class="title">下午好，您已入营{{userList.dayNum}}天啦！</view>
-    <view class="nums"></view>
+    <block wx:if="{{userList.productId==3}}">
+      <view class="title">下午好，您已入营{{userList.dayNum}}天啦！</view>
+      <view class="nums" style="background:#EE7500;color:white" wx:if="{{isGuo}}" bindtap="chongxiRuyin">重新购买</view>
+    </block>
+    <block wx:if="{{userList.productId==1||userList.productId==2}}">
+      <view class="title" wx:if="{{isGuo}}">您的7天/21天逆转营已结束。您还有{{timeMli}}天可享用续费优惠特权</view>
+      <view class="title" wx:if="{{!isGuo}}">下午好，您已入营{{userList.dayNum}}天啦！</view>
+      <view class="nums" wx:if="{{!isThree}}" bindtap="shenJi">升级续费</view>
+      <view class="nums" style="background:#EE7500;color:white" bindtap="chongxiRuyin" wx:if="{{isThree}}">重新购买</view>
+    </block>
   </view>
 </view>
 <view class="index_user">

@@ -16,7 +16,7 @@ Page({
     console.log(app.globalData.userInfo.nickName)
     this.setData({
       nickName: app.globalData.userInfo.nickName,
-      head:app.globalData.userInfo.avatarUrl
+      head: app.globalData.userInfo.avatarUrl
     })
   },
   notiro: function (e) {
@@ -35,57 +35,57 @@ Page({
   //     showId: ''
   //   })
   // },
-  resName:function(e){
+  resName: function (e) {
 
     this.setData({
-      resName:e.detail.value
+      resName: e.detail.value
     })
   },
-  tel:function(e){
+  tel: function (e) {
 
     this.setData({
-      tel:e.detail.value
+      tel: e.detail.value
     })
   },
-  tel1:function(e){
+  tel1: function (e) {
 
     this.setData({
-      tel1:e.detail.value
+      tel1: e.detail.value
     })
   },
-  tel2:function(e){
+  tel2: function (e) {
     this.setData({
-      tel2:e.detail.value
+      tel2: e.detail.value
     })
   },
-  custody1:function(e){
+  custody1: function (e) {
     this.setData({
-      custody1:e.detail.value
+      custody1: e.detail.value
     })
   },
-  relation1:function(e){
+  relation1: function (e) {
     this.setData({
-      relation1:e.detail.value
+      relation1: e.detail.value
     })
   },
-  phone1:function(e){
+  phone1: function (e) {
     this.setData({
-      phone1:e.detail.value
+      phone1: e.detail.value
     })
   },
-  custody2:function(e){
+  custody2: function (e) {
     this.setData({
-      custody2:e.detail.value
+      custody2: e.detail.value
     })
   },
-  relation2:function(e){
+  relation2: function (e) {
     this.setData({
-      relation2:e.detail.value
+      relation2: e.detail.value
     })
   },
-  phone2:function(e){
+  phone2: function (e) {
     this.setData({
-      phone2:e.detail.value
+      phone2: e.detail.value
     })
   },
   bindfocusone: function (e) {
@@ -110,62 +110,62 @@ Page({
       })
     }
   },
-  submitens:function(e){
-    if(!this.data.resName){
+  submitens: function (e) {
+    if (!this.data.resName) {
       wx.showToast({
         title: '请输入姓名',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(!this.data.tel){
+    if (!this.data.tel) {
       wx.showToast({
         title: '请输入正确手机号',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(this.data.tel.length!=11){
+    if (this.data.tel.length != 11) {
       wx.showToast({
         title: '请输入11位正确手机号',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
-    if(this.data.phone1){
-      if(this.data.phone1.length!=11){
+    if (this.data.phone1) {
+      if (this.data.phone1.length != 11) {
         wx.showToast({
           title: '监护人1请输入正确手机号',
-          icon:'none'
+          icon: 'none'
         })
         return
       }
     }
-    if(this.data.phone2){
-      if(this.data.phone2.length!=11){
+    if (this.data.phone2) {
+      if (this.data.phone2.length != 11) {
         wx.showToast({
           title: '监护人2请输入正确手机号',
-          icon:'none'
+          icon: 'none'
         })
         return
       }
     }
     var that = this
-		var url = app.globalData.url + '/joinCamp/saveCustody';
+    var url = app.globalData.url + '/joinCamp/saveCustody';
     var data = {
-      user_id:app.globalData.user_id,
-      user_name:that.data.resName,
-      phone:that.data.tel,
-      custody1:that.data.custody1?that.data.custody1:'',
-      relation1:that.data.relation1?that.data.relation1:'',
-      phone1:that.data.phone1?that.data.phone1:'',
-      custody2:that.data.custody2?that.data.custody2:'',
-      relation2:that.data.relation2?that.data.relation2:'',
-      phone2:that.data.phone2?that.data.phone2:'',
-      step:1,
-      piece:1,
-      aim:7,
-      id:that.data.jid?that.data.jid:''
+      user_id: app.globalData.user_id,
+      user_name: that.data.resName,
+      phone: that.data.tel,
+      custody1: that.data.custody1 ? that.data.custody1 : '',
+      relation1: that.data.relation1 ? that.data.relation1 : '',
+      phone1: that.data.phone1 ? that.data.phone1 : '',
+      custody2: that.data.custody2 ? that.data.custody2 : '',
+      relation2: that.data.relation2 ? that.data.relation2 : '',
+      phone2: that.data.phone2 ? that.data.phone2 : '',
+      step: 1,
+      piece: 1,
+      aim: 7,
+      id: that.data.jid ? that.data.jid : ''
     }
     app.wxRequest('POST', url, data, (res) => {
       console.log(res)
@@ -185,7 +185,7 @@ Page({
       })
       console.log(err.errMsg)
     })
-   
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -202,27 +202,27 @@ Page({
       title: '加载中',
     })
     var that = this
-		var url = app.globalData.url + '/joinCamp/getCustodyByUser';
+    var url = app.globalData.url + '/joinCamp/getCustodyByUser';
     var data = {
-      user_id:app.globalData.user_id,
-   
+      user_id: app.globalData.user_id,
+
     }
     app.wxRequest('POST', url, data, (res) => {
       console.log(res)
       wx.hideLoading()
-      if (res.success&&res.data) {
-       that.setData({
-         jid:res.data.id,
-         resName:res.data.user_name,
-         tel:res.data.phone,
-         custody1:res.data.custody1?res.data.custody1:'',
-         relation1:res.data.relation1?res.data.relation1:'',
-         phone1:res.data.phone1?res.data.phone1:'',
-         custody2:res.data.custody2?res.data.custody2:'',
-         relation2:res.data.relation2?res.data.relation2:'',
-         phone2:res.data.phone2?res.data.phone2:'',
-       })
-				
+      if (res.success && res.data) {
+        that.setData({
+          jid: res.data.id,
+          resName: res.data.user_name,
+          tel: res.data.phone,
+          custody1: res.data.custody1 ? res.data.custody1 : '',
+          relation1: res.data.relation1 ? res.data.relation1 : '',
+          phone1: res.data.phone1 ? res.data.phone1 : '',
+          custody2: res.data.custody2 ? res.data.custody2 : '',
+          relation2: res.data.relation2 ? res.data.relation2 : '',
+          phone2: res.data.phone2 ? res.data.phone2 : '',
+        })
+
       } else {
         wx.showToast({
           title: res.msg,
@@ -234,6 +234,38 @@ Page({
       })
       console.log(err.errMsg)
     })
+
+    var url = app.globalData.url + '/api/getUserInfo';
+    var data = {
+      userId: app.globalData.user_id,
+    }
+    app.wxRequest('get', url, data, (res) => {
+      console.log(res)
+      wx.hideLoading()
+      if (res.success) {
+        that.setData({
+
+          head: res.data.userData.headImg,
+          nickName: res.data.userData.userName
+        })
+        if (!this.data.tel) {
+          that.setData({
+            tel: res.data.userData.phone,
+
+          })
+        }
+      } else {
+        wx.showToast({
+          title: res.error_message,
+        })
+      }
+    }, (err) => {
+      wx.showToast({
+        title: '提交失败',
+      })
+      console.log(err.errMsg)
+    })
+
   },
 
   /**

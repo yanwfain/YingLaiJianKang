@@ -452,7 +452,7 @@
 		</view> -->
 	</view>
 </view>
-<view class="logoKefu">
+<view class="logoKefu" bindtap="kefuFn">
 	<image src="http://47.94.16.158:8001/n8.png"></image>
 </view>
 <view style="height:120px"></view>

@@ -13,7 +13,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showLoading({
+      title: '加载中',
+    })
+    var that = this
+    var url = app.globalData.url + '/api/getDeclarationCamp';
+    var data = {
+      type:3
+    }
+    app.wxRequest('get', url, data, (res) => {
+      console.log(res)
+      wx.hideLoading()
+      if (res.success) {
+        that.setData({
+          indexpage:res.data
+        })
+      } else {
+        wx.showToast({
+          title: res.error_message,
+          icon:'none'
+        })
+      }
+    }, (err) => {
+      wx.showToast({
+        title: '提交失败',
+      })
+      console.log(err.errMsg)
+    })
   },
   notiro:function(e){
     wx.navigateBack({

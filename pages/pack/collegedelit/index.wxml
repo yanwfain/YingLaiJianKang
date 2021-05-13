@@ -1,0 +1,160 @@
+<view class="title">
+  {{userList.title}}
+</view>
+
+<view class="user_llop">
+  <view class="user_delit">
+    <image
+      src="{{userList.authorHeadImg}}">
+    </image>
+    {{userList.author}} 
+  </view>
+  <view class="btns1" bindtap="gusnabiz" wx:if="{{userList.isAuthorStatus==0}}">
+    <image src="http://47.94.16.158:8001/198.png"></image> 关注
+  </view>
+  <view class="btns1" bindtap="gusnabiz" style="color:gray;border:1px solid gray"  wx:if="{{userList.isAuthorStatus>0}}">
+    已关注
+  </view>
+</view>
+<view class="timesfa">发布于{{userList.addTime}}</view>
+<!-- acover    飞会员使用class -->
+<view wx:if="{{isMember!='Y'&&userList.type==1}}" class="txt_bot acover">
+  <rich-text nodes="{{userList.content}}"></rich-text>
+  <view class="opcit"></view>
+</view>
+<view wx:if="{{isMember!='Y'&&userList.type==0}}" class="txt_bot">
+  <rich-text nodes="{{userList.content}}"></rich-text>
+</view>
+<view wx:if="{{isMember=='Y'&&userList.type==1}}" class="txt_bot ">
+  <rich-text nodes="{{userList.content}}"></rich-text>
+</view>
+<view wx:if="{{isMember=='Y'&&userList.type==0}}" class="txt_bot ">
+  <rich-text nodes="{{userList.content}}"></rich-text>
+</view>
+<view class="kaitong" wx:if="{{isMember!='Y'&&userList.type==1}}" bindtap="shenjiVip">开通会员，查看完整内容<image src="http://47.94.16.158:8001/272.png"></image>
+</view>
+<view class="vip_ress" wx:if="{{isMember!='Y'&&userList.type==1}}">
+  <view class="vip_txt1">
+    <view class="txt_v1">即将开始的直播为VIP专属内容</view>
+    <view class="txt_v2">马上升级VIP，畅享全部优质内容</view>
+  </view>
+  <view class="btn_vips" bindtap="shenjiVip">升级VIP</view>
+</view>
+<view class="bords"></view>
+<view class="cont_userlistp">
+  <view class="zhibotitle">评论（{{userList.commentsNum}}）</view>
+  <view class="pllist" wx:for="{{movieList}}"> 
+    <image class="ol_img"
+      src="{{item.headImg}}">
+    </image>
+    <view class="right_pl">
+      <view class="ol_name">{{item.userName}} <image wx:if="{{item.isMember=='Y'}}" class="vipimgs" src="http://47.94.16.158:8001/164.png"></image>
+      </view>
+      <view class="content">{{item.comment}}</view>
+      <view class="bott_con">
+        <view class="botm_leftc">{{item.addTime}}</view>
+        <view class="btn_rugtc">
+          <view class="huifu" bindtap="huifus" data-id="{{item.id}}">
+            <image src="http://47.94.16.158:8001/190.png"></image>回复
+          </view>
+          <view class="huifu" bindtap="dianzans" data-id="{{item.id}}" data-givelikestatus="{{item.givelikeStatus}}">
+            <image src="http://47.94.16.158:8001/192.png" wx:if="{{item.givelikeStatus==0}}"></image> 
+            <image src="http://47.94.16.158:8001/193.png" wx:if="{{item.givelikeStatus>0}}"></image> 
+            
+            {{item.givelikeNum}}
+          </view>
+        </view>
+      </view>
+      <!-- 回复 -->
+      <view class="list_lp" wx:if="{{item.children.length>0}}">
+        <view class="txt_userlist" wx:for="{{item.children}}" wx:for-item="ite">
+          <text style="color:#15A7AA">{{ite.userName}}:</text>{{ite.comment}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<image class="zhanwei" src="http://47.94.16.158:8001/264.png"></image>
+<view style="color:gray;padding:30rpx;text-align:center;font-size:34rpx">没有更多内容了</view>
+<view style="height:200rpx"></view>
+<view class="bottfixed" wx:if="{{!inptxt}}">
+  <view class="left_taet" bindtap="inpgour">
+    <block wx:if="{{!inptxt}}">
+      <image src="http://47.94.16.158:8001/265.png"></image>
+      <view class="txt_b">{{inptxtval?inptxtval:'写评论'}}</view>
+    </block>
+
+    <!-- <textarea wx:if="{{inptxt}}" focus="{{inptxt?true:false}}" bindinput="inptxtval" placeholder="写评论" bindblur="bindblur" value="{{inptxtval}}" auto-height="true" show-confirm-bar="" fixed="true" bindconfirm="bindconfirm" confirm-type="send" maxlength="-1"></textarea> -->
+  </view>
+  <view class="rigth_btof">
+    <view class="shoucang" bindtap="shoucang" >
+      <image src="http://47.94.16.158:8001/191.png" wx:if="{{userList.isCollectStatus==0}}"></image>
+      <image src="http://47.94.16.158:8001/263.png" wx:if="{{userList.isCollectStatus>0}}"></image>
+      <view class="chouTxt">收藏</view>
+    </view>
+    <button open-type="share" class="shoucang">
+      <image src="http://47.94.16.158:8001/189.png"></image>
+      <view class="chouTxt">分享</view>
+    </button>
+  </view>
+</view>
+<block wx:if="{{inptxt}}">
+  <view class="back" bindtap="guanbi"></view>
+  <view class="ttxtaer_bo">
+    <textarea class="txear" focus="{{inptxt?true:false}}" bindinput="inptxtval" placeholder="写评论" value="{{inptxtval}}"
+      show-confirm-bar="" fixed="true" bindconfirm="bindconfirm" confirm-type="send" maxlength="-1"></textarea>
+    <view class="butnfaub" bindtap="bindconfirm">发布</view>
+  </view>
+
+</block>
+<block wx:if="{{isDvip}}">
+
+
+  <view class="back" bindtap="isDvipFn"></view>
+  <view class="moadovip">
+    <image class="chasx" bindtap="isDvipFn" src="http://47.94.16.158:8001/267.png"></image>
+    <view class="title_vipmo">升级VIP继续观看</view>
+    <image class="img_zuan" src="http://47.94.16.158:8001/266.png"></image>
+    <view class="txt_mole">
+      <view>专家讲糖课程 · 权威控糖知识</view>
+      <view>专家名医互动 · 健康商城优惠</view>
+    </view>
+    <view class="list_vip">
+      <view class="list_v">
+        <image src="http://47.94.16.158:8001/268.png"></image>
+        <view class="vip_t">专家讲糖</view>
+        <view class="vip_b">免费学</view>
+      </view>
+      <view class="list_v">
+        <image src="http://47.94.16.158:8001/269.png"></image>
+        <view class="vip_t">专家直播间</view>
+        <view class="vip_b">免费看</view>
+      </view>
+      <view class="list_v">
+        <image src="http://47.94.16.158:8001/270.png"></image>
+        <view class="vip_t">VIP文章</view>
+        <view class="vip_b">免费读</view>
+      </view>
+      <view class="list_v">
+        <image src="http://47.94.16.158:8001/271.png"></image>
+        <view class="vip_t">健康商城</view>
+        <view class="vip_b">8.8折</view>
+      </view>
+    </view>
+    <view class="vip_shenbtm" bindtap="submitBtn">
+      <view class="top_mpic">盈来健康会员 ￥39/12个月 原价 <text style="text-decoration:line-through;">￥198</text></view>
+      <view class="txt_btn1">马上升级</view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{isModels}}">
+  <view class="back" bindtap="jixsuFn"></view>
+  <view class="isshowModele">
+    <image class="delesx" bindtap="jixsuFn" src="http://47.94.16.158:8001/28.png"></image>
+    <!-- <image class="jiangbei" src="http://47.94.16.158:8001/96.png"></image> -->
+    <view class="textsIsshow">发布成功</view>
+    <view class="textsIsshow" style="padding-top:40rpx;">恭喜您评论成功等待审核，通过后</view>
+    <view class="fontsinumS"> <text style=" font-weight: 600;">+ {{jifensnum}}</text> 积分</view>
+    <view class="jisubtnsubs" bindtap="jixsuFn">确认</view>
+  </view>
+</block>

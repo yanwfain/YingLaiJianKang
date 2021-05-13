@@ -13,6 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     this.setData({
       typeid:options.typeid,
       orderId:options.orderId
@@ -104,7 +105,7 @@ Page({
   },
   wuliu:function(e){
     wx.navigateTo({
-      url: '/pages/pagetwo/wuliudelit/index?code=' + this.data.orderlist.deliveryId,
+      url: '/pages/pagetwo/wuliudelit/index?code=' + this.data.orderlist.deliveryId ,
     })
   },
   lijiFn:function(e){
@@ -216,7 +217,7 @@ Page({
             title: "支付成功",
           })
           wx.redirectTo({
-            url: '/pages/pack/delit/index?orderId=' + that.data.orderlist.id,
+            url: '/pages/pack/delit/index?orderId=' + that.data.orderlist.id + '&typeid=' + that.data.typeid + '&id=' + that.data.orderlist.id ,
           })
         },
         'fail': function (res) {

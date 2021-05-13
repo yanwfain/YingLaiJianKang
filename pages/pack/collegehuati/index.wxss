@@ -1,0 +1,142 @@
+/* pages/pack/collegehuati/index.wxss */
+.top_img{
+  width: 100%;
+  height: 360rpx;
+  background: url(http://47.94.16.158:8001/275.png) no-repeat center;
+  background-size: 100% 100%;
+}
+
+.top1{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 38rpx;
+  color: white;
+  padding-top: 100rpx;
+}
+.top1 image{
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 10rpx;
+
+}
+.top2{
+  font-size: 28rpx;
+  color: white;
+  margin: 0 auto;
+  margin-top: 4rpx;
+  width: 90%;
+}
+.tit_tt{
+  font-size: 36rpx;
+  width: 90%;
+  padding: 20rpx 0;
+  margin: 0 auto;
+
+}
+.cont_list{
+  padding: 20rpx 0;
+  width: 90%;
+  margin: 0 auto;
+
+}
+.botds{
+  height: 20rpx;
+  background: #F6F6F6;
+}
+.user_contlist{
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+
+}
+.user_contlist image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  margin-right: 16rpx;
+}
+.cont_userRight{
+  width: 86%;
+}
+.conn_name{
+  font-size:28rpx;
+  margin-bottom: 6rpx;
+  display: flex;
+  align-items: center;
+}
+.user_contlist .vipimgs{
+  width: 58rpx;
+  height: 28rpx;
+  margin-left:16rpx;
+  border-radius: 0;
+}
+.times_cont{
+  color:#767676;
+  font-size:24rpx;
+}
+.title_cont{
+  font-size:32rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+}
+.imglust{
+  display: flex;
+  flex-wrap: wrap;
+  padding:10rpx 0;
+}
+.imglust image{
+  width: 210rpx;
+  height: 210rpx;
+  margin: 1%;
+  border-radius: 16rpx;
+}
+.listicont{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.icon{
+  /* width: 23%; */
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #767676;
+}
+.icon image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 6rpx;
+}
+.botds{
+  height: 20rpx;
+  background: #F6F6F6;
+}
+.fatieBtn{
+  width: 110rpx;
+  height: 110rpx;
+  position: fixed;
+  z-index: 2;
+  font-size: 32rpx;
+  bottom: 200rpx;
+  right: 20rpx;
+  border-radius: 100%;
+  background: #29C3C7;
+  color: white;
+  text-align: center;
+  line-height: 110rpx;
+
+}
+.contquwei{
+  width: 90%; 
+  margin: 0 auto;
+  height: 128px;
+}
+.contquwei image{
+  width: 100%;
+  height: 100%;
+}

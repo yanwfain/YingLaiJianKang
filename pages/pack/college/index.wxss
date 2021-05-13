@@ -287,3 +287,201 @@
   background-color: white;
 
 }
+.list_Jiangtab{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60rpx;
+}
+.Jianglis{
+  width: 25%;
+  text-align: center;
+
+}
+.Jianglis image{
+  width: 110rpx;
+  height: 110rpx;
+
+}
+.txt_Jxt{
+  font-size: 32rpx;
+  padding-top: 10rpx;
+}
+.Jiangt_list{
+  width: 90%;
+  margin: 0 auto;
+  padding: 40rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left_jt{
+  width: 65%;
+
+}
+.jt_img{
+  width: 210rpx;
+  height: 140rpx;
+}
+.jt_title{
+  font-size: 34rpx;
+  padding-bottom: 16rpx;
+}
+.jt_tit_botm{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.jt_icons{
+  border:1px solid #16AA2E;
+  font-size: 26rpx;
+  border-radius: 60rpx;
+  padding: 6rpx 14rpx;
+  color: #16AA2E;
+}
+.jt_numlook{
+  font-size: 26rpx;
+  color: #767676;
+}
+.backgrays{
+  height: 20rpx;
+  background: #F6F6F6;
+}
+.shequHuati{
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  font-size: 36rpx;
+}
+.quotations{
+  height: 160rpx;
+  width: 95%;
+  margin-left: 5%;
+}
+.swiperimg{
+  height: 160rpx;
+}
+.cotntsimg{
+  width: 300rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+.tit_zhid{
+  width:98%;
+  overflow: hidden;
+text-overflow:ellipsis; white-space: nowrap;
+position: absolute;
+top: 56rpx;
+color: white;
+z-index: 2;
+left: 1%;
+font-size: 34rpx;
+text-align: center;
+}
+.imgsper{
+  width: 300rpx;
+  height: 160rpx;
+  /* margin-right: 20rpx; */
+}
+.cont_list{
+  padding: 20rpx 0;
+  width: 90%;
+  margin: 0 auto;
+
+}
+.botds{
+  height: 20rpx;
+  background: #F6F6F6;
+}
+.user_contlist{
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+
+}
+.user_contlist image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  margin-right: 16rpx;
+}
+.cont_userRight{
+  width: 86%;
+}
+.conn_name{
+  font-size:28rpx;
+  margin-bottom: 6rpx;
+  display: flex;
+  align-items: center;
+}
+.user_contlist .vipimgs{
+  width: 58rpx;
+  height: 28rpx;
+  margin-left:16rpx;
+  border-radius: 0;
+}
+.times_cont{
+  color:#767676;
+  font-size:24rpx;
+}
+.title_cont{
+  font-size:32rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+}
+.imglust{
+  display: flex;
+  flex-wrap: wrap;
+  padding:10rpx 0;
+}
+.imglust image{
+  width: 210rpx;
+  height: 210rpx;
+  margin: 1%;
+  border-radius: 16rpx;
+}
+.listicont{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.icon{
+  /* width: 23%; */
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #767676;
+}
+.icon image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 6rpx;
+}
+.botds{
+  height: 20rpx;
+  background: #F6F6F6;
+}
+.fatieBtn{
+  width: 110rpx;
+  height: 110rpx;
+  position: fixed;
+  z-index: 2;
+  font-size: 32rpx;
+  bottom: 200rpx;
+  right: 20rpx;
+  border-radius: 100%;
+  background: #29C3C7;
+  color: white;
+  text-align: center;
+  line-height: 110rpx;
+
+}

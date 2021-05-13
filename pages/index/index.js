@@ -105,6 +105,11 @@ Page({
       console.log(err.errMsg)
     })
   },
+  kefuFn:function(e){
+    wx.navigateTo({
+      url: '/pages/pagetwo/kefu/index',
+    })
+  },
   listxiaoxi:function(e){
     wx.navigateTo({
       url: '/pages/pagetwo/xiaoximessg/index',
@@ -610,9 +615,12 @@ function getOpenid(that, userdelit) {
               var timestamp = Date.parse(new Date());
               var arr = that.data.day + ' ' +that.data.clock
               console.log(arr)
-              var date = new Date(arr);
+              // 时间转换 正则匹配'-' 否则真机NaN
+              var date = new Date(arr.replace(/-/g, '/'));
+              console.log(date)
               // 有三种方式获取
               var time1 = date.getTime();
+              console.log(date.getTime())
               console.log(time1)
               console.log(timestamp)
               if(time1<timestamp){

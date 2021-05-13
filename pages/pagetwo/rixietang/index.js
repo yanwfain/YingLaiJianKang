@@ -73,7 +73,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -86,7 +86,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -99,7 +99,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -112,7 +112,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -125,7 +125,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -138,7 +138,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -151,7 +151,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -164,7 +164,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -177,7 +177,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return
@@ -190,7 +190,7 @@ Page({
     var num = Number(e.detail.value)
     if(50<num||num<2){
       wx.showToast({
-        title: '数值异常请确认后重新填写',
+        title: '血糖数值范围：小于50大于2之间',
         icon:'none'
       })
       return

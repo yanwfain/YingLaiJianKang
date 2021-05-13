@@ -1,0 +1,44 @@
+<view class="boxTop">
+  <view class="tit_top1">当前逆转营方案</view>
+  <view class="tit_top2" wx:if="{{pid==1}}">7天体验营</view>
+  <view class="tit_top2" wx:if="{{pid==2}}">21天体验营</view>
+
+</view>
+<view class="titdelit">升级逆转营，体验更多项目升级逆转营，体验更多项目升级逆转营，体验更多项目</view>
+<view class="contlist" style="width:100%;padding-bottom:130rpx;">
+  <image mode="widthFix" lazy-load="true" class="imgshopds" src="http://47.94.16.158:8001/246.png"></image>
+  <image mode="widthFix" lazy-load="true" class="imgshopds" src="http://47.94.16.158:8001/247.png"></image>
+  <image mode="widthFix" lazy-load="true" class="imgshopds" src="http://47.94.16.158:8001/248.png"></image>
+</view>
+<view style="height:200rpx"></view>
+<view class="liJIShen" bindtap="subMold">立即升级</view>
+<block wx:if="{{isModel}}">
+  <view class="opct" bindtap="catabs"></view>
+  <view class="tanIsModel">
+    <view class="model_title">
+      <view>选择逆转营方案</view>
+      <image class="cha" bindtap="catabs" src="http://47.94.16.158:8001/28.png"> x </image>
+    </view>
+    <view class="distablist" style="display:block">
+      <block wx:for="{{listshop}}">
+        <view class="listcity {{tid==item.id?'activeOne':''}}"
+          style="margin:3% 1%;  display: flex;justify-content: space-between;" bindtap="tabOne" data-id="{{item.id}}"
+          data-txt="{{item.name}}" data-picker="{{item.price}}">
+          <image wx:if="{{tid==item.id}}" class="loabse" src="http://47.94.16.158:8001/icon-buy_checked@2x.png"></image>
+          <view class="tit_picker" style="margin-left:70rpx">{{item.name}}</view>
+          <view class="pickertxt" style="margin-right:50rpx">
+             <text style="text-decoration:line-through;margin-right:20rpx">￥{{item.marketPrice}}</text> 
+              ￥{{item.price}}
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="bottomBtnsub">
+    <view class="left_Btnsub">
+      <view class="txtsele">已选:{{txtOne? txtOne: '--'}}</view>
+      <view class="btnselepicker">￥{{picker?picker:'0.00'}}</view>
+    </view>
+    <view class="btnsgoshop" bindtap="submitnotation">立即购买</view>
+  </view>
+</block>

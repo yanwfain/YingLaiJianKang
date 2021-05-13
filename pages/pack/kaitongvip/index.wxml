@@ -1,0 +1,190 @@
+<view class="tops">
+  <!-- 默认飞会员展示top -->
+  <!-- <image class="img1" src="http://47.94.16.158:8001/277.png"></image> -->
+  <!-- 提醒vip快过期 -->
+  <view class="cipkuaig">
+    <image src="http://47.94.16.158:8001/285.png"></image>
+    <view class="ttxts_kud">您的VIP已过期, 请尽快续费</view>
+    <view class="leftXu3" style="padding:10rpx 0;">立即续费</view>
+  </view>
+  <!-- 会员信息 -->
+  <view class="user_delti">
+    <view class="top_deuty1">
+      <view class="lser_user1">
+        <image class="imgd" src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132"></image>
+        <view class="namer_uts">
+          <view class="name_uers">赖凝盛 <image class="vipimgs_im" src="http://47.94.16.158:8001/164.png"></image></view>
+          <view class="itime">
+           <view class="time">2022-03-23 到期</view> 
+           <view class="goumaijil">购买记录 <image src="http://47.94.16.158:8001/n5.png"></image></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="tit_jies">您已累计节省¥ <text style="font-size:50rpx;">290.26</text></view>
+  </view>
+  <!-- 会员续费 -->
+  <view class="inikexufei">您可专享特惠续费价</view>
+  <!-- <view class="inikexufei">您的VIP已到期</view> -->
+  <view class="user_delti1">
+    <view class="left_xu">
+      <view class="leftXu1">续费年度会员</view>
+      <view class="leftXu2">购买后有效期将顺延</view>
+      <!-- <view class="leftXu2">您的VIP已过期, 请尽快续费</view> -->
+      <view class="leftXu3">立即续费</view>
+    </view>
+    <view class="right_xu">
+      <view class="right_xu1">￥<text style="font-size:50rpx;font-weight: bold;">39</text>/年 </view>
+      <view class="right_xu2">¥198</view>
+      <view class="right_xu3">续费专享价</view>
+
+    </view>
+  </view>
+  <image class="img2" src="http://47.94.16.158:8001/278.png"></image>
+</view>
+<view class="backgrddd">
+  <view class="title_zhuanjia">
+    <view class="left_zhuna">
+      <image src="http://47.94.16.158:8001/n1.png"></image>专家讲糖
+    </view>
+    <image class="img3" src="http://47.94.16.158:8001/279.png"></image>
+  </view>
+  <view class="cont_listd">
+    <view class="txtde">
+      汇集国内一流的糖尿病、内分泌、心脑血管、肾病、眼科、心理、中医等跨学科专家名医在线讲解糖尿病相关知识。
+    </view>
+    <view class="listd">
+      <image
+        src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132">
+      </image>
+      <view class="rightd">
+        <view class="txt1">糖尿病逆转的发展和定义</view>
+        <view class="txt_names">杭建梅</view>
+        <view class="txt_s">盈来健康首席专家, 主任医师</view>
+      </view>
+    </view>
+    <view class="listd">
+      <image
+        src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132">
+      </image>
+      <view class="rightd">
+        <view class="txt1">糖尿病逆转的发展和定义</view>
+        <view class="txt_names">杭建梅</view>
+        <view class="txt_s">盈来健康首席专家, 主任医师</view>
+      </view>
+    </view>
+    <view class="listd">
+      <image
+        src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132">
+      </image>
+      <view class="rightd">
+        <view class="txt1">糖尿病逆转的发展和定义</view>
+        <view class="txt_names">杭建梅</view>
+        <view class="txt_s">盈来健康首席专家, 主任医师</view>
+      </view>
+    </view>
+    <view class="listd">
+      <image
+        src="https://thirdwx.qlogo.cn/mmopen/vi_32/0vZ7SSvoGdB8fAcSzqRwmdogGPUDv0bWHiauMofu5ZzWX4FWYIDVv1gesfgyZnNerySLQrS0JoxAe74uYO4ZVSA/132">
+      </image>
+      <view class="rightd">
+        <view class="txt1">糖尿病逆转的发展和定义</view>
+        <view class="txt_names">杭建梅</view>
+        <view class="txt_s">盈来健康首席专家, 主任医师</view>
+      </view>
+    </view>
+    <view class="gengduo">查看更多精品讲座 <image src="http://47.94.16.158:8001/n5.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="backgrddd">
+  <view class="title_zhuanjia">
+    <view class="left_zhuna">
+      <image src="http://47.94.16.158:8001/280.png"></image>专家直播间
+    </view>
+    <image class="img3" src="http://47.94.16.158:8001/281.png"></image>
+  </view>
+  <view class="cont_listd">
+    <view class="txtde">
+      免费观看VIP直播，与跨学科专家名医现场互动。
+    </view>
+    <image class="videos" mode="aspectFill" src="http://47.94.16.158:8001/282.png"></image>
+    <view class="gengduo">查看更多VIP直播 <image src="http://47.94.16.158:8001/n5.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="backgrddd">
+  <view class="title_zhuanjia">
+    <view class="left_zhuna">
+      <image src="http://47.94.16.158:8001/283.png"></image>健康商城
+    </view>
+    <image class="img3" src="http://47.94.16.158:8001/284.png"></image>
+  </view>
+  <view class="cont_listd">
+    <view class="txtde">
+      特权享受全部健康产品88折优惠。
+    </view>
+    <view class="list_bunew">
+      <!-- <view class="list" bindtap="shopdelit" wx:for="{{indexpage.goodsList}}" data-id="{{item.id}}">
+        <image mode="aspectFill" src="{{item.imgUrl}}"></image>
+        <view class="tit_bunew">{{item.name}}</view>
+        <view class="botmodelt">
+          <view class="pick">￥{{item.price}}</view>
+          <view class="num_new">已售{{item.sales}}</view>
+        </view>
+      </view> -->
+      <view class="list">
+        <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+        <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+        <view class="botmodelt">
+          <view class="pick">￥49 <image class="vipimgs_im" src="http://47.94.16.158:8001/164.png"></image></view>
+        </view>
+        <view class="botmodelt">
+          <view class="num_new">原价 <text style="text-decoration:line-through;">290</text></view>
+        </view>
+      </view>
+      <view class="list">
+        <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+        <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+        <view class="botmodelt">
+          <view class="pick">￥49 <image class="vipimgs_im" src="http://47.94.16.158:8001/164.png"></image></view>
+        </view>
+        <view class="botmodelt">
+          <view class="num_new">原价 <text style="text-decoration:line-through;">290</text></view>
+        </view>
+      </view>
+      <view class="list">
+        <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+        <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+        <view class="botmodelt">
+          <view class="pick">￥49 <image class="vipimgs_im" src="http://47.94.16.158:8001/164.png"></image></view>
+        </view>
+        <view class="botmodelt">
+          <view class="num_new">原价 <text style="text-decoration:line-through;">290</text></view>
+        </view>
+      </view>
+      <view class="list">
+        <image src="http://47.94.16.158:8001/da63deebfb12cfd046b504338f1eb14.png"></image>
+        <view class="tit_bunew">吃着零食养着生，蜂蜜黑芝麻条 200克2盒</view>
+        <view class="botmodelt">
+          <view class="pick">￥49 <image class="vipimgs_im" src="http://47.94.16.158:8001/164.png"></image></view>
+        </view>
+        <view class="botmodelt">
+          <view class="num_new">原价 <text style="text-decoration:line-through;">290</text></view>
+        </view>
+      </view>
+
+    </view>
+    <view class="gengduo">查看更多健康商品 <image src="http://47.94.16.158:8001/n5.png"></image>
+    </view>
+  </view>
+</view>
+<view style="height:250rpx"></view>
+<view class="backbottoms">
+  <view class="vip_shenbtm" bindtap="submitBtn">
+    <view class="top_mpic"><image src="http://47.94.16.158:8001/285.png"></image>盈来健康会员 ￥39/12个月 原价 <text style="text-decoration:line-through;">￥198</text></view>
+    <view class="txt_btn1">马上升级</view>
+  </view>
+</view>

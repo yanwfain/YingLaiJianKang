@@ -17,6 +17,8 @@ let pageConfig = {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+   
     wx.showLoading({
       title: '等待医师发起',
     })
@@ -66,7 +68,7 @@ let pageConfig = {
    
     // 跳转
     wx.redirectTo({
-      url: `/partials/chating/chating?chatTo=${account}&type=${chatType}`,
+      url: `/partials/chating/chating?chatTo=${account}&type=${chatType}&fid=1`,
     })
   },
   /**

@@ -21,14 +21,15 @@ Page({
       typeids:options.typeids,
       shopid:options.shopid,
       bid:options.bid,
-     
-      gouche:JSON.parse(options.gouche),
+      imgs:options.imgs,
+    
       ltxt:options.ltxt,
       unique:options.unique
     })
     if(options.gouche){
       this.setData({
         cartIdslist:JSON.parse(options.gouche),
+        gouche:JSON.parse(options.gouche),
       })
     }
     if(this.data.shopid){
@@ -47,8 +48,6 @@ Page({
       } else{
         data.productAttrUnique = options.unique
       }
-      
-      
       app.wxRequest('POST', url, data, (res) => {
         console.log(res)
         wx.hideLoading()
@@ -58,15 +57,12 @@ Page({
             cartIds:res.data.cartId,
             cartIdslist: that.data.cartIdslist
           })
-         
-  
           var url = app.globalData.url + '/api/order/confirm';
           var data = {
             userId:app.globalData.user_id,
             cartIds:res.data.cartId
       
           }
-          
           app.wxRequest('POST', url, data, (res) => {
             console.log(res)
             wx.hideLoading()
@@ -139,22 +135,32 @@ Page({
     })
   },
   chckedFn:function(e){
+
     this.setData({
+      totalPrice_dor:e.currentTarget.dataset.picker,
       pickerYou:e.currentTarget.dataset.couponprice,
       youId:e.currentTarget.dataset.id
     })
   },
   queFn:function(e){
+    if(this.data.contldelit.totalPrice<this.data.totalPrice_dor){
+      wx.showToast({
+        title: '不满足使用条件',
+        icon:'none'
+      })
+      return
+    }
     wx.showLoading({
       title: '加载中',
     })
-
     var that = this
     var url = app.globalData.url + '/api/order/computedOrder';
     var data = {
       userId:app.globalData.user_id,
       cartIds:this.data.cartIdslist,
-      couponId:this.data.youId
+      couponId:this.data.youId,
+      integral:this.data.jifenval?this.data.jifenval:''
+
     }
     app.wxRequest('POST', url, data, (res) => {
       console.log(res)
@@ -186,13 +192,68 @@ Page({
     })
   },
   deleyouFn:function(e){
-    this.setData({
-      pickerYou:'',
-      pickerYouindex:'',
-      youIdindex:'',
-      modelis:false,
-      tidpicker:''
+    if(!this.data.jifenval&&!this.data.youId){
+      this.setData({
+        pickerYou:'',
+        pickerYouindex:'',
+        youIdindex:'',
+        modelis:false,
+        youId:'',
+        jifenval:'',
+        tidpicker:''
+      })
+    }else{
+      this.setData({
+        pickerYou:'',
+        pickerYouindex:'',
+        youIdindex:'',
+        modelis:false,
+        youId:'',
+        tidpicker:1
+      })
+    }
+    wx.showLoading({
+      title: '加载中',
     })
+    var that = this
+    var url = app.globalData.url + '/api/order/computedOrder';
+    var data = {
+      userId:app.globalData.user_id,
+      cartIds:this.data.cartIdslist,
+      couponId:this.data.youId,
+      integral:this.data.jifenval?this.data.jifenval:''
+    }
+    app.wxRequest('POST', url, data, (res) => {
+      console.log(res)
+      wx.hideLoading()
+      if (res.success) {
+        if(!this.data.jifenval&&!this.data.youId){
+          that.setData({
+            tidpicker:'',
+          })
+        }else{
+          that.setData({
+            tidpicker:1,
+          })
+        }
+        that.setData({
+          pickerCont:res.data,
+          modelis:false
+        })
+      } else {
+        wx.showToast({
+          title: res.data,
+          icon:'none'
+        })
+      }
+    }, (err) => {
+      wx.showToast({
+        title: '提交失败',
+      })
+      console.log(err.errMsg)
+    })
+   
+ 
   },
   clickYouFn:function(e){
     this.setData({
@@ -240,6 +301,7 @@ Page({
       data.orderType =1
       data.userRemark = this.data.userRemark?this.data.userRemark:'' //备注
       data.couponId = this.data.youId?this.data.youId:'' //优惠劵id
+      data.integral = this.data.jifenval?this.data.jifenval:'' //优惠劵id
     }
     app.wxRequest('POST', url, data, (res1) => {
       console.log(res1)
@@ -328,6 +390,88 @@ Page({
       console.log(err.errMsg)
     })
   },
+  jifenval:function(e){
+    this.setData({
+      jifenval:e.detail.value
+    })
+  },
+  subinpuji:function(e){
+    // if(!this.data.jifenval){
+    //   wx.showToast({
+    //     title: '请输入使用积分数量',
+    //     icon:'none'
+    //   })
+    //   return
+    // }
+    if(this.data.userList.usableScore<this.data.userList.integralMax){
+      if(this.data.userList.usableScore<this.data.jifenval){
+        wx.showToast({
+          title: '请确认使用积分数量',
+          icon:'none'
+        })
+        return
+      }
+    }
+    if(this.data.userList.usableScore>this.data.integralMax){
+      if(this.data.jifenval>this.data.integralMax){
+        wx.showToast({
+          title: '请确认使用积分数量',
+          icon:'none'
+        })
+        return
+      }
+    }
+    // this.setData({
+    //   jifenvalNum:this.data.jifenval/this.data.userList.integralRatio,
+    //   isJifens:false
+    // })
+    wx.showLoading({
+      title: '加载中',
+    })
+    var that = this
+    var url = app.globalData.url + '/api/order/computedOrder';
+    var data = {
+      userId:app.globalData.user_id,
+      cartIds:this.data.cartIdslist,
+      couponId:this.data.youId?this.data.youId:'',
+      integral:this.data.jifenval?this.data.jifenval:''
+    }
+    app.wxRequest('POST', url, data, (res) => {
+      console.log(res)
+      wx.hideLoading()
+      if (res.success) {
+        that.setData({
+          tidpicker:1,
+          pickerCont:res.data,
+          pickerYouindex:this.data.pickerYou,
+          youIdindex:this.data.youId,
+          modelis:false,
+          jifenvalNum:this.data.jifenval/this.data.userList.integralRatio,
+          isJifens:false
+        })
+      } else {
+        wx.showToast({
+          title: res.data,
+          icon:'none'
+        })
+      }
+    }, (err) => {
+      wx.showToast({
+        title: '提交失败',
+      })
+      console.log(err.errMsg)
+    })
+  },
+  clickJiFn:function(e){
+      this.setData({
+        isJifens:true
+      })
+  },
+  binBi:function(e){
+    this.setData({
+      isJifens:false
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -339,6 +483,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
+    var that = this
+    var url = app.globalData.url + '/api/getUserInfo';
+    var data = {
+      userId:app.globalData.user_id,
+    }
+    app.wxRequest('get', url, data, (res) => {
+      console.log(res)
+      wx.hideLoading()
+      if (res.success) {
+
+        that.setData({
+          userList:res.data.userData
+        })
+      } else {
+        wx.showToast({
+          title: res.error_message,
+          icon:'none'
+        })
+      }
+    }, (err) => {
+      wx.showToast({
+        title: '提交失败',
+      })
+      console.log(err.errMsg)
+    })
     wx.showLoading({
       title: '加载中',
     })

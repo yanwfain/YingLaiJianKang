@@ -19,6 +19,8 @@
         "scorlji/index",
         "shebei/index",
         "shenggao/index",
+        "kefu/index",
+        
         "shipdeeliwen/index",
         "shnegchengmeport/index",
         "shopdelit/index",
@@ -97,6 +99,7 @@
       "root": "pages/pack",
       "pages": [
         "activation/index",
+        "question/index",
         "addAddress/index",
         "addheshuil/index",
         "addjilupage/index",
@@ -115,6 +118,15 @@
         "circumference/index",
         "classcity/index",
         "college/index",
+        "collegevideolist/index",
+        "collegecdelit/index",
+        "collegedelit/index",
+        "collegefatie/index",
+        "collegehuati/index",
+        "kaitongvip/index",
+        "shequdelit/index",
+        "shenJi/index",
+        
         "delit/index",
         "delitsriqi/index",
         "dongtai/index",
@@ -164,14 +176,15 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":false
   },
   "usingComponents":{
     "handwriting":"/components/handwriting/index"
   },
     "plugins": {
       "ICDeviceManager": {
-        "version": "0.2.10",
+        "version": "0.2.15",
         "provider": "wx8bbfa3009f30f5d8"
       }
     },

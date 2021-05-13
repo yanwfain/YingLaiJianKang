@@ -179,7 +179,10 @@ Page({
       console.log(res)
       wx.hideLoading()
       if (res.success) {
-
+      // 查询金额
+      if (that.data.arrId.length > 0) {
+        that.picker()
+      }
       } else {
         wx.showToast({
           title: res.error_message,
@@ -235,9 +238,9 @@ Page({
     })
     console.log(num)
     // 查询金额
-    if (this.data.arrId.length > 0) {
-      this.picker()
-    }
+    // if (this.data.arrId.length > 0) {
+    //   this.picker()
+    // }
 
   },
   jiaFn: function (e) {
@@ -278,9 +281,9 @@ Page({
     })
     console.log(num)
     // 查询金额
-    if (this.data.arrId.length > 0) {
-      this.picker()
-    }
+    // if (this.data.arrId.length > 0) {
+    //   this.picker()
+    // }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

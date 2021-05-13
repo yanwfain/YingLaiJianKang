@@ -71,19 +71,19 @@
 </view>
 <view class="title_tit">健康管理</view>
 <view class="listGaun">
-	<view class="lostview">
+	<view class="lostview" bindtap="metorterl">
 		<image src="http://47.94.16.158:8001/165.png"></image>
 		<view class="txt_Guan">我的医师</view>
 	</view>
-	<view class="lostview">
+	<view class="lostview" bindtap="meYinyang">
 		<image src="http://47.94.16.158:8001/166.png"></image>
 		<view class="txt_Guan">我的营养师</view>
 	</view>
-	<view class="lostview">
+	<view class="lostview" bindtap="meShuju">
 		<image src="http://47.94.16.158:8001/167.png"></image>
 		<view class="txt_Guan">我的数据</view>
 	</view>
-	<view class="lostview">
+	<view class="lostview" bindtap="meJianKang">
 		<image src="http://47.94.16.158:8001/168.png"></image>
 		<view class="txt_Guan">健康档案</view>
 	</view>
@@ -188,6 +188,6 @@
 		<view class="Btab_txt" style="color:#29C3C7">我的</view>
 	</view>
 </view>
-<view class="logoKefu">
+<view class="logoKefu" bindtap="kefuFn">
 	<image src="http://47.94.16.158:8001/n8.png"></image>
 </view>

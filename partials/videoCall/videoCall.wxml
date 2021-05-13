@@ -40,11 +40,11 @@
             >
             <cover-view class='control-wrapper'>
               <cover-view class='netcall-time-text'>{{duration}}</cover-view>
-              <cover-image class="item" src="/images/netcall-call-{{callTypeIconKind == 'video' ? 'voice' : 'video'}}.png" catchtap="switchToVoiceCallHandler">语音通话</cover-image>
-              <cover-image class="item" src="/images/netcall-revert-camera.png" wx:if="{{callTypeIconKind == 'video'}}" catchtap="switchCameraHandler">切摄像头</cover-image>
-              <cover-image class="item" src="/images/netcall-camera{{enableCamera ? '' : '-close'}}.png" wx:if="{{callTypeIconKind == 'video'}}" data-mode="1" catchtap="switchMeetingModeHandler">关闭摄像头</cover-image>
-              <cover-image class="item" src="/images/netcall-micro{{muted ? '-close' : ''}}.png" data-mode="2" catchtap="switchMeetingModeHandler">关闭麦克风</cover-image>
-              <cover-image class="item" src="/images/netcall-reject.png" catchtap="hangupHandler">挂断</cover-image>
+              <cover-image class="item" src="http://47.94.16.158:8001/{{callTypeIconKind == 'video' ? '250' : '257'}}.png" catchtap="switchToVoiceCallHandler">语音通话</cover-image>
+              <cover-image class="item" src="http://47.94.16.158:8001/251.png" wx:if="{{callTypeIconKind == 'video'}}" catchtap="switchCameraHandler">切摄像头</cover-image>
+              <cover-image class="item" src="http://47.94.16.158:8001/{{enableCamera ? '252' : '256'}}.png" wx:if="{{callTypeIconKind == 'video'}}" data-mode="1" catchtap="switchMeetingModeHandler">关闭摄像头</cover-image>
+              <cover-image class="item" src="http://47.94.16.158:8001/{{muted ? '254' : '253'}}.png" data-mode="2" catchtap="switchMeetingModeHandler">关闭麦克风</cover-image>
+              <cover-image class="item" src="http://47.94.16.158:8001/255.png" catchtap="hangupHandler">挂断</cover-image>
             </cover-view>
           </yunxin-player>
         </block>

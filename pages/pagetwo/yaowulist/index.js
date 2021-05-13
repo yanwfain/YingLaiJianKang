@@ -150,6 +150,7 @@ Page({
       typeId:that.data.typeId,
       text: e.currentTarget.dataset.text,
       wuid: e.currentTarget.dataset.id,
+      unit:e.currentTarget.dataset.unit
     })
     wx.navigateBack({
       delta: 1,  // 返回上一级页面。

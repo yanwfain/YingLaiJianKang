@@ -1,0 +1,225 @@
+/* pages/pack/shenJi/index.wxss */
+.boxTop{
+  width: 100%;
+  height: 364rpx;
+  background: url(http://47.94.16.158:8001/286.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.tit_top1{
+  text-align: center;
+  padding-top: 100rpx;
+  color: white;
+  font-size: 26rpx;
+
+}
+.tit_top2{
+  text-align: center;
+  padding-top: 30rpx;
+  color: white;
+  font-size: 60rpx;
+  font-weight: 600;
+}
+.imgshopds{
+  width: 100%;
+}
+.titdelit{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 34rpx;
+  padding-top: 30rpx;
+  padding-bottom: 50rpx;
+  color: #4A4A4A;
+}
+.liJIShen{
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 60rpx;
+  line-height: 100rpx;
+  color: white;
+  font-size: 34rpx;
+  text-align: center;
+  position: fixed;
+  z-index:1;
+  left: 5%;
+  bottom: 2%;
+  background: #EE7500;
+}
+.opct{
+  background: black;
+  opacity: .7;
+  position: fixed;
+  z-index: 21;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.tanIsModel{
+  width: 100%;
+  position: fixed;
+  z-index: 22;
+  bottom: 0px;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  background: white;
+  height: 70%;
+
+  overflow-y: scroll;
+
+}
+.model_title{
+  font-size:36rpx;
+  padding: 24rpx 0;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.cha{
+  width:52rpx;
+  height: 54rpx;
+
+}
+.distablist{
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+
+}
+.listcity{
+  width: 98%;
+  margin: 1%;
+  padding: 24rpx 0;
+  border:1px solid #FFD0A2;
+  background: #FFF8F3;
+  border-radius: 10rpx;
+  position: relative;
+
+
+}
+.backtxt{
+  background: #F3F3F3;
+  border-radius: 10rpx;
+
+}
+.activeOne{
+  background-image: linear-gradient(to right, #EE7500, #F5A776);
+  color:white;
+}
+.loabse{
+  width: 60rpx;
+  height: 60rpx;
+  top: 0;
+  left:0;
+  position: absolute;
+}
+.topSble{
+  padding: 4rpx 14rpx;
+  font-size:22rpx;
+  color: white;
+  background-image: linear-gradient(to right, #FE2A67, #FF6862);
+  position: absolute;
+  top: -30rpx;
+  right: 0;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  border-top-left-radius: 36rpx;
+
+}
+.tit_picker{
+  font-size:36rpx;
+  /* font-weight: 600; */
+  text-align: center;
+
+}
+.pickertxt{
+  font-size:34rpx;
+  margin-top: 6rpx;
+  text-align: center;
+
+}
+.bottomBtnsub{
+  position: fixed;
+  bottom: 36px;
+  width: 100%;
+  left:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  z-index: 23;
+}
+.left_Btnsub{
+  width: 48%;
+  margin-left:2%;
+
+}
+.txtsele{
+  font-size:24rpx;
+  color: #767676;
+
+}
+.btnselepicker{
+  color: #EE7500;
+  font-size:38rpx;
+  font-weight: 600;
+
+}
+.btnsgoshop{
+  width: 44%;
+  margin-right: 2%;
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  color: white;
+  background-image: linear-gradient(to right, #EE7500, #F5A776);
+  border-radius: 50rpx;
+}
+.listcitybcg{
+  width: 48%;
+  margin: 2% 1%;
+  text-align: center;
+  position: relative;
+  border:1px solid white;
+  border-radius: 12rpx;
+  position: relative;
+}
+.imgshopds{
+  width: 100%;
+}
+.loocksdiomg{
+  width: 160rpx;
+  height: 70rpx;
+  position: absolute;
+  top: 4rpx;
+  right: 4rpx;
+}
+.activek{
+  border:1px solid #EE7500;
+}
+.img{
+  width: 100%;
+  height:210rpx;
+}
+.listlipi{
+  width: 100%;
+  font-size:28rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rpx;
+}
+.listlipi image{
+  width: 66rpx;
+  height: 66rpx;
+  margin-right: 10rpx;
+}
+.botgraytxt{
+  padding:20rpx 30rpx;
+  padding-bottom: 120rpx;
+  background: #F6F6F6;
+  margin-top: 30rpx;
+}

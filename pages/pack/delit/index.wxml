@@ -7,7 +7,7 @@
   <view class="page_tile">
     <block wx:if="{{orderlist.orderType==0}}">
       <!-- 支付后展示 -->
-      <view class="tit" wx:if="{{orderlist.payment==3}}">您可以直接启动入营流程</view>
+      <view class="tit" wx:if="{{orderlist.payment==3&&orderlist.status!=2}}">您可以直接启动入营流程</view>
       <!-- 待付款展示 -->
       <view class="tit" wx:if="{{orderlist.payment==1}}" >购买后可直接启动入营流程</view>
     </block>
@@ -16,7 +16,7 @@
       <!-- 待付款展示 -->
       <view class="tit" wx:if="{{orderlist.payment==1}}">您的订单尚未付款</view>
       <!-- 支付后展示 -->
-      <view class="tit" wx:if="{{orderlist.payment==3}}">已付款，礼品卡稍后为您寄出</view>
+      <view class="tit" wx:if="{{orderlist.payment==3&&orderlist.status!=2}}">已付款，礼品卡稍后为您寄出</view>
       </view>
     </block>
    <block wx:if="{{orderlist.payment==3&&orderlist.orderType==0}}">
@@ -46,7 +46,8 @@
   <view class="contdelit">
   <view class="title">礼品卡信息</view>
   <view class="cont" wx:for="{{orderlist.productList}}">
-    <image mode="aspectFill" style="width:220rpx" src="{{item.cartInfo.imgUrl}}"></image>
+    <!-- <image mode="aspectFill" style="width:220rpx" src="{{item.cartInfo.imgUrl}}"></image> -->
+    <image mode="aspectFill" style="width:220rpx" src="{{orderlist.cardImg}}"></image>
     <view class="delit">
       <view class="listdelit">
         <view class="shoptitle">{{item.cartInfo.name}}</view>
@@ -129,9 +130,9 @@
 </view>
 <block wx:if="{{orderlist.jhCode}}">
   <view class="backd"></view>
-<view class="pickercont" >
+<view class="pickercont" wx:if="{{orderlist.jhCode&&orderlist.status==2}}">
 
-  <view class="listtxts" bindtap="copy" data-code="{{orderlist.jhCode}}" wx:if="{{orderlist.jhCode}}">激活码：{{orderlist.jhCode}}</view>
+  <view class="listtxts" bindtap="copy" data-code="{{orderlist.jhCode}}" wx:if="{{orderlist.jhCode&&orderlist.status==2}}">激活码：{{orderlist.jhCode}}</view>
 </view>
 </block>
 
@@ -140,7 +141,7 @@
   <view class="listtxts">订单编号：{{orderlist.code}}</view>
   <view class="listtxts">创建时间：{{orderlist.createTime}}</view>
   <view class="listtxts" wx:if="{{orderlist.tampstap}}">支付时间：{{orderlist.tampstap}}</view>
-  <view class="listtxts" wx:if="{{orderlist.actCode}}">激活码：{{orderlist.jhCode}}</view>
+  <!-- <view class="listtxts" wx:if="{{orderlist.actCode&&orderlist.status==2}}">激活码：{{orderlist.jhCode}}</view> -->
 </view>
 
 <view  style="height:180rpx"></view>

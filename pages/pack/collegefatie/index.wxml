@@ -1,0 +1,58 @@
+<view class="title">
+  <input type="text" placeholder="标题" bindinput="title" value="{{title}}" />
+</view>
+<view class="textart">
+  <textarea class="txear" bindinput="inptxtval" placeholder="说点什么…" value="{{inptxtval}}" show-confirm-bar=""
+    fixed="true" maxlength="-1"></textarea>
+</view>
+<!-- http://47.94.16.158:8001/211.png -->
+<view class="images_box">
+  <block wx:for="{{imgbox}}">
+    <view class='img-box' bindtap="topic_preview" data-id="{{item.id}}" data-url="{{item.url1}}">
+      <image class='img' mode="aspectFill" src='{{item.url1}}'></image>
+      <view class='img-delect' data-deindex='{{index}}' catchtap='imgDelete1' data-id="{{item.id}}">
+        <image class='img' src='http://47.94.16.158:8001/62.png'></image>
+      </view>
+    </view>
+  </block>
+  <view class='img-box' bindtap='addPic1' data-id="{{item.id}}" wx:if="{{imgbox.length<3}}">
+    <image class='img' src='http://47.94.16.158:8001/273.png'></image>
+  </view>
+</view>
+<view class="celiang" style="margin-top:20rpx;border-top:1px solid #F6F6F6">
+
+  <view class="celText">选择分类</view>
+  <view class="left">
+    <picker bindchange="pickerProChangef" range="{{ pickerProDataf }}" range-key="{{'name'}}" value="{{countryIndex}}">
+      <view class="txt" style="">
+        {{pickerProDataf[countryIndex].name?pickerProDataf[countryIndex].name:"选择分类"}}
+      </view>
+    </picker>
+  </view>
+  <image src="http://47.94.16.158:8001/n5.png"></image>
+</view>
+<view class="celiang" >
+
+<view class="celText">选择话题</view>
+<view class="left">
+  <picker bindchange="pickerProChangef1" range="{{ pickerProDataf1 }}" range-key="{{'name'}}" value="{{countryIndex1}}">
+    <view class="txt" style="">
+      {{pickerProDataf1[countryIndex1].name?pickerProDataf1[countryIndex1].name:"选择话题"}}
+    </view>
+  </picker>
+</view>
+<image src="http://47.94.16.158:8001/n5.png"></image>
+</view>
+<view class="submites" bindtap="subite">发布</view>
+<block wx:if="{{isModels}}">
+  <view class="back" bindtap="jixsuFn"></view>
+  <view class="isshowModele">
+    <image class="delesx" bindtap="jixsuFn" src="http://47.94.16.158:8001/28.png"></image>
+    <!-- <image class="jiangbei" src="http://47.94.16.158:8001/96.png"></image> -->
+    <view class="textsIsshow" >发布成功</view>
+    <view class="textsIsshow" style="padding-top:40rpx;">恭喜您发帖成功
+并获得</view>
+    <view class="fontsinumS"> <text style=" font-weight: 600;">+ {{jifensnum}}</text>  积分</view>
+    <view class="jisubtnsubs" bindtap="jixsuFn">确认</view>
+  </view>
+</block>

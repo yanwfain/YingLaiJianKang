@@ -33,6 +33,7 @@ Page({
 
     let pageTitle = ''
     if (options.beCalling) { // 被叫
+      console.log(options.beCalling)
       pageTitle = options.caller
       this.setData({
         pageTitle: pageTitle,

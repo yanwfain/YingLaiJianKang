@@ -104,7 +104,7 @@
 		<block wx:if="{{cid==2}}">
 			<view class="model_title">选择礼品卡样式</view>
 			<view class="distablist">
-				<view class="listcitybcg {{bid==item.id?'activek':''}}" bindtap="tabThree" data-txt="{{item.name}}" data-id="{{item.id}}" wx:for="{{listshopimg}}">
+				<view class="listcitybcg {{bid==item.id?'activek':''}}" bindtap="tabThree" data-imgs="{{item.img}}" data-txt="{{item.name}}" data-id="{{item.id}}" wx:for="{{listshopimg}}">
 					<image class="loocksdiomg"  catchtap="preview" data-img="{{item.img}}" src="http://47.94.16.158:8001/249.png"></image>
 					<image wx:if="{{bid==item.id}}" class="loabse" src="http://47.94.16.158:8001/icon-buy_checked@2x.png"></image>
 					<image class="img" style="border-radius:10rpx;" mode="aspectFill" src="{{item.img}}"></image>

@@ -16,7 +16,7 @@
 <view class="contdelit" wx:if="{{typeids==1}}">
   <view class="title">礼品卡信息</view>
   <view class="cont" wx:for="{{pagedelit}}">
-    <image src="{{item.image}}"></image>
+    <image mode="aspectFill" src="{{imgs}}"></image>
     <view class="delit">
       <view class="listdelit">
         <view class="shoptitle">{{item.name}}</view>
@@ -36,7 +36,7 @@
 <view class="contdelit" wx:if="{{!typeids}}">
   <view class="title">盈来健康</view>
   <view class="cont" wx:for="{{pagedelit}}" style="align-items: inherit;">
-    <image style="width:170rpx;height:170rpx;border-radius: 14rpx;"
+    <image mode="aspectFill" style="width:170rpx;height:170rpx;border-radius: 14rpx;"
       src="{{item.image}}"></image>
     <view class="delit" style="width:70%">
       <view class="listdelit">
@@ -60,6 +60,11 @@
     <view class="valuepicker" bindtap="clickYouFn"> <text wx:if="{{pickerYouindex}}">-￥{{pickerYouindex}}</text><text wx:if="{{!pickerYouindex}}" style="color:gray;">未使用优惠券</text><image class="addlogos" src="http://47.94.16.158:8001/n5.png"></image>
     </view>
   </view>
+  <view class="lost_picker" wx:if="{{contldelit.totalPrice>=userList.integralFull}}">
+    <view class="txt">积分抵扣</view>
+    <view class="valuepicker" bindtap="clickJiFn"> <text wx:if="{{jifenvalNum}}">-￥{{we.toFixed(jifenvalNum)}}元</text><text wx:if="{{!jifenvalNum}}" style="color:gray;">未使用积分</text><image class="addlogos" src="http://47.94.16.158:8001/n5.png"></image>
+    </view>
+  </view>
   <view class="lost_picker">
     <view class="txt">留言</view>
     <input class="louyan" type="text" bindinput="userRemark" value="{{userRemark}}" placeholder="选填, 建议提前协商" value="" />
@@ -71,10 +76,14 @@
     <view class="txt">合计</view>
     <view class="txt">¥ {{contldelit.totalPrice}}</view>
   </view>
-  <view class="lost_picker" wx:if="{{contldelit.pickerYouindex>0}}">
+  <!-- <view class="lost_picker" wx:if="{{contldelit.pickerYouindex>0}}">
     <view class="txt">优惠券</view>
     <view class="txt">- ¥ {{contldelit.couponPrice}}</view>
-  </view>
+  </view> -->
+  <!-- <view class="lost_picker" wx:if="{{contldelit.jifenvalNum>0}}">
+    <view class="txt">积分抵扣</view>
+    <view class="txt">- ¥ {{contldelit.couponPrice}}</view>
+  </view> -->
   <view class="lost_picker" wx:if="{{contldelit.memberPrice>0}}">
     <view class="txt">会员88折优惠</view>
     <view class="txt">- ¥ {{contldelit.memberPrice}}</view>
@@ -89,11 +98,15 @@
     <view class="txt">合计</view>
     <view class="txt">¥ {{pickerCont.totalPrice}}</view>
   </view>
-  <view class="lost_picker" wx:if="{{contldelit.pickerYouindex>0}}">
+  <view class="lost_picker" wx:if="{{pickerCont.couponPrice>0}}">
     <view class="txt">优惠券</view>
     <view class="txt">- ¥ {{pickerCont.couponPrice}}</view>
   </view>
-  <view class="lost_picker" wx:if="{{contldelit.memberPrice>0}}">
+  <view class="lost_picker" wx:if="{{pickerCont.integralPrice>0}}">
+    <view class="txt">积分抵扣</view>
+    <view class="txt">- ¥ {{pickerCont.integralPrice}}</view>
+  </view>
+  <view class="lost_picker" wx:if="{{pickerCont.memberPrice>0}}">
     <view class="txt">会员88折优惠</view>
     <view class="txt">- ¥ {{pickerCont.memberPrice}}</view>
   </view>
@@ -120,7 +133,7 @@
     </view>
     <view class="listYouhuil">
       <view class="title_models">可使用</view>
-      <view class="list" bindtap="chckedFn" wx:for="{{noOverdueList}}" data-couponprice="{{item.couponPrice}}" data-id="{{item.id}}">
+      <view class="list" bindtap="chckedFn" wx:for="{{noOverdueList}}" data-picker="{{item.useMinPrice}}" data-couponprice="{{item.couponPrice}}" data-id="{{item.id}}">
         <view class="left">
           <view class="money">￥ <text>{{item.couponPrice}}</text></view>
           <view class="money_txt">满{{item.useMinPrice}}可用</view>
@@ -150,3 +163,23 @@
     <view class="buNOs" bindtap="deleyouFn">不使用优惠劵</view>
   </view>
 </block>
+<block wx:if="{{isJifens}}">
+  <view class="bkkoo" bindtap="binBi"></view>
+  <view class="modelinput">
+    <view class="jiGuize">
+     {{userList.integralRatio}}积分等于1元，满{{userList.integralFull}}元可以使用，单次最大使用积分数量为{{userList.integralMax}}
+    </view>
+    <view class="list_iboput">我的可用积分：{{userList.usableScore}}</view>
+    <input class="ino_ji" type="number" placeholder="请输入使用积分" bindinput="jifenval" value="{{jifenval}}" />
+    <view class="subinpuji" bindtap="subinpuji">确定</view>
+  </view>
+  
+</block>
+<wxs module="we">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

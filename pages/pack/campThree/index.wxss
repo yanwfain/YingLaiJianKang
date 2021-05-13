@@ -27,7 +27,7 @@
   width: 90%;
   position: absolute;
   left: 5%;
-  top: 160rpx;
+  top: 140rpx;
   display:flex;
   font-size: 36rpx;
   color: white;
@@ -36,10 +36,15 @@
 }
 .title{
   font-size: 32rpx;
-
+  width: 70%;
 }
 .nums{
-  font-size: 38rpx;
+  font-size: 28rpx;
+  padding: 10rpx 26rpx;
+  color: #725503;
+  background-image: linear-gradient(to right, #EABC3D, #FFE68A);
+  border-radius: 60rpx;
+  
 }
 .txt_tit{
   width: 90%;

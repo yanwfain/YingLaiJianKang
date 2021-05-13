@@ -1,0 +1,54 @@
+<view class="top_img">
+  <view class="top1">
+    <image src="http://47.94.16.158:8001/274.png"></image>{{name}}
+  </view>
+  <view class="top2">
+    快来分享{{name}}时候遇到的事情吧
+  </view>
+</view>
+<view class="tit_tt">最新发布</view>
+<block>
+
+  <view class="cont_list" wx:for="{{movieList}}" bindtap="shequdelit" data-id="{{item.id}}">
+    <view class="user_contlist">
+      <image src="{{item.headImg}}">
+      </image>
+      <view class="cont_userRight">
+        <view class="conn_name">{{item.userName}} <image wx:if="{{item.isMember=='Y'}}" class="vipimgs"
+            src="http://47.94.16.158:8001/164.png"></image>
+        </view>
+        <view class="times_cont">{{item.createTime}}</view>
+      </view>
+    </view>
+    <view class="title_cont">
+      {{item.introduction}}
+    </view>
+    <view class="imglust">
+      <image mode="aspectFill" wx:for="{{item.imgs}}" wx:for-item="ite" src="{{ite}}"></image>
+
+    </view>
+    <view class="listicont">
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/189.png"></image>{{item.shareNum}}
+      </view>
+      <view class="icon">
+        <image src="http://47.94.16.158:8001/190.png"></image>{{item.commentsNum}}
+      </view>
+      <view class="icon" catchtap="shoucangs" data-collectstatus="{{item.collectStatus}}" data-id="{{item.id}}">
+        <image src="http://47.94.16.158:8001/191.png" wx:if="{{item.collectStatus==0}}"></image>
+        <image src="http://47.94.16.158:8001/263.png" wx:if="{{item.collectStatus>0}}"></image>{{item.collectionNum}}
+      </view>
+      <view class="icon" catchtap="dianzans" data-givelikestatus="{{item.givelikeStatus}}" data-id="{{item.id}}">
+        <image src="http://47.94.16.158:8001/192.png" wx:if="{{item.givelikeStatus==0}}"></image>
+        <image src="http://47.94.16.158:8001/193.png" wx:if="{{item.givelikeStatus>0}}"></image>
+        {{item.giveLikeNum}}
+      </view>
+    </view>
+  </view>
+  <view class="botds"></view>
+</block>
+<view class="contquwei">
+  <image mode="aspectFill" src="http://47.94.16.158:8001/236.png"></image>
+</view>
+<view style="color:gray;padding:30rpx;text-align:center;font-size:34rpx">没有更多内容了</view>
+<view class="fatieBtn" bindtap="fatieFn">发帖</view>

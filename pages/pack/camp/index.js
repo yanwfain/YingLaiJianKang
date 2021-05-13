@@ -93,7 +93,7 @@ Page({
     }
     if(this.data.cid==2){
       wx.navigateTo({
-        url: '/pages/pagetwo/zengdelit/index?txtOne=' + this.data.txtOne + '&picker=' + this.data.picker + '&specifications=' + 2 + '&shopid=' + this.data.tid + '&typeids=' + 1 + '&bid=' + this.data.bid + '&ltxt=' + this.data.ltxt,
+        url: '/pages/pagetwo/zengdelit/index?txtOne=' + this.data.txtOne + '&picker=' + this.data.picker + '&specifications=' + 2 + '&shopid=' + this.data.tid + '&typeids=' + 1 + '&bid=' + this.data.bid + '&ltxt=' + this.data.ltxt + '&imgs=' + this.data.imgs,
       })
     }
   
@@ -149,7 +149,8 @@ Page({
   tabThree:function(e){
     this.setData({
       bid: e.currentTarget.dataset.id,
-      ltxt:e.currentTarget.dataset.txt
+      ltxt:e.currentTarget.dataset.txt,
+      imgs:e.currentTarget.dataset.imgs
     })
   },
   subMold:function(e){
